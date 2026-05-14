@@ -302,18 +302,30 @@ def tl(x): return f"{x:,.0f} TL"
 
 def fotograf_analiz(img_bytes):
     b64 = base64.standard_b64encode(img_bytes).decode()
+    api_key = st.secrets.get("GROQ_API_KEY", "")
+    if not api_key:
+        return {"kasa_tipi":"Bilinmiyor","renk":"Diğer","aciklama":"GROQ_API_KEY bulunamadı"}
     try:
         r = requests.post(
-            "https://api.anthropic.com/v1/messages",
-            headers={"Content-Type":"application/json"},
-            json={"model":"claude-sonnet-4-20250514","max_tokens":300,
-                  "messages":[{"role":"user","content":[
-                      {"type":"image","source":{"type":"base64","media_type":"image/jpeg","data":b64}},
-                      {"type":"text","text":'Araç fotoğrafı. SADECE JSON:\n{"kasa_tipi":"Sedan|Hatchback/5|Hatchback/3|SUV|Coupe|Station wagon|MPV|Cabrio|Pick-up|Bilinmiyor","renk":"Beyaz|Siyah|Gri|Kırmızı|Mavi|Lacivert|Kahverengi|Bordo|Yeşil|Sarı|Turuncu|Mor|Bej|Şampanya|Füme|Diğer","aciklama":"kısa açıklama"}'}
-                  ]}]},
-            timeout=15
+            "https://api.groq.com/openai/v1/chat/completions",
+            headers={
+                "Content-Type": "application/json",
+                "Authorization": f"Bearer {api_key}"
+            },
+            json={
+                "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+                "max_tokens": 300,
+                "messages": [{
+                    "role": "user",
+                    "content": [
+                        {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{b64}"}},
+                        {"type": "text", "text": 'Araç fotoğrafı. SADECE JSON döndür:\n{"kasa_tipi":"Sedan|Hatchback/5|Hatchback/3|SUV|Coupe|Station wagon|MPV|Cabrio|Pick-up|Bilinmiyor","renk":"Beyaz|Siyah|Gri|Kırmızı|Mavi|Lacivert|Kahverengi|Bordo|Yeşil|Sarı|Turuncu|Mor|Bej|Şampanya|Füme|Diğer","aciklama":"kısa Türkçe açıklama"}'}
+                    ]
+                }]
+            },
+            timeout=20
         )
-        t = r.json()["content"][0]["text"].strip().replace("```json","").replace("```","")
+        t = r.json()["choices"][0]["message"]["content"].strip().replace("```json","").replace("```","")
         return json.loads(t)
     except Exception as e:
         return {"kasa_tipi":"Bilinmiyor","renk":"Diğer","aciklama":str(e)}
@@ -457,6 +469,7 @@ st.markdown("""
 <div class="hero">
     <h1 class="hero-title">AutoValuate</h1>
     <p class="hero-sub">Yapay Zeka Destekli Araç Değerleme & Piyasa Analiz Platformu</p>
+    <p style="color:#4b5563;font-size:.78rem;margin-top:.4rem;letter-spacing:.5px">📊 Veri: Mart 2026 · arabam.com</p>
 </div>
 """, unsafe_allow_html=True)
 
