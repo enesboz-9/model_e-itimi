@@ -304,31 +304,35 @@ def fotograf_analiz(img_bytes):
     b64 = base64.standard_b64encode(img_bytes).decode()
     api_key = st.secrets.get("GROQ_API_KEY", "")
     if not api_key:
-        return {"kasa_tipi":"Bilinmiyor","renk":"Diğer","aciklama":"GROQ_API_KEY bulunamadı"}
+        return {"kasa_tipi":"Bilinmiyor","renk":"Diğer","marka":"","seri":"","yil":0,"aciklama":"GROQ_API_KEY bulunamadı"}
+    marka_listesi = sorted(MARKA_ENC.keys())
+    prompt = f"""Bu araç fotoğrafını analiz et. SADECE JSON döndür, başka hiçbir şey yazma:
+{{
+  "marka": "araç markası (örn: Toyota, BMW, Mercedes - Benz, Volkswagen — tam liste: {', '.join(marka_listesi[:30])} vb.)",
+  "seri": "model/seri adı (örn: Corolla, CLA, Golf)",
+  "yil": yıl sayısı veya 0,
+  "kasa_tipi": "Sedan|Hatchback/5|Hatchback/3|SUV|Coupe|Station wagon|MPV|Cabrio|Pick-up|Bilinmiyor",
+  "renk": "Beyaz|Siyah|Gri|Kırmızı|Mavi|Lacivert|Kahverengi|Bordo|Yeşil|Sarı|Turuncu|Mor|Bej|Şampanya|Füme|Diğer",
+  "aciklama": "kısa Türkçe açıklama"
+}}"""
     try:
         r = requests.post(
             "https://api.groq.com/openai/v1/chat/completions",
-            headers={
-                "Content-Type": "application/json",
-                "Authorization": f"Bearer {api_key}"
-            },
+            headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
             json={
                 "model": "meta-llama/llama-4-scout-17b-16e-instruct",
-                "max_tokens": 300,
-                "messages": [{
-                    "role": "user",
-                    "content": [
-                        {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{b64}"}},
-                        {"type": "text", "text": 'Araç fotoğrafı. SADECE JSON döndür:\n{"kasa_tipi":"Sedan|Hatchback/5|Hatchback/3|SUV|Coupe|Station wagon|MPV|Cabrio|Pick-up|Bilinmiyor","renk":"Beyaz|Siyah|Gri|Kırmızı|Mavi|Lacivert|Kahverengi|Bordo|Yeşil|Sarı|Turuncu|Mor|Bej|Şampanya|Füme|Diğer","aciklama":"kısa Türkçe açıklama"}'}
-                    ]
-                }]
+                "max_tokens": 400,
+                "messages": [{"role": "user", "content": [
+                    {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{b64}"}},
+                    {"type": "text", "text": prompt}
+                ]}]
             },
             timeout=20
         )
         t = r.json()["choices"][0]["message"]["content"].strip().replace("```json","").replace("```","")
         return json.loads(t)
     except Exception as e:
-        return {"kasa_tipi":"Bilinmiyor","renk":"Diğer","aciklama":str(e)}
+        return {"kasa_tipi":"Bilinmiyor","renk":"Diğer","marka":"","seri":"","yil":0,"aciklama":str(e)}
 
 def tahmin_yap(form):
     """
@@ -493,18 +497,32 @@ with tab1:
     st.markdown('<div class="gcard"><div class="gcard-title">📸 Araç Fotoğrafı (İsteğe Bağlı)</div>', unsafe_allow_html=True)
     foto = st.file_uploader("Fotoğraf yükle → kasa tipi ve renk otomatik tespit edilir",
                              type=["jpg","jpeg","png"], key="foto")
-    ai_kasa = ai_renk = None
+    ai_kasa = ai_renk = ai_marka = ai_seri = ai_yil = None
     if foto:
-        c1, c2 = st.columns(2)
-        with c1: st.image(foto, use_container_width=True)
-        with c2:
+        foto_bytes = foto.read()
+        foto_key = str(len(foto_bytes))
+        if st.session_state.get("_foto_key") != foto_key:
             with st.spinner("🤖 AI analiz ediyor..."):
-                res = fotograf_analiz(foto.read())
-                ai_kasa = res.get("kasa_tipi","Bilinmiyor")
-                ai_renk = res.get("renk","Diğer")
+                res = fotograf_analiz(foto_bytes)
+            st.session_state["_foto_res"] = res
+            st.session_state["_foto_key"] = foto_key
+        else:
+            res = st.session_state.get("_foto_res", {})
+
+        ai_kasa  = res.get("kasa_tipi","Bilinmiyor")
+        ai_renk  = res.get("renk","Diğer")
+        ai_marka = res.get("marka","")
+        ai_seri  = res.get("seri","")
+        ai_yil   = res.get("yil", 0)
+
+        c1, c2 = st.columns(2)
+        with c1: st.image(foto_bytes, use_container_width=True)
+        with c2:
             st.success(f"**Kasa:** {ai_kasa}  |  **Renk:** {ai_renk}")
+            if ai_marka:
+                st.info(f"**Marka:** {ai_marka}  |  **Model:** {ai_seri}" + (f"  |  **Yıl:** {ai_yil}" if ai_yil else ""))
             st.caption(res.get("aciklama",""))
-            st.info("Aşağıda AI tespitlerini onaylayabilir veya değiştirebilirsin.")
+            st.caption("Aşağıda AI tespitlerini onaylayabilir veya değiştirebilirsin.")
     st.markdown('</div>', unsafe_allow_html=True)
 
     # — Form —
@@ -512,11 +530,14 @@ with tab1:
 
     with col1:
         st.markdown('<div class="gcard"><div class="gcard-title">🚘 Araç Bilgileri</div>', unsafe_allow_html=True)
-        marka = st.selectbox("Marka", sorted(MARKA_ENC), index=list(sorted(MARKA_ENC)).index("Toyota"))
-        seri_listesi = sorted(SERI_ENC.get(marka, {"Diğer":0}).keys())
-        seri = st.selectbox("Model / Seri", seri_listesi or ["Diğer"])
+        _markalar = sorted(MARKA_ENC)
+        _marka_idx = _markalar.index(ai_marka) if ai_marka and ai_marka in _markalar else _markalar.index("Toyota")
+        marka = st.selectbox("Marka" + (" 🤖" if ai_marka else ""), _markalar, index=_marka_idx)
+        _seri_listesi = sorted(k for k in SERI_ENC if k != "nan")
+        _seri_idx = _seri_listesi.index(ai_seri) if ai_seri and ai_seri in _seri_listesi else 0
+        seri = st.selectbox("Model / Seri" + (" 🤖" if ai_seri else ""), _seri_listesi or ["Diğer"], index=_seri_idx)
         cy, ck = st.columns(2)
-        with cy: yil = st.number_input("Yıl", 1985, 2026, 2019, step=1)
+        with cy: yil = st.number_input("Yıl" + (" 🤖" if ai_yil else ""), 1985, 2026, int(ai_yil) if ai_yil and 1985 <= ai_yil <= 2026 else 2019, step=1)
         with ck: km  = st.slider("Kilometre", 0, 500_000, 85_000, step=5000)
         durum = st.selectbox("Araç Durumu", list(DURUM_ENC), index=3)
         h1, h2 = st.columns(2)
