@@ -256,33 +256,7 @@ def yukle_ham():
     import os
     script_dir = os.path.dirname(os.path.abspath(__file__))
 
-    METIN_COLS = ["marka","seri","yil","km","fiyat","yakit_tipi","vites_tipi",
-                  "kasa_tipi","renk","arac_durumu","kimden","agir_hasarli","sehir"]
-
-    # Önce metin sütunlu CSV'leri ara (arabam_temiz.csv enc formatında olduğu için hariç)
-    for fname in ["arabam_temiz_zengin.csv", "arabam_features.csv",
-                  os.path.join(script_dir, "arabam_temiz_zengin.csv"),
-                  os.path.join(script_dir, "arabam_features.csv")]:
-        if not os.path.exists(fname):
-            continue
-        try:
-            with open(fname, encoding="utf-8-sig") as fh:
-                header = fh.readline()
-            mevcut = [c for c in METIN_COLS if c in header]
-            if "marka" not in mevcut:   # metin sütun yoksa atla
-                continue
-            df = pd.read_csv(fname, encoding="utf-8-sig", usecols=mevcut, low_memory=False)
-            df = df.dropna(subset=["fiyat"])
-            df["fiyat"] = pd.to_numeric(df["fiyat"], errors="coerce")
-            df["yil"]   = pd.to_numeric(df["yil"],   errors="coerce").astype("Int64")
-            df["km"]    = pd.to_numeric(df["km"],     errors="coerce")
-            sonuc = df[df["fiyat"] > 0].copy()
-            if len(sonuc) > 0:
-                return sonuc
-        except Exception:
-            continue
-
-    # Metin sütunlu CSV yok — enc CSV'den ters çevir
+    # Enc CSV'den ters çevir
     # Ters mapping sözlükleri
     enc_to_marka   = {v: k for k, v in MARKA_ENC.items()}
     enc_to_yakit   = {v: k for k, v in YAKIT_ENC.items()}
@@ -580,14 +554,14 @@ with tab1:
         seri = st.selectbox("Model / Seri", seri_listesi or ["Diğer"])
         cy, ck = st.columns(2)
         with cy: yil = st.number_input("Yıl", 1985, 2026, 2019, step=1)
-        with ck: km  = st.number_input("Kilometre", 0, 999_999, 85_000, step=1000)
-        durum = st.selectbox("Araç Durumu", list(DURUM_ENC), index=2)
+        with ck: km  = st.slider("Kilometre", 0, 500_000, 85_000, step=5000)
+        durum = st.selectbox("Araç Durumu", list(DURUM_ENC), index=3)
         h1, h2 = st.columns(2)
         with h1:
             kimden     = st.radio("Kimden?", ["Sahibinden","Galeriden","Yetkili Bayiden"])
             agir_hasar = st.radio("Ağır Hasarlı?", ["Hayır","Evet"])
         with h2:
-            takasa      = st.radio("Takasa Uygun?", ["Evet","Hayır"])
+            takasa      = st.radio("Takasa Uygun?", ["Hayır","Evet"])
             hasar_skoru = st.slider("Hasar Skoru", 0, 26, 0,
                                     help="0=Orijinal, 26=Maksimum hasar")
         st.markdown('</div>', unsafe_allow_html=True)
