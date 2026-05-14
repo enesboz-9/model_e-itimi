@@ -332,14 +332,10 @@ def yukle_ham():
             df["kasa_tipi"]   = df["kasa_tipi_enc"].map(enc_to_kasa).fillna("Bilinmiyor")   if "kasa_tipi_enc"  in df.columns else "Bilinmiyor"
             df["renk"]        = df["renk_enc"].map(enc_to_renk).fillna("Bilinmiyor")         if "renk_enc"       in df.columns else "Bilinmiyor"
             df["arac_durumu"] = df["arac_durumu_enc"].map(enc_to_durum).fillna("Bilinmiyor") if "arac_durumu_enc" in df.columns else "Bilinmiyor"
-            # Seri: enc → isim (SERI_ENC ters)
-            marka_seri_enc = {}
-            for mk, smap in SERI_ENC.items():
-                for sn, sv in smap.items():
-                    marka_seri_enc[(MARKA_ENC.get(mk, -1), sv)] = sn
+            # Seri: enc → isim (SERI_ENC duz sozluk: {seri_adi: enc_deger})
+            enc_to_seri = {v: k for k, v in SERI_ENC.items()}
             if "seri_enc" in df.columns:
-                df["seri"] = df.apply(
-                    lambda r: marka_seri_enc.get((int(r["marka_enc"]), int(r["seri_enc"])), "Diğer"), axis=1)
+                df["seri"] = df["seri_enc"].map(enc_to_seri).fillna("Diğer")
             else:
                 df["seri"] = "Diğer"
             df["kimden"]      = "Sahibinden"
