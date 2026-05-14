@@ -19,8 +19,7 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="collapsed",
 )
-import os
-st.write(os.listdir(os.path.dirname(os.path.abspath(__file__))))
+
 # ══════════════════════════════════════════════════════════════
 # TEMA & CSS
 # ══════════════════════════════════════════════════════════════
@@ -260,11 +259,10 @@ def yukle_ham():
     METIN_COLS = ["marka","seri","yil","km","fiyat","yakit_tipi","vites_tipi",
                   "kasa_tipi","renk","arac_durumu","kimden","agir_hasarli","sehir"]
 
-    # Önce metin sütunlu CSV'leri ara
-    for fname in ["arabam_temiz_zengin.csv", "arabam_features.csv", "arabam_temiz.csv",
+    # Önce metin sütunlu CSV'leri ara (arabam_temiz.csv enc formatında olduğu için hariç)
+    for fname in ["arabam_temiz_zengin.csv", "arabam_features.csv",
                   os.path.join(script_dir, "arabam_temiz_zengin.csv"),
-                  os.path.join(script_dir, "arabam_features.csv"),
-                  os.path.join(script_dir, "arabam_temiz.csv")]:
+                  os.path.join(script_dir, "arabam_features.csv")]:
         if not os.path.exists(fname):
             continue
         try:
