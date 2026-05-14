@@ -248,98 +248,48 @@ def yukle_meta():
 
 @st.cache_data(show_spinner="Veri seti yükleniyor...")
 def yukle_ham():
-    """
-    İlan Arama ve Piyasa Analizi için ham veri yükler.
-    Önce arabam_temiz.csv/arabam_features.csv'yi dener (metin sütunlar varsa).
-    Yoksa ham CSV'den gerekli sütunları okur ve enc sütunlarını metin'e çevirir.
-    """
     import os
     script_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    enc_to_marka = {v: k for k, v in MARKA_ENC.items()}
+    enc_to_yakit = {v: k for k, v in YAKIT_ENC.items()}
+    enc_to_vites = {v: k for k, v in VITES_ENC.items()}
+    enc_to_kasa  = {v: k for k, v in KASA_ENC.items()}
+    enc_to_renk  = {v: k for k, v in RENK_ENC.items()}
+    enc_to_durum = {v: k for k, v in DURUM_ENC.items()}
+    enc_to_seri  = {v: k for k, v in SERI_ENC.items()}
 
-    # Enc CSV'den ters çevir
-    # Ters mapping sözlükleri
-    enc_to_marka   = {v: k for k, v in MARKA_ENC.items()}
-    enc_to_yakit   = {v: k for k, v in YAKIT_ENC.items()}
-    enc_to_vites   = {v: k for k, v in VITES_ENC.items()}
-    enc_to_kasa    = {v: k for k, v in KASA_ENC.items()}
-    enc_to_renk    = {v: k for k, v in RENK_ENC.items()}
-    enc_to_durum   = {v: k for k, v in DURUM_ENC.items()}
-
-    # enc sütunlu CSV
-    enc_cols = ["marka_enc","seri_enc","arac_yasi","yil","km","fiyat",
-                "yakit_tipi_enc","vites_tipi_enc","kasa_tipi_enc",
-                "renk_enc","arac_durumu_enc"]
-    for fname in ["arabam_temiz.csv", "arabam_features.csv",
-                  os.path.join(script_dir, "arabam_temiz.csv"),
-                  os.path.join(script_dir, "arabam_features.csv")]:
+    for fname in [os.path.join(script_dir, "arabam_temiz.csv"), "arabam_temiz.csv"]:
         if not os.path.exists(fname):
             continue
-        try:
-            with open(fname, encoding="utf-8-sig") as fh:
-                header = fh.readline()
-            mevcut = [c for c in enc_cols if c in header]
-            if "marka_enc" not in mevcut or "fiyat" not in mevcut:
-                continue
-            df = pd.read_csv(fname, encoding="utf-8-sig", usecols=mevcut, low_memory=False)
-            df = df.dropna(subset=["fiyat"])
-            df["fiyat"] = pd.to_numeric(df["fiyat"], errors="coerce")
-            # yil sütunu yoksa arac_yasi'ndan türet
-            if "yil" not in df.columns:
-                if "arac_yasi" in df.columns:
-                    df["yil"] = (2026 - pd.to_numeric(df["arac_yasi"], errors="coerce")).astype("Int64")
-                else:
-                    df["yil"] = 2020
-            else:
-                df["yil"] = pd.to_numeric(df["yil"], errors="coerce").astype("Int64")
-            # km sütunu yoksa yillik_km * arac_yasi'ndan tahmin et
-            if "km" not in df.columns:
-                if "yillik_km" in df.columns and "arac_yasi" in df.columns:
-                    df["km"] = pd.to_numeric(df["yillik_km"], errors="coerce") * pd.to_numeric(df["arac_yasi"], errors="coerce")
-                else:
-                    df["km"] = 50000
-            else:
-                df["km"] = pd.to_numeric(df["km"], errors="coerce")
-            # enc → metin
-            df["marka"]       = df["marka_enc"].map(enc_to_marka).fillna("Bilinmiyor")
-            df["yakit_tipi"]  = df["yakit_tipi_enc"].map(enc_to_yakit).fillna("Bilinmiyor") if "yakit_tipi_enc" in df.columns else "Bilinmiyor"
-            df["vites_tipi"]  = df["vites_tipi_enc"].map(enc_to_vites).fillna("Bilinmiyor") if "vites_tipi_enc" in df.columns else "Bilinmiyor"
-            df["kasa_tipi"]   = df["kasa_tipi_enc"].map(enc_to_kasa).fillna("Bilinmiyor")   if "kasa_tipi_enc"  in df.columns else "Bilinmiyor"
-            df["renk"]        = df["renk_enc"].map(enc_to_renk).fillna("Bilinmiyor")         if "renk_enc"       in df.columns else "Bilinmiyor"
-            df["arac_durumu"] = df["arac_durumu_enc"].map(enc_to_durum).fillna("Bilinmiyor") if "arac_durumu_enc" in df.columns else "Bilinmiyor"
-            # Seri: enc → isim (SERI_ENC duz sozluk: {seri_adi: enc_deger})
-            enc_to_seri = {v: k for k, v in SERI_ENC.items()}
-            if "seri_enc" in df.columns:
-                df["seri"] = df["seri_enc"].map(enc_to_seri).fillna("Diğer")
-            else:
-                df["seri"] = "Diğer"
-            df["kimden"]      = "Sahibinden"
-            df["agir_hasarli"] = "Hayır"
-            df["sehir"]       = ""
-            sonuc = df[df["fiyat"] > 0].copy()
-            if len(sonuc) > 0:
-                return sonuc
-        except Exception as e:
-            continue
-
-    # Son çare: ham CSV'den oku
-    for fname in ["arabam.com-otomobil-veri-seti-csv.csv",
-                  os.path.join(script_dir, "arabam.com-otomobil-veri-seti-csv.csv")]:
-        if not os.path.exists(fname):
-            continue
-        try:
-            usecols = ["marka","seri","yil","km","fiyat","yakit_tipi","vites_tipi",
-                       "kasa_tipi","renk","arac_durumu","kimden","agir_hasarli","sehir"]
-            df = pd.read_csv(fname, encoding="utf-8-sig", usecols=usecols, low_memory=False)
-            df = df.dropna(subset=["fiyat"])
-            df["fiyat"] = pd.to_numeric(df["fiyat"], errors="coerce")
-            df["yil"]   = pd.to_numeric(df["yil"],   errors="coerce").astype("Int64")
-            df["km"]    = pd.to_numeric(df["km"],     errors="coerce")
-            sonuc = df[df["fiyat"] > 0].copy()
-            if len(sonuc) > 0:
-                return sonuc
-        except Exception:
-            continue
-
+        df = pd.read_csv(fname, low_memory=False)
+        df = df.dropna(subset=["fiyat"])
+        df["fiyat"] = pd.to_numeric(df["fiyat"], errors="coerce")
+        df = df[df["fiyat"] > 0].copy()
+        
+        # yil türet
+        if "arac_yasi" in df.columns:
+            df["yil"] = (2026 - pd.to_numeric(df["arac_yasi"], errors="coerce")).astype("Int64")
+        elif "yil" in df.columns:
+            df["yil"] = pd.to_numeric(df["yil"], errors="coerce").astype("Int64")
+        else:
+            df["yil"] = 2020
+        
+        df["km"] = pd.to_numeric(df.get("km", 50000), errors="coerce").fillna(50000)
+        df["marka"]      = df["marka_enc"].map(enc_to_marka).fillna("Bilinmiyor")
+        df["seri"]       = df["seri_enc"].map(enc_to_seri).fillna("Diğer")
+        df["yakit_tipi"] = df["yakit_tipi_enc"].map(enc_to_yakit).fillna("Bilinmiyor")
+        df["vites_tipi"] = df["vites_tipi_enc"].map(enc_to_vites).fillna("Bilinmiyor")
+        df["kasa_tipi"]  = df["kasa_tipi_enc"].map(enc_to_kasa).fillna("Bilinmiyor")
+        df["renk"]       = df["renk_enc"].map(enc_to_renk).fillna("Bilinmiyor")
+        df["arac_durumu"]= df["arac_durumu_enc"].map(enc_to_durum).fillna("Bilinmiyor")
+        df["kimden"]     = "Sahibinden"
+        df["agir_hasarli"]= "Hayır"
+        df["sehir"]      = ""
+        
+        if len(df) > 0:
+            return df
+    
     return None
 
 model = yukle_model()
