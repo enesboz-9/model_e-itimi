@@ -489,15 +489,17 @@ def piyasa_analiz(df_ham, marka, seri=None, yil_min=2010, yil_max=2026):
         "kasa":  d["kasa_tipi"].value_counts().to_dict()  if "kasa_tipi"  in d else {},
     }
 
-def oneri_bul(df_ham, kasa, fiyat_ust, fiyat_alt, marka_hariç=None, n=5):
-    """Aynı kasa tipinde, benzer fiyat bandında alternatif öner."""
-    df_ham = df_ham.reset_index(drop=True)  # index uyumsuzluğunu önle
+def oneri_bul(df_ham, kasa, fiyat_ust, fiyat_alt, marka_hariç=None, n=5, yil_ref=None):
+    """Aynı kasa tipinde, ±%10 fiyat ve ±3 yıl bandında alternatif öner."""
+    df_ham = df_ham.reset_index(drop=True)
     mask = pd.Series([True] * len(df_ham))
     if "kasa_tipi" in df_ham.columns and kasa and kasa != "Bilinmiyor":
         mask &= df_ham["kasa_tipi"].str.lower() == kasa.lower()
     mask &= df_ham["fiyat"].between(fiyat_alt, fiyat_ust)
     if marka_hariç and "marka" in df_ham.columns:
         mask &= df_ham["marka"].str.lower() != marka_hariç.lower()
+    if yil_ref and "yil" in df_ham.columns:
+        mask &= df_ham["yil"].between(yil_ref - 3, yil_ref + 3)
     sonuc = df_ham[mask].copy()
     if sonuc.empty: return pd.DataFrame()
     return sonuc.sort_values("fiyat").drop_duplicates(subset=["marka","seri"]).head(n)
@@ -711,7 +713,7 @@ with tab1:
 
         # — Alternatif öneriler —
         if df_ham is not None:
-            oneriler = oneri_bul(df_ham, kasa, tahmin * 1.15, tahmin * 0.75, marka_hariç=marka)
+            oneriler = oneri_bul(df_ham, kasa, tahmin * 1.10, tahmin * 0.90, marka_hariç=marka, yil_ref=yil)
             if not oneriler.empty:
                 st.markdown('<div class="gcard"><div class="gcard-title">💡 Benzer Araç Önerileri (Aynı Kasa, Farklı Marka)</div>', unsafe_allow_html=True)
                 for _, r in oneriler.iterrows():
