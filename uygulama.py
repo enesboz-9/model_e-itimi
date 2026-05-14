@@ -586,8 +586,27 @@ with tab1:
     with col1:
         st.markdown('<div class="gcard"><div class="gcard-title">🚘 Araç Bilgileri</div>', unsafe_allow_html=True)
         _markalar = sorted(MARKA_ENC)
-        _marka_idx = _markalar.index(ai_marka) if ai_marka and ai_marka in _markalar else _markalar.index("Toyota")
-        marka = st.selectbox("Marka" + (" 🤖" if ai_marka else ""), _markalar, index=_marka_idx)
+
+        # Groq'tan gelen marka adını listedeki en yakın eşleşmeyle bul
+        def marka_esles(ai_m, liste):
+            if not ai_m: return None
+            # Tam eşleşme
+            if ai_m in liste: return ai_m
+            # Boşluk/tire normalize ederek karşılaştır
+            ai_norm = ai_m.lower().replace(" - ", "").replace("-", "").replace(" ", "")
+            for m in liste:
+                m_norm = m.lower().replace(" - ", "").replace("-", "").replace(" ", "")
+                if ai_norm == m_norm:
+                    return m
+            # Kısmi eşleşme (ai_m, liste elemanının içinde geçiyorsa)
+            for m in liste:
+                if ai_m.lower() in m.lower() or m.lower() in ai_m.lower():
+                    return m
+            return None
+
+        _eslesen_marka = marka_esles(ai_marka, _markalar)
+        _marka_idx = _markalar.index(_eslesen_marka) if _eslesen_marka else _markalar.index("Toyota")
+        marka = st.selectbox("Marka" + (" 🤖" if _eslesen_marka else ""), _markalar, index=_marka_idx)
         _seri_listesi = sorted(k for k in SERI_ENC if k != "nan")
         _seri_idx = _seri_listesi.index(ai_seri) if ai_seri and ai_seri in _seri_listesi else 0
         seri = st.selectbox("Model / Seri" + (" 🤖" if ai_seri else ""), _seri_listesi or ["Diğer"], index=_seri_idx)
