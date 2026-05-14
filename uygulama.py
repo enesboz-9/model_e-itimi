@@ -19,7 +19,8 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="collapsed",
 )
-
+import os
+st.write(os.listdir(os.path.dirname(os.path.abspath(__file__))))
 # ══════════════════════════════════════════════════════════════
 # TEMA & CSS
 # ══════════════════════════════════════════════════════════════
