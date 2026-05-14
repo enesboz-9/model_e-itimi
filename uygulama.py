@@ -293,7 +293,7 @@ def yukle_ham():
     enc_to_durum   = {v: k for k, v in DURUM_ENC.items()}
 
     # enc sütunlu CSV
-    enc_cols = ["marka_enc","seri_enc","yil","km","fiyat",
+    enc_cols = ["marka_enc","seri_enc","arac_yasi","yil","km","fiyat",
                 "yakit_tipi_enc","vites_tipi_enc","kasa_tipi_enc",
                 "renk_enc","arac_durumu_enc"]
     for fname in ["arabam_temiz.csv", "arabam_features.csv",
@@ -310,13 +310,21 @@ def yukle_ham():
             df = pd.read_csv(fname, encoding="utf-8-sig", usecols=mevcut, low_memory=False)
             df = df.dropna(subset=["fiyat"])
             df["fiyat"] = pd.to_numeric(df["fiyat"], errors="coerce")
-            if "yil" in df.columns:
-                df["yil"] = pd.to_numeric(df["yil"], errors="coerce").astype("Int64")
-            else:
-                # arac_yasi varsa yıl türet
+            # yil sütunu yoksa arac_yasi'ndan türet
+            if "yil" not in df.columns:
                 if "arac_yasi" in df.columns:
-                    df["yil"] = (2026 - df["arac_yasi"]).astype("Int64")
-            if "km" in df.columns:
+                    df["yil"] = (2026 - pd.to_numeric(df["arac_yasi"], errors="coerce")).astype("Int64")
+                else:
+                    df["yil"] = 2020
+            else:
+                df["yil"] = pd.to_numeric(df["yil"], errors="coerce").astype("Int64")
+            # km sütunu yoksa yillik_km * arac_yasi'ndan tahmin et
+            if "km" not in df.columns:
+                if "yillik_km" in df.columns and "arac_yasi" in df.columns:
+                    df["km"] = pd.to_numeric(df["yillik_km"], errors="coerce") * pd.to_numeric(df["arac_yasi"], errors="coerce")
+                else:
+                    df["km"] = 50000
+            else:
                 df["km"] = pd.to_numeric(df["km"], errors="coerce")
             # enc → metin
             df["marka"]       = df["marka_enc"].map(enc_to_marka).fillna("Bilinmiyor")
