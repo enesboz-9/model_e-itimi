@@ -301,19 +301,35 @@ meta  = yukle_meta()
 def tl(x): return f"{x:,.0f} TL"
 
 def fotograf_analiz(img_bytes):
+    import random
     b64 = base64.standard_b64encode(img_bytes).decode()
     api_key = st.secrets.get("GROQ_API_KEY", "")
     if not api_key:
-        return {"kasa_tipi":"Bilinmiyor","renk":"Diğer","marka":"","seri":"","yil":0,"aciklama":"GROQ_API_KEY bulunamadı"}
+        return {"kasa_tipi":"Bilinmiyor","renk":"Diğer","marka":"","seri":"","yil":0,"km":0,"aciklama":"GROQ_API_KEY bulunamadı"}
     marka_listesi = sorted(MARKA_ENC.keys())
-    prompt = f"""Bu araç fotoğrafını analiz et. SADECE JSON döndür, başka hiçbir şey yazma:
+    guncel_yil = 2026
+    prompt = f"""Bu araç fotoğrafını analiz et. SADECE JSON döndür, başka hiçbir şey yazma.
+
+ÖNEMLİ KURALLAR:
+1. Bu aracın kasasının/neslinin (generation) piyasaya sürüldüğü YIL ARALIGINI belirle (örn: 2015-2019).
+2. "yil" alanına bu aralığın ORTASI olan yılı yaz (örn: 2017).
+3. "yil_aralik_baslangic" ve "yil_aralik_bitis" alanlarına kasa üretim yıllarını yaz.
+4. "arac_yasi" = {guncel_yil} - yil hesapla.
+5. Eğer arac_yasi <= 10 ise: km = yil × (15000 ile 20000 arasında rastgele bir tam sayı) — ancak yıl bazında değil, arac_yasi bazında hesapla: km = arac_yasi × (15000..20000 arası).
+   Eğer arac_yasi > 10 ise: km = arac_yasi × (10000 ile 15000 arasında rastgele bir tam sayı).
+6. "km" alanına bu hesaplanan değeri yaz (tam sayı).
+
+JSON formatı:
 {{
-  "marka": "araç markası (örn: Toyota, BMW, Mercedes - Benz, Volkswagen — tam liste: {', '.join(marka_listesi[:30])} vb.)",
+  "marka": "araç markası (örn: Toyota, BMW, Mercedes - Benz — tam liste: {', '.join(marka_listesi[:30])} vb.)",
   "seri": "model/seri adı (örn: Corolla, CLA, Golf)",
-  "yil": yıl sayısı veya 0,
+  "yil_aralik_baslangic": kasa üretim başlangıç yılı (tam sayı),
+  "yil_aralik_bitis": kasa üretim bitiş yılı (tam sayı),
+  "yil": aralığın ortası (tam sayı),
+  "km": tahmini kilometre (tam sayı, yukarıdaki formülle hesapla),
   "kasa_tipi": "Sedan|Hatchback/5|Hatchback/3|SUV|Coupe|Station wagon|MPV|Cabrio|Pick-up|Bilinmiyor",
   "renk": "Beyaz|Siyah|Gri|Kırmızı|Mavi|Lacivert|Kahverengi|Bordo|Yeşil|Sarı|Turuncu|Mor|Bej|Şampanya|Füme|Diğer",
-  "aciklama": "kısa Türkçe açıklama"
+  "aciklama": "kısa Türkçe açıklama (kasa dönemi ve km tahmini dahil)"
 }}"""
     try:
         r = requests.post(
@@ -321,18 +337,47 @@ def fotograf_analiz(img_bytes):
             headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
             json={
                 "model": "meta-llama/llama-4-scout-17b-16e-instruct",
-                "max_tokens": 400,
+                "max_tokens": 500,
                 "messages": [{"role": "user", "content": [
                     {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{b64}"}},
                     {"type": "text", "text": prompt}
                 ]}]
             },
-            timeout=20
+            timeout=25
         )
         t = r.json()["choices"][0]["message"]["content"].strip().replace("```json","").replace("```","")
-        return json.loads(t)
+        res = json.loads(t)
+
+        # Güvenlik: yil ve km alanlarını doğrula / yedek hesapla
+        yil = int(res.get("yil", 0) or 0)
+        if not (1985 <= yil <= guncel_yil):
+            # Aralıktan hesapla
+            bas = int(res.get("yil_aralik_baslangic", 0) or 0)
+            bit = int(res.get("yil_aralik_bitis", 0) or 0)
+            if bas > 0 and bit > 0:
+                yil = (bas + bit) // 2
+            else:
+                yil = 0
+
+        arac_yasi = guncel_yil - yil if yil > 0 else 0
+
+        km = int(res.get("km", 0) or 0)
+        # Eğer Groq km hesaplamadıysa veya mantıksızsa, Python tarafında hesapla
+        if km <= 0 or km > 1_000_000:
+            if arac_yasi > 0:
+                if arac_yasi <= 10:
+                    carpan = random.randint(15000, 20000)
+                else:
+                    carpan = random.randint(10000, 15000)
+                km = arac_yasi * carpan
+            else:
+                km = 0
+
+        res["yil"] = yil
+        res["km"]  = km
+        return res
     except Exception as e:
-        return {"kasa_tipi":"Bilinmiyor","renk":"Diğer","marka":"","seri":"","yil":0,"aciklama":str(e)}
+        return {"kasa_tipi":"Bilinmiyor","renk":"Diğer","marka":"","seri":"","yil":0,"km":0,"aciklama":str(e)}
 
 def tahmin_yap(form):
     """
@@ -497,7 +542,7 @@ with tab1:
     st.markdown('<div class="gcard"><div class="gcard-title">📸 Araç Fotoğrafı (İsteğe Bağlı)</div>', unsafe_allow_html=True)
     foto = st.file_uploader("Fotoğraf yükle → kasa tipi ve renk otomatik tespit edilir",
                              type=["jpg","jpeg","png"], key="foto")
-    ai_kasa = ai_renk = ai_marka = ai_seri = ai_yil = None
+    ai_kasa = ai_renk = ai_marka = ai_seri = ai_yil = ai_km = None
     if foto:
         foto_bytes = foto.read()
         foto_key = str(len(foto_bytes))
@@ -514,13 +559,21 @@ with tab1:
         ai_marka = res.get("marka","")
         ai_seri  = res.get("seri","")
         ai_yil   = res.get("yil", 0)
+        ai_km    = res.get("km", 0)
+        ai_yil_bas = res.get("yil_aralik_baslangic", 0)
+        ai_yil_bit = res.get("yil_aralik_bitis", 0)
 
         c1, c2 = st.columns(2)
         with c1: st.image(foto_bytes, use_container_width=True)
         with c2:
             st.success(f"**Kasa:** {ai_kasa}  |  **Renk:** {ai_renk}")
             if ai_marka:
-                st.info(f"**Marka:** {ai_marka}  |  **Model:** {ai_seri}" + (f"  |  **Yıl:** {ai_yil}" if ai_yil else ""))
+                yil_aralik_str = f"  |  **Kasa Dönemi:** {ai_yil_bas}–{ai_yil_bit}" if ai_yil_bas and ai_yil_bit else ""
+                st.info(f"**Marka:** {ai_marka}  |  **Model:** {ai_seri}" + (f"  |  **Yıl:** {ai_yil}" if ai_yil else "") + yil_aralik_str)
+            if ai_km and ai_km > 0:
+                arac_yasi_ai = 2026 - ai_yil if ai_yil else 0
+                km_formul = f"{arac_yasi_ai} yıl × {'15k-20k' if arac_yasi_ai <= 10 else '10k-15k'} km/yıl"
+                st.info(f"**Tahmini KM:** {ai_km:,} km  *(~{km_formul})*")
             st.caption(res.get("aciklama",""))
             st.caption("Aşağıda AI tespitlerini onaylayabilir veya değiştirebilirsin.")
     st.markdown('</div>', unsafe_allow_html=True)
@@ -538,7 +591,11 @@ with tab1:
         seri = st.selectbox("Model / Seri" + (" 🤖" if ai_seri else ""), _seri_listesi or ["Diğer"], index=_seri_idx)
         cy, ck = st.columns(2)
         with cy: yil = st.number_input("Yıl" + (" 🤖" if ai_yil else ""), 1985, 2026, int(ai_yil) if ai_yil and 1985 <= ai_yil <= 2026 else 2019, step=1)
-        with ck: km  = st.slider("Kilometre", 0, 500_000, 85_000, step=5000)
+        _km_default = int(ai_km) if ai_km and 0 < ai_km <= 500_000 else 85_000
+        _km_default = min(max(_km_default, 0), 500_000)
+        # 5000'in katına yuvarla
+        _km_default = round(_km_default / 5000) * 5000
+        with ck: km = st.slider("Kilometre" + (" 🤖" if ai_km else ""), 0, 500_000, _km_default, step=5000)
         durum = st.selectbox("Araç Durumu", list(DURUM_ENC), index=3)
         h1, h2 = st.columns(2)
         with h1:
