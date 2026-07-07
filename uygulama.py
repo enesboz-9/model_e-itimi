@@ -329,18 +329,6 @@ def yukle_motor_model():
     return None
 
 @st.cache_resource
-def yukle_performans_model():
-    """Senaryo bazlı performans skoru regresyon modelini yükler."""
-    import os
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    for fname in ["performans_model.pkl", os.path.join(script_dir, "performans_model.pkl")]:
-        if os.path.exists(fname):
-            try:
-                with open(fname, "rb") as f: return pickle.load(f)
-            except Exception: continue
-    return None
-
-@st.cache_resource
 def yukle_performans_ozet():
     """Marka/model bazlı gerçek performans veri seti özetini (agregasyon) yükler."""
     import os
@@ -351,34 +339,6 @@ def yukle_performans_ozet():
                 with open(fname, "rb") as f: return pickle.load(f)
             except Exception: continue
     return {}
-
-@st.cache_resource
-def yukle_performans_meta():
-    import os
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    for fname in ["performans_meta.pkl", os.path.join(script_dir, "performans_meta.pkl")]:
-        if os.path.exists(fname):
-            try:
-                with open(fname, "rb") as f: return pickle.load(f)
-            except Exception: continue
-    return {}
-
-def performans_tahmin_et(form, performans_model_dict):
-    """Seçilen marka/model + kullanım senaryosuna göre (0-100) performans skoru tahmini yapar."""
-    if not performans_model_dict:
-        return None
-    kolonlar = performans_model_dict["kolonlar"]
-    model_reg = performans_model_dict["model"]
-    row = {k: 0 for k in kolonlar}
-    if "Temperature" in row: row["Temperature"] = form.get("temperature", 20)
-    if "Price" in row: row["Price"] = form.get("price", 0)
-    for kat_kolon, deger in form.get("kategorikler", {}).items():
-        col_adi = f"{kat_kolon}_{deger}"
-        if col_adi in row:
-            row[col_adi] = 1
-    veri = pd.DataFrame([row])[kolonlar]
-    tahmin = float(model_reg.predict(veri)[0])
-    return float(np.clip(tahmin, 0, 100))
 
 def motor_bilgisi_bul(marka, hacim_cc, guc_hp, motor_model_sozluk):
     """Marka + motor hacmi/gücüne göre veri setindeki en yakın gerçek motoru bulur.
@@ -448,9 +408,7 @@ def yukle_ham():
 model = yukle_model()
 meta  = yukle_meta()
 motor_model = yukle_motor_model()
-performans_model = yukle_performans_model()
 performans_ozet   = yukle_performans_ozet()
-performans_meta   = yukle_performans_meta()
 
 # ══════════════════════════════════════════════════════════════
 # YARDIMCI FONKSİYONLAR
@@ -1318,7 +1276,7 @@ with tab5:
     )
 
     if not performans_ozet:
-        st.error("⚠️ performans_ozet.pkl / performans_model.pkl bulunamadı. "
+        st.error("⚠️ performans_ozet.pkl bulunamadı. "
                  "Önce `python3 performans_model_egitimi.py` çalıştırın.")
     else:
         _perf_markalar = sorted({m for (m, _) in performans_ozet.keys()})
@@ -1334,24 +1292,6 @@ with tab5:
             "performans veri setine (6 marka / 12 model, 500 kayıt) dayanır. "
             "Değerleme sekmesindeki fiyat veri seti ile aynı kaynak değildir."
         )
-
-        with st.expander("🧭 Kullanım Senaryosu (İsteğe Bağlı — skor tahminini etkiler)", expanded=False):
-            sc1, sc2, sc3 = st.columns(3)
-            with sc1:
-                p_motor_tipi = st.selectbox("Motor Tipi", ["Petrol", "Diesel", "Electric"])
-                p_yol_tipi   = st.selectbox("Yol Tipi", ["City streets", "Highway", "Off-road terrain"])
-                p_hava       = st.selectbox("Hava Durumu", ["Clear", "Rainy", "Snowy"])
-            with sc2:
-                p_kullanim   = st.selectbox("Kullanım Koşulu", ["Urban", "Highway", "Heavy Traffic", "Off-Road", "Extreme Weather"])
-                p_trafik     = st.selectbox("Trafik Seviyesi", ["Low", "Medium", "High"])
-                p_sicaklik   = st.slider("Sıcaklık (°C)", -20, 45, 20)
-            with sc3:
-                p_arac_durum = st.selectbox("Araç Durumu", ["Well-maintained", "Moderate wear", "Poor"])
-                p_lastik     = st.selectbox("Lastik Durumu", ["New", "Worn", "Flat"])
-                p_surucu     = st.selectbox("Sürücü Deneyimi", ["Novice", "Intermediate", "Expert"])
-            p_optimizasyon = st.select_slider("Performans Optimizasyonu", ["Low", "Medium", "High"], value="Medium")
-            p_fiyat = st.number_input("Fiyat (USD, veri seti kendi para birimi)", 0, 200_000,
-                                       int(performans_ozet[(p_marka, p_model)]["fiyat_ort"]), step=1000)
 
         with st.expander("🔧 Motor Modeli Bilgisi İçin Motor Girdileri (İsteğe Bağlı)", expanded=False):
             mh1, mh2 = st.columns(2)
@@ -1375,6 +1315,12 @@ with tab5:
                     f'<span>Güvenilirlik (1-3): <b style="color:#e5e7eb">{ozet["guvenilirlik_ort"]:.1f}</b></span>'
                     if ozet.get("guvenilirlik_ort") is not None else ""
                 )
+                # NOT: guvenilirlik_satiri/elektrik_satiri bos oldugunda, bunlari ayri
+                # satirlarda birakmak markdown'un o satiri "bos satir" sanip, sonrasindaki
+                # girintili HTML'i kod blogu olarak yorumlamasina yol aciyordu (ekranda
+                # </div> etiketlerinin duz metin olarak gorunmesi). Bu yuzden ikisini TEK
+                # bir degiskende, tek satirda birlestirip sablona oyle gomuyoruz.
+                ekstra_spanlar = guvenilirlik_satiri + elektrik_satiri
                 st.markdown(f"""
                 <div class="gcard">
                     <div class="gcard-title">📊 Veri Seti Özeti — {p_marka} {p_model}
@@ -1389,9 +1335,7 @@ with tab5:
                         <span>0-100 Hızlanma: <b style="color:#e5e7eb">{ozet['0_100_ort']:.1f} sn</b></span>
                         <span>Süspansiyon: <b style="color:#e5e7eb">{ozet['suspansiyon_ort']:.1f}</b></span>
                         <span>Emisyon: <b style="color:#e5e7eb">{ozet['emisyon_ort']:.0f} g/km</b></span>
-                        <span>Senaryo Uyumu: <b style="color:#e5e7eb">{ozet['senaryo_uyum_ort']:.1f} / 10</b></span>
-                        {guvenilirlik_satiri}
-                        {elektrik_satiri}
+                        <span>Senaryo Uyumu: <b style="color:#e5e7eb">{ozet['senaryo_uyum_ort']:.1f} / 10</b></span>{ekstra_spanlar}
                     </div>
                     <div style="color:#6b7280;font-size:.8rem;margin-top:10px;">
                         Fiyat aralığı: {ozet['fiyat_min']:,.0f} — {ozet['fiyat_max']:,.0f}
@@ -1400,47 +1344,7 @@ with tab5:
                 </div>
                 """, unsafe_allow_html=True)
 
-            # — 2) Senaryo bazlı tahmini performans skoru (model) —
-            form_perf = dict(
-                temperature=p_sicaklik,
-                price=p_fiyat,
-                kategorikler={
-                    "Car_Brand": p_marka, "Model": p_model, "Engine_Type": p_motor_tipi,
-                    "Driving_Condition": p_kullanim, "Road_Type": p_yol_tipi,
-                    "Traffic_Level": p_trafik, "Weather_Condition": p_hava,
-                    "Vehicle_Condition": p_arac_durum, "Tire_Condition": p_lastik,
-                    "Driver_Experience": p_surucu, "Performance_Optimization": p_optimizasyon,
-                },
-            )
-            skor = performans_tahmin_et(form_perf, performans_model)
-
-            if skor is not None:
-                ort_skor = ozet["performans_skoru_ort"] if ozet else skor
-                fark = skor - ort_skor
-                fark_renk = "#34d399" if fark >= 0 else "#f87171"
-                fark_yon  = "▲" if fark >= 0 else "▼"
-                r2_test = performans_meta.get("test_metrikleri", {}).get("r2", None)
-
-                st.markdown(f"""
-                <div class="result-hero">
-                    <div class="result-label">SEÇİLEN SENARYO İÇİN TAHMİNİ PERFORMANS SKORU</div>
-                    <div class="result-price">{skor:.1f} / 100</div>
-                    <div class="result-range">
-                        {p_marka} {p_model} ortalaması: {ort_skor:.1f} / 100 &nbsp;
-                        <span style="color:{fark_renk};font-weight:700">{fark_yon} {abs(fark):.1f}</span>
-                    </div>
-                </div>
-                """, unsafe_allow_html=True)
-
-                if r2_test is not None and r2_test < 0.3:
-                    st.warning(
-                        "⚠️ Bu skor tahmini modeli, sadece 500 kayıtlık küçük/senaryo-tabanlı bir "
-                        "veri setiyle eğitildi ve test performansı (R²) düşük. Sayıyı kesin bir "
-                        "gerçek değer değil, yukarıdaki veri seti özetini tamamlayan kaba bir "
-                        "gösterge olarak değerlendirin."
-                    )
-
-            # — 3) Motor Modeli Bilgisi (motor_model.pkl, marka bazlı KNN) —
+            # — 2) Motor Modeli Bilgisi (motor_model.pkl, marka bazlı KNN) —
             motor_eslesme = motor_bilgisi_bul(p_marka, p_motor_hacmi, p_motor_gucu, motor_model)
             if motor_eslesme:
                 motor_kayit, motor_mesafe = motor_eslesme
