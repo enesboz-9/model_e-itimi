@@ -376,6 +376,22 @@ meta  = yukle_meta()
 # ══════════════════════════════════════════════════════════════
 def tl(x): return f"{x:,.0f} TL"
 
+@st.cache_data(show_spinner=False)
+def marka_seri_haritasi(df_ham):
+    """Her marka için veri setinde gerçekten var olan seri/model adlarının
+    haritasını çıkarır. Model/Seri seçim kutusunu seçilen markaya göre
+    daraltmak ve AI'ın tahmin ettiği seri adını doğru markanın gerçek
+    seri listesiyle eşleştirmek için kullanılır."""
+    if df_ham is None or "marka" not in df_ham.columns or "seri" not in df_ham.columns:
+        return {}
+    d = df_ham.dropna(subset=["marka", "seri"])
+    harita = {}
+    for m, grp in d.groupby("marka"):
+        seriler = sorted(s for s in grp["seri"].dropna().unique().tolist() if s and s.lower() != "nan")
+        if seriler:
+            harita[m] = seriler
+    return harita
+
 def fotograf_analiz(img_bytes):
     import random
     b64 = base64.standard_b64encode(img_bytes).decode()
@@ -704,10 +720,44 @@ with tab1:
         # değişiklikler korunur.
         marka = st.selectbox("Marka" + (" 🤖" if _eslesen_marka else ""), _markalar, index=_marka_idx,
                               key=f"marka_sel_{foto_key}")
-        _seri_listesi = sorted(k for k in SERI_ENC if k != "nan")
-        _seri_idx = _seri_listesi.index(ai_seri) if ai_seri and ai_seri in _seri_listesi else 0
-        seri = st.selectbox("Model / Seri" + (" 🤖" if ai_seri else ""), _seri_listesi or ["Diğer"], index=_seri_idx,
-                             key=f"seri_sel_{foto_key}")
+
+        # Seri eşleştirme: AI'dan gelen seri adı (örn. "E-Class") veri
+        # setindeki gerçek seri adıyla (örn. "E") birebir aynı yazılmıyor.
+        # Önceden sadece TAM eşleşme aranıyordu; eşleşmeyince sessizce
+        # listenin ilk elemanına (alfabetik sırayla "1 Serisi") düşülüyor,
+        # bu da Model/Seri alanının AI tahminiyle güncellenmemiş gibi
+        # görünmesine yol açıyordu. Aşağıda hem marka bazlı daraltma hem de
+        # esnek (fuzzy) eşleştirme uygulanıyor.
+        def seri_esles(ai_s, liste):
+            if not ai_s or not liste:
+                return None
+            if ai_s in liste:
+                return ai_s
+            def norm(s):
+                s = s.lower().strip()
+                for tok in ["-class", " class", " serisi", " series", "-", " "]:
+                    s = s.replace(tok, "")
+                return s
+            ai_norm = norm(ai_s)
+            if not ai_norm:
+                return None
+            for s in liste:
+                if norm(s) == ai_norm:
+                    return s
+            for s in liste:
+                s_norm = norm(s)
+                if s_norm and (s_norm in ai_norm or ai_norm in s_norm):
+                    return s
+            return None
+
+        _df_ham_early = yukle_ham()
+        _marka_seri_harita = marka_seri_haritasi(_df_ham_early)
+        _seri_listesi = _marka_seri_harita.get(marka) or sorted(k for k in SERI_ENC if k != "nan")
+
+        _eslesen_seri = seri_esles(ai_seri, _seri_listesi)
+        _seri_idx = _seri_listesi.index(_eslesen_seri) if _eslesen_seri else 0
+        seri = st.selectbox("Model / Seri" + (" 🤖" if _eslesen_seri else ""), _seri_listesi or ["Diğer"], index=_seri_idx,
+                             key=f"seri_sel_{foto_key}_{marka}")
         cy, ck = st.columns(2)
         with cy:
             yil = st.number_input("Yıl" + (" 🤖" if ai_yil else ""), 1985, 2026,
