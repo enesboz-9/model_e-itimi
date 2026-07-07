@@ -328,6 +328,58 @@ def yukle_motor_model():
             except Exception: continue
     return None
 
+@st.cache_resource
+def yukle_performans_model():
+    """Senaryo bazlı performans skoru regresyon modelini yükler."""
+    import os
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    for fname in ["performans_model.pkl", os.path.join(script_dir, "performans_model.pkl")]:
+        if os.path.exists(fname):
+            try:
+                with open(fname, "rb") as f: return pickle.load(f)
+            except Exception: continue
+    return None
+
+@st.cache_resource
+def yukle_performans_ozet():
+    """Marka/model bazlı gerçek performans veri seti özetini (agregasyon) yükler."""
+    import os
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    for fname in ["performans_ozet.pkl", os.path.join(script_dir, "performans_ozet.pkl")]:
+        if os.path.exists(fname):
+            try:
+                with open(fname, "rb") as f: return pickle.load(f)
+            except Exception: continue
+    return {}
+
+@st.cache_resource
+def yukle_performans_meta():
+    import os
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    for fname in ["performans_meta.pkl", os.path.join(script_dir, "performans_meta.pkl")]:
+        if os.path.exists(fname):
+            try:
+                with open(fname, "rb") as f: return pickle.load(f)
+            except Exception: continue
+    return {}
+
+def performans_tahmin_et(form, performans_model_dict):
+    """Seçilen marka/model + kullanım senaryosuna göre (0-100) performans skoru tahmini yapar."""
+    if not performans_model_dict:
+        return None
+    kolonlar = performans_model_dict["kolonlar"]
+    model_reg = performans_model_dict["model"]
+    row = {k: 0 for k in kolonlar}
+    if "Temperature" in row: row["Temperature"] = form.get("temperature", 20)
+    if "Price" in row: row["Price"] = form.get("price", 0)
+    for kat_kolon, deger in form.get("kategorikler", {}).items():
+        col_adi = f"{kat_kolon}_{deger}"
+        if col_adi in row:
+            row[col_adi] = 1
+    veri = pd.DataFrame([row])[kolonlar]
+    tahmin = float(model_reg.predict(veri)[0])
+    return float(np.clip(tahmin, 0, 100))
+
 def motor_bilgisi_bul(marka, hacim_cc, guc_hp, motor_model_sozluk):
     """Marka + motor hacmi/gücüne göre veri setindeki en yakın gerçek motoru bulur.
     Dönüş: (kayit(Series), mesafe(float)) veya None"""
@@ -396,6 +448,9 @@ def yukle_ham():
 model = yukle_model()
 meta  = yukle_meta()
 motor_model = yukle_motor_model()
+performans_model = yukle_performans_model()
+performans_ozet   = yukle_performans_ozet()
+performans_meta   = yukle_performans_meta()
 
 # ══════════════════════════════════════════════════════════════
 # YARDIMCI FONKSİYONLAR
@@ -653,11 +708,12 @@ if model is None:
     st.error("⚠️ model.pkl (veya arac_fiyat_modeli.pkl) bulunamadı. Önce `python3 3_model_egitim.py` çalıştır.")
     st.stop()
 
-tab1, tab2, tab3, tab4 = st.tabs([
+tab1, tab2, tab3, tab4, tab5 = st.tabs([
     "🔮  Değerleme",
     "🔍  İlan Arama",
     "📊  Piyasa Analizi",
     "🤖  Model Bilgisi",
+    "🧪  Performans Analizi",
 ])
 
 # ══════════════════════════════════════════════════════════════
@@ -1251,3 +1307,176 @@ with tab4:
         st.json(meta["best_params"])
 
     st.markdown('</div>', unsafe_allow_html=True)
+
+# ══════════════════════════════════════════════════════════════
+# TAB 5 — PERFORMANS ANALİZİ
+# ══════════════════════════════════════════════════════════════
+with tab5:
+    st.markdown(
+        '<div class="gcard"><div class="gcard-title">🧪 Marka / Model Seçimi</div>',
+        unsafe_allow_html=True,
+    )
+
+    if not performans_ozet:
+        st.error("⚠️ performans_ozet.pkl / performans_model.pkl bulunamadı. "
+                 "Önce `python3 performans_model_egitimi.py` çalıştırın.")
+    else:
+        _perf_markalar = sorted({m for (m, _) in performans_ozet.keys()})
+        cp1, cp2 = st.columns(2)
+        with cp1:
+            p_marka = st.selectbox("Marka", _perf_markalar, key="p_marka")
+        with cp2:
+            _perf_modeller = sorted(mdl for (m, mdl) in performans_ozet.keys() if m == p_marka)
+            p_model = st.selectbox("Model", _perf_modeller, key="p_model")
+
+        st.caption(
+            "ⓘ Bu sekme, gerçek kullanıcı senaryolarından oluşan ayrı bir "
+            "performans veri setine (6 marka / 12 model, 500 kayıt) dayanır. "
+            "Değerleme sekmesindeki fiyat veri seti ile aynı kaynak değildir."
+        )
+
+        with st.expander("🧭 Kullanım Senaryosu (İsteğe Bağlı — skor tahminini etkiler)", expanded=False):
+            sc1, sc2, sc3 = st.columns(3)
+            with sc1:
+                p_motor_tipi = st.selectbox("Motor Tipi", ["Petrol", "Diesel", "Electric"])
+                p_yol_tipi   = st.selectbox("Yol Tipi", ["City streets", "Highway", "Off-road terrain"])
+                p_hava       = st.selectbox("Hava Durumu", ["Clear", "Rainy", "Snowy"])
+            with sc2:
+                p_kullanim   = st.selectbox("Kullanım Koşulu", ["Urban", "Highway", "Heavy Traffic", "Off-Road", "Extreme Weather"])
+                p_trafik     = st.selectbox("Trafik Seviyesi", ["Low", "Medium", "High"])
+                p_sicaklik   = st.slider("Sıcaklık (°C)", -20, 45, 20)
+            with sc3:
+                p_arac_durum = st.selectbox("Araç Durumu", ["Well-maintained", "Moderate wear", "Poor"])
+                p_lastik     = st.selectbox("Lastik Durumu", ["New", "Worn", "Flat"])
+                p_surucu     = st.selectbox("Sürücü Deneyimi", ["Novice", "Intermediate", "Expert"])
+            p_optimizasyon = st.select_slider("Performans Optimizasyonu", ["Low", "Medium", "High"], value="Medium")
+            p_fiyat = st.number_input("Fiyat (USD, veri seti kendi para birimi)", 0, 200_000,
+                                       int(performans_ozet[(p_marka, p_model)]["fiyat_ort"]), step=1000)
+
+        with st.expander("🔧 Motor Modeli Bilgisi İçin Motor Girdileri (İsteğe Bağlı)", expanded=False):
+            mh1, mh2 = st.columns(2)
+            with mh1:
+                p_motor_hacmi = st.number_input("Motor Hacmi (cc)", 0, 7000, 1600, step=50, key="p_hacim")
+            with mh2:
+                p_motor_gucu = st.number_input("Motor Gücü (HP)", 0, 1500, 110, step=5, key="p_guc")
+
+        st.markdown("</div>", unsafe_allow_html=True)
+
+        if st.button("🧪  Performans Analizi Yap", use_container_width=True, type="primary"):
+            ozet = performans_ozet.get((p_marka, p_model))
+
+            # — 1) Gerçek veri seti özeti —
+            if ozet:
+                elektrik_satiri = (
+                    f'<span>Elektrikli Menzil: <b style="color:#e5e7eb">{ozet["elektrik_menzil_ort"]:.0f} km</b></span>'
+                    if ozet.get("elektrik_menzil_ort") else ""
+                )
+                guvenilirlik_satiri = (
+                    f'<span>Güvenilirlik (1-3): <b style="color:#e5e7eb">{ozet["guvenilirlik_ort"]:.1f}</b></span>'
+                    if ozet.get("guvenilirlik_ort") is not None else ""
+                )
+                st.markdown(f"""
+                <div class="gcard">
+                    <div class="gcard-title">📊 Veri Seti Özeti — {p_marka} {p_model}
+                        <span style="font-size:.7rem;font-weight:400;opacity:.6">({ozet['adet']} kayıt · en yaygın motor: {ozet.get('en_yaygin_motor_tipi','-')})</span>
+                    </div>
+                    <div style="display:flex;gap:20px;flex-wrap:wrap;color:#9ca3af;font-size:.85rem;">
+                        <span>Yakıt Tüketimi: <b style="color:#e5e7eb">{ozet['yakit_tuketimi_ort']:.1f}</b></span>
+                        <span>Güvenlik Notu: <b style="color:#e5e7eb">{ozet['guvenlik_notu_ort']:.1f} / 5</b></span>
+                        <span>Motor Performansı: <b style="color:#e5e7eb">{ozet['motor_performansi_ort']:.0f}</b></span>
+                        <span>Frenleme: <b style="color:#e5e7eb">{ozet['frenleme_ort']:.0f}</b></span>
+                        <span>Konfor: <b style="color:#e5e7eb">{ozet['konfor_ort']:.1f} / 10</b></span>
+                        <span>0-100 Hızlanma: <b style="color:#e5e7eb">{ozet['0_100_ort']:.1f} sn</b></span>
+                        <span>Süspansiyon: <b style="color:#e5e7eb">{ozet['suspansiyon_ort']:.1f}</b></span>
+                        <span>Emisyon: <b style="color:#e5e7eb">{ozet['emisyon_ort']:.0f} g/km</b></span>
+                        <span>Senaryo Uyumu: <b style="color:#e5e7eb">{ozet['senaryo_uyum_ort']:.1f} / 10</b></span>
+                        {guvenilirlik_satiri}
+                        {elektrik_satiri}
+                    </div>
+                    <div style="color:#6b7280;font-size:.8rem;margin-top:10px;">
+                        Fiyat aralığı: {ozet['fiyat_min']:,.0f} — {ozet['fiyat_max']:,.0f}
+                        (ortalama {ozet['fiyat_ort']:,.0f})
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
+
+            # — 2) Senaryo bazlı tahmini performans skoru (model) —
+            form_perf = dict(
+                temperature=p_sicaklik,
+                price=p_fiyat,
+                kategorikler={
+                    "Car_Brand": p_marka, "Model": p_model, "Engine_Type": p_motor_tipi,
+                    "Driving_Condition": p_kullanim, "Road_Type": p_yol_tipi,
+                    "Traffic_Level": p_trafik, "Weather_Condition": p_hava,
+                    "Vehicle_Condition": p_arac_durum, "Tire_Condition": p_lastik,
+                    "Driver_Experience": p_surucu, "Performance_Optimization": p_optimizasyon,
+                },
+            )
+            skor = performans_tahmin_et(form_perf, performans_model)
+
+            if skor is not None:
+                ort_skor = ozet["performans_skoru_ort"] if ozet else skor
+                fark = skor - ort_skor
+                fark_renk = "#34d399" if fark >= 0 else "#f87171"
+                fark_yon  = "▲" if fark >= 0 else "▼"
+                r2_test = performans_meta.get("test_metrikleri", {}).get("r2", None)
+
+                st.markdown(f"""
+                <div class="result-hero">
+                    <div class="result-label">SEÇİLEN SENARYO İÇİN TAHMİNİ PERFORMANS SKORU</div>
+                    <div class="result-price">{skor:.1f} / 100</div>
+                    <div class="result-range">
+                        {p_marka} {p_model} ortalaması: {ort_skor:.1f} / 100 &nbsp;
+                        <span style="color:{fark_renk};font-weight:700">{fark_yon} {abs(fark):.1f}</span>
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
+
+                if r2_test is not None and r2_test < 0.3:
+                    st.warning(
+                        "⚠️ Bu skor tahmini modeli, sadece 500 kayıtlık küçük/senaryo-tabanlı bir "
+                        "veri setiyle eğitildi ve test performansı (R²) düşük. Sayıyı kesin bir "
+                        "gerçek değer değil, yukarıdaki veri seti özetini tamamlayan kaba bir "
+                        "gösterge olarak değerlendirin."
+                    )
+
+            # — 3) Motor Modeli Bilgisi (motor_model.pkl, marka bazlı KNN) —
+            motor_eslesme = motor_bilgisi_bul(p_marka, p_motor_hacmi, p_motor_gucu, motor_model)
+            if motor_eslesme:
+                motor_kayit, motor_mesafe = motor_eslesme
+                _guven = "Yüksek" if motor_mesafe < 0.3 else ("Orta" if motor_mesafe < 1.0 else "Düşük")
+                _guven_renk = {"Yüksek": "#34d399", "Orta": "#fbbf24", "Düşük": "#f87171"}[_guven]
+
+                def _pf(deger, birim=""):
+                    if pd.isna(deger) or deger == "" or (isinstance(deger, str) and deger.lower() == "nan"):
+                        return "—"
+                    if isinstance(deger, float) and deger.is_integer():
+                        deger = int(deger)
+                    return f"{deger}{birim}"
+
+                st.markdown(f"""
+                <div class="gcard" style="margin-top:20px;">
+                    <div class="gcard-title">🔧 Motor Modeli Bilgisi <span style="font-size:.7rem;font-weight:400;opacity:.6">(en yakın eşleşen kayıt · güven: <b style="color:{_guven_renk}">{_guven}</b>)</span></div>
+                    <div style="color:#e5e7eb;font-size:1.05rem;font-weight:600;margin-bottom:10px;">
+                        {p_marka} {_pf(motor_kayit.get('motor_kodu'))} <span style="color:#6b7280;font-weight:400;font-size:.82rem;">({_pf(motor_kayit.get('uretim_yillari'))})</span>
+                    </div>
+                    <div style="display:flex;gap:24px;flex-wrap:wrap;color:#9ca3af;font-size:.85rem;">
+                        <span>Hacim: <b style="color:#e5e7eb">{_pf(motor_kayit.get('hacim_cc'), ' cc')}</b></span>
+                        <span>Güç: <b style="color:#e5e7eb">{_pf(motor_kayit.get('guc_hp'), ' hp')}</b></span>
+                        <span>Tork: <b style="color:#e5e7eb">{_pf(motor_kayit.get('tork_nm'), ' nm')}</b></span>
+                        <span>Yakıt: <b style="color:#e5e7eb">{_pf(motor_kayit.get('yakit_tipi'))}</b></span>
+                        <span>Konfigürasyon: <b style="color:#e5e7eb">{_pf(motor_kayit.get('silindir_konf'))} {_pf(motor_kayit.get('silindir_sayisi'))}</b></span>
+                        <span>Turbo: <b style="color:#e5e7eb">{_pf(motor_kayit.get('turbo'))}</b></span>
+                        <span>Sıkıştırma Oranı: <b style="color:#e5e7eb">{_pf(motor_kayit.get('kompresyon_orani'))}</b></span>
+                        <span>Tavsiye Yağ: <b style="color:#e5e7eb">{_pf(motor_kayit.get('tavsiye_edilen_yag'))}</b></span>
+                        <span>Yağ Kapasitesi: <b style="color:#e5e7eb">{_pf(motor_kayit.get('yag_kapasitesi_l'), ' L')}</b></span>
+                        <span>Tahmini Motor Ömrü: <b style="color:#e5e7eb">{_pf(motor_kayit.get('motor_omru_km'), ' km')}</b></span>
+                        <span>Euro Standardı: <b style="color:#e5e7eb">{_pf(motor_kayit.get('euro_standardi'))}</b></span>
+                    </div>
+                    <div style="color:#6b7280;font-size:.72rem;margin-top:10px;">
+                        ⓘ Girdiğiniz hacim/güç değerlerine en yakın gerçek motor kaydı gösterilmektedir. Kaynak: mymotorlist.com motor veri tabanı.
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
+            else:
+                st.info(f"ℹ️ {p_marka} markası için motor veri tabanında eşleşen kayıt bulunamadı.")

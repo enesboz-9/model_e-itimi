@@ -1,0 +1,501 @@
+Car_Brand,Model,Engine_Type,Fuel_Efficiency,Braking_Performance,Emissions,Driving_Condition,Weather_Condition,Engine_Performance,Safety_Rating,Electric_Range,Driving_Comfort,Reliability
+Tesla,Model 3,Diesel,16,90,169,Heavy Traffic,Snowy,422,4,389.0,8,1
+BMW,3 Series,Petrol,22,51,170,Urban,Rainy,228,4,,7,2
+Tesla,Model S,Diesel,28,74,135,Highway,Clear,188,4,306.0,7,1
+Mercedes,GLE,Electric,13,80,155,Off-Road,Rainy,170,4,,6,3
+Ford,F-150,Diesel,25,64,148,Extreme Weather,Rainy,330,4,,9,2
+Hyundai,Kona EV,Diesel,16,57,152,Urban,Rainy,272,4,,8,3
+BMW,3 Series,Diesel,13,82,168,Heavy Traffic,Clear,282,4,,7,2
+Mercedes,E-Class,Petrol,19,66,127,Urban,Snowy,166,5,,9,2
+Mercedes,E-Class,Diesel,11,76,196,Off-Road,Clear,491,4,,7,2
+Toyota,Corolla,Diesel,13,82,165,Off-Road,Rainy,357,4,,6,1
+Hyundai,Kona EV,Petrol,17,50,127,Urban,Rainy,234,4,,7,3
+Ford,F-150,Electric,17,50,148,Urban,Snowy,492,5,,8,1
+Mercedes,E-Class,Petrol,20,66,141,Urban,Rainy,390,5,,9,2
+Mercedes,GLE,Petrol,14,87,199,Heavy Traffic,Rainy,386,5,,6,1
+Mercedes,E-Class,Electric,27,79,148,Highway,Snowy,180,5,,7,2
+Tesla,Model S,Electric,16,64,145,Urban,Rainy,150,4,356.0,7,2
+Toyota,Camry,Petrol,38,62,116,Highway,Clear,465,5,,9,1
+Hyundai,Sonata,Diesel,23,78,165,Extreme Weather,Clear,494,5,,8,2
+Hyundai,Sonata,Petrol,22,53,129,Urban,Rainy,412,4,,9,2
+Toyota,Camry,Petrol,19,85,160,Heavy Traffic,Snowy,381,5,,6,3
+Toyota,Corolla,Electric,17,80,207,Heavy Traffic,Clear,427,4,,7,2
+BMW,X5,Petrol,19,74,139,Extreme Weather,Clear,376,5,,9,1
+Toyota,Camry,Petrol,26,76,107,Highway,Snowy,427,4,,7,2
+Mercedes,E-Class,Electric,25,65,143,Extreme Weather,Snowy,310,5,,9,1
+Tesla,Model 3,Diesel,16,81,153,Off-Road,Rainy,341,4,305.0,6,2
+Hyundai,Sonata,Petrol,24,59,161,Urban,Snowy,216,4,,7,3
+Tesla,Model 3,Electric,17,74,173,Off-Road,Snowy,496,4,329.0,8,3
+Hyundai,Sonata,Diesel,25,79,170,Extreme Weather,Rainy,473,5,,6,2
+Ford,F-150,Electric,16,82,182,Heavy Traffic,Snowy,338,4,,6,3
+Ford,F-150,Electric,17,87,182,Heavy Traffic,Rainy,373,4,,9,2
+Ford,Mustang,Electric,18,80,206,Heavy Traffic,Clear,487,4,,9,1
+Tesla,Model 3,Electric,22,56,153,Urban,Snowy,168,5,376.0,6,1
+Tesla,Model S,Diesel,16,50,151,Urban,Snowy,369,5,340.0,9,1
+Tesla,Model S,Diesel,18,79,183,Off-Road,Rainy,348,5,351.0,7,3
+Ford,F-150,Diesel,35,68,119,Highway,Rainy,276,5,,9,3
+Toyota,Corolla,Electric,22,54,154,Urban,Clear,490,4,,6,1
+Ford,Mustang,Diesel,20,60,150,Extreme Weather,Snowy,485,5,,8,2
+Toyota,Camry,Diesel,36,60,100,Highway,Clear,177,4,,9,1
+Tesla,Model S,Petrol,24,61,160,Urban,Clear,348,4,360.0,9,3
+Mercedes,E-Class,Electric,25,62,100,Highway,Clear,464,4,,7,3
+Tesla,Model 3,Electric,14,86,164,Heavy Traffic,Snowy,329,4,382.0,8,2
+BMW,3 Series,Petrol,16,65,152,Urban,Snowy,198,4,,6,1
+Mercedes,E-Class,Electric,19,85,192,Heavy Traffic,Clear,159,5,,9,1
+Ford,Mustang,Electric,11,89,159,Off-Road,Snowy,366,5,,9,3
+BMW,3 Series,Petrol,30,64,101,Highway,Rainy,428,5,,6,3
+Ford,Mustang,Petrol,19,67,139,Urban,Snowy,185,5,,7,2
+Ford,Mustang,Electric,10,84,199,Off-Road,Rainy,387,5,,6,3
+Mercedes,E-Class,Petrol,16,75,175,Off-Road,Rainy,150,5,,8,3
+Hyundai,Sonata,Petrol,18,97,200,Heavy Traffic,Clear,296,4,,9,1
+Tesla,Model S,Diesel,30,77,115,Highway,Snowy,279,4,319.0,9,3
+Ford,F-150,Diesel,37,64,101,Highway,Clear,392,4,,9,2
+Ford,Mustang,Electric,23,79,154,Extreme Weather,Rainy,202,4,,9,3
+Tesla,Model 3,Petrol,29,61,145,Extreme Weather,Clear,499,5,342.0,6,2
+Hyundai,Sonata,Diesel,38,64,138,Highway,Snowy,288,4,,8,1
+Mercedes,E-Class,Petrol,20,74,143,Extreme Weather,Clear,488,5,,6,3
+Ford,Mustang,Diesel,17,88,163,Heavy Traffic,Snowy,190,5,,7,3
+Mercedes,GLE,Electric,16,87,204,Heavy Traffic,Clear,484,4,,9,1
+Tesla,Model S,Electric,28,64,142,Extreme Weather,Rainy,498,5,324.0,6,3
+BMW,X5,Petrol,18,99,174,Heavy Traffic,Snowy,175,4,,7,3
+Toyota,Corolla,Electric,12,71,187,Off-Road,Snowy,236,5,,6,3
+BMW,3 Series,Petrol,24,64,178,Extreme Weather,Rainy,292,4,,7,2
+Tesla,Model S,Electric,18,80,194,Off-Road,Snowy,418,5,318.0,7,1
+Mercedes,GLE,Electric,18,52,170,Urban,Snowy,245,5,,9,2
+Mercedes,E-Class,Electric,13,97,177,Heavy Traffic,Snowy,206,5,,9,2
+BMW,X5,Petrol,15,73,185,Off-Road,Snowy,409,4,,6,3
+Toyota,Corolla,Diesel,20,79,156,Extreme Weather,Rainy,192,5,,9,2
+Toyota,Camry,Diesel,37,67,100,Highway,Clear,170,5,,9,1
+Ford,F-150,Petrol,18,69,165,Extreme Weather,Snowy,395,5,,6,2
+Mercedes,E-Class,Petrol,14,87,201,Heavy Traffic,Rainy,245,5,,9,3
+Hyundai,Kona EV,Diesel,22,56,140,Urban,Clear,318,5,,7,2
+BMW,3 Series,Electric,12,92,180,Heavy Traffic,Rainy,469,4,,7,1
+Mercedes,E-Class,Diesel,16,62,141,Extreme Weather,Snowy,328,5,,6,3
+BMW,3 Series,Electric,16,77,181,Off-Road,Snowy,299,4,,7,1
+Toyota,Corolla,Diesel,39,61,137,Highway,Clear,403,4,,9,3
+Hyundai,Kona EV,Petrol,13,93,194,Heavy Traffic,Clear,197,5,,8,3
+Hyundai,Sonata,Diesel,20,63,134,Urban,Rainy,449,5,,7,2
+BMW,X5,Electric,18,58,134,Urban,Rainy,450,4,,9,2
+Tesla,Model S,Diesel,17,70,159,Off-Road,Rainy,403,4,334.0,7,3
+Tesla,Model 3,Diesel,15,84,163,Off-Road,Snowy,351,5,330.0,6,2
+Toyota,Corolla,Petrol,10,81,164,Off-Road,Clear,495,4,,6,1
+Mercedes,GLE,Diesel,23,62,132,Extreme Weather,Clear,239,4,,6,2
+Tesla,Model 3,Electric,16,71,190,Off-Road,Snowy,424,4,359.0,8,2
+Mercedes,E-Class,Diesel,14,86,165,Heavy Traffic,Snowy,438,4,,6,1
+Ford,Mustang,Petrol,29,74,162,Extreme Weather,Clear,329,5,,8,1
+BMW,X5,Petrol,13,87,193,Heavy Traffic,Rainy,406,5,,9,3
+Mercedes,E-Class,Electric,15,99,160,Heavy Traffic,Snowy,284,5,,8,2
+Toyota,Corolla,Electric,15,75,192,Off-Road,Clear,395,4,,6,2
+Mercedes,GLE,Electric,39,79,122,Highway,Rainy,345,5,,6,1
+Toyota,Corolla,Petrol,11,71,155,Off-Road,Snowy,198,4,,6,2
+Toyota,Corolla,Diesel,10,82,192,Off-Road,Rainy,176,5,,9,3
+Toyota,Corolla,Petrol,19,55,178,Urban,Clear,203,5,,7,1
+Ford,F-150,Electric,27,64,132,Extreme Weather,Clear,441,5,,6,2
+BMW,X5,Electric,15,85,166,Off-Road,Rainy,259,4,,9,1
+BMW,3 Series,Petrol,26,79,105,Highway,Rainy,345,5,,7,3
+Tesla,Model 3,Electric,19,91,162,Heavy Traffic,Snowy,305,5,377.0,7,3
+Mercedes,GLE,Petrol,39,78,108,Highway,Clear,345,5,,8,1
+Toyota,Corolla,Electric,13,91,207,Heavy Traffic,Snowy,179,5,,8,3
+BMW,X5,Petrol,15,75,164,Off-Road,Snowy,348,5,,7,3
+Ford,Mustang,Petrol,16,98,186,Heavy Traffic,Clear,189,4,,9,1
+Tesla,Model S,Electric,16,83,176,Off-Road,Snowy,222,5,396.0,6,2
+Mercedes,E-Class,Diesel,29,61,179,Extreme Weather,Clear,485,4,,9,2
+Toyota,Corolla,Electric,16,76,139,Extreme Weather,Clear,158,5,,7,2
+Toyota,Corolla,Petrol,16,55,167,Urban,Rainy,369,5,,7,2
+BMW,X5,Petrol,19,64,144,Extreme Weather,Rainy,492,4,,8,2
+BMW,X5,Petrol,19,89,185,Heavy Traffic,Clear,469,4,,7,1
+Ford,Mustang,Diesel,38,62,126,Highway,Clear,209,5,,8,3
+Hyundai,Sonata,Diesel,16,84,173,Heavy Traffic,Snowy,202,4,,7,3
+Tesla,Model 3,Electric,25,79,153,Extreme Weather,Snowy,294,5,345.0,9,3
+BMW,3 Series,Petrol,17,74,193,Off-Road,Rainy,369,5,,8,1
+Hyundai,Kona EV,Diesel,17,61,174,Extreme Weather,Clear,226,4,,8,1
+Hyundai,Kona EV,Electric,14,86,185,Heavy Traffic,Clear,228,4,,6,2
+BMW,3 Series,Diesel,19,57,135,Urban,Snowy,245,5,,7,2
+Hyundai,Sonata,Diesel,16,84,198,Off-Road,Rainy,406,5,,7,1
+BMW,X5,Diesel,17,80,180,Heavy Traffic,Rainy,398,4,,8,1
+Ford,F-150,Petrol,20,67,154,Extreme Weather,Snowy,420,4,,8,2
+Toyota,Corolla,Petrol,24,73,156,Extreme Weather,Snowy,395,4,,7,3
+BMW,X5,Electric,32,69,103,Highway,Snowy,313,5,,7,1
+Ford,F-150,Electric,22,75,132,Extreme Weather,Rainy,480,5,,7,1
+Mercedes,E-Class,Electric,27,71,150,Extreme Weather,Rainy,190,5,,7,3
+Hyundai,Sonata,Electric,28,69,147,Extreme Weather,Clear,256,5,,7,2
+Hyundai,Sonata,Petrol,24,61,152,Extreme Weather,Rainy,470,5,,7,1
+Hyundai,Sonata,Electric,21,66,154,Urban,Clear,261,5,,9,2
+Toyota,Camry,Petrol,17,77,154,Off-Road,Clear,225,5,,6,3
+Ford,Mustang,Electric,29,67,102,Highway,Rainy,175,5,,9,3
+Tesla,Model 3,Diesel,17,95,185,Heavy Traffic,Clear,340,5,335.0,9,1
+Mercedes,GLE,Petrol,17,86,198,Off-Road,Snowy,493,4,,9,2
+Ford,Mustang,Diesel,38,67,106,Highway,Snowy,353,4,,8,2
+Hyundai,Kona EV,Petrol,17,82,209,Heavy Traffic,Snowy,242,4,,7,2
+BMW,3 Series,Petrol,25,62,174,Extreme Weather,Clear,338,4,,7,1
+Mercedes,E-Class,Petrol,13,99,174,Heavy Traffic,Rainy,198,4,,6,2
+Hyundai,Sonata,Petrol,10,70,163,Off-Road,Snowy,498,4,,8,2
+Ford,F-150,Electric,28,63,139,Extreme Weather,Clear,317,5,,8,3
+Ford,F-150,Diesel,33,74,116,Highway,Snowy,380,4,,7,3
+BMW,X5,Petrol,19,87,189,Heavy Traffic,Rainy,311,4,,6,3
+Hyundai,Kona EV,Diesel,19,90,204,Heavy Traffic,Snowy,477,5,,6,1
+Hyundai,Sonata,Petrol,16,75,178,Extreme Weather,Rainy,237,5,,8,1
+Hyundai,Kona EV,Diesel,34,65,105,Highway,Snowy,201,5,,9,1
+Tesla,Model 3,Electric,24,51,147,Urban,Clear,255,5,317.0,7,3
+Mercedes,E-Class,Diesel,17,84,194,Heavy Traffic,Clear,424,5,,6,1
+Hyundai,Kona EV,Electric,22,62,124,Urban,Clear,370,4,,7,1
+BMW,3 Series,Petrol,18,75,196,Off-Road,Snowy,321,5,,7,1
+BMW,X5,Diesel,27,62,136,Highway,Clear,358,5,,6,1
+Toyota,Corolla,Electric,31,78,129,Highway,Snowy,204,4,,6,2
+Toyota,Corolla,Diesel,20,67,153,Urban,Rainy,329,5,,8,2
+Toyota,Camry,Petrol,22,69,139,Extreme Weather,Clear,391,4,,6,3
+BMW,3 Series,Diesel,11,89,155,Off-Road,Rainy,458,4,,7,2
+Toyota,Corolla,Petrol,32,76,116,Highway,Rainy,377,4,,9,3
+Toyota,Corolla,Petrol,10,71,189,Off-Road,Rainy,410,5,,8,2
+Toyota,Camry,Diesel,13,77,157,Off-Road,Snowy,364,4,,8,3
+Hyundai,Kona EV,Electric,26,65,179,Extreme Weather,Snowy,414,4,,7,3
+Ford,F-150,Diesel,20,62,164,Extreme Weather,Snowy,488,5,,6,2
+Hyundai,Kona EV,Electric,22,68,176,Extreme Weather,Rainy,237,5,,7,3
+Tesla,Model 3,Petrol,38,65,112,Highway,Clear,270,4,383.0,6,2
+Hyundai,Kona EV,Electric,14,80,181,Heavy Traffic,Snowy,391,5,,9,3
+Ford,Mustang,Petrol,37,67,148,Highway,Clear,460,5,,9,2
+Ford,F-150,Diesel,20,66,167,Urban,Rainy,324,4,,7,2
+Mercedes,E-Class,Electric,27,75,150,Extreme Weather,Clear,153,5,,7,2
+Ford,F-150,Diesel,16,65,167,Urban,Clear,191,5,,8,1
+Mercedes,GLE,Diesel,17,65,132,Extreme Weather,Rainy,400,5,,8,2
+Mercedes,E-Class,Petrol,10,70,194,Off-Road,Rainy,271,5,,9,1
+Ford,Mustang,Electric,14,88,197,Heavy Traffic,Rainy,317,5,,6,2
+Mercedes,E-Class,Electric,28,77,113,Highway,Clear,307,4,,6,3
+Mercedes,GLE,Diesel,23,69,124,Urban,Snowy,284,4,,9,3
+Tesla,Model 3,Diesel,15,97,161,Heavy Traffic,Clear,361,4,376.0,9,1
+Ford,Mustang,Electric,16,83,161,Heavy Traffic,Snowy,423,5,,9,2
+Toyota,Corolla,Diesel,37,64,148,Highway,Rainy,213,4,,7,2
+Hyundai,Sonata,Electric,25,72,177,Extreme Weather,Clear,469,5,,7,2
+Hyundai,Kona EV,Diesel,17,58,129,Urban,Clear,199,4,,8,1
+BMW,X5,Electric,15,71,163,Extreme Weather,Snowy,452,5,,8,2
+Toyota,Camry,Petrol,17,83,164,Heavy Traffic,Rainy,246,5,,6,2
+Ford,F-150,Petrol,14,84,185,Heavy Traffic,Snowy,318,5,,6,3
+BMW,X5,Electric,28,77,109,Highway,Snowy,290,4,,7,2
+Hyundai,Sonata,Diesel,32,74,112,Highway,Rainy,285,5,,6,2
+Toyota,Corolla,Electric,15,78,194,Off-Road,Rainy,184,4,,7,1
+Toyota,Camry,Electric,17,94,201,Heavy Traffic,Rainy,193,4,,8,3
+Mercedes,E-Class,Electric,30,70,131,Highway,Snowy,381,4,,6,3
+Mercedes,GLE,Diesel,14,84,173,Off-Road,Snowy,166,4,,7,1
+BMW,3 Series,Petrol,18,76,159,Off-Road,Clear,429,5,,6,1
+BMW,3 Series,Diesel,26,62,145,Highway,Rainy,221,5,,9,3
+Hyundai,Kona EV,Electric,12,88,158,Off-Road,Clear,220,4,,6,2
+Toyota,Corolla,Electric,15,61,125,Urban,Clear,231,4,,6,3
+Ford,Mustang,Diesel,18,51,165,Urban,Snowy,215,4,,7,3
+BMW,3 Series,Diesel,35,72,119,Highway,Snowy,371,5,,8,3
+Tesla,Model S,Diesel,27,69,137,Highway,Snowy,325,4,372.0,8,3
+BMW,X5,Diesel,26,72,154,Extreme Weather,Snowy,377,5,,9,3
+Mercedes,E-Class,Diesel,13,90,206,Heavy Traffic,Clear,426,4,,8,2
+Toyota,Camry,Petrol,27,60,129,Highway,Rainy,329,5,,9,3
+Tesla,Model 3,Petrol,17,74,166,Off-Road,Rainy,241,4,396.0,8,2
+Tesla,Model S,Electric,14,89,179,Heavy Traffic,Clear,490,4,385.0,6,2
+Toyota,Camry,Electric,25,71,145,Extreme Weather,Rainy,328,5,,8,3
+BMW,X5,Electric,22,62,131,Extreme Weather,Snowy,401,4,,9,1
+Hyundai,Kona EV,Petrol,28,77,131,Extreme Weather,Rainy,470,4,,7,1
+Tesla,Model S,Diesel,28,71,159,Extreme Weather,Snowy,492,5,340.0,9,2
+Tesla,Model S,Petrol,25,69,158,Extreme Weather,Clear,443,5,307.0,6,2
+Tesla,Model S,Electric,19,52,121,Urban,Snowy,440,5,358.0,9,1
+Tesla,Model 3,Electric,15,80,179,Heavy Traffic,Clear,326,5,359.0,9,2
+Toyota,Corolla,Diesel,13,76,156,Off-Road,Rainy,467,4,,9,3
+Toyota,Corolla,Diesel,19,94,183,Heavy Traffic,Snowy,345,4,,6,3
+Tesla,Model 3,Diesel,14,92,174,Heavy Traffic,Clear,219,4,314.0,8,2
+Ford,Mustang,Diesel,10,83,173,Off-Road,Rainy,177,4,,9,1
+Toyota,Corolla,Petrol,24,65,142,Urban,Clear,432,5,,8,3
+Hyundai,Sonata,Electric,24,69,139,Extreme Weather,Rainy,336,4,,7,2
+Toyota,Corolla,Diesel,17,86,166,Heavy Traffic,Clear,286,5,,7,1
+BMW,3 Series,Electric,36,72,113,Highway,Rainy,158,5,,7,2
+Toyota,Camry,Petrol,31,77,112,Highway,Snowy,282,4,,8,2
+Ford,F-150,Electric,15,64,165,Urban,Clear,483,4,,7,3
+Hyundai,Kona EV,Electric,19,64,134,Urban,Clear,457,5,,6,1
+Tesla,Model 3,Electric,39,68,146,Highway,Snowy,253,4,315.0,8,2
+BMW,3 Series,Electric,12,85,167,Heavy Traffic,Clear,400,5,,9,2
+Ford,Mustang,Petrol,29,75,144,Highway,Clear,249,5,,7,3
+Hyundai,Kona EV,Electric,17,52,136,Urban,Clear,319,5,,7,3
+Hyundai,Kona EV,Diesel,26,64,112,Highway,Snowy,348,4,,8,2
+BMW,3 Series,Diesel,13,81,207,Heavy Traffic,Snowy,379,5,,8,2
+Ford,Mustang,Petrol,17,75,168,Extreme Weather,Clear,420,5,,6,3
+Toyota,Camry,Petrol,22,59,125,Urban,Clear,180,5,,9,2
+BMW,X5,Electric,12,83,209,Heavy Traffic,Clear,383,5,,9,1
+Tesla,Model 3,Diesel,19,99,176,Heavy Traffic,Clear,439,5,398.0,7,2
+Ford,Mustang,Electric,21,54,146,Urban,Clear,490,5,,6,2
+BMW,X5,Diesel,16,75,144,Extreme Weather,Clear,418,4,,9,2
+Ford,Mustang,Electric,29,75,114,Highway,Snowy,417,4,,6,2
+Hyundai,Sonata,Diesel,17,89,167,Heavy Traffic,Snowy,325,5,,7,3
+Toyota,Camry,Petrol,27,72,117,Highway,Rainy,452,4,,7,1
+BMW,X5,Petrol,38,62,127,Highway,Snowy,403,5,,6,3
+Toyota,Camry,Electric,24,65,146,Urban,Clear,237,5,,8,3
+Toyota,Camry,Electric,14,77,170,Off-Road,Snowy,261,4,,8,1
+Mercedes,E-Class,Diesel,18,78,182,Off-Road,Rainy,438,4,,8,2
+BMW,X5,Electric,14,79,189,Off-Road,Snowy,370,5,,7,2
+BMW,3 Series,Electric,15,77,164,Off-Road,Clear,354,5,,7,2
+Tesla,Model S,Electric,14,90,199,Heavy Traffic,Clear,363,5,359.0,8,2
+Mercedes,GLE,Petrol,20,68,139,Extreme Weather,Clear,361,4,,7,2
+Toyota,Camry,Diesel,13,71,165,Off-Road,Clear,152,5,,8,2
+Toyota,Camry,Diesel,13,84,183,Heavy Traffic,Snowy,370,4,,7,3
+Toyota,Camry,Electric,12,70,176,Off-Road,Rainy,322,5,,9,1
+Toyota,Corolla,Petrol,28,75,160,Extreme Weather,Clear,389,4,,8,2
+Ford,F-150,Diesel,29,75,130,Highway,Rainy,442,4,,9,3
+Hyundai,Kona EV,Petrol,16,55,160,Urban,Snowy,252,4,,8,3
+BMW,3 Series,Diesel,19,51,130,Urban,Rainy,150,5,,7,1
+Hyundai,Sonata,Petrol,28,76,115,Highway,Snowy,384,5,,8,3
+Mercedes,E-Class,Electric,17,88,178,Heavy Traffic,Clear,446,5,,6,2
+Tesla,Model S,Electric,24,67,141,Extreme Weather,Clear,309,5,373.0,9,3
+Hyundai,Sonata,Diesel,13,82,181,Heavy Traffic,Clear,295,5,,8,2
+Hyundai,Sonata,Diesel,24,68,143,Urban,Clear,362,4,,9,3
+Toyota,Corolla,Electric,17,83,150,Off-Road,Snowy,226,5,,6,2
+BMW,X5,Electric,11,79,157,Off-Road,Clear,417,4,,7,2
+Tesla,Model S,Petrol,32,60,113,Highway,Snowy,276,4,386.0,8,1
+BMW,X5,Diesel,37,74,141,Highway,Clear,278,5,,7,1
+Toyota,Corolla,Electric,17,71,195,Off-Road,Snowy,251,5,,6,1
+Tesla,Model 3,Diesel,27,69,152,Extreme Weather,Rainy,262,4,366.0,9,1
+Tesla,Model S,Diesel,24,65,120,Urban,Snowy,350,4,368.0,8,2
+Ford,F-150,Electric,24,58,122,Urban,Clear,153,5,,7,1
+Mercedes,GLE,Petrol,22,62,152,Urban,Clear,182,5,,8,2
+Hyundai,Sonata,Petrol,12,96,209,Heavy Traffic,Rainy,284,4,,7,2
+Tesla,Model 3,Electric,13,90,200,Heavy Traffic,Snowy,460,4,364.0,7,1
+Ford,F-150,Petrol,12,94,168,Heavy Traffic,Rainy,360,4,,9,2
+Tesla,Model 3,Petrol,36,65,128,Highway,Rainy,226,4,316.0,7,1
+BMW,3 Series,Petrol,21,65,159,Urban,Rainy,195,5,,8,1
+Toyota,Camry,Electric,37,75,101,Highway,Rainy,345,4,,9,2
+BMW,3 Series,Petrol,14,89,202,Heavy Traffic,Rainy,296,4,,6,3
+BMW,3 Series,Diesel,17,62,173,Urban,Rainy,479,5,,8,1
+Ford,F-150,Diesel,12,74,196,Off-Road,Snowy,249,5,,9,3
+Toyota,Corolla,Diesel,15,96,181,Heavy Traffic,Clear,355,4,,6,2
+Mercedes,GLE,Electric,20,63,147,Extreme Weather,Snowy,431,5,,8,1
+Hyundai,Kona EV,Electric,14,84,175,Off-Road,Snowy,205,5,,9,3
+Toyota,Corolla,Diesel,31,63,109,Highway,Clear,222,5,,8,3
+Ford,F-150,Petrol,13,71,166,Off-Road,Clear,295,5,,7,3
+Tesla,Model S,Electric,32,64,111,Highway,Clear,204,4,372.0,9,2
+Mercedes,E-Class,Diesel,12,99,163,Heavy Traffic,Snowy,448,4,,7,1
+Ford,Mustang,Electric,22,66,165,Extreme Weather,Snowy,425,5,,9,3
+Toyota,Camry,Petrol,38,62,142,Highway,Snowy,353,5,,9,2
+Hyundai,Sonata,Diesel,18,96,171,Heavy Traffic,Snowy,403,4,,8,3
+Hyundai,Kona EV,Electric,38,78,112,Highway,Snowy,462,4,,8,2
+BMW,3 Series,Petrol,20,63,122,Urban,Snowy,360,4,,6,3
+Toyota,Corolla,Electric,15,62,143,Extreme Weather,Snowy,336,5,,6,3
+Ford,Mustang,Electric,20,55,175,Urban,Clear,432,5,,6,3
+Mercedes,GLE,Electric,24,53,129,Urban,Snowy,336,4,,7,1
+BMW,X5,Petrol,26,68,164,Extreme Weather,Rainy,349,5,,9,2
+Tesla,Model 3,Diesel,36,62,124,Highway,Clear,353,5,339.0,9,2
+Ford,Mustang,Electric,18,87,182,Heavy Traffic,Clear,389,5,,7,1
+Tesla,Model S,Electric,12,86,181,Off-Road,Clear,303,5,321.0,6,1
+Toyota,Corolla,Electric,28,74,172,Extreme Weather,Snowy,397,4,,6,1
+Toyota,Corolla,Electric,13,94,176,Heavy Traffic,Rainy,290,5,,6,3
+Hyundai,Sonata,Petrol,38,78,147,Highway,Clear,479,5,,6,3
+Ford,Mustang,Electric,14,97,175,Heavy Traffic,Snowy,279,5,,6,1
+Hyundai,Kona EV,Electric,23,54,128,Urban,Snowy,197,4,,7,3
+Hyundai,Kona EV,Electric,19,82,195,Off-Road,Rainy,330,4,,6,3
+Hyundai,Kona EV,Diesel,22,67,140,Urban,Clear,270,5,,8,3
+Hyundai,Sonata,Petrol,22,64,133,Urban,Rainy,204,4,,8,3
+BMW,3 Series,Diesel,26,63,146,Highway,Rainy,466,4,,9,3
+Hyundai,Kona EV,Electric,17,70,184,Off-Road,Snowy,474,4,,9,1
+Ford,F-150,Electric,15,65,155,Urban,Snowy,383,4,,8,1
+Tesla,Model S,Petrol,21,64,161,Extreme Weather,Clear,256,4,337.0,7,2
+Ford,F-150,Petrol,13,74,158,Off-Road,Snowy,198,5,,8,3
+Ford,Mustang,Electric,23,66,149,Urban,Snowy,446,5,,7,3
+BMW,X5,Petrol,27,62,173,Extreme Weather,Clear,189,5,,9,3
+BMW,X5,Diesel,15,51,125,Urban,Rainy,271,5,,6,3
+Toyota,Corolla,Electric,29,71,170,Extreme Weather,Rainy,178,5,,6,1
+Toyota,Corolla,Electric,30,78,109,Highway,Clear,284,5,,6,2
+Mercedes,GLE,Diesel,31,71,127,Highway,Clear,210,5,,7,1
+Hyundai,Sonata,Electric,17,73,159,Extreme Weather,Snowy,254,4,,8,3
+Tesla,Model 3,Diesel,13,87,162,Off-Road,Clear,319,5,353.0,6,3
+Tesla,Model 3,Diesel,15,55,146,Urban,Clear,300,5,394.0,9,1
+Mercedes,E-Class,Diesel,16,67,163,Extreme Weather,Rainy,222,5,,7,1
+Tesla,Model 3,Diesel,18,94,196,Heavy Traffic,Clear,171,4,356.0,8,3
+BMW,3 Series,Electric,17,61,174,Extreme Weather,Rainy,455,4,,8,1
+BMW,3 Series,Electric,13,97,206,Heavy Traffic,Clear,329,5,,8,1
+Toyota,Corolla,Diesel,23,63,156,Urban,Clear,189,5,,7,2
+Tesla,Model S,Diesel,19,68,149,Urban,Clear,453,4,315.0,9,3
+Mercedes,E-Class,Petrol,23,57,120,Urban,Snowy,467,5,,8,3
+Tesla,Model S,Electric,20,58,169,Urban,Clear,329,4,367.0,7,1
+Tesla,Model 3,Petrol,17,84,170,Heavy Traffic,Clear,193,4,352.0,6,2
+Tesla,Model S,Electric,25,70,150,Extreme Weather,Rainy,393,5,306.0,6,2
+Toyota,Corolla,Petrol,13,88,172,Heavy Traffic,Clear,186,4,,6,1
+Hyundai,Sonata,Petrol,29,63,145,Highway,Snowy,219,4,,9,3
+Ford,F-150,Diesel,24,59,169,Urban,Snowy,193,4,,7,3
+Toyota,Camry,Diesel,18,94,200,Heavy Traffic,Rainy,469,4,,9,2
+BMW,X5,Diesel,20,50,165,Urban,Clear,337,4,,9,1
+BMW,3 Series,Diesel,16,67,132,Urban,Clear,288,5,,7,1
+BMW,X5,Electric,19,75,199,Off-Road,Rainy,281,5,,6,2
+BMW,X5,Electric,17,89,199,Off-Road,Snowy,470,5,,9,2
+Toyota,Camry,Diesel,15,65,142,Urban,Clear,347,4,,8,3
+Hyundai,Sonata,Petrol,39,71,112,Highway,Clear,477,4,,7,1
+Tesla,Model 3,Petrol,16,91,161,Heavy Traffic,Snowy,339,5,358.0,9,1
+Toyota,Camry,Electric,21,72,150,Extreme Weather,Snowy,331,4,,9,1
+Ford,Mustang,Petrol,10,71,197,Off-Road,Rainy,363,4,,7,1
+Ford,F-150,Electric,12,91,199,Heavy Traffic,Snowy,442,4,,9,3
+BMW,X5,Diesel,23,60,164,Extreme Weather,Rainy,193,4,,6,3
+Ford,Mustang,Petrol,13,75,168,Off-Road,Clear,180,4,,7,2
+Toyota,Corolla,Electric,37,74,101,Highway,Rainy,329,4,,6,3
+Ford,F-150,Electric,25,70,123,Highway,Rainy,351,4,,7,3
+Tesla,Model 3,Electric,22,61,168,Extreme Weather,Snowy,328,4,318.0,7,3
+Mercedes,GLE,Electric,18,97,205,Heavy Traffic,Snowy,373,4,,7,2
+Hyundai,Sonata,Diesel,12,99,208,Heavy Traffic,Clear,352,4,,9,3
+Hyundai,Sonata,Petrol,14,87,188,Heavy Traffic,Clear,351,4,,9,2
+Toyota,Camry,Petrol,17,74,178,Off-Road,Rainy,197,4,,7,2
+Mercedes,GLE,Petrol,12,89,182,Heavy Traffic,Rainy,243,4,,6,2
+Mercedes,E-Class,Diesel,31,66,145,Highway,Clear,218,4,,9,3
+Ford,Mustang,Electric,33,72,115,Highway,Clear,426,4,,7,3
+Mercedes,GLE,Electric,17,77,158,Off-Road,Snowy,307,4,,6,3
+BMW,3 Series,Diesel,12,84,182,Heavy Traffic,Rainy,482,5,,6,1
+Hyundai,Sonata,Petrol,19,78,168,Extreme Weather,Rainy,290,4,,9,3
+Ford,Mustang,Petrol,19,73,138,Extreme Weather,Snowy,468,5,,9,2
+Hyundai,Sonata,Petrol,29,76,133,Extreme Weather,Rainy,226,4,,8,3
+Toyota,Corolla,Petrol,10,81,171,Off-Road,Rainy,287,5,,7,3
+Toyota,Corolla,Electric,18,60,174,Urban,Clear,170,5,,6,3
+Ford,F-150,Petrol,20,68,120,Urban,Clear,464,4,,9,2
+Toyota,Camry,Electric,17,95,183,Heavy Traffic,Clear,265,4,,7,3
+Ford,Mustang,Petrol,15,87,175,Heavy Traffic,Snowy,199,5,,9,1
+Hyundai,Sonata,Electric,18,68,134,Extreme Weather,Rainy,326,4,,7,1
+BMW,X5,Electric,28,70,160,Extreme Weather,Rainy,344,5,,7,3
+Toyota,Camry,Electric,19,61,162,Extreme Weather,Snowy,459,5,,6,1
+Tesla,Model S,Petrol,12,87,170,Off-Road,Clear,190,4,321.0,8,2
+Toyota,Corolla,Petrol,15,52,159,Urban,Snowy,427,5,,9,1
+Ford,Mustang,Petrol,10,76,179,Off-Road,Rainy,168,5,,9,3
+Mercedes,GLE,Diesel,21,50,159,Urban,Snowy,360,5,,9,3
+Hyundai,Kona EV,Diesel,23,53,123,Urban,Clear,292,4,,7,3
+BMW,X5,Electric,18,68,143,Extreme Weather,Snowy,162,4,,9,1
+Hyundai,Kona EV,Diesel,16,77,142,Extreme Weather,Rainy,242,4,,7,1
+BMW,X5,Diesel,17,71,183,Off-Road,Snowy,325,5,,9,2
+Mercedes,GLE,Electric,29,66,136,Extreme Weather,Rainy,263,5,,8,2
+Toyota,Corolla,Electric,23,62,163,Urban,Clear,365,4,,8,1
+Hyundai,Kona EV,Diesel,17,89,181,Heavy Traffic,Clear,243,4,,9,3
+Mercedes,E-Class,Petrol,38,61,112,Highway,Rainy,344,4,,7,2
+Mercedes,E-Class,Petrol,21,74,130,Extreme Weather,Snowy,261,5,,9,2
+Toyota,Corolla,Petrol,18,92,203,Heavy Traffic,Rainy,313,4,,6,3
+Mercedes,GLE,Electric,14,85,171,Heavy Traffic,Snowy,227,4,,9,3
+BMW,3 Series,Diesel,19,55,142,Urban,Clear,216,5,,6,3
+Mercedes,GLE,Petrol,15,57,145,Urban,Snowy,433,4,,7,1
+Mercedes,GLE,Petrol,21,60,123,Urban,Snowy,225,5,,9,3
+Toyota,Corolla,Electric,22,60,152,Urban,Snowy,195,5,,7,1
+Hyundai,Sonata,Diesel,30,61,123,Highway,Rainy,427,5,,9,1
+Tesla,Model S,Diesel,12,70,154,Off-Road,Snowy,182,5,318.0,9,3
+BMW,X5,Diesel,22,76,140,Extreme Weather,Clear,390,5,,6,1
+Mercedes,E-Class,Diesel,16,67,125,Urban,Rainy,189,5,,8,2
+BMW,3 Series,Electric,29,68,104,Highway,Snowy,288,5,,8,2
+Toyota,Corolla,Electric,15,58,162,Urban,Snowy,424,4,,8,3
+Toyota,Camry,Electric,17,82,180,Heavy Traffic,Snowy,366,5,,7,1
+BMW,X5,Electric,26,78,175,Extreme Weather,Snowy,312,4,,9,2
+Tesla,Model S,Diesel,34,60,137,Highway,Clear,264,5,387.0,6,1
+Ford,Mustang,Diesel,13,88,208,Heavy Traffic,Clear,345,4,,8,1
+Ford,Mustang,Petrol,22,77,145,Extreme Weather,Rainy,382,5,,6,3
+Hyundai,Kona EV,Diesel,18,77,133,Extreme Weather,Rainy,325,4,,7,3
+Ford,Mustang,Electric,15,84,176,Off-Road,Rainy,181,4,,9,1
+Hyundai,Sonata,Petrol,14,92,185,Heavy Traffic,Clear,434,4,,9,3
+Hyundai,Sonata,Petrol,27,71,145,Highway,Clear,235,5,,9,2
+Mercedes,GLE,Diesel,33,72,109,Highway,Clear,352,4,,7,2
+Toyota,Camry,Petrol,27,66,138,Highway,Rainy,310,4,,9,3
+Hyundai,Kona EV,Diesel,34,66,112,Highway,Snowy,203,5,,8,3
+Hyundai,Sonata,Petrol,37,71,146,Highway,Rainy,483,5,,9,3
+Mercedes,GLE,Petrol,39,64,105,Highway,Rainy,318,5,,7,1
+Ford,F-150,Petrol,29,73,130,Extreme Weather,Clear,422,5,,8,1
+Hyundai,Sonata,Diesel,16,97,194,Heavy Traffic,Rainy,354,5,,9,3
+Toyota,Camry,Electric,13,73,188,Off-Road,Clear,468,4,,8,2
+Ford,Mustang,Electric,16,73,181,Off-Road,Clear,237,5,,6,3
+BMW,3 Series,Petrol,16,65,158,Urban,Clear,404,5,,7,3
+Tesla,Model S,Diesel,15,90,181,Heavy Traffic,Rainy,260,5,356.0,6,3
+Mercedes,GLE,Petrol,21,70,160,Extreme Weather,Rainy,434,5,,9,1
+Toyota,Corolla,Petrol,14,91,188,Heavy Traffic,Snowy,288,4,,9,3
+Mercedes,GLE,Diesel,19,95,169,Heavy Traffic,Rainy,180,5,,9,2
+BMW,X5,Diesel,23,74,138,Extreme Weather,Rainy,220,4,,9,2
+Mercedes,GLE,Electric,12,80,181,Off-Road,Snowy,202,4,,8,2
+Ford,F-150,Electric,19,62,170,Urban,Rainy,411,5,,6,3
+Hyundai,Sonata,Diesel,13,95,176,Heavy Traffic,Clear,256,5,,9,3
+Mercedes,E-Class,Petrol,16,93,193,Heavy Traffic,Clear,368,5,,8,2
+Ford,F-150,Petrol,19,79,149,Extreme Weather,Snowy,282,4,,9,3
+BMW,X5,Electric,12,75,191,Off-Road,Rainy,169,5,,7,3
+Hyundai,Kona EV,Petrol,15,67,150,Urban,Rainy,377,5,,6,2
+Ford,Mustang,Petrol,14,90,192,Heavy Traffic,Snowy,335,4,,6,2
+Mercedes,GLE,Electric,22,50,140,Urban,Clear,427,4,,9,1
+Ford,F-150,Petrol,18,73,134,Extreme Weather,Clear,260,5,,8,1
+Toyota,Corolla,Diesel,15,84,195,Heavy Traffic,Clear,389,4,,7,2
+Mercedes,E-Class,Petrol,19,86,153,Off-Road,Snowy,262,4,,8,1
+Hyundai,Kona EV,Electric,16,86,185,Off-Road,Clear,415,5,,9,3
+Ford,F-150,Petrol,20,71,170,Extreme Weather,Snowy,340,4,,6,1
+Toyota,Corolla,Petrol,16,55,128,Urban,Rainy,472,4,,6,3
+BMW,X5,Electric,27,63,141,Highway,Rainy,291,5,,9,3
+Ford,F-150,Diesel,10,79,187,Off-Road,Rainy,290,4,,9,2
+Hyundai,Sonata,Electric,21,69,175,Extreme Weather,Snowy,484,4,,8,1
+Hyundai,Sonata,Petrol,10,71,196,Off-Road,Rainy,475,5,,7,3
+Mercedes,E-Class,Petrol,39,74,115,Highway,Rainy,334,5,,7,3
+Ford,F-150,Diesel,23,60,157,Extreme Weather,Snowy,404,4,,6,3
+Tesla,Model S,Diesel,15,77,197,Off-Road,Clear,182,5,355.0,6,1
+Ford,F-150,Electric,25,69,161,Extreme Weather,Clear,322,5,,7,3
+Tesla,Model S,Electric,38,69,138,Highway,Snowy,396,4,332.0,7,3
+Ford,F-150,Diesel,16,76,150,Off-Road,Rainy,351,5,,8,2
+Tesla,Model S,Diesel,23,69,179,Extreme Weather,Rainy,261,4,382.0,6,2
+Mercedes,E-Class,Diesel,25,71,173,Extreme Weather,Rainy,365,4,,9,2
+Toyota,Corolla,Electric,16,82,158,Off-Road,Rainy,426,5,,9,1
+BMW,X5,Electric,18,63,133,Urban,Rainy,387,4,,7,1
+Toyota,Camry,Petrol,12,79,169,Off-Road,Clear,343,5,,9,2
+Ford,Mustang,Petrol,21,64,137,Urban,Rainy,477,5,,8,2
+BMW,3 Series,Electric,22,71,152,Extreme Weather,Clear,452,5,,9,2
+Ford,F-150,Diesel,19,69,172,Urban,Snowy,415,4,,7,3
+Hyundai,Sonata,Petrol,28,65,127,Highway,Snowy,464,5,,6,2
+Ford,F-150,Electric,16,57,161,Urban,Rainy,340,5,,9,2
+Tesla,Model S,Petrol,23,69,163,Urban,Clear,211,5,307.0,8,3
+Mercedes,E-Class,Diesel,18,96,206,Heavy Traffic,Snowy,206,4,,8,3
+Hyundai,Kona EV,Petrol,22,67,131,Urban,Clear,198,5,,7,3
+Hyundai,Kona EV,Diesel,23,64,128,Urban,Snowy,417,5,,6,2
+Toyota,Corolla,Petrol,16,70,138,Extreme Weather,Clear,382,4,,9,3
+Ford,Mustang,Electric,13,87,164,Off-Road,Clear,424,4,,7,2
+BMW,3 Series,Diesel,16,65,155,Urban,Clear,213,5,,7,2
+Hyundai,Kona EV,Petrol,17,99,187,Heavy Traffic,Rainy,236,5,,6,1
+Toyota,Camry,Petrol,30,72,132,Highway,Rainy,351,5,,9,3
+Toyota,Camry,Electric,18,91,172,Heavy Traffic,Snowy,337,4,,7,1
+Hyundai,Sonata,Electric,24,63,132,Extreme Weather,Rainy,496,4,,6,2
+Mercedes,E-Class,Electric,11,70,161,Off-Road,Clear,413,5,,6,2
+Ford,Mustang,Petrol,15,54,161,Urban,Rainy,238,5,,7,3
+Mercedes,GLE,Petrol,24,71,131,Extreme Weather,Clear,376,4,,6,3
+Toyota,Camry,Electric,18,70,151,Off-Road,Snowy,176,4,,7,2
+Ford,F-150,Electric,26,67,149,Highway,Clear,244,5,,6,3
+BMW,X5,Electric,20,58,148,Urban,Rainy,219,4,,6,3
+Mercedes,E-Class,Electric,27,63,109,Highway,Rainy,376,5,,9,1
+Ford,F-150,Petrol,17,82,153,Off-Road,Rainy,334,4,,6,3
+Mercedes,GLE,Diesel,17,69,130,Extreme Weather,Rainy,172,5,,9,1
+Mercedes,E-Class,Electric,18,87,155,Off-Road,Snowy,360,5,,9,1
+Toyota,Corolla,Petrol,16,63,178,Urban,Snowy,396,4,,9,1
+Hyundai,Kona EV,Diesel,14,87,177,Heavy Traffic,Clear,325,4,,9,3
+Ford,F-150,Petrol,35,69,108,Highway,Snowy,203,4,,6,1
+Mercedes,GLE,Diesel,11,79,173,Off-Road,Clear,232,5,,8,3
+Hyundai,Kona EV,Diesel,14,88,194,Heavy Traffic,Snowy,486,5,,7,2
+Tesla,Model 3,Diesel,15,78,170,Off-Road,Rainy,269,5,357.0,8,2
+Tesla,Model 3,Diesel,17,68,162,Urban,Rainy,346,4,372.0,8,1
+BMW,3 Series,Diesel,15,61,149,Extreme Weather,Clear,357,4,,7,3
+Hyundai,Kona EV,Electric,18,83,192,Off-Road,Clear,254,5,,8,1
+Hyundai,Kona EV,Petrol,24,61,143,Extreme Weather,Rainy,413,5,,8,2
+Ford,F-150,Diesel,16,97,190,Heavy Traffic,Rainy,407,5,,8,2
+Ford,Mustang,Petrol,22,74,143,Extreme Weather,Snowy,308,5,,8,1
+BMW,X5,Electric,32,76,115,Highway,Snowy,480,5,,9,3
+Hyundai,Sonata,Diesel,13,80,165,Off-Road,Clear,332,4,,6,2
+Toyota,Camry,Petrol,20,66,143,Extreme Weather,Rainy,160,4,,7,1
+BMW,3 Series,Diesel,34,60,129,Highway,Snowy,173,5,,6,3
+BMW,3 Series,Electric,19,95,193,Heavy Traffic,Rainy,432,5,,9,1
+Tesla,Model 3,Petrol,25,67,101,Highway,Snowy,334,4,357.0,8,1
+Tesla,Model 3,Diesel,12,86,186,Off-Road,Rainy,297,5,316.0,7,1
+Hyundai,Kona EV,Electric,16,81,161,Off-Road,Rainy,340,4,,6,2
+BMW,X5,Electric,39,75,103,Highway,Clear,289,5,,6,2
+Ford,Mustang,Diesel,24,68,167,Urban,Snowy,483,5,,7,2
+Mercedes,GLE,Diesel,17,73,154,Off-Road,Rainy,188,4,,6,1
+BMW,X5,Petrol,16,82,206,Heavy Traffic,Snowy,368,5,,6,3
+Tesla,Model S,Diesel,19,72,173,Extreme Weather,Rainy,274,5,302.0,7,3
+Toyota,Corolla,Diesel,27,73,162,Extreme Weather,Rainy,343,5,,6,3
+Tesla,Model 3,Diesel,19,92,203,Heavy Traffic,Clear,232,5,373.0,8,2
+Toyota,Camry,Electric,26,77,168,Extreme Weather,Rainy,410,4,,9,2
+Hyundai,Kona EV,Petrol,25,71,137,Extreme Weather,Rainy,479,4,,9,2
+Mercedes,E-Class,Petrol,17,76,168,Extreme Weather,Clear,272,4,,6,2
+Mercedes,E-Class,Diesel,39,73,132,Highway,Snowy,434,5,,8,3
+Hyundai,Sonata,Electric,16,81,209,Heavy Traffic,Clear,244,4,,9,1
+BMW,3 Series,Petrol,28,67,117,Highway,Rainy,463,5,,9,1
+Ford,F-150,Electric,16,53,174,Urban,Clear,489,5,,9,1
+Hyundai,Kona EV,Petrol,16,76,185,Off-Road,Rainy,470,4,,9,1
+Tesla,Model 3,Petrol,16,84,204,Heavy Traffic,Snowy,245,5,309.0,8,3
+Tesla,Model S,Petrol,19,72,166,Off-Road,Rainy,214,4,352.0,9,1
+Ford,F-150,Diesel,19,72,164,Extreme Weather,Snowy,447,4,,9,2
+Hyundai,Kona EV,Electric,28,66,142,Extreme Weather,Clear,458,5,,6,1
+Ford,Mustang,Petrol,36,72,146,Highway,Rainy,447,4,,7,1
+BMW,X5,Diesel,15,61,156,Extreme Weather,Snowy,389,5,,7,2
+Hyundai,Sonata,Diesel,24,64,137,Extreme Weather,Snowy,314,4,,7,2
+Toyota,Camry,Diesel,21,66,168,Urban,Clear,210,5,,9,3
+Hyundai,Sonata,Diesel,19,82,168,Heavy Traffic,Rainy,196,5,,7,2
+BMW,3 Series,Petrol,27,60,102,Highway,Snowy,398,5,,8,3
