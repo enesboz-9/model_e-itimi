@@ -758,6 +758,20 @@ with tab1:
         _seri_idx = _seri_listesi.index(_eslesen_seri) if _eslesen_seri else 0
         seri = st.selectbox("Model / Seri" + (" 🤖" if _eslesen_seri else ""), _seri_listesi or ["Diğer"], index=_seri_idx,
                              key=f"seri_sel_{foto_key}_{marka}")
+
+        # Değerleme alanında yazılı marka/model değiştiğinde, İlan Arama ve
+        # Piyasa Analizi sekmelerinin varsayılan filtrelerini de aynı
+        # marka/modele senkronize etmek için değişikliği işaretliyoruz.
+        # (Bu sekmelerin selectbox'ları sabit key kullandığından, index=
+        # parametresi ilk oluşturmadan sonra etkisiz kalır; bu yüzden hedef
+        # değeri doğrudan session_state üzerinden, widget oluşmadan önce
+        # yazmamız gerekiyor — bkz. Tab 2 / Tab 3 kodundaki senkron bloğu.)
+        if (st.session_state.get("_izlenen_marka") != marka or
+                st.session_state.get("_izlenen_seri") != seri):
+            st.session_state["_izlenen_marka"] = marka
+            st.session_state["_izlenen_seri"] = seri
+            st.session_state["_sync_tab2"] = True
+            st.session_state["_sync_tab3"] = True
         cy, ck = st.columns(2)
         with cy:
             yil = st.number_input("Yıl" + (" 🤖" if ai_yil else ""), 1985, 2026,
@@ -916,6 +930,19 @@ with tab2:
     else:
         st.markdown('<div class="gcard"><div class="gcard-title">🔎 Filtreler</div>', unsafe_allow_html=True)
         markalar2 = sorted(df_h2["marka"].dropna().unique())
+
+        # Değerleme sekmesinde marka/model değiştiyse, bu sekmenin
+        # varsayılan filtrelerini de aynı araca senkronize et (widget'lar
+        # oluşturulmadan ÖNCE session_state'e yazılmalı).
+        if st.session_state.get("_sync_tab2"):
+            _hedef_marka = st.session_state.get("_izlenen_marka")
+            if _hedef_marka in list(markalar2):
+                st.session_state["s_marka"] = _hedef_marka
+                _hedef_seriler = sorted(df_h2[df_h2["marka"] == _hedef_marka]["seri"].dropna().unique())
+                _hedef_seri = st.session_state.get("_izlenen_seri")
+                st.session_state["s_seri"] = _hedef_seri if _hedef_seri in _hedef_seriler else "Tümü"
+            st.session_state["_sync_tab2"] = False
+
         cm1, cm2, cm3 = st.columns([2,2,1])
         with cm1:
             s_marka = st.selectbox("Marka", markalar2,
@@ -1008,6 +1035,19 @@ with tab3:
     else:
         st.markdown('<div class="gcard"><div class="gcard-title">📊 Filtreler</div>', unsafe_allow_html=True)
         markalar3 = sorted(df_h3["marka"].dropna().unique())
+
+        # Değerleme sekmesinde marka/model değiştiyse, bu sekmenin
+        # varsayılan filtrelerini de aynı araca senkronize et (widget'lar
+        # oluşturulmadan ÖNCE session_state'e yazılmalı).
+        if st.session_state.get("_sync_tab3"):
+            _hedef_marka3 = st.session_state.get("_izlenen_marka")
+            if _hedef_marka3 in list(markalar3):
+                st.session_state["a_marka"] = _hedef_marka3
+                _hedef_seriler3 = sorted(df_h3[df_h3["marka"] == _hedef_marka3]["seri"].dropna().unique())
+                _hedef_seri3 = st.session_state.get("_izlenen_seri")
+                st.session_state["a_seri"] = _hedef_seri3 if _hedef_seri3 in _hedef_seriler3 else "Tümü"
+            st.session_state["_sync_tab3"] = False
+
         pa1, pa2 = st.columns(2)
         with pa1:
             marka3 = st.selectbox("Marka", markalar3,
