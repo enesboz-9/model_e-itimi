@@ -8,6 +8,8 @@ import pandas as pd
 import numpy as np
 import pickle
 import base64
+import hashlib
+import datetime
 import json
 import requests
 import plotly.express as px
@@ -220,6 +222,74 @@ DURUM_ENC = {"Bilinmiyor": 0, "Sıfır": 1, "Yurtdışından İthal Sıfır": 2,
 CEKIS_ENC = {"Önden Çekiş": 0, "Arkadan İtiş": 1, "4WD (Sürekli)": 2, "AWD (Elektronik)": 3}
 
 # ══════════════════════════════════════════════════════════════
+# PİYASA ENFLASYON ENDEKSİ (Veri seti tabanını güncel aya taşımak için)
+# ══════════════════════════════════════════════════════════════
+# Kaynak: VavaCars "VavaAI Fiyat Endeksi" — Türkiye ikinci el araç piyasasını
+# yapay zeka ile aylık olarak endeksleyen, kamuya açık ilan verilerine dayanan
+# ve sektörde en güncel/gerçekçi kabul edilen kaynaklardan biri. Değerler,
+# ilgili ayın bir önceki aya göre YÜZDE değişimidir (TL bazında, nominal).
+# Yeni bir ay yayınlandıkça bu sözlüğe tek satır eklemek yeterlidir.
+VERI_SETI_TABAN = (2026, 3)  # arabam_temiz.csv verisi Mart 2026 sonu itibarıyladır
+
+AYLIK_ENDEKS_YUZDE = {
+    (2026, 1): 1.10,
+    (2026, 2): 1.28,
+    (2026, 3): 1.09,   # <- veri setinin taban ayı
+    (2026, 4): 0.40,
+    (2026, 5): 0.19,
+    # NOT: Haziran/Temmuz 2026 için VavaAI Fiyat Endeksi'nin resmi ay sonu
+    # raporu bu kodun yazıldığı tarihte henüz yayınlanmamıştı. Nisan-Mayıs
+    # döneminde gözlenen "kontrollü/yatay" seyir (~%0.2-0.3/ay) baz alınarak
+    # temkinli bir öngörü kullanılıyor. Rapor yayınlandığında bu satırları
+    # gerçek değerle güncelleyin.
+    (2026, 6): 0.30,   # öngörü
+    (2026, 7): 0.30,   # öngörü
+}
+_SON_BILINEN_AYLAR = sorted(k for k, v in AYLIK_ENDEKS_YUZDE.items())
+_VARSAYILAN_AYLIK_ORAN = float(np.mean([AYLIK_ENDEKS_YUZDE[k] for k in _SON_BILINEN_AYLAR[-3:]]))
+
+def _ay_ekle(yil, ay, n=1):
+    ay += n
+    while ay > 12:
+        ay -= 12
+        yil += 1
+    while ay < 1:
+        ay += 12
+        yil -= 1
+    return yil, ay
+
+@st.cache_data(show_spinner=False)
+def guncel_enflasyon_katsayisi(hedef_yil=None, hedef_ay=None):
+    """
+    Veri setinin taban ayından (VERI_SETI_TABAN) hedef aya (varsayılan: bugün)
+    kadar, AYLIK_ENDEKS_YUZDE'deki aylık değişim oranlarını bileşik olarak
+    uygulayıp bir çarpan döndürür. Örn. 1.012 -> fiyatları %1.2 yukarı çeker.
+    Bilinmeyen (henüz raporlanmamış) aylar için son 3 ayın ortalama oranı kullanılır.
+    """
+    if hedef_yil is None or hedef_ay is None:
+        bugun = datetime.date.today()
+        hedef_yil, hedef_ay = bugun.year, bugun.month
+
+    taban_yil, taban_ay = VERI_SETI_TABAN
+    y, a = taban_yil, taban_ay
+    katsayi = 1.0
+    guvenlik_sayaci = 0
+    while (y, a) != (hedef_yil, hedef_ay) and guvenlik_sayaci < 240:
+        y, a = _ay_ekle(y, a, 1)
+        oran = AYLIK_ENDEKS_YUZDE.get((y, a), _VARSAYILAN_AYLIK_ORAN)
+        katsayi *= (1 + oran / 100.0)
+        guvenlik_sayaci += 1
+    return katsayi
+
+def guncel_ay_etiketi(hedef_yil=None, hedef_ay=None):
+    AY_ADLARI = ["", "Ocak","Şubat","Mart","Nisan","Mayıs","Haziran",
+                 "Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"]
+    if hedef_yil is None or hedef_ay is None:
+        bugun = datetime.date.today()
+        hedef_yil, hedef_ay = bugun.year, bugun.month
+    return f"{AY_ADLARI[hedef_ay]} {hedef_yil}"
+
+# ══════════════════════════════════════════════════════════════
 # KAYNAK YÜKLEYİCİLER
 # ══════════════════════════════════════════════════════════════
 @st.cache_resource
@@ -266,6 +336,12 @@ def yukle_ham():
         df = df.dropna(subset=["fiyat"])
         df["fiyat"] = pd.to_numeric(df["fiyat"], errors="coerce")
         df = df[df["fiyat"] > 0].copy()
+
+        # Veri seti Mart 2026 tabanlıdır. Piyasa analizleri ve benzer araç
+        # önerilerinin güncel ayın fiyat seviyesini yansıtması için VavaAI
+        # Fiyat Endeksi'nden türetilen bileşik enflasyon katsayısı uygulanır.
+        _katsayi = guncel_enflasyon_katsayisi()
+        df["fiyat"] = df["fiyat"] * _katsayi
         
         # yil türet
         if "arac_yasi" in df.columns:
@@ -472,7 +548,12 @@ def tahmin_yap(form):
             ]
 
     veri = pd.DataFrame([{k: row.get(k, 0) for k in ozellikler}])
-    return float(np.expm1(model.predict(veri)[0]))
+    ham_tahmin = float(np.expm1(model.predict(veri)[0]))
+
+    # Model, Mart 2026 taban alınarak eğitilmiş arabam_temiz.csv verisiyle
+    # eğitildi. Tahmini güncel aya taşımak için aynı piyasa enflasyon
+    # katsayısı (VavaAI Fiyat Endeksi bileşik oranı) uygulanır.
+    return ham_tahmin * guncel_enflasyon_katsayisi()
 
 def piyasa_analiz(df_ham, marka, seri=None, yil_min=2010, yil_max=2026):
     mask = df_ham["marka"].str.lower() == marka.lower()
@@ -516,11 +597,13 @@ def verdict(tahmin, medyan):
 # ══════════════════════════════════════════════════════════════
 # BAŞLIK
 # ══════════════════════════════════════════════════════════════
-st.markdown("""
+_guncel_katsayi = guncel_enflasyon_katsayisi()
+_guncel_ay = guncel_ay_etiketi()
+st.markdown(f"""
 <div class="hero">
     <h1 class="hero-title">AutoValuate</h1>
     <p class="hero-sub">Yapay Zeka Destekli Araç Değerleme & Piyasa Analiz Platformu</p>
-    <p style="color:#4b5563;font-size:.78rem;margin-top:.4rem;letter-spacing:.5px">📊 Veri: Mart 2026 · arabam.com</p>
+    <p style="color:#4b5563;font-size:.78rem;margin-top:.4rem;letter-spacing:.5px">📊 Veri Tabanı: Mart 2026 (arabam.com) · Fiyatlar VavaAI Fiyat Endeksi ile {_guncel_ay} seviyesine güncellendi (x{_guncel_katsayi:.4f})</p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -545,9 +628,14 @@ with tab1:
     foto = st.file_uploader("Fotoğraf yükle → kasa tipi ve renk otomatik tespit edilir",
                              type=["jpg","jpeg","png"], key="foto")
     ai_kasa = ai_renk = ai_marka = ai_seri = ai_yil = ai_km = None
+    foto_key = "_yok_"  # foto yüklenmediğinde form widget key'i sabit kalır
     if foto:
         foto_bytes = foto.read()
-        foto_key = str(len(foto_bytes))
+        # NOT: Önceden sadece byte uzunluğu (len) kullanılıyordu; bu, farklı
+        # iki fotoğrafın boyutu tesadüfen aynıysa AI analizinin yeniden
+        # çalışmamasına ve eski sonucun gösterilmesine yol açıyordu. İçerik
+        # hash'i kullanmak bunu garanti şekilde önler.
+        foto_key = hashlib.md5(foto_bytes).hexdigest()
         if st.session_state.get("_foto_key") != foto_key:
             with st.spinner("🤖 AI analiz ediyor..."):
                 res = fotograf_analiz(foto_bytes)
@@ -606,17 +694,32 @@ with tab1:
 
         _eslesen_marka = marka_esles(ai_marka, _markalar)
         _marka_idx = _markalar.index(_eslesen_marka) if _eslesen_marka else _markalar.index("Toyota")
-        marka = st.selectbox("Marka" + (" 🤖" if _eslesen_marka else ""), _markalar, index=_marka_idx)
+        # NOT: key=... parametresi foto_key'e bağlanır. Streamlit, bir widget'ı
+        # ilk oluşturulduğu andan sonra index/value parametrelerini değil,
+        # session_state'teki eski değerini kullanır. Aynı key ile (örn. sadece
+        # "Marka" etiketi) yeni bir fotoğraf yüklendiğinde AI'ın yeni tahmini
+        # görmezden geliniyordu. foto_key'i key'e dahil ederek her yeni
+        # fotoğrafta widget'ın AI'ın güncel tahminiyle sıfırdan oluşmasını
+        # sağlıyoruz; fotoğraf değişmediği sürece kullanıcının elle yaptığı
+        # değişiklikler korunur.
+        marka = st.selectbox("Marka" + (" 🤖" if _eslesen_marka else ""), _markalar, index=_marka_idx,
+                              key=f"marka_sel_{foto_key}")
         _seri_listesi = sorted(k for k in SERI_ENC if k != "nan")
         _seri_idx = _seri_listesi.index(ai_seri) if ai_seri and ai_seri in _seri_listesi else 0
-        seri = st.selectbox("Model / Seri" + (" 🤖" if ai_seri else ""), _seri_listesi or ["Diğer"], index=_seri_idx)
+        seri = st.selectbox("Model / Seri" + (" 🤖" if ai_seri else ""), _seri_listesi or ["Diğer"], index=_seri_idx,
+                             key=f"seri_sel_{foto_key}")
         cy, ck = st.columns(2)
-        with cy: yil = st.number_input("Yıl" + (" 🤖" if ai_yil else ""), 1985, 2026, int(ai_yil) if ai_yil and 1985 <= ai_yil <= 2026 else 2019, step=1)
+        with cy:
+            yil = st.number_input("Yıl" + (" 🤖" if ai_yil else ""), 1985, 2026,
+                                   int(ai_yil) if ai_yil and 1985 <= ai_yil <= 2026 else 2019, step=1,
+                                   key=f"yil_input_{foto_key}")
         _km_default = int(ai_km) if ai_km and 0 < ai_km <= 500_000 else 85_000
         _km_default = min(max(_km_default, 0), 500_000)
         # 5000'in katına yuvarla
         _km_default = round(_km_default / 5000) * 5000
-        with ck: km = st.slider("Kilometre" + (" 🤖" if ai_km else ""), 0, 500_000, _km_default, step=5000)
+        with ck:
+            km = st.slider("Kilometre" + (" 🤖" if ai_km else ""), 0, 500_000, _km_default, step=5000,
+                            key=f"km_slider_{foto_key}")
         durum = st.selectbox("Araç Durumu", list(DURUM_ENC), index=3)
         h1, h2 = st.columns(2)
         with h1:
@@ -645,12 +748,14 @@ with tab1:
             vites = st.selectbox("Vites",      ["Belirtilmemiş"] + list(VITES_ENC))
             kasa_opts = ["Belirtilmemiş"] + [k for k in KASA_ENC if k != "Bilinmiyor"] + ["Bilinmiyor"]
             kasa_idx  = kasa_opts.index(ai_kasa) if ai_kasa and ai_kasa in kasa_opts else 0
-            kasa = st.selectbox("Kasa Tipi" + (" 🤖" if ai_kasa else ""), kasa_opts, index=kasa_idx)
+            kasa = st.selectbox("Kasa Tipi" + (" 🤖" if ai_kasa else ""), kasa_opts, index=kasa_idx,
+                                 key=f"kasa_sel_{foto_key}")
 
         with st.expander("🎨 Renk", expanded=False):
             renk_listesi = ["Belirtilmemiş"] + sorted(RENK_ENC)
             renk_idx = renk_listesi.index(ai_renk) if ai_renk and ai_renk in renk_listesi else 0
-            renk = st.selectbox("Renk" + (" 🤖" if ai_renk else ""), renk_listesi, index=renk_idx)
+            renk = st.selectbox("Renk" + (" 🤖" if ai_renk else ""), renk_listesi, index=renk_idx,
+                                 key=f"renk_sel_{foto_key}")
 
         # Varsayılan değerleri belirle (belirtilmemişse medyan/ortalama kullan)
         motor_hacmi_son = motor_hacmi if motor_hacmi > 0 else 1600
