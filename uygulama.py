@@ -316,6 +316,31 @@ def yukle_meta():
             except Exception: continue
     return {}
 
+@st.cache_resource
+def yukle_motor_model():
+    """Motor eşleştirme modelini (marka bazlı KNN) yükler."""
+    import os
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    for fname in ["motor_model.pkl", os.path.join(script_dir, "motor_model.pkl")]:
+        if os.path.exists(fname):
+            try:
+                with open(fname, "rb") as f: return pickle.load(f)
+            except Exception: continue
+    return None
+
+def motor_bilgisi_bul(marka, hacim_cc, guc_hp, motor_model_sozluk):
+    """Marka + motor hacmi/gücüne göre veri setindeki en yakın gerçek motoru bulur.
+    Dönüş: (kayit(Series), mesafe(float)) veya None"""
+    if not motor_model_sozluk or marka not in motor_model_sozluk:
+        return None
+    kayit = motor_model_sozluk[marka]
+    knn, scaler, veri = kayit["knn"], kayit["scaler"], kayit["veri"]
+    x = np.array([[hacim_cc, guc_hp]], dtype=float)
+    xs = scaler.transform(x) if scaler is not None else x - veri[["hacim_cc", "guc_hp"]].values.mean(axis=0)
+    mesafe, idx = knn.kneighbors(xs, n_neighbors=1)
+    en_yakin = veri.iloc[idx[0][0]]
+    return en_yakin, float(mesafe[0][0])
+
 @st.cache_data(show_spinner="Veri seti yükleniyor...")
 def yukle_ham():
     import os
@@ -370,6 +395,7 @@ def yukle_ham():
 
 model = yukle_model()
 meta  = yukle_meta()
+motor_model = yukle_motor_model()
 
 # ══════════════════════════════════════════════════════════════
 # YARDIMCI FONKSİYONLAR
@@ -883,6 +909,45 @@ with tab1:
             <div class="mkart"><div class="mkart-val">{2026-yil} yıl</div><div class="mkart-lbl">Araç Yaşı</div></div>
         </div>
         """, unsafe_allow_html=True)
+
+        # — Motor Modeli Bilgisi (mymotorlist.com motor veri setinden eşleştirme) —
+        motor_eslesme = motor_bilgisi_bul(marka, motor_hacmi_son, motor_gucu_son, motor_model)
+        if motor_eslesme:
+            motor_kayit, motor_mesafe = motor_eslesme
+            _guven = "Yüksek" if motor_mesafe < 0.3 else ("Orta" if motor_mesafe < 1.0 else "Düşük")
+            _guven_renk = {"Yüksek": "#34d399", "Orta": "#fbbf24", "Düşük": "#f87171"}[_guven]
+
+            def _f(deger, birim=""):
+                if pd.isna(deger) or deger == "" or (isinstance(deger, str) and deger.lower() == "nan"):
+                    return "—"
+                if isinstance(deger, float) and deger.is_integer():
+                    deger = int(deger)
+                return f"{deger}{birim}"
+
+            st.markdown(f"""
+            <div class="gcard" style="margin-top:20px;">
+                <div class="gcard-title">🔧 Motor Modeli Bilgisi <span style="font-size:.7rem;font-weight:400;opacity:.6">(en yakın eşleşen kayıt · güven: <b style="color:{_guven_renk}">{_guven}</b>)</span></div>
+                <div style="color:#e5e7eb;font-size:1.05rem;font-weight:600;margin-bottom:10px;">
+                    {marka} {_f(motor_kayit.get('motor_kodu'))} <span style="color:#6b7280;font-weight:400;font-size:.82rem;">({_f(motor_kayit.get('uretim_yillari'))})</span>
+                </div>
+                <div style="display:flex;gap:24px;flex-wrap:wrap;color:#9ca3af;font-size:.85rem;">
+                    <span>Hacim: <b style="color:#e5e7eb">{_f(motor_kayit.get('hacim_cc'), ' cc')}</b></span>
+                    <span>Güç: <b style="color:#e5e7eb">{_f(motor_kayit.get('guc_hp'), ' hp')}</b></span>
+                    <span>Tork: <b style="color:#e5e7eb">{_f(motor_kayit.get('tork_nm'), ' nm')}</b></span>
+                    <span>Yakıt: <b style="color:#e5e7eb">{_f(motor_kayit.get('yakit_tipi'))}</b></span>
+                    <span>Konfigürasyon: <b style="color:#e5e7eb">{_f(motor_kayit.get('silindir_konf'))} {_f(motor_kayit.get('silindir_sayisi'))}</b></span>
+                    <span>Turbo: <b style="color:#e5e7eb">{_f(motor_kayit.get('turbo'))}</b></span>
+                    <span>Sıkıştırma Oranı: <b style="color:#e5e7eb">{_f(motor_kayit.get('kompresyon_orani'))}</b></span>
+                    <span>Tavsiye Yağ: <b style="color:#e5e7eb">{_f(motor_kayit.get('tavsiye_edilen_yag'))}</b></span>
+                    <span>Yağ Kapasitesi: <b style="color:#e5e7eb">{_f(motor_kayit.get('yag_kapasitesi_l'), ' L')}</b></span>
+                    <span>Tahmini Motor Ömrü: <b style="color:#e5e7eb">{_f(motor_kayit.get('motor_omru_km'), ' km')}</b></span>
+                    <span>Euro Standardı: <b style="color:#e5e7eb">{_f(motor_kayit.get('euro_standardi'))}</b></span>
+                </div>
+                <div style="color:#6b7280;font-size:.72rem;margin-top:10px;">
+                    ⓘ Girdiğiniz hacim/güç değerlerine en yakın gerçek motor kaydı gösterilmektedir; aracınızın tam olarak bu motor koduna sahip olduğu garanti edilmez. Kaynak: mymotorlist.com motor veri tabanı.
+                </div>
+            </div>
+            """, unsafe_allow_html=True)
 
         if ana:
             st.markdown(f"""
