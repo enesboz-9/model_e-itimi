@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 </head>
-<body>
+<body class="yukleniyor">
 <div class="wrap">
   <header class="hero">
     <h1 class="hero-title">EderiNe</h1>
@@ -22,12 +22,29 @@
 
   <div id="hata" class="msg err" hidden></div>
 
+  <!-- Açılış: yükleniyor iskeleti / bağlantı hatası -->
+  <div id="iskelet" class="iskelet" aria-live="polite">
+    <div class="iskelet-yuk" aria-busy="true">
+      <div class="sk sk-kart"><div class="sk sk-b" style="width:30%"></div><div class="sk sk-in"></div></div>
+      <div class="grid2">
+        <div class="sk sk-kart"><div class="sk sk-b" style="width:40%"></div><div class="sk sk-in"></div><div class="sk sk-in"></div><div class="sk sk-in"></div></div>
+        <div class="sk sk-kart"><div class="sk sk-b" style="width:35%"></div><div class="sk sk-in"></div><div class="sk sk-in"></div><div class="sk sk-in"></div></div>
+      </div>
+      <p class="loading">Sunucu hazırlanıyor… ilk açılış birkaç saniye sürebilir.</p>
+    </div>
+    <div class="iskelet-hata gcard" hidden>
+      <div class="gcard-title">⚠️ Bağlantı Kurulamadı</div>
+      <p id="iskelet-mesaj" style="margin:0 0 14px;color:var(--soft)"></p>
+      <button class="btn" id="tekrar" type="button">🔄&nbsp; Tekrar Dene</button>
+    </div>
+  </div>
+
   <nav class="tabs" role="tablist" aria-label="Bölümler">
-    <button class="tab" role="tab" id="tab-t1" aria-controls="t1" aria-selected="true">🔮&nbsp; Değerleme</button>
-    <button class="tab" role="tab" id="tab-t2" aria-controls="t2" aria-selected="false">🔍&nbsp; İlan Arama</button>
-    <button class="tab" role="tab" id="tab-t3" aria-controls="t3" aria-selected="false">📊&nbsp; Piyasa Analizi</button>
-    <button class="tab" role="tab" id="tab-t4" aria-controls="t4" aria-selected="false">📈&nbsp; Fiyat Değişimi</button>
-    <button class="tab" role="tab" id="tab-t5" aria-controls="t5" aria-selected="false">🧪&nbsp; Performans Analizi</button>
+    <button class="tab" role="tab" id="tab-t1" aria-controls="t1" aria-selected="true"><span class="ti" aria-hidden="true">🔮</span><span class="tl">Değerleme</span></button>
+    <button class="tab" role="tab" id="tab-t2" aria-controls="t2" aria-selected="false"><span class="ti" aria-hidden="true">🔍</span><span class="tl">İlan<span class="uzun"> Arama</span></span></button>
+    <button class="tab" role="tab" id="tab-t3" aria-controls="t3" aria-selected="false"><span class="ti" aria-hidden="true">📊</span><span class="tl">Piyasa<span class="uzun"> Analizi</span></span></button>
+    <button class="tab" role="tab" id="tab-t4" aria-controls="t4" aria-selected="false"><span class="ti" aria-hidden="true">📈</span><span class="tl">Fiyat<span class="uzun"> Değişimi</span></span></button>
+    <button class="tab" role="tab" id="tab-t5" aria-controls="t5" aria-selected="false"><span class="ti" aria-hidden="true">🧪</span><span class="tl">Performans<span class="uzun"> Analizi</span></span></button>
   </nav>
 
   <!-- 1 · DEĞERLEME -->

@@ -49,7 +49,14 @@ async function calistir(btn, fn) {
   const eski = btn.innerHTML;
   btn.disabled = true; btn.textContent = 'Hesaplanıyor…';
   hataGoster('');
-  try { await fn(); } catch (err) { hataGoster(err.message); } finally { btn.disabled = false; btn.innerHTML = eski; }
+  let kutu = btn.parentElement.querySelector(`[data-hata-icin="${btn.id}"]`);
+  if (kutu) kutu.remove();
+  try { await fn(); } catch (err) {
+    // Hata, butonun hemen altında (kullanıcının baktığı yerde) ve "Tekrar dene" ile gösterilir
+    btn.insertAdjacentHTML('afterend', `<div class="msg err hata-satir" role="alert" data-hata-icin="${btn.id}">
+      <span>⚠️ ${e(err.message)}</span><button type="button" class="tekrar-k">🔄 Tekrar dene</button></div>`);
+    btn.nextElementSibling.querySelector('button').addEventListener('click', () => btn.click());
+  } finally { btn.disabled = false; btn.innerHTML = eski; }
 }
 
 /* ── Plotly (ilk grafik gerektiğinde yüklenir) ─────────────────── */
@@ -102,7 +109,8 @@ const yuklendi = {};
 function sekmeAc(id) {
   sekmeler.forEach((b) => b.setAttribute('aria-selected', String(b.getAttribute('aria-controls') === id)));
   document.querySelectorAll('.panel').forEach((p) => { p.hidden = p.id !== id; });
-  if (id === 't3') analizCalistir();
+  document.body.classList.toggle('t4-acik', id === 't4');
+  if (id === 't3' && cfg) analizCalistir();
   if (id === 't4' && !yuklendi.t4) { yuklendi.t4 = true; fiyatDegisimiSekmesi(); }
   try { history.replaceState(null, '', '#' + id); } catch (_) { /* yoksay */ }
 }
@@ -342,6 +350,10 @@ const analizErtele = () => { clearTimeout(analizZaman); analizZaman = setTimeout
 const AY_KISA = ['', 'Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara'];
 const ayAd = (k) => { const [y, a] = k.split('-').map(Number); return `${AY_KISA[a]} ${String(y).slice(2)}`; };
 const yuzde = (x, d = 1) => `${x < 0 ? '−' : x > 0 ? '+' : ''}%${sayi(Math.abs(x), d)}`;
+/* Artış ▲ (yeşil) / düşüş ▼ (kırmızı): renge ek olarak şekil de taşır (renk körlüğü) */
+const yon = (x) => (x > 0 ? '▲' : x < 0 ? '▼' : '■');
+const degisim = (x, d = 1) => `${yon(x)} %${sayi(Math.abs(x), d)}`;
+const degRenk = (x) => (x > 0 ? '#34d399' : x < 0 ? '#f87171' : '#9ca3af');
 const HAT = { arti: '#34d399', eksi: '#f87171', ana: '#6366f1', ikinci: '#f59e0b' };
 const kaynakLink = (u, ad) => `<a href="${e(u)}" target="_blank" rel="noopener noreferrer">${e(ad)}</a>`;
 let fiyatVeri = null;
@@ -359,9 +371,9 @@ async function fiyatDegisimiSekmesi() {
     kutu.innerHTML = `
       <div class="gcard"><div class="gcard-title">📈 Türkiye Araç Piyasası — Son 12 Ay <small>(${ayAd(d.son_ay)} itibarıyla)</small></div>
         <div class="mgrid">
-          ${kart(yuzde(yil), 'İkinci el araç fiyatı (12 ay, TL)', yil >= 0 ? HAT.arti : HAT.eksi)}
+          ${kart(degisim(yil), 'İkinci el araç fiyatı (12 ay, TL)', degRenk(yil))}
           ${kart(yuzde(en.tufe_yillik_eylul_2026), 'TÜFE (12 ay)')}
-          ${kart(yuzde(reel), 'Reel değişim (araç / TÜFE)', reel >= 0 ? HAT.arti : HAT.eksi)}
+          ${kart(degisim(reel), 'Reel değişim (araç / TÜFE)', degRenk(reel))}
           ${kart(yuzde(en.usd_12ay), 'USD/TL (12 ay)')}
           ${kart(yuzde(en.eur_12ay), 'EUR/TL (12 ay)')}
         </div>
@@ -420,7 +432,8 @@ async function fiyatDegisimiSekmesi() {
       P.newPlot(id, [{
         type: 'bar', orientation: 'h', y: s.map((o) => o.ad), x: s.map((o) => o.yuzde),
         marker: { color: s.map((o) => (o.yuzde >= 0 ? HAT.ana : HAT.eksi)) },
-        text: s.map((o) => yuzde(o.yuzde)), textposition: 'outside', cliponaxis: false,
+        text: s.map((o) => degisim(o.yuzde)), textposition: 'outside', cliponaxis: false,
+        textfont: { color: s.map((o) => degRenk(o.yuzde)), size: 12 },
         hovertemplate: '%{y}: %{x:+.1f}%<extra></extra>',
       }], DUZEN({
         title: { text: baslik, font: { size: 14 } }, yaxis: { autorange: 'reversed' },
@@ -486,11 +499,34 @@ async function performansAnalizi() {
 }
 
 /* ── Başlangıç ─────────────────────────────────────────────────── */
-async function basla() {
-  try { cfg = await api('/api/ayarlar'); } catch (err) {
-    hataGoster('Sunucuya bağlanılamadı: ' + err.message);
-    return;
+const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
+function iskeletDurum(hata) {
+  const k = $('iskelet');
+  k.querySelector('.iskelet-yuk').hidden = !!hata;
+  k.querySelector('.iskelet-hata').hidden = !hata;
+  if (hata) $('iskelet-mesaj').textContent = hata;
+}
+async function ayarlariYukle() {
+  iskeletDurum(null);
+  for (let deneme = 0; ; deneme++) {
+    try { cfg = await api('/api/ayarlar'); return true; } catch (err) {
+      if (deneme === 0) { await bekle(1500); continue; }   // soğuk başlangıç için sessizce bir kez daha dene
+      iskeletDurum(`Sunucuya ulaşılamadı (${err.message}). İnternet bağlantınızı kontrol edip tekrar deneyin.`);
+      return false;
+    }
   }
+}
+$('tekrar').addEventListener('click', async (ev) => {
+  const dugme = ev.currentTarget;   // await sonrası currentTarget null olur
+  dugme.disabled = true;
+  const ok = await ayarlariYukle();
+  dugme.disabled = false;
+  if (ok) basla();
+});
+
+async function basla() {
+  if (!cfg && !(await ayarlariYukle())) return;
+  document.body.classList.remove('yukleniyor');
 
   const markalar = cfg.markalar.filter((m) => m !== 'nan');
   doldur($('t1-marka'), markalar, 'Toyota'); t1SeriDoldur();
@@ -523,7 +559,9 @@ async function basla() {
   const t5Modeller = () => doldur($('t5-model'), cfg.performans[$('t5-marka').value] || []);
   t5Modeller(); $('t5-marka').addEventListener('change', t5Modeller);
 
-  const hash = location.hash.slice(1);
-  if (['t2', 't3', 't4', 't5'].includes(hash)) sekmeAc(hash);
+  // Yükleme sırasında başka sekmeye geçildiyse ya da adreste #sekme varsa oraya git
+  const hash = location.hash.slice(1), aktif = document.querySelector('.tab[aria-selected="true"]').getAttribute('aria-controls');
+  const hedef = ['t2', 't3', 't4', 't5'].includes(hash) ? hash : aktif;
+  if (hedef !== 't1') sekmeAc(hedef);
 }
 basla();

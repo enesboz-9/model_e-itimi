@@ -173,3 +173,34 @@ footer { text-align: center; color: #374151; font-size: .75rem; margin-top: 40px
 .small a, .msg a { color: var(--indigo); }
 
 .hero-note a { color: var(--indigo); text-decoration: none; } .hero-note a:hover { text-decoration: underline; }
+
+/* Sekme etiketleri */
+.tab .ti { margin-right: .5em; }
+
+/* Açılış iskeleti */
+.iskelet { display: none; }
+body.yukleniyor:not(.t4-acik) .iskelet { display: block; }
+body.yukleniyor:not(.t4-acik) .panel:not(#t4) { display: none; }
+.sk { background: linear-gradient(90deg, rgba(255,255,255,.04) 25%, rgba(255,255,255,.09) 50%, rgba(255,255,255,.04) 75%); background-size: 200% 100%; animation: sk 1.4s linear infinite; border-radius: 10px; }
+.sk-kart { padding: 22px 24px; margin-bottom: 18px; border: 1px solid var(--line); border-radius: 16px; }
+.sk-b { height: 12px; margin-bottom: 18px; } .sk-in { height: 42px; margin-bottom: 14px; }
+@keyframes sk { to { background-position: -200% 0; } }
+@media (prefers-reduced-motion: reduce) { .sk { animation: none; } }
+.hata-satir { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin: 12px 0 0; }
+.tekrar-k { cursor: pointer; color: #fecaca; background: rgba(248,113,113,.12); border: 1px solid rgba(248,113,113,.4); border-radius: 9px; padding: 7px 14px; font-size: .84rem; }
+.tekrar-k:hover { background: rgba(248,113,113,.25); }
+
+/* Mobil: alt gezinme çubuğu */
+@media (max-width: 720px) {
+  .wrap { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
+  .tabs {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; margin: 0; border-radius: 16px 16px 0 0;
+    border-width: 1px 0 0; padding: 6px 6px calc(6px + env(safe-area-inset-bottom));
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; overflow: visible;
+    background: rgba(12,12,20,.92); backdrop-filter: blur(14px);
+  }
+  .tab { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 8px 2px; min-height: 52px; font-size: .68rem; border-radius: 12px; white-space: normal; text-align: center; }
+  .tab .ti { margin: 0; font-size: 1.25rem; line-height: 1.2; }
+  .tab .uzun { display: none; }
+  footer { margin-bottom: 8px; }
+}
