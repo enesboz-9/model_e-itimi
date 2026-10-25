@@ -29,7 +29,7 @@ class TahminIstegi(BaseModel):
     kimden: str = "Sahibinden"
     agir_hasar: str = "Hayır"
     takasa: str = "Hayır"
-    hasar_skoru: int = Field(0, ge=0, le=26)
+    hasar_skoru: int = Field(0, ge=0, le=42)   # parça ağırlıklı skor; bkz. public/index.html
     motor_hacmi_cc: int = Field(0, ge=0, le=7000)   # 0 = belirtilmemiş
     motor_gucu_hp: int = Field(0, ge=0, le=1500)
     cekis: Optional[str] = None
@@ -115,11 +115,22 @@ def tahmin(r: TahminIstegi):
     f["kasa"] = r.kasa if not _bos(r.kasa) else "Sedan"
     f["renk"] = r.renk if not _bos(r.renk) else "Beyaz"
 
-    deger = core.tahmin_yap(f)
+    ham = core.tahmin_yap(f, monoton=True)
+    # Değerleme, aynı marka/model/yıl/km'deki emsal ilanların min–maks aralığı içinde tutulur.
+    # Hasar skoru, km ve diğer etkenler modelin tahminini belirler; aralık yalnızca uç sınırdır.
+    emsal = core.emsal_aralik(r.marka, r.seri, r.yil, r.km)
+    deger, sinir = ham, None
+    alt, ust = ham * 0.90, ham * 1.10
+    if emsal:
+        deger = min(max(ham, emsal["min"]), emsal["max"])
+        sinir = "alt" if ham < emsal["min"] else "ust" if ham > emsal["max"] else None
+        alt, ust = max(deger * 0.90, emsal["min"]), min(deger * 1.10, emsal["max"])
+        emsal["konum"] = (deger - emsal["min"]) / (emsal["max"] - emsal["min"]) if emsal["max"] > emsal["min"] else 0.5
     ana = core.piyasa_analiz(r.marka, None, r.yil - 2, r.yil + 2)
     medyan = ana.get("medyan", deger)
     return {
-        "tahmin": deger, "alt": deger * 0.90, "ust": deger * 1.10,
+        "tahmin": deger, "alt": alt, "ust": ust,
+        "ham_tahmin": ham, "emsal": emsal, "sinirlandi": sinir,
         "luks_uyari": r.marka in core.LUKS_MARKALAR,
         "verdict": core.verdict(deger, medyan),
         "girdi": {k: f[k] for k in ("marka", "seri", "yil", "km", "motor_hacmi_cc", "motor_gucu_hp")},

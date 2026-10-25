@@ -242,6 +242,8 @@ footer { text-align: center; color: var(--mute); font-size: .78rem; margin-top: 
 .tbl th, .tbl td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); color: var(--soft); }
 .tbl th { color: var(--ink); font-weight: 700; font-size: .8rem; }
 .tbl td:last-child, .tbl th:last-child { text-align: right; width: 64px; color: var(--ink); font-weight: 700; }
+.tbl.sayi th:not(:first-child), .tbl.sayi td:not(:first-child) { text-align: right; width: 110px; color: var(--ink); font-weight: 700; }
+.tbl.sayi th:not(:first-child) { font-weight: 700; }
 
 .hata-satir { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin: 12px 0 0; }
 .tekrar-k { cursor: pointer; color: var(--red); background: color-mix(in srgb, var(--red) 10%, transparent); border: 1px solid color-mix(in srgb, var(--red) 40%, transparent); border-radius: 10px; padding: 7px 14px; font-size: .85rem; font-weight: 600; }
@@ -341,3 +343,44 @@ body.yukleniyor .panel, body.yukleniyor .tabs { display: none; }
   .panel, .sk, .yol-serit, .yol .arac, .arac .jant, .arac .isik, .btn-yuk .arac { animation: none !important; }
   .arac .jant { animation: don 1.6s linear infinite !important; }   /* tekerlek yavaş döner: yükleme sürdüğü anlaşılsın */
 }
+
+/* ── Parça parça hasar hesaplayıcı ────────────────────────── */
+.hp-grid { display: grid; grid-template-columns: 200px 1fr; gap: 18px; align-items: start; padding-bottom: 10px; }
+.hp-sema svg { width: 100%; height: auto; display: block; }
+.hp-govde { fill: var(--surface); stroke: var(--line-strong); stroke-width: 2; }
+.hp-teker { fill: var(--lastik); }
+.hp-cam { fill: var(--accent-soft); stroke: var(--line); }
+.parca { cursor: pointer; outline: none; }
+.parca rect { fill: var(--fill); stroke: var(--line-strong); stroke-width: 1.5; transition: fill .15s, stroke .15s; }
+.parca:hover rect { stroke: var(--mute); }
+.parca:focus-visible rect { stroke: var(--accent); stroke-width: 3; }
+.parca[data-d="1"] rect { fill: color-mix(in srgb, var(--yellow) 42%, transparent); stroke: var(--yellow); }
+.parca[data-d="2"] rect { fill: color-mix(in srgb, var(--red) 50%, transparent); stroke: var(--red); }
+.hp-puan { font-size: 13px; font-weight: 800; fill: var(--ink); pointer-events: none; }
+.hp-lejant { display: flex; gap: 14px; flex-wrap: wrap; font-size: .8rem; color: var(--soft); margin-bottom: 10px; }
+.hp-lejant i { display: inline-block; width: 12px; height: 12px; border-radius: 4px; margin-right: 6px; vertical-align: -1px; border: 1.5px solid var(--line-strong); background: var(--fill); }
+.hp-lejant i.d1 { background: color-mix(in srgb, var(--yellow) 42%, transparent); border-color: var(--yellow); }
+.hp-lejant i.d2 { background: color-mix(in srgb, var(--red) 50%, transparent); border-color: var(--red); }
+.hp-liste { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+.chip { font-size: .76rem; padding: 4px 10px; border-radius: 999px; border: 1px solid; color: var(--ink); }
+.chip.d1 { background: color-mix(in srgb, var(--yellow) 14%, transparent); border-color: color-mix(in srgb, var(--yellow) 50%, transparent); }
+.chip.d2 { background: color-mix(in srgb, var(--red) 12%, transparent); border-color: color-mix(in srgb, var(--red) 50%, transparent); }
+.hp-toplam { font-size: .92rem; color: var(--soft); margin: 8px 0 12px; }
+.hp-toplam b { color: var(--ink); font-size: 1.15rem; }
+.hp-sifirla { cursor: pointer; font-size: .82rem; font-weight: 600; color: var(--soft); background: var(--fill); border: 1px solid var(--line-strong); border-radius: 10px; padding: 7px 14px; }
+.hp-sifirla:hover { color: var(--ink); border-color: var(--mute); }
+@media (max-width: 520px) { .hp-grid { grid-template-columns: 1fr; } .hp-sema { max-width: 200px; margin: 0 auto; } }
+
+/* ── Emsal ilan aralığı çubuğu ─────────────────────────────── */
+.aralik { padding: 44px 8px 4px; }
+.aralik-cubuk { position: relative; height: 10px; border-radius: 999px; background: linear-gradient(90deg, color-mix(in srgb, var(--red) 55%, transparent), color-mix(in srgb, var(--yellow) 55%, transparent) 50%, color-mix(in srgb, var(--green) 55%, transparent)); }
+.aralik-isaret { font-style: normal; position: absolute; top: 50%; width: 18px; height: 18px; margin: -9px 0 0 -9px; border-radius: 50%; background: var(--ink); border: 3px solid var(--surface); box-shadow: 0 0 0 2px var(--ink); }
+.aralik-isaret b { position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: .82rem; font-weight: 800; color: var(--accent-ink); background: var(--accent); padding: 3px 10px; border-radius: 8px; font-variant-numeric: tabular-nums; }
+.aralik-isaret b::after { content: ''; position: absolute; left: 50%; top: 100%; margin-left: -5px; border: 5px solid transparent; border-top-color: var(--accent); }
+.aralik-isaret.sol b { left: -9px; transform: none; }
+.aralik-isaret.sol b::after { left: 9px; }
+.aralik-isaret.sag b { left: auto; right: -9px; transform: none; }
+.aralik-isaret.sag b::after { left: auto; right: 9px; margin-left: 0; margin-right: -5px; }
+.aralik-uc { display: flex; justify-content: space-between; margin-top: 14px; font-weight: 700; font-size: .95rem; font-variant-numeric: tabular-nums; }
+.aralik-uc small { display: block; font-weight: 400; color: var(--mute); font-size: .74rem; }
+.aralik-uc span:last-child { text-align: right; }

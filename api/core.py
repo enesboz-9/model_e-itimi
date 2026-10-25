@@ -205,7 +205,12 @@ def _guc_seg(h):  return 0 if h < 90 else 1 if h < 140 else 2 if h < 220 else 3
 def _hacim_seg(c): return 0 if c < 1000 else 1 if c < 1400 else 2 if c < 1800 else 3 if c < 2500 else 4
 
 
-def tahmin_yap(f: dict) -> float:
+def tahmin_yap(f: dict, monoton: bool = False) -> float:
+    """Fiyat tahmini. monoton=True: hasar skoru arttıkça tahmin ARTMAZ.
+
+    Model eski skalada (0–26) eğitildi; yüksek skorlar çok az örnekle temsil edildiği için
+    ağaçlar ~22 üstünde fiyatı tekrar yükseltebiliyor ve 26 üstünde sabitleniyor. Arayüzdeki yeni
+    ağırlıklı skor 42'ye çıktığından, 0..skor aralığındaki tahminlerin en düşüğü alınır."""
     import xgboost as xgb
     arac_yasi = MODEL_YILI - f["yil"]
     hacim, guc = f["motor_hacmi_cc"], f["motor_gucu_hp"]
@@ -241,8 +246,10 @@ def tahmin_yap(f: dict) -> float:
         "marka_popularite": mpop, "km_anomali": 0.0,
     }
     oz = meta()["ozellikler"]
-    x = np.array([[satir.get(k, 0) for k in oz]], dtype=np.float32)
-    ham = float(np.expm1(model().predict(xgb.DMatrix(x, feature_names=oz))[0]))
+    hasarlar = range(0, min(int(f["hasar_skoru"]), 26) + 1) if monoton else [f["hasar_skoru"]]
+    x = np.array([[{**satir, "hasar_skoru": h}.get(k, 0) for k in oz] for h in hasarlar], dtype=np.float32)
+    tahminler = np.expm1(model().predict(xgb.DMatrix(x, feature_names=oz)))
+    ham = float(tahminler.min() if monoton else tahminler[0])
     return ham * enflasyon_katsayisi()
 
 
@@ -317,6 +324,37 @@ def oneri_bul(kasa, fiyat_ust, fiyat_alt, marka_haric=None, n=5, yil_ref=None, m
         })
     sonuc.sort(key=lambda s: abs(s["ort_fiyat"] - hedef))
     return sonuc[:n]
+
+
+def emsal_aralik(marka, seri, yil, km, min_ilan=15):
+    """Aynı marka+model, benzer model yılı ve kilometredeki ilanların fiyat aralığı (min–maks).
+
+    Emsal bulunamazsa pencere kademeli genişler: (yıl ±1, km ±%40) → (±2, %60) → (±3, %100) → (±5, km sınırı yok).
+    Fiyat girişi hatası gibi aşırı uç değerler (Q1−3×IQR altı / Q3+3×IQR üstü) aralığa dahil edilmez.
+    Model yok ya da 5'ten az emsal varsa None döner (aralık sınırı uygulanmaz)."""
+    il = ilanlar()
+    if not seri:
+        return None
+    for adim, (dy, kw) in enumerate(((1, 0.4), (2, 0.6), (3, 1.0), (5, None))):
+        m = il.maske(marka, seri, yil - dy, yil + dy)
+        if kw is not None:
+            pay = km * kw + 15000
+            m &= (il.km >= km - pay) & (il.km <= km + pay)
+        n = int(m.sum())
+        if n >= min_ilan or adim == 3:
+            break
+    if n < 5:
+        return None
+    p = il.fiyat[m]
+    q1, q3 = np.percentile(p, [25, 75])
+    iqr = q3 - q1
+    tut = (p >= q1 - 3 * iqr) & (p <= q3 + 3 * iqr)
+    p, k, y = p[tut], il.km[m][tut], il.yil[m][tut]
+    return {
+        "min": float(p.min()), "max": float(p.max()), "adet": int(p.size),
+        "yil_min": int(y.min()), "yil_max": int(y.max()),
+        "km_min": int(k.min()), "km_max": int(k.max()), "genis": adim > 0,
+    }
 
 
 def verdict(tahmin, medyan):

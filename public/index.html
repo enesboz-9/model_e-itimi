@@ -85,29 +85,56 @@
         </div>
         <label class="f"><span class="l">Araç Durumu</span><select id="t1-durum"></select></label>
         <fieldset class="seg" id="g-agir"><legend>Ağır Hasarlı? <small>(ağır hasar kaydı varsa)</small></legend></fieldset>
-        <label class="f"><span class="l">Hasar Skoru <small>(0 = orijinal, 26 = maksimum)</small></span>
-          <span class="rng"><input type="range" id="t1-hasar" min="0" max="26" step="1" value="0"><output id="t1-hasar-o" for="t1-hasar"></output></span>
+        <label class="f"><span class="l">Hasar Skoru <small>(0 = orijinal, 42 = tüm parçalar değişmiş)</small></span>
+          <span class="rng"><input type="range" id="t1-hasar" min="0" max="42" step="1" value="0"><output id="t1-hasar-o" for="t1-hasar"></output></span>
           <span class="hint" id="t1-hasar-ac" style="display:block;margin:6px 0 0"></span></label>
+        <details class="hp" open>
+          <summary>Parçaları işaretleyerek hesapla</summary>
+          <div class="hp-grid">
+            <div class="hp-sema"><svg id="hp-svg" viewBox="0 0 240 412" role="group" aria-label="Araç parçaları şeması (üstten görünüm, ön taraf yukarıda)"></svg></div>
+            <div class="hp-yan">
+              <p class="hint" style="margin:0 0 10px">Parçaya dokun: bir kez <b>boyalı</b>, iki kez <b>değişen</b>, üç kez tekrar orijinal. Skor otomatik hesaplanır.</p>
+              <div class="hp-lejant"><span><i class="d0"></i>Orijinal</span><span><i class="d1"></i>Boyalı</span><span><i class="d2"></i>Değişen</span></div>
+              <div id="hp-ozet" aria-live="polite"></div>
+              <button type="button" class="hp-sifirla" id="hp-sifirla">Tümünü orijinal yap</button>
+            </div>
+          </div>
+        </details>
         <details>
           <summary>Hasar skoru nasıl hesaplanır? Örnekler</summary>
-          <p class="hint" style="margin-top:0">Skor, ekspertiz raporundaki <b>13 parça</b> üzerinden hesaplanır: her <b>boyalı / lokal boyalı</b> parça <b>1 puan</b>, her <b>değişen</b> parça <b>2 puan</b>. Parçalar: ön/arka tampon, motor kaputu, arka kaput (bagaj), tavan, sağ/sol ön çamurluk, sağ/sol arka çamurluk, sağ/sol ön kapı, sağ/sol arka kapı.</p>
+          <p class="hint" style="margin-top:0">Skor, ekspertiz raporundaki <b>13 parçanın</b> puanlarının toplamıdır. Puan, parçanın büyüklüğüne ve hasarın ne kadar ciddi olduğuna göre değişir: <b>tavan</b> ve <b>motor kaputu</b> değişimi tek başına skoru çok yükseltir, çünkü tavan değişimi aracın takla attığını gösterir.</p>
+          <table class="tbl sayi">
+            <thead><tr><th>Parça</th><th>Boyalı / lokal boyalı</th><th>Değişen</th></tr></thead>
+            <tbody>
+              <tr><td>Tavan</td><td>3</td><td>10</td></tr>
+              <tr><td>Motor kaputu</td><td>2</td><td>6</td></tr>
+              <tr><td>Arka kaput (bagaj)</td><td>2</td><td>4</td></tr>
+              <tr><td>Ön çamurluk (sağ / sol, her biri)</td><td>2</td><td>3</td></tr>
+              <tr><td>Arka çamurluk (sağ / sol, her biri)</td><td>2</td><td>2</td></tr>
+              <tr><td>Kapı (4 kapı, her biri)</td><td>2</td><td>2</td></tr>
+              <tr><td>Ön / arka tampon (her biri)</td><td>1</td><td>2</td></tr>
+            </tbody>
+          </table>
+          <p class="hint" style="margin-top:12px">Büyük parçaların (kaput, bagaj, çamurluk, kapı) boyası <b>2</b>, tamponların boyası <b>1</b> puandır; tavan boyası <b>3</b> puandır. En düşük skor 0 (tamamen orijinal), en yüksek skor 42'dir (13 parçanın hepsi değişmiş).</p>
           <table class="tbl">
             <thead><tr><th>Durum</th><th>Skor</th></tr></thead>
             <tbody>
               <tr><td>Tamamen orijinal, boya/değişen yok</td><td>0</td></tr>
               <tr><td>Sadece ön tampon boyalı</td><td>1</td></tr>
               <tr><td>Ön tampon + arka tampon boyalı</td><td>2</td></tr>
-              <tr><td>Tek kapı değişmiş (başka işlem yok)</td><td>2</td></tr>
-              <tr><td>2 kapı + 1 çamurluk boyalı</td><td>3</td></tr>
-              <tr><td>Motor kaputu değişmiş + 2 çamurluk boyalı (hafif ön darbe)</td><td>4</td></tr>
-              <tr><td>Bir yan tamamen boyalı (2 kapı + 2 çamurluk)</td><td>4</td></tr>
-              <tr><td>2 parça değişmiş + 3 parça boyalı</td><td>7</td></tr>
-              <tr><td>Tavan değişmiş + 4 parça değişmiş + 2 parça boyalı (ciddi hasar geçmişi)</td><td>12</td></tr>
-              <tr><td>13 parçanın hepsi boyalı (komple boya)</td><td>13</td></tr>
-              <tr><td>13 parçanın hepsi değişmiş</td><td>26</td></tr>
+              <tr><td>Tek kapı boyalı</td><td>2</td></tr>
+              <tr><td>Tavan boyalı</td><td>3</td></tr>
+              <tr><td>2 kapı + 1 çamurluk boyalı</td><td>6</td></tr>
+              <tr><td>Bir yan tamamen boyalı (2 kapı + 2 çamurluk)</td><td>8</td></tr>
+              <tr><td>Bagaj kapağı + arka tampon değişmiş (arka darbe)</td><td>6</td></tr>
+              <tr><td>Tavan değişmiş (tek başına; takla ihtimali)</td><td>10</td></tr>
+              <tr><td>Motor kaputu değişmiş + 2 çamurluk boyalı (ön darbe)</td><td>10</td></tr>
+              <tr><td>Tavan + motor kaputu + 2 ön çamurluk değişmiş (ciddi hasar geçmişi)</td><td>22</td></tr>
+              <tr><td>13 parçanın hepsi boyalı (komple boya)</td><td>25</td></tr>
+              <tr><td>13 parçanın hepsi değişmiş</td><td>42</td></tr>
             </tbody>
           </table>
-          <p class="hint">Veri setindeki araçların yaklaşık %35'i 0, dörtte üçü 0–5 arasındadır. "Ağır Hasarlı" bilgisi skordan ayrıdır: ağır hasar kaydı varsa skordan bağımsız olarak "Evet" seçin.</p>
+          <p class="hint">Skor yükseldikçe tahmini değer düşer. "Ağır Hasarlı" bilgisi skordan ayrıdır: ağır hasar kaydı varsa skordan bağımsız olarak "Evet" seçin.</p>
         </details>
       </div>
 
