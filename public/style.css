@@ -167,3 +167,9 @@ footer { text-align: center; color: #374151; font-size: .75rem; margin-top: 40px
 .tbl th { color: var(--indigo); font-weight: 600; font-size: .75rem; letter-spacing: 1px; text-transform: uppercase; }
 .tbl td:last-child, .tbl th:last-child { text-align: right; width: 64px; color: var(--ink); font-weight: 600; }
 .seg legend small { color: var(--mute); }
+
+/* Fiyat değişimi */
+.msg code { background: rgba(0,0,0,.3); padding: 1px 6px; border-radius: 5px; font-size: .8rem; }
+.small a, .msg a { color: var(--indigo); }
+
+.hero-note a { color: var(--indigo); text-decoration: none; } .hero-note a:hover { text-decoration: underline; }

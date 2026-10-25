@@ -103,7 +103,7 @@ function sekmeAc(id) {
   sekmeler.forEach((b) => b.setAttribute('aria-selected', String(b.getAttribute('aria-controls') === id)));
   document.querySelectorAll('.panel').forEach((p) => { p.hidden = p.id !== id; });
   if (id === 't3') analizCalistir();
-  if (id === 't4' && !yuklendi.t4) { yuklendi.t4 = true; modelSekmesi(); }
+  if (id === 't4' && !yuklendi.t4) { yuklendi.t4 = true; fiyatDegisimiSekmesi(); }
   try { history.replaceState(null, '', '#' + id); } catch (_) { /* yoksay */ }
 }
 sekmeler.forEach((b, i) => {
@@ -338,27 +338,124 @@ async function analizCalistir() {
 let analizZaman;
 const analizErtele = () => { clearTimeout(analizZaman); analizZaman = setTimeout(analizCalistir, 350); };
 
-/* ── Sekme 4 — Model bilgisi ───────────────────────────────────── */
-async function modelSekmesi() {
-  const kutu = $('t4-ic'), m = cfg.model;
-  const t = m.test_metrikleri;
-  kutu.innerHTML = `<div class="gcard-title">🤖 Model Performansı</div>
-    ${t ? `<div class="mgrid">
-      <div class="mkart"><div class="mkart-val">${tl(t.mae)}</div><div class="mkart-lbl">MAE (Test)</div></div>
-      <div class="mkart"><div class="mkart-val">${tl(t.rmse)}</div><div class="mkart-lbl">RMSE (Test)</div></div>
-      <div class="mkart"><div class="mkart-val">%${sayi(t.mape, 1)}</div><div class="mkart-lbl">MAPE (Test)</div></div>
-      <div class="mkart"><div class="mkart-val">${sayi(t.r2, 4)}</div><div class="mkart-lbl">R² (Test)</div></div></div>` : ''}
-    <div id="g-imp" class="chart"></div>
-    ${m.en_iyi_parametreler ? `<div class="gcard-title" style="margin-top:16px">⚙️ Hiperparametreler</div><pre>${e(JSON.stringify(m.en_iyi_parametreler, null, 2))}</pre>` : ''}`;
-  if (!m.ozellik_onemi.length) return;
+/* ── Sekme 4 — Fiyat değişimi ─────────────────────────────────── */
+const AY_KISA = ['', 'Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara'];
+const ayAd = (k) => { const [y, a] = k.split('-').map(Number); return `${AY_KISA[a]} ${String(y).slice(2)}`; };
+const yuzde = (x, d = 1) => `${x < 0 ? '−' : x > 0 ? '+' : ''}%${sayi(Math.abs(x), d)}`;
+const HAT = { arti: '#34d399', eksi: '#f87171', ana: '#6366f1', ikinci: '#f59e0b' };
+const kaynakLink = (u, ad) => `<a href="${e(u)}" target="_blank" rel="noopener noreferrer">${e(ad)}</a>`;
+let fiyatVeri = null;
+
+async function fiyatDegisimiSekmesi() {
+  const kutu = $('t4-ic');
   try {
-    const P = await plotly();
-    const d = m.ozellik_onemi;
-    P.newPlot('g-imp', [{
-      type: 'bar', orientation: 'h', x: d.map((x) => x.deger), y: d.map((x) => x.ad),
-      marker: { color: d.map((x) => x.deger), colorscale: [[0, '#312e81'], [0.5, '#6366f1'], [1, '#34d399']] },
-    }], DUZEN({ title: { text: 'En Önemli 15 Özellik', font: { size: 14 } }, yaxis: { autorange: 'reversed' }, xaxis: { title: 'Önem Skoru' }, margin: { t: 44, b: 40, l: 140, r: 10 } }), CIZ);
-  } catch (err) { $('g-imp').innerHTML = `<div class="msg err">⚠️ ${e(err.message)}</div>`; }
+    fiyatVeri ??= await fetch('/veri/fiyat_degisimi.json').then((r) => { if (!r.ok) throw new Error('Fiyat değişimi verisi yüklenemedi'); return r.json(); });
+    const [d, P] = [fiyatVeri, await plotly()];
+    const v = d.vavaai, fp = d.fiyatplus, en = d.enflasyon, bt = d.betam_haziran_2026, ks = d.kasa_satis;
+    const yil = v.yillik_yuzde[d.son_ay], reel = ((1 + yil / 100) / (1 + en.tufe_yillik_eylul_2026 / 100) - 1) * 100;
+    const kart = (val, lbl, renk) => `<div class="mkart"><div class="mkart-val" ${renk ? `style="color:${renk}"` : ''}>${val}</div><div class="mkart-lbl">${lbl}</div></div>`;
+    const seri = fiyatSeriBolumu(d);
+
+    kutu.innerHTML = `
+      <div class="gcard"><div class="gcard-title">📈 Türkiye Araç Piyasası — Son 12 Ay <small>(${ayAd(d.son_ay)} itibarıyla)</small></div>
+        <div class="mgrid">
+          ${kart(yuzde(yil), 'İkinci el araç fiyatı (12 ay, TL)', yil >= 0 ? HAT.arti : HAT.eksi)}
+          ${kart(yuzde(en.tufe_yillik_eylul_2026), 'TÜFE (12 ay)')}
+          ${kart(yuzde(reel), 'Reel değişim (araç / TÜFE)', reel >= 0 ? HAT.arti : HAT.eksi)}
+          ${kart(yuzde(en.usd_12ay), 'USD/TL (12 ay)')}
+          ${kart(yuzde(en.eur_12ay), 'EUR/TL (12 ay)')}
+        </div>
+        <p class="hint" style="margin:0">ⓘ İkinci el fiyatlar TL bazında enflasyonun belirgin şekilde altında arttı; yani araçlar reel olarak ucuzladı. Reel değişim, 12 aylık nominal artış ile TÜFE'den hesaplanmıştır.</p>
+      </div>
+
+      <div class="grid2">
+        <div class="gcard"><div id="g-kum" class="chart"></div></div>
+        <div class="gcard"><div id="g-ay" class="chart"></div></div>
+      </div>
+
+      <div class="gcard-title" style="margin:8px 0 14px">⛽ Yakıt Tipine Göre</div>
+      <div class="grid2">
+        <div class="gcard"><div id="g-yakit12" class="chart"></div></div>
+        <div class="gcard"><div id="g-yakit9" class="chart"></div></div>
+      </div>
+
+      <div class="gcard-title" style="margin:8px 0 14px">🚘 Segment ve Fiyat Bandına Göre</div>
+      <div class="grid2">
+        <div class="gcard"><div id="g-seg" class="chart"></div></div>
+        <div class="gcard"><div id="g-bant" class="chart"></div></div>
+      </div>
+
+      <div class="gcard-title" style="margin:8px 0 14px">🚙 Kasa Tipine Göre (SUV · Sedan · Hatchback)</div>
+      ${seri.html}
+      <div class="gcard"><div id="g-kasa" class="chart" style="min-height:280px"></div>
+        <p class="hint" style="margin:0">ⓘ Bu grafik <b>fiyat değil, satış adedi</b> değişimidir (${e(ks.ad)}). SUV'un ikinci eldeki payı %${sayi(ks.suv_payi.onceki, 1)} → %${sayi(ks.suv_payi.simdi, 1)}.</p></div>
+
+      <div class="gcard"><div class="gcard-title">ⓘ Nasıl Okunmalı?</div>
+        <div class="small" style="margin:0;line-height:1.7">
+          • <b>VavaAI</b> ve <b>FiyatPlus+</b> kalite-düzeltmeli endekslerdir (aynı araç kombinasyonunun fiyat hareketi); ikisi farklı yöntemle hesaplandığı için aynı ayda farklı değer verebilir.<br>
+          • <b>BETAM–Sahibinden</b> ortalama ilan fiyatıdır; araç karması (daha pahalı/ucuz araçların payı) değiştiğinde endekslerden daha yüksek çıkabilir.<br>
+          • Grafikteki kesikli çizgi, ilgili dönemin TÜFE yıllık enflasyonudur.<br>
+          • Kaynaklar: ${kaynakLink(v.url, 'VavaCars')} · ${kaynakLink(fp.url, 'FiyatPlus+ Endeksi (fiyatplus.com/endeks)')} · ${kaynakLink(bt.url, 'BETAM–Sahibinden (KARAR)')} · ${kaynakLink(ks.url, 'Ticaret Gazetesi')} · TÜİK.
+          Veri tarihi: ${e(d.guncelleme)}. Bilgilendirme amaçlıdır.
+        </div></div>`;
+
+    // Kümülatif endeks (Aralık 2025 = 100)
+    const aylar = Object.keys(v.aylik_yuzde), x = [ayAd(d.baz_ay), ...aylar.map(ayAd)];
+    let k = 100; const vavaKum = [100, ...aylar.map((a) => (k *= 1 + v.aylik_yuzde[a] / 100))];
+    const fpA = Object.keys(fp.endeks), fpTaban = fp.endeks[d.baz_ay];
+    const fpKum = fpA.map((a) => fp.endeks[a] / fpTaban * 100);
+    const eksenBas = { t: 44, b: 40, l: 50, r: 10 };
+    P.newPlot('g-kum', [
+      { type: 'scatter', mode: 'lines+markers', name: 'VavaAI', x, y: vavaKum, line: { color: HAT.ana, width: 3 }, hovertemplate: '%{x}: %{y:.1f}<extra>VavaAI</extra>' },
+      { type: 'scatter', mode: 'lines+markers', name: 'FiyatPlus+', x: fpA.map(ayAd), y: fpKum, line: { color: HAT.ikinci, width: 3 }, hovertemplate: '%{x}: %{y:.1f}<extra>FiyatPlus+</extra>' },
+    ], DUZEN({ title: { text: `Fiyat Endeksi (${ayAd(d.baz_ay)} = 100)`, font: { size: 14 } }, legend: { orientation: 'h', y: -0.18 }, margin: eksenBas, xaxis: { showgrid: false }, yaxis: { gridcolor: 'rgba(255,255,255,.06)' } }), CIZ);
+
+    P.newPlot('g-ay', [
+      { type: 'bar', name: 'VavaAI', x: aylar.map(ayAd), y: aylar.map((a) => v.aylik_yuzde[a]), marker: { color: HAT.ana }, hovertemplate: '%{x}: %{y:+.2f}%<extra>VavaAI</extra>' },
+      { type: 'bar', name: 'FiyatPlus+', x: fpA.slice(1).map(ayAd), y: fpA.slice(1).map((a, i) => +((fp.endeks[a] / fp.endeks[fpA[i]] - 1) * 100).toFixed(2)), marker: { color: HAT.ikinci }, hovertemplate: '%{x}: %{y:+.2f}%<extra>FiyatPlus+</extra>' },
+    ], DUZEN({ title: { text: 'Aylık Değişim (%)', font: { size: 14 } }, barmode: 'group', legend: { orientation: 'h', y: -0.18 }, margin: eksenBas, yaxis: { gridcolor: 'rgba(255,255,255,.06)', zeroline: true, zerolinecolor: 'rgba(255,255,255,.25)' } }), CIZ);
+
+    const cubuk = (id, baslik, liste, tufe, ek = {}) => {
+      const s = [...liste].sort((a, b) => b.yuzde - a.yuzde);
+      P.newPlot(id, [{
+        type: 'bar', orientation: 'h', y: s.map((o) => o.ad), x: s.map((o) => o.yuzde),
+        marker: { color: s.map((o) => (o.yuzde >= 0 ? HAT.ana : HAT.eksi)) },
+        text: s.map((o) => yuzde(o.yuzde)), textposition: 'outside', cliponaxis: false,
+        hovertemplate: '%{y}: %{x:+.1f}%<extra></extra>',
+      }], DUZEN({
+        title: { text: baslik, font: { size: 14 } }, yaxis: { autorange: 'reversed' },
+        xaxis: { gridcolor: 'rgba(255,255,255,.06)', ticksuffix: '%', range: [Math.min(0, ...s.map((o) => o.yuzde)) - 3, Math.max(tufe ?? 0, ...s.map((o) => o.yuzde)) * 1.18] },
+        margin: { t: 44, b: 30, l: 110, r: 30 },
+        shapes: tufe == null ? [] : [{ type: 'line', x0: tufe, x1: tufe, yref: 'paper', y0: 0, y1: 1, line: { color: '#fbbf24', dash: 'dash', width: 1.5 } }],
+        annotations: tufe == null ? [] : [{ x: tufe, yref: 'paper', y: 1.02, text: `TÜFE %${sayi(tufe, 1)}`, showarrow: false, font: { color: '#fbbf24', size: 11 }, yanchor: 'bottom' }],
+        ...ek,
+      }), CIZ);
+    };
+    cubuk('g-yakit12', 'Son 12 Ay · Ort. İlan Fiyatı (Haz 2026)', bt.yakit, en.tufe_yillik_haziran_2026);
+    cubuk('g-yakit9', 'Ocak → Eylül 2026 · Endeks', fp.yakit_ocak_eylul, null);
+    cubuk('g-seg', 'Son 12 Ay · Segment (Haz 2026)', bt.segment, en.tufe_yillik_haziran_2026);
+    cubuk('g-bant', 'Ocak → Eylül 2026 · Fiyat Bandı', fp.fiyat_bandi_ocak_eylul, null);
+    cubuk('g-kasa', 'Satış Adedi Değişimi · Oca–Tem 2026', ks.degisim, null);
+    seri.ciz(P);
+  } catch (err) { kutu.innerHTML = `<div class="msg err">⚠️ ${e(err.message)}</div>`; }
+}
+
+/* Kasa tipi / yakıt aylık fiyat serileri (scripts/fiyatplus_guncelle.py doldurur) */
+function fiyatSeriBolumu(d) {
+  const s = d.fiyatplus_seri || {}, gruplar = [['kasa', 'g-kasa-seri', 'Kasa Tipi'], ['yakit', 'g-yakit-seri', 'Yakıt Tipi']].filter(([k]) => (s[k] || []).length);
+  if (!gruplar.length) {
+    return {
+      html: `<div class="msg info">ℹ️ SUV / sedan / hatchback ve elektrikli için aylık <b>fiyat</b> serisi henüz yüklü değil. <code>python scripts/fiyatplus_guncelle.py</code> komutu FiyatPlus+ API'sinden bu serileri çekip buraya ekler.</div>`,
+      ciz: () => {},
+    };
+  }
+  return {
+    html: `<div class="grid2">${gruplar.map(([, id]) => `<div class="gcard"><div id="${id}" class="chart"></div></div>`).join('')}</div>`,
+    ciz: (P) => gruplar.forEach(([k, id, ad]) => P.newPlot(id, s[k].map((o) => ({
+      type: 'scatter', mode: 'lines+markers', name: o.ad, x: o.noktalar.map((n) => ayAd(n.ay)), y: o.noktalar.map((n) => n.endeks),
+      hovertemplate: `%{x}: %{y:.1f}<extra>${e(o.ad)}</extra>`,
+    })), DUZEN({ title: { text: `${ad} Fiyat Endeksi (${e(s.baz || 'Ocak 2026 = 100')})`, font: { size: 14 } }, legend: { orientation: 'h', y: -0.25 }, margin: { t: 44, b: 40, l: 50, r: 10 }, yaxis: { gridcolor: 'rgba(255,255,255,.06)' } }), CIZ)),
+  };
 }
 
 /* ── Sekme 5 — Performans analizi ──────────────────────────────── */
@@ -391,11 +488,9 @@ async function performansAnalizi() {
 /* ── Başlangıç ─────────────────────────────────────────────────── */
 async function basla() {
   try { cfg = await api('/api/ayarlar'); } catch (err) {
-    $('hero-note').textContent = '';
     hataGoster('Sunucuya bağlanılamadı: ' + err.message);
     return;
   }
-  $('hero-note').textContent = `📊 Veri Tabanı: Mart 2026 (arabam.com) · Fiyatlar VavaAI Fiyat Endeksi ile ${cfg.ay_etiketi} seviyesine güncellendi (x${cfg.katsayi.toFixed(4)})`;
 
   const markalar = cfg.markalar.filter((m) => m !== 'nan');
   doldur($('t1-marka'), markalar, 'Toyota'); t1SeriDoldur();

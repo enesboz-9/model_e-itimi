@@ -22,3 +22,6 @@ Streamlit uygulaması Vercel'de çalışmadığı için (sürekli açık WebSock
 `egitim/` içinde yeniden eğitin → `pip install pandas scikit-learn` → `python scripts/build_assets.py` → commit/push.
 Aylık endeks: `data/endeks.json` içine yeni ay satırı ekleyin (yoksa son 3 ayın ortalaması kullanılır).
 Eski/yeni sonuç karşılaştırması: `python scripts/test_parity.py`.
+
+## Fiyat Değişimi sekmesi
+Veri: `public/veri/fiyat_degisimi.json` (kaynak ve tarih alanlarıyla). Yeni ay yayınlanınca `vavaai.aylik_yuzde`, `fiyatplus.endeks`, `son_ay` güncellenir. SUV/sedan/elektrikli aylık fiyat serileri için: `python scripts/fiyatplus_guncelle.py` (FiyatPlus+ API, atıf gerekir).
