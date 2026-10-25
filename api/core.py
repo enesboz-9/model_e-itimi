@@ -493,6 +493,36 @@ def motor_bilgisi_bul(marka, hacim_cc, guc_hp):
 
 
 # ── Fotoğraf analizi (Groq) ──────────────────────────────────────────
+# Görsel destekli modeller sırayla denenir. llama-4-scout Groq tarafından 17.07.2026'da kaldırıldı;
+# model değişirse Vercel'de GROQ_VISION_MODEL ortam değişkeniyle kod değiştirmeden güncellenebilir.
+FOTO_MODELLERI = ("qwen/qwen3.6-27b", "qwen/qwen3.8-27b")
+
+
+def _tam_sayi(v) -> int:
+    """'2017', 2017.0, '2017-2019' gibi değerlerden ilk tam sayıyı alır; olmazsa 0."""
+    import re
+    if isinstance(v, (int, float)):
+        return int(v)
+    m = re.search(r"\d+", str(v or "").replace(".", "").replace(",", ""))
+    return int(m.group()) if m else 0
+
+
+def _json_ayikla(metin: str) -> dict:
+    """Model çıktısından JSON nesnesini çıkarır (düşünme etiketleri / ```json çitleri / ek metin olsa da)."""
+    import re
+    t = re.sub(r"<think>.*?</think>", "", metin or "", flags=re.S)
+    t = t.replace("```json", "").replace("```", "")
+    bas = t.find("{")
+    if bas < 0:
+        raise ValueError("Model JSON döndürmedi")
+    derin = 0
+    for k in range(bas, len(t)):
+        derin += (t[k] == "{") - (t[k] == "}")
+        if derin == 0:
+            return json.loads(t[bas:k + 1])
+    raise ValueError("Model JSON'u yarım kaldı")
+
+
 def fotograf_analiz(img_bytes: bytes, mime: str = "image/jpeg") -> dict:
     import httpx
     yedek = {"kasa_tipi": "Bilinmiyor", "renk": "Diğer", "marka": "", "seri": "",
@@ -506,58 +536,69 @@ def fotograf_analiz(img_bytes: bytes, mime: str = "image/jpeg") -> dict:
     prompt = f"""Bu araç fotoğrafını analiz et. SADECE JSON döndür, başka hiçbir şey yazma.
 
 ÖNEMLİ KURALLAR:
-1. Bu aracın kasasının/neslinin (generation) piyasaya sürüldüğü YIL ARALIGINI belirle (örn: 2015-2019).
-2. "yil" alanına bu aralığın ORTASI olan yılı yaz (örn: 2017).
-3. "yil_aralik_baslangic" ve "yil_aralik_bitis" alanlarına kasa üretim yıllarını yaz.
-4. "arac_yasi" = {guncel_yil} - yil hesapla.
-5. Eğer arac_yasi <= 10 ise: km = yil × (15000 ile 20000 arasında rastgele bir tam sayı) — ancak yıl bazında değil, arac_yasi bazında hesapla: km = arac_yasi × (15000..20000 arası).
-   Eğer arac_yasi > 10 ise: km = arac_yasi × (10000 ile 15000 arasında rastgele bir tam sayı).
-6. "km" alanına bu hesaplanan değeri yaz (tam sayı).
+1. Aracı mutlaka tanımaya çalış: görselde tek bir araç görünüyorsa marka ve modeli en iyi tahminle yaz. "marka" alanını yalnızca fotoğrafta hiç araç yoksa boş bırak.
+2. Bu aracın kasasının/neslinin (generation) piyasaya sürüldüğü YIL ARALIĞINI belirle (örn: 2015-2019).
+3. "yil" alanına bu aralığın ORTASI olan yılı yaz (örn: 2017).
+4. "yil_aralik_baslangic" ve "yil_aralik_bitis" alanlarına kasa üretim yıllarını yaz.
+5. arac_yasi = {guncel_yil} - yil. arac_yasi <= 10 ise km = arac_yasi × 17500, değilse km = arac_yasi × 12500 (tam sayı).
 
 JSON formatı:
 {{
-  "marka": "araç markası (örn: Toyota, BMW, Mercedes - Benz — tam liste: {', '.join(marka_listesi[:30])} vb.)",
+  "marka": "araç markası (örn: Toyota, BMW, Mercedes - Benz — bilinen markalar: {', '.join(marka_listesi[:40])} vb.)",
   "seri": "model/seri adı (örn: Corolla, CLA, Golf)",
   "yil_aralik_baslangic": kasa üretim başlangıç yılı (tam sayı),
   "yil_aralik_bitis": kasa üretim bitiş yılı (tam sayı),
   "yil": aralığın ortası (tam sayı),
-  "km": tahmini kilometre (tam sayı, yukarıdaki formülle hesapla),
+  "km": tahmini kilometre (tam sayı),
   "kasa_tipi": "Sedan|Hatchback/5|Hatchback/3|SUV|Coupe|Station wagon|MPV|Cabrio|Pick-up|Bilinmiyor",
   "renk": "Beyaz|Siyah|Gri|Kırmızı|Mavi|Lacivert|Kahverengi|Bordo|Yeşil|Sarı|Turuncu|Mor|Bej|Şampanya|Füme|Diğer",
   "aciklama": "kısa Türkçe açıklama (kasa dönemi ve km tahmini dahil)"
 }}"""
-    try:
-        r = httpx.post(
-            "https://api.groq.com/openai/v1/chat/completions",
-            headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
-            json={
-                "model": "meta-llama/llama-4-scout-17b-16e-instruct",
-                "max_tokens": 500,
-                "messages": [{"role": "user", "content": [
-                    {"type": "image_url", "image_url": {"url": f"data:{mime};base64,{b64}"}},
-                    {"type": "text", "text": prompt},
-                ]}],
-            },
-            timeout=25,
-        )
-        t = r.json()["choices"][0]["message"]["content"].strip().replace("```json", "").replace("```", "")
-        res = json.loads(t)
+    modeller = [m for m in (os.environ.get("GROQ_VISION_MODEL", "").strip(), *FOTO_MODELLERI) if m]
+    modeller = list(dict.fromkeys(modeller))
+    son_hata = "bilinmeyen hata"
+    res = None
+    for model_adi in modeller:
+        try:
+            r = httpx.post(
+                "https://api.groq.com/openai/v1/chat/completions",
+                headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
+                json={
+                    "model": model_adi,
+                    "temperature": 0.2,
+                    "max_tokens": 4000,   # düşünen (reasoning) modeller cevaptan önce token harcar
+                    "messages": [{"role": "user", "content": [
+                        {"type": "image_url", "image_url": {"url": f"data:{mime};base64,{b64}"}},
+                        {"type": "text", "text": prompt},
+                    ]}],
+                },
+                timeout=50,
+            )
+            veri = r.json()
+            if r.status_code != 200 or "choices" not in veri:
+                ayrinti = (veri.get("error") or {}).get("message") if isinstance(veri, dict) else None
+                raise RuntimeError(f"Groq hatası {r.status_code} ({model_adi}): {ayrinti or r.text[:200]}")
+            res = _json_ayikla(veri["choices"][0]["message"].get("content"))
+            break
+        except Exception as e:  # bu model olmadı → sıradakini dene
+            son_hata = str(e)
+    if res is None:
+        return {**yedek, "aciklama": son_hata}
 
-        yil = int(res.get("yil", 0) or 0)
+    import re
+    sayilar = [int(x) for x in re.findall(r"\d{4}", str(res.get("yil") or ""))]
+    yil = (sayilar[0] + sayilar[-1]) // 2 if len(sayilar) >= 2 else _tam_sayi(res.get("yil"))   # "2012-2018" → 2015
+    if not (1985 <= yil <= guncel_yil):
+        bas, bit = _tam_sayi(res.get("yil_aralik_baslangic")), _tam_sayi(res.get("yil_aralik_bitis"))
+        yil = (bas + bit) // 2 if bas > 0 and bit > 0 else 0
         if not (1985 <= yil <= guncel_yil):
-            bas = int(res.get("yil_aralik_baslangic", 0) or 0)
-            bit = int(res.get("yil_aralik_bitis", 0) or 0)
-            yil = (bas + bit) // 2 if bas > 0 and bit > 0 else 0
-        arac_yasi = guncel_yil - yil if yil > 0 else 0
+            yil = 0
+    arac_yasi = guncel_yil - yil if yil > 0 else 0
 
-        km = int(res.get("km", 0) or 0)
-        if km <= 0 or km > 1_000_000:
-            if arac_yasi > 0:
-                km = arac_yasi * (random.randint(15000, 20000) if arac_yasi <= 10
-                                  else random.randint(10000, 15000))
-            else:
-                km = 0
-        res["yil"], res["km"] = yil, km
-        return res
-    except Exception as e:  # ağ/JSON hatası → kullanıcıya açıklama dön
-        return {**yedek, "aciklama": str(e)}
+    km = _tam_sayi(res.get("km"))
+    if km <= 0 or km > 1_000_000:
+        km = arac_yasi * (17500 if arac_yasi <= 10 else 12500) if arac_yasi > 0 else 0
+    res["marka"] = str(res.get("marka") or "").strip()
+    res["seri"] = str(res.get("seri") or "").strip()
+    res["yil"], res["km"] = yil, km
+    return res
