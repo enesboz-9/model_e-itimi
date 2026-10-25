@@ -88,7 +88,10 @@ for (m, mdl), v in po.items():
 yaz("performans.json", perf)
 
 # 6) İlan veri seti (arabam_temiz.csv) → sıkıştırılmış sütunlu dizi
-df = pd.read_csv(EGITIM / "arabam_temiz.csv", low_memory=False)
+CSV = EGITIM / "arabam_temiz.csv"
+if not CSV.exists():
+    CSV = KOK / "arabam_temiz.csv"
+df = pd.read_csv(CSV, low_memory=False)
 df = df.dropna(subset=["fiyat"])
 df["fiyat"] = pd.to_numeric(df["fiyat"], errors="coerce")
 df = df[df["fiyat"] > 0].copy()
@@ -116,12 +119,27 @@ arr = {
     "yakit": kodla("yakit", "yakit_tipi_enc", K.YAKIT_ENC, "Bilinmiyor"),
     "vites": kodla("vites", "vites_tipi_enc", K.VITES_ENC, "Bilinmiyor"),
     "kasa": kodla("kasa", "kasa_tipi_enc", K.KASA_ENC, "Bilinmiyor"),
+    "cekis": kodla("cekis", "cekis_enc", K.CEKIS_ENC, "Önden Çekiş"),
+    "hacim": pd.to_numeric(df["motor_hacmi_cc"], errors="coerce").fillna(0).clip(0, 30000).astype(np.int16).values,
+    "guc": pd.to_numeric(df["motor_gucu_hp"], errors="coerce").fillna(0).clip(0, 30000).astype(np.int16).values,
     "yil": yil.values,
     "km": km.astype(np.float32).values,
     "fiyat": df["fiyat"].astype(np.float32).values,   # taban ay (Mart 2026) fiyatı
 }
 np.savez_compressed(CIKTI / "ilanlar.npz", **arr)
 yaz("ilan_tablolari.json", tablolar)
+
+# 7) km_anomali referansı — tahmin sırasında eğitimdeki ile AYNI değer hesaplanabilsin diye.
+#    (Eğitimde: (yillik_km - yaşa göre medyan yıllık km) / genel std, [-3, 3] aralığına kırpılır.)
+if "yillik_km" in df.columns:
+    yk = pd.to_numeric(df["yillik_km"], errors="coerce")
+    yas_i = pd.to_numeric(df["arac_yasi"], errors="coerce")
+    ok = yk.notna() & yas_i.notna()
+    meta.setdefault("fe_sabitler", {})["yas_km_medyan"] = {
+        str(int(a)): float(v) for a, v in yk[ok].groupby(yas_i[ok].astype(int)).median().items()}
+    meta["fe_sabitler"]["yillik_km_std"] = float(yk[ok].std())
+    yaz("meta.json", meta)
+    print("km_anomali referansı meta.json'a eklendi")
 print(f"ilanlar.npz  ({len(df):,} ilan)")
 
 for p in sorted(CIKTI.iterdir()):

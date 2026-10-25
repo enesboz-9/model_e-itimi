@@ -25,3 +25,10 @@ Eski/yeni sonuç karşılaştırması: `python scripts/test_parity.py`.
 
 ## Fiyat Değişimi sekmesi
 Veri: `public/veri/fiyat_degisimi.json` (kaynak ve tarih alanlarıyla). Yeni ay yayınlanınca `vavaai.aylik_yuzde`, `fiyatplus.endeks`, `son_ay` güncellenir. SUV/sedan/elektrikli aylık fiyat serileri için: `python scripts/fiyatplus_guncelle.py` (FiyatPlus+ API, atıf gerekir).
+
+## Değerleme mantığı düzeltmeleri (fiyatlar çok düşük çıkıyordu)
+- **Boş teknik alanlar**: eskiden sabit değerle doluyordu (1600 cc / 110 HP / **Dizel** / Sedan). Artık `core.tamamla()` aynı marka+model ve yakın model yılı ilanlarında en yaygın gerçek donanımları kullanır (en çok 6 donanımın ilan sayısıyla ağırlıklı ortalaması). Sonuç ekranında hangi donanımın esas alındığı yazar.
+- **`km_anomali`**: eğitimde hesaplanıyordu ama tahminde hep 0 veriliyordu (düşük km'li araç "ortalama" görünüyordu). Artık eğitimdeki formülle hesaplanır; referans değerler `meta.json → fe_sabitler` içindedir (`scripts/build_assets.py` üretir).
+- **Emsal alt sınırı** yalnızca hasarsız araçlara uygulanır; hasar skoru 12 ve 30 artık aynı taban fiyata kilitlenmez.
+- **"Piyasadan ucuz/pahalı"** kıyası tüm markanın medyanına değil, aynı model/yıl/km emsallerinin medyanına göre yapılır.
+- Veri dosyaları değiştiği için `python scripts/build_assets.py` çalıştırılmalıdır (`data/ilanlar.npz` artık motor hacmi/gücü/çekiş de içerir).

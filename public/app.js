@@ -105,6 +105,15 @@ function motorKart(m, marka, kisa) {
   </div>`;
 }
 
+/* Boş bırakılan teknik alanlar için hangi donanımın esas alındığını gösterir. */
+function varsayimNotu(r) {
+  const v = r.varsayim;
+  if (!v) return '';
+  const parcalar = [['motor', v.motor], ['yakıt', v.yakit], ['vites', v.vites], ['kasa', v.kasa]].filter(([, d]) => d).map(([ad, d]) => `${ad} <b>${e(d)}</b>`);
+  if (!parcalar.length) return '';
+  return `<p class="small" style="margin:0 0 16px">ⓘ Boş bıraktığınız teknik alanlar için ${e(r.girdi.marka)} ${e(r.girdi.seri)} ilanlarında en yaygın donanımlar esas alındı: ${parcalar.join(' · ')}. Daha kesin sonuç için “Teknik &amp; Ek Bilgiler” bölümünü doldurun.</p>`;
+}
+
 function emsalKarti(r) {
   const s = r.emsal;
   if (!s) return '';
@@ -112,11 +121,13 @@ function emsalKarti(r) {
   const aralikYil = s.yil_min === s.yil_max ? `${s.yil_min}` : `${s.yil_min}–${s.yil_max}`;
   const not = r.sinirlandi
     ? `<div class="msg warn">Modelin ham tahmini (${tl(r.ham_tahmin)}) emsal ilanların ${r.sinirlandi === 'alt' ? 'en düşük' : 'en yüksek'} fiyatının ${r.sinirlandi === 'alt' ? 'altında' : 'üstünde'} kaldığı için değer aralığın ${r.sinirlandi === 'alt' ? 'alt' : 'üst'} sınırına çekildi.</div>` : '';
+  const altinda = r.emsal_alti && !r.sinirlandi
+    ? '<div class="msg warn">Hasar kaydı nedeniyle değerleme, emsal ilanların (çoğu hasarsız) en düşük fiyatının altında kalıyor.</div>' : '';
   return `<div class="gcard"><div class="gcard-title">Emsal ilan aralığı <small>(${e(r.girdi.marka)} ${e(r.girdi.seri)} · ${aralikYil} model · ${sayi(s.km_min)}–${sayi(s.km_max)} km · ${sayi(s.adet)} ilan)</small></div>
     <div class="aralik"><div class="aralik-cubuk"><i class="aralik-isaret ${yuzde < 15 ? 'sol' : yuzde > 85 ? 'sag' : ''}" style="left:${yuzde}%"><b>${tl(r.tahmin)}</b></i></div>
       <div class="aralik-uc"><span><small>En düşük ilan</small>${tl(s.min)}</span><span><small>En yüksek ilan</small>${tl(s.max)}</span></div></div>
-    ${not}
-    <p class="small" style="margin:12px 0 0">Değerleme bu aralığın içinde kalır. Aralıktaki konumu hasar skoru, kilometre, yıl ve diğer bilgiler belirler.${s.genis ? ' Yeterli emsal olmadığı için yıl ve km penceresi genişletildi.' : ''}</p></div>`;
+    ${not}${altinda}
+    <p class="small" style="margin:12px 0 0">Hasarsız araçlarda değerleme bu aralığın içinde kalır. Aralıktaki konumu hasar skoru, kilometre, yıl ve diğer bilgiler belirler.${s.genis ? ' Yeterli emsal olmadığı için yıl ve km penceresi genişletildi.' : ''}</p></div>`;
 }
 
 function ozetSatiri(a) {
@@ -168,33 +179,44 @@ function seriEsles(ai, liste) {
 
 /* ── Sekme 1 — Değerleme ───────────────────────────────────────── */
 /* ── Parça parça hasar hesaplayıcı ─────────────────────────────────
-   Her parça: [kimlik, ad, boyalı puanı, değişen puanı, x, y, genişlik, yükseklik] (üstten görünüm).
+   Her parça: [kimlik, ad, boyalı puanı, değişen puanı, x, y, genişlik, yükseklik, şemada yazan satırlar] (üstten görünüm, ön yukarıda).
    Puanlar index.html'deki "Hasar skoru nasıl hesaplanır?" tablosuyla aynıdır; değiştirirken ikisini birlikte güncelleyin. */
 const PARCALAR = [
-  ['on-tampon', 'Ön tampon', 1, 2, 74, 8, 92, 26],
-  ['kaput', 'Motor kaputu', 2, 6, 68, 38, 104, 84],
-  ['sol-on-camurluk', 'Sol ön çamurluk', 2, 3, 34, 40, 30, 84],
-  ['sag-on-camurluk', 'Sağ ön çamurluk', 2, 3, 176, 40, 30, 84],
-  ['sol-on-kapi', 'Sol ön kapı', 2, 2, 34, 130, 30, 62],
-  ['sag-on-kapi', 'Sağ ön kapı', 2, 2, 176, 130, 30, 62],
-  ['tavan', 'Tavan', 3, 10, 72, 148, 96, 116],
-  ['sol-arka-kapi', 'Sol arka kapı', 2, 2, 34, 196, 30, 62],
-  ['sag-arka-kapi', 'Sağ arka kapı', 2, 2, 176, 196, 30, 62],
-  ['sol-arka-camurluk', 'Sol arka çamurluk', 2, 2, 34, 262, 30, 70],
-  ['sag-arka-camurluk', 'Sağ arka çamurluk', 2, 2, 176, 262, 30, 70],
-  ['bagaj', 'Arka kaput (bagaj)', 2, 4, 68, 296, 104, 78],
-  ['arka-tampon', 'Arka tampon', 1, 2, 74, 378, 92, 26],
+  ['on-tampon', 'Ön tampon', 1, 2, 84, 36, 132, 28, ['Ön tampon']],
+  ['kaput', 'Motor kaputu', 2, 6, 102, 70, 96, 92, ['Motor', 'kaputu']],
+  ['sol-on-camurluk', 'Sol ön çamurluk', 2, 3, 30, 70, 64, 92, ['Sol ön', 'çamurluk']],
+  ['sag-on-camurluk', 'Sağ ön çamurluk', 2, 3, 206, 70, 64, 92, ['Sağ ön', 'çamurluk']],
+  ['sol-on-kapi', 'Sol ön kapı', 2, 2, 30, 168, 64, 68, ['Sol ön', 'kapı']],
+  ['sag-on-kapi', 'Sağ ön kapı', 2, 2, 206, 168, 64, 68, ['Sağ ön', 'kapı']],
+  ['tavan', 'Tavan', 3, 10, 102, 190, 96, 116, ['Tavan']],
+  ['sol-arka-kapi', 'Sol arka kapı', 2, 2, 30, 242, 64, 68, ['Sol arka', 'kapı']],
+  ['sag-arka-kapi', 'Sağ arka kapı', 2, 2, 206, 242, 64, 68, ['Sağ arka', 'kapı']],
+  ['sol-arka-camurluk', 'Sol arka çamurluk', 2, 2, 30, 316, 64, 110, ['Sol arka', 'çamurluk']],
+  ['sag-arka-camurluk', 'Sağ arka çamurluk', 2, 2, 206, 316, 64, 110, ['Sağ arka', 'çamurluk']],
+  ['bagaj', 'Arka kaput (bagaj)', 2, 4, 102, 334, 96, 92, ['Bagaj', 'kapağı']],
+  ['arka-tampon', 'Arka tampon', 1, 2, 84, 436, 132, 28, ['Arka tampon']],
 ];
 const HP_DURUM = ['orijinal', 'boyalı', 'değişen'];
 const hp = Object.fromEntries(PARCALAR.map((p) => [p[0], 0]));
 let hpYaziyor = false;
 
 function hpKur() {
-  const tekerlek = [[22, 56], [22, 282], [208, 56], [208, 282]].map(([x, y]) => `<rect class="hp-teker" x="${x}" y="${y}" width="10" height="34" rx="4"/>`).join('');
-  $('hp-svg').innerHTML = `<rect class="hp-govde" x="26" y="2" width="188" height="408" rx="46"/>${tekerlek}
-    <path class="hp-cam" d="M72 124h96l-6 22H78z"/><path class="hp-cam" d="M78 266h84l6 28H72z"/>
-    ${PARCALAR.map(([id, ad, , , x, y, w, h]) => `<g class="parca" data-id="${id}" data-d="0" tabindex="0" role="button">
-      <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="9"/><text class="hp-puan" x="${x + w / 2}" y="${y + h / 2 + 4}" text-anchor="middle"></text></g>`).join('')}`;
+  // Tekerlekler gövdenin altında çizilir (dışarı taşan kısım görünür); ön = farlar + "ÖN", arka = stop lambaları + "ARKA"
+  const tekerlek = [[10, 86], [276, 86], [10, 342], [276, 342]].map(([x, y]) => `<rect class="hp-teker" x="${x}" y="${y}" width="14" height="56" rx="5"/>`).join('');
+  const parcalar = PARCALAR.map(([id, , , , x, y, w, h, satirlar]) => {
+    // İnce tek satırlı parçada (tampon) puan adın yanına yazılır; diğerlerinde ad bloğu puan varken biraz yukarı kayar
+    const cx = x + w / 2, cy = y + h / 2, tek = satirlar.length === 1 && h < 40;
+    const ad = satirlar.map((t, i) => `<text class="hp-ad" data-i="${i}" x="${cx}" y="${cy + 4 + (i - (satirlar.length - 1) / 2) * 13}" text-anchor="middle">${e(t)}</text>`).join('');
+    return `<g class="parca" data-id="${id}" data-d="0" data-tek="${tek ? 1 : 0}" data-n="${satirlar.length}" data-cy="${cy}" tabindex="0" role="button">
+      <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="9"/>${ad}
+      <text class="hp-puan" x="${cx}" y="${cy + 4 + satirlar.length * 6.5 + 8}" text-anchor="middle"></text></g>`;
+  }).join('');
+  $('hp-svg').innerHTML = `${tekerlek}<rect class="hp-govde" x="22" y="28" width="256" height="444" rx="64"/>
+    <path class="hp-cam" d="M102 165h96l-6 22h-84z"/><path class="hp-cam" d="M108 309h84l6 22h-96z"/>
+    <ellipse class="hp-far" cx="62" cy="52" rx="14" ry="6" transform="rotate(-20 62 52)"/><ellipse class="hp-far" cx="238" cy="52" rx="14" ry="6" transform="rotate(20 238 52)"/>
+    <rect class="hp-stop" x="46" y="440" width="26" height="8" rx="3"/><rect class="hp-stop" x="228" y="440" width="26" height="8" rx="3"/>
+    <text class="hp-yon" x="150" y="17" text-anchor="middle">▲ ÖN</text><text class="hp-yon" x="150" y="494" text-anchor="middle">ARKA ▼</text>
+    ${parcalar}`;
   $('hp-svg').querySelectorAll('.parca').forEach((g) => {
     const don = () => { const id = g.dataset.id; hp[id] = (hp[id] + 1) % 3; hpCiz(true); };
     g.addEventListener('click', don);
@@ -206,6 +228,19 @@ function hpKur() {
   hpCiz(false);
 }
 
+/* Puan yazısını ve parça adını yerleştirir (puan varsa ad bloğu 7px yukarı kayar; tamponda puan adın yanındadır). */
+function hpYerlestir(g, puan, ad) {
+  const p = g.querySelector('.hp-puan'), adlar = g.querySelectorAll('.hp-ad'), n = +g.dataset.n, cy = +g.dataset.cy;
+  if (g.dataset.tek === '1') {
+    p.textContent = '';
+    adlar[0].textContent = puan ? `${ad} +${puan}` : ad;
+    return;
+  }
+  p.textContent = puan ? `+${puan}` : '';
+  adlar.forEach((t, i) => t.setAttribute('y', cy + 4 + (i - (n - 1) / 2) * 13 - (puan ? 7 : 0)));
+  p.setAttribute('y', cy + 4 + (n - 1) / 2 * 13 + 14 - 7);
+}
+
 function hpCiz(skoruYaz) {
   let skor = 0;
   const secili = [];
@@ -214,7 +249,7 @@ function hpCiz(skoruYaz) {
     skor += puan;
     const g = $('hp-svg').querySelector(`[data-id="${id}"]`);
     g.dataset.d = d;
-    g.querySelector('text').textContent = puan ? `+${puan}` : '';
+    hpYerlestir(g, puan, ad);
     g.setAttribute('aria-label', `${ad}: ${HP_DURUM[d]}${puan ? `, +${puan} puan` : ''}. Değiştirmek için seç.`);
     if (d) secili.push(`<span class="chip d${d}">${e(ad)} · ${HP_DURUM[d]} <b>+${puan}</b></span>`);
   }
@@ -225,16 +260,6 @@ function hpCiz(skoruYaz) {
     const s = $('t1-hasar');
     hpYaziyor = true; s.value = skor; s.dispatchEvent(new Event('input')); hpYaziyor = false;
   }
-}
-
-function hasarAciklama() {
-  const v = +$('t1-hasar').value;
-  $('t1-hasar-ac').textContent = v === 0 ? 'Orijinal: boya/değişen parça yok.'
-    : v <= 2 ? 'Çok hafif: tampon boyası ya da tek bir parça işlemi.'
-    : v <= 6 ? 'Hafif–orta: birkaç parça boyalı ya da bir iki küçük parça değişmiş.'
-    : v <= 12 ? 'Yüksek: kaput/bagaj gibi büyük parça değişimi ya da çok sayıda parça işlemi.'
-    : v <= 20 ? 'Çok yüksek: ciddi hasar geçmişi (tavan ya da birden fazla büyük parça değişmiş olabilir).'
-    : 'Aşırı: neredeyse tüm parçalar boyalı/değişmiş; takla veya ağır çarpışma ihtimali yüksek.';
 }
 
 const seriListesi = (marka) => cfg.seri_haritasi[marka] || cfg.tum_seriler;
@@ -358,9 +383,10 @@ async function degerle() {
       <div class="mkart"><div class="mkart-val">${e(g.marka)} ${e(g.seri)}</div><div class="mkart-lbl">Araç</div></div>
       <div class="mkart"><div class="mkart-val">${g.yil}</div><div class="mkart-lbl">Yıl</div></div>
       <div class="mkart"><div class="mkart-val">${sayi(g.km)} km</div><div class="mkart-lbl">Kilometre</div></div>
-      <div class="mkart"><div class="mkart-val">${g.motor_hacmi_cc} cc / ${g.motor_gucu_hp} HP</div><div class="mkart-lbl">Motor</div></div>
+      <div class="mkart"><div class="mkart-val">${g.motor_hacmi_cc} cc / ${g.motor_gucu_hp} HP</div><div class="mkart-lbl">Motor${r.varsayim && r.varsayim.motor ? ' (tipik)' : ''}</div></div>
       <div class="mkart"><div class="mkart-val">${r.arac_yasi} yıl</div><div class="mkart-lbl">Araç Yaşı</div></div>
     </div>
+    ${varsayimNotu(r)}
     ${emsalKarti(r)}
     ${motorKart(r.motor, g.marka, false)}
     ${r.piyasa && r.piyasa.adet ? `<div class="gcard" style="margin-top:20px"><div class="gcard-title">Piyasa Özeti (${e(g.marka)} · ${g.yil - 2}–${g.yil + 2})</div><div class="kv">${ozetSatiri(r.piyasa)}</div></div>` : ''}
@@ -647,7 +673,7 @@ async function basla() {
   doldur($('t1-kasa'), [BELIRTILMEMIS, ...cfg.kasa.filter((k) => k !== 'Bilinmiyor'), 'Bilinmiyor']);
   doldur($('t1-renk'), [BELIRTILMEMIS, ...cfg.renk]);
   segment($('g-agir'), 'agir', ['Hayır', 'Evet'], 'Hayır');
-  aralik('t1-km', (v) => `${sayi(v)} km`); aralik('t1-hasar', String); hasarAciklama(); hpKur(); $('t1-hasar').addEventListener('input', hasarAciklama); aralik('t2-km', (v) => `${sayi(v)} km`);
+  aralik('t1-km', (v) => `${sayi(v)} km`); aralik('t1-hasar', String); hpKur(); aralik('t2-km', (v) => `${sayi(v)} km`);
 
   for (const p of ['t2', 't3']) {
     doldur($(`${p}-marka`), cfg.ilan_markalari, VARSAYILAN_MARKA); seriSecenekleri(p, VARSAYILAN_SERI);

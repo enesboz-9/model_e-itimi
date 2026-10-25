@@ -107,37 +107,53 @@ def ayarlar():
 @app.post("/api/tahmin")
 def tahmin(r: TahminIstegi):
     f = r.model_dump()
-    f["motor_hacmi_cc"] = r.motor_hacmi_cc or 1600
-    f["motor_gucu_hp"] = r.motor_gucu_hp or 110
-    f["cekis"] = r.cekis if not _bos(r.cekis) else "Önden Çekiş"
-    f["yakit"] = r.yakit if not _bos(r.yakit) else list(YAKIT_ENC)[1]
-    f["vites"] = r.vites if not _bos(r.vites) else list(VITES_ENC)[1]
-    f["kasa"] = r.kasa if not _bos(r.kasa) else "Sedan"
-    f["renk"] = r.renk if not _bos(r.renk) else "Beyaz"
+    # Boş bırakılan teknik alanlar sabit değerle doldurulmaz (eskiden: 1600 cc / 110 HP / Dizel / Sedan ...);
+    # core.tamamla() aynı marka+model ilanlarındaki en yaygın gerçek donanımlardan doldurur.
+    for alan in ("cekis", "yakit", "vites", "kasa", "renk"):
+        if _bos(f[alan]):
+            f[alan] = None
+    f["renk"] = f["renk"] or "Beyaz"
+    konfigler = core.tamamla(f)
+    tipik = konfigler[0][1]          # en yaygın donanım (ekranda gösterilir)
+    verilen = {"motor": not (_bos(r.motor_hacmi_cc) or _bos(r.motor_gucu_hp)), "yakit": f["yakit"] is not None,
+               "vites": f["vites"] is not None, "kasa": f["kasa"] is not None, "cekis": f["cekis"] is not None}
+    f["motor_hacmi_cc"], f["motor_gucu_hp"] = tipik["motor_hacmi_cc"], tipik["motor_gucu_hp"]
 
-    ham = core.tahmin_yap(f, monoton=True)
+    ham = core.tahmin_yap(f, monoton=True, konfigler=konfigler)
     # Değerleme, aynı marka/model/yıl/km'deki emsal ilanların min–maks aralığı içinde tutulur.
     # Hasar skoru, km ve diğer etkenler modelin tahminini belirler; aralık yalnızca uç sınırdır.
     emsal = core.emsal_aralik(r.marka, r.seri, r.yil, r.km)
-    deger, sinir = ham, None
+    deger, sinir, emsal_alti = ham, None, False
     alt, ust = ham * 0.90, ham * 1.10
     if emsal:
-        deger = min(max(ham, emsal["min"]), emsal["max"])
-        sinir = "alt" if ham < emsal["min"] else "ust" if ham > emsal["max"] else None
-        alt, ust = max(deger * 0.90, emsal["min"]), min(deger * 1.10, emsal["max"])
+        # Alt sınır yalnızca HASARSIZ araçlara uygulanır: emsal ilanların çoğu hasarsızdır, hasar kaydı olan bir araç
+        # haklı olarak en ucuz emsalin altında olabilir (eskiden skor 12 ile 30 aynı taban fiyata kilitleniyordu).
+        hasarli = r.hasar_skoru > 0 or r.agir_hasar == "Evet"
+        taban = 0.0 if hasarli else emsal["min"]
+        deger = min(max(ham, taban), emsal["max"])
+        sinir = "alt" if ham < taban else "ust" if ham > emsal["max"] else None
+        emsal_alti = bool(hasarli and ham < emsal["min"])
+        alt, ust = max(deger * 0.90, taban), min(deger * 1.10, emsal["max"])
         emsal["konum"] = (deger - emsal["min"]) / (emsal["max"] - emsal["min"]) if emsal["max"] > emsal["min"] else 0.5
     ana = core.piyasa_analiz(r.marka, None, r.yil - 2, r.yil + 2)
-    medyan = ana.get("medyan", deger)
+    # "Piyasadan ucuz/pahalı" kıyası: tüm markanın medyanına değil, aynı model/yıl/km emsallerinin medyanına göre
+    medyan = (emsal or {}).get("medyan") or ana.get("medyan", deger)
     return {
         "tahmin": deger, "alt": alt, "ust": ust,
-        "ham_tahmin": ham, "emsal": emsal, "sinirlandi": sinir,
+        "ham_tahmin": ham, "emsal": emsal, "sinirlandi": sinir, "emsal_alti": emsal_alti,
         "luks_uyari": r.marka in core.LUKS_MARKALAR,
         "verdict": core.verdict(deger, medyan),
         "girdi": {k: f[k] for k in ("marka", "seri", "yil", "km", "motor_hacmi_cc", "motor_gucu_hp")},
+        "varsayim": {
+            "motor": None if verilen["motor"] else f"{tipik['motor_hacmi_cc']} cc / {tipik['motor_gucu_hp']} HP",
+            "yakit": None if verilen["yakit"] else tipik["yakit"],
+            "vites": None if verilen["vites"] else tipik["vites"],
+            "kasa": None if verilen["kasa"] else tipik["kasa"],
+        },
         "arac_yasi": core.MODEL_YILI - r.yil,
         "motor": core.motor_bilgisi_bul(r.marka, f["motor_hacmi_cc"], f["motor_gucu_hp"]),
         "piyasa": ana,
-        "oneriler": core.oneri_bul(f["kasa"], deger * 1.10, deger * 0.90,
+        "oneriler": core.oneri_bul(tipik["kasa"], deger * 1.10, deger * 0.90,
                                    marka_haric=r.marka, yil_ref=r.yil),
     }
 

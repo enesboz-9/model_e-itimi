@@ -86,14 +86,13 @@
         <label class="f"><span class="l">Araç Durumu</span><select id="t1-durum"></select></label>
         <fieldset class="seg" id="g-agir"><legend>Ağır Hasarlı? <small>(ağır hasar kaydı varsa)</small></legend></fieldset>
         <label class="f"><span class="l">Hasar Skoru <small>(0 = orijinal, 42 = tüm parçalar değişmiş)</small></span>
-          <span class="rng"><input type="range" id="t1-hasar" min="0" max="42" step="1" value="0"><output id="t1-hasar-o" for="t1-hasar"></output></span>
-          <span class="hint" id="t1-hasar-ac" style="display:block;margin:6px 0 0"></span></label>
+          <span class="rng"><input type="range" id="t1-hasar" min="0" max="42" step="1" value="0"><output id="t1-hasar-o" for="t1-hasar"></output></span></label>
         <details class="hp" open>
           <summary>Parçaları işaretleyerek hesapla</summary>
           <div class="hp-grid">
-            <div class="hp-sema"><svg id="hp-svg" viewBox="0 0 240 412" role="group" aria-label="Araç parçaları şeması (üstten görünüm, ön taraf yukarıda)"></svg></div>
+            <div class="hp-sema"><svg id="hp-svg" viewBox="0 0 240 412" role="group" aria-label="Araç parçaları şeması (üstten görünüm, ön taraf yukarıda, arka taraf aşağıda)"></svg></div>
             <div class="hp-yan">
-              <p class="hint" style="margin:0 0 10px">Parçaya dokun: bir kez <b>boyalı</b>, iki kez <b>değişen</b>, üç kez tekrar orijinal. Skor otomatik hesaplanır.</p>
+              <p class="hint" style="margin:0 0 10px">Şema üstten görünümdür: <b>ön yukarıda</b>, <b>arka aşağıda</b>. Parçaya dokun: bir kez <b>boyalı</b>, iki kez <b>değişen</b>, üç kez tekrar orijinal. Skor otomatik hesaplanır.</p>
               <div class="hp-lejant"><span><i class="d0"></i>Orijinal</span><span><i class="d1"></i>Boyalı</span><span><i class="d2"></i>Değişen</span></div>
               <div id="hp-ozet" aria-live="polite"></div>
               <button type="button" class="hp-sifirla" id="hp-sifirla">Tümünü orijinal yap</button>

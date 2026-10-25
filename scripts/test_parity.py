@@ -41,7 +41,7 @@ for _ in range(300):
         kasa_tipi_enc=KD.KASA_ENC[f["kasa"]], renk_enc=KD.RENK_ENC[f["renk"]], arac_durumu_enc=KD.DURUM_ENC[f["durum"]],
         yas_segment=core._yas_seg(ya), guc_hacim_norm=float(np.clip((gh - fe["guc_hacim_median"]) / (fe["guc_hacim_std"] + 1e-9), -3, 3)),
         guc_segment=core._guc_seg(f["motor_gucu_hp"]), hacim_segment=core._hacim_seg(f["motor_hacmi_cc"]),
-        marka_popularite=mpop, km_anomali=0.0)
+        marka_popularite=mpop, km_anomali=core._km_anomali(f["km"], ya))
     eski = float(np.expm1(model.predict(pd.DataFrame([{k: row[k] for k in oz}]))[0])) * kat
     maxfark = max(maxfark, abs(yeni - eski) / eski)
 print(f"[1] tahmin: 300 rastgele girdi, en büyük bağıl fark = {maxfark:.2e}")
@@ -59,7 +59,7 @@ for _ in range(500):
 print(f"[2] motor KNN: 500 sorgu, uyuşmayan = {yanlis}"); assert yanlis <= 2
 
 # 3) Piyasa analizi (pandas ile yeniden hesapla)
-df = pd.read_csv(E / "arabam_temiz.csv", low_memory=False)
+df = pd.read_csv(E / "arabam_temiz.csv" if (E / "arabam_temiz.csv").exists() else K / "arabam_temiz.csv", low_memory=False)
 df = df[pd.to_numeric(df["fiyat"], errors="coerce") > 0].copy(); df["fiyat"] *= kat
 df["yil"] = (2026 - pd.to_numeric(df["arac_yasi"], errors="coerce")).astype("Int64")
 df["marka"] = df["marka_enc"].map({v: k for k, v in KD.MARKA_ENC.items()}).fillna("Bilinmiyor")

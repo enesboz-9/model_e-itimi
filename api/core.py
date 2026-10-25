@@ -153,6 +153,11 @@ class Ilanlar:
         self.yakit, self.vites, self.kasa = z["yakit"], z["vites"], z["kasa"]
         self.yil, self.km = z["yil"].astype(np.int32), z["km"]
         self.taban_fiyat = z["fiyat"].astype(np.float64)
+        # Motor hacmi/gücü ve çekiş: boş bırakılan alanlar piyasadaki gerçek dağılımdan tamamlanır.
+        # (Eski data/ilanlar.npz'de yoksa None kalır; bu durumda eski sabit varsayılanlar kullanılır.)
+        self.hacim = z["hacim"].astype(np.int32) if "hacim" in z.files else None
+        self.guc = z["guc"].astype(np.int32) if "guc" in z.files else None
+        self.cekis = z["cekis"] if "cekis" in z.files else None
         self._kat = None
         self._fiyat = None
         # küçük harfli ad → kod
@@ -205,12 +210,25 @@ def _guc_seg(h):  return 0 if h < 90 else 1 if h < 140 else 2 if h < 220 else 3
 def _hacim_seg(c): return 0 if c < 1000 else 1 if c < 1400 else 2 if c < 1800 else 3 if c < 2500 else 4
 
 
-def tahmin_yap(f: dict, monoton: bool = False) -> float:
-    """Fiyat tahmini. monoton=True: hasar skoru arttıkça tahmin ARTMAZ.
+def _km_anomali(km, arac_yasi):
+    """Eğitimdeki km_anomali ile AYNI formül: (yıllık km − yaşa göre medyan yıllık km) / genel std, [-3, 3].
+    Eskiden tahminde hep 0 veriliyordu: düşük km'li araç 'ortalama km'li' görünüyor, fiyatı düşük çıkıyordu."""
+    fe = meta().get("fe_sabitler", {})
+    tablo, std = fe.get("yas_km_medyan"), fe.get("yillik_km_std")
+    if not tablo or not std:
+        return 0.0
+    yaslar = sorted(int(k) for k in tablo)
+    yas = min(yaslar, key=lambda a: abs(a - arac_yasi))   # tabloda olmayan yaşta en yakın yaş
+    yillik = km / max(arac_yasi, 1)
+    return float(np.clip((yillik - tablo[str(yas)]) / (std + 1e-9), -3, 3))
 
-    Model eski skalada (0–26) eğitildi; yüksek skorlar çok az örnekle temsil edildiği için
-    ağaçlar ~22 üstünde fiyatı tekrar yükseltebiliyor ve 26 üstünde sabitleniyor. Arayüzdeki yeni
-    ağırlıklı skor 42'ye çıktığından, 0..skor aralığındaki tahminlerin en düşüğü alınır."""
+
+def _tahmin_tek(f: dict, monoton: bool = False) -> float:
+    """Tüm alanları dolu tek bir araç yapılandırması için fiyat (güncel aya taşınmış).
+
+    monoton=True: hasar skoru arttıkça tahmin ARTMAZ. Model eski skalada (0–26) eğitildi; yüksek skorlar
+    çok az örnekle temsil edildiği için ağaçlar ~22 üstünde fiyatı tekrar yükseltebiliyor ve 26 üstünde
+    sabitleniyor. Arayüzdeki ağırlıklı skor 42'ye çıktığından 0..skor aralığındaki en düşük tahmin alınır."""
     import xgboost as xgb
     arac_yasi = MODEL_YILI - f["yil"]
     hacim, guc = f["motor_hacmi_cc"], f["motor_gucu_hp"]
@@ -243,7 +261,7 @@ def tahmin_yap(f: dict, monoton: bool = False) -> float:
         "arac_durumu_enc": DURUM_ENC.get(f["durum"], 2),
         "yas_segment": _yas_seg(arac_yasi), "guc_hacim_norm": guc_hacim_norm,
         "guc_segment": _guc_seg(guc), "hacim_segment": _hacim_seg(hacim),
-        "marka_popularite": mpop, "km_anomali": 0.0,
+        "marka_popularite": mpop, "km_anomali": _km_anomali(f["km"], arac_yasi),
     }
     oz = meta()["ozellikler"]
     hasarlar = range(0, min(int(f["hasar_skoru"]), 26) + 1) if monoton else [f["hasar_skoru"]]
@@ -251,6 +269,96 @@ def tahmin_yap(f: dict, monoton: bool = False) -> float:
     tahminler = np.expm1(model().predict(xgb.DMatrix(x, feature_names=oz)))
     ham = float(tahminler.min() if monoton else tahminler[0])
     return ham * enflasyon_katsayisi()
+
+
+# Boş bırakılan teknik alanların tamamlanması ----------------------------------
+# Eskiden boş alanlar SABİT değerle dolduruluyordu (1600 cc / 110 HP, yakıt = listenin 2. elemanı = DİZEL,
+# kasa = Sedan ...). Gerçekte olmayan bu kombinasyonlar (ör. dizel Civic) modeli şaşırtıp fiyatı düşürüyordu.
+# Şimdi aynı marka+model (ve yakın model yılı) ilanlarında en sık görülen GERÇEK donanımlar kullanılır.
+_ESKI_VARSAYILAN = {"motor_hacmi_cc": 1600, "motor_gucu_hp": 110, "cekis": "Önden Çekiş",
+                    "yakit": "Benzin", "vites": "Otomatik", "kasa": "Sedan"}
+
+
+def _bos_mu(v):
+    return v is None or v == "" or v == 0 or v == "Belirtilmemiş"
+
+
+def _emsal_pencere(marka, seri, yil, en_az=8):
+    """Marka+model için yıl penceresi giderek genişleyen ilan maskesi."""
+    il = ilanlar()
+    for dy in (1, 2, 4):
+        m = il.maske(marka, seri or None, yil - dy, yil + dy)
+        if m.sum() >= en_az:
+            return m
+    m = il.maske(marka, seri or None)
+    if m.sum() >= en_az:
+        return m
+    return il.maske(marka, None, yil - 4, yil + 4)
+
+
+def tamamla(f: dict, en_fazla: int = 6):
+    """[(ağırlık, tam_yapılandırma)] — boş teknik alanları piyasadaki gerçek donanım dağılımından doldurur.
+
+    Kullanıcının verdiği alanlar korunur; verilmeyenler için en yaygın donanımlar (en çok `en_fazla`),
+    ilan sayısıyla orantılı ağırlıkla döner. Birinci eleman en yaygın donanımdır."""
+    il = ilanlar()
+    f = dict(f)
+    alanlar = {"motor_hacmi_cc": "hacim", "motor_gucu_hp": "guc", "yakit": "yakit",
+               "vites": "vites", "kasa": "kasa", "cekis": "cekis"}
+    bos = [a for a in alanlar if _bos_mu(f.get(a))]
+    if not bos:
+        return [(1.0, f)]
+    if il.hacim is None or il.guc is None or il.cekis is None:   # eski veri dosyası
+        return [(1.0, {**f, **{a: _ESKI_VARSAYILAN[a] for a in bos}})]
+
+    pencere = _emsal_pencere(f["marka"], f.get("seri"), f["yil"])
+    sec = np.flatnonzero(pencere)
+    if sec.size == 0:
+        return [(1.0, {**f, **{a: _ESKI_VARSAYILAN[a] for a in bos}})]
+
+    sutun = {"hacim": il.hacim, "guc": il.guc, "yakit": il.yakit, "vites": il.vites,
+             "kasa": il.kasa, "cekis": il.cekis}
+    # Geçerli motor kaydı olan ilanlar (hacim/güç eksik olanlar tamamlamada kullanılamaz)
+    if "motor_hacmi_cc" in bos or "motor_gucu_hp" in bos:
+        gecerli = sec[(il.hacim[sec] > 0) & (il.guc[sec] > 0)]
+        if gecerli.size >= 3:
+            sec = gecerli
+    # Kullanıcının verdiği alanlara uyan ilanlara daralt; çok az ilan kalıyorsa o filtreyi atla
+    for a, anahtar in alanlar.items():
+        if a in bos:
+            continue
+        if a == "motor_hacmi_cc":
+            uy = np.abs(il.hacim[sec] - f[a]) <= max(f[a] * 0.05, 1)
+        elif a == "motor_gucu_hp":
+            uy = np.abs(il.guc[sec] - f[a]) <= max(f[a] * 0.10, 1)
+        else:
+            tablo = il.t[anahtar]
+            kod = tablo.index(f[a]) if f[a] in tablo else None
+            if kod is None:
+                continue
+            uy = sutun[anahtar][sec] == kod
+        if uy.sum() >= 3:
+            sec = sec[uy]
+
+    # Yalnızca BOŞ alanlara göre benzersiz yapılandırmalar ve sayıları
+    kolonlar = np.stack([sutun[alanlar[a]][sec].astype(np.int64) for a in bos], axis=1)
+    benzersiz, sayim = np.unique(kolonlar, axis=0, return_counts=True)
+    sira = np.argsort(-sayim, kind="stable")[:en_fazla]
+    toplam = float(sayim[sira].sum())
+    sonuc = []
+    for i in sira:
+        g = dict(f)
+        for a, kod in zip(bos, benzersiz[i]):
+            anahtar = alanlar[a]
+            g[a] = int(kod) if anahtar in ("hacim", "guc") else il.t[anahtar][int(kod)]
+        sonuc.append((float(sayim[i]) / toplam, g))
+    return sonuc
+
+
+def tahmin_yap(f: dict, monoton: bool = False, konfigler=None) -> float:
+    """Fiyat tahmini. Boş teknik alanlar varsa, piyasadaki yaygın donanımların ağırlıklı ortalaması alınır."""
+    konfigler = konfigler or tamamla(f)
+    return float(sum(w * _tahmin_tek(g, monoton) for w, g in konfigler))
 
 
 # ── Piyasa analizi / öneri ───────────────────────────────────────────
@@ -351,7 +459,7 @@ def emsal_aralik(marka, seri, yil, km, min_ilan=15):
     tut = (p >= q1 - 3 * iqr) & (p <= q3 + 3 * iqr)
     p, k, y = p[tut], il.km[m][tut], il.yil[m][tut]
     return {
-        "min": float(p.min()), "max": float(p.max()), "adet": int(p.size),
+        "min": float(p.min()), "max": float(p.max()), "medyan": float(np.median(p)), "adet": int(p.size),
         "yil_min": int(y.min()), "yil_max": int(y.max()),
         "km_min": int(k.min()), "km_max": int(k.max()), "genis": adim > 0,
     }
