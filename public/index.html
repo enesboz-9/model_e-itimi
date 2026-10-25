@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AutoValuate — Araç Değerleme</title>
+  <title>EderiNe — Araç Değerleme</title>
   <meta name="description" content="Yapay zeka destekli araç değerleme ve piyasa analiz platformu.">
   <meta name="theme-color" content="#09090f">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🚗%3C/text%3E%3C/svg%3E">
@@ -15,7 +15,7 @@
 <body>
 <div class="wrap">
   <header class="hero">
-    <h1 class="hero-title">AutoValuate</h1>
+    <h1 class="hero-title">EderiNe</h1>
     <p class="hero-sub">Yapay Zeka Destekli Araç Değerleme &amp; Piyasa Analiz Platformu</p>
     <p class="hero-note" id="hero-note">Yükleniyor…</p>
   </header>
@@ -34,7 +34,10 @@
   <section class="panel" id="t1" role="tabpanel" aria-labelledby="tab-t1">
     <div class="gcard">
       <div class="gcard-title">📸 Araç Fotoğrafı (İsteğe Bağlı)</div>
-      <input class="file" type="file" id="foto" accept="image/jpeg,image/png" aria-label="Araç fotoğrafı yükle">
+      <div class="filerow">
+        <input class="file" type="file" id="foto" accept="image/jpeg,image/png" aria-label="Araç fotoğrafı yükle">
+        <button type="button" class="x" id="foto-kaldir" aria-label="Fotoğrafı kaldır" title="Fotoğrafı kaldır" hidden>✕</button>
+      </div>
       <p class="hint" style="margin-top:8px">Fotoğraf yükle → marka, model, kasa tipi ve renk otomatik tespit edilir.</p>
       <div id="foto-sonuc"></div>
     </div>
@@ -50,17 +53,31 @@
             <span class="rng"><input type="range" id="t1-km" min="0" max="500000" step="5000" value="85000"><output id="t1-km-o" for="t1-km"></output></span></label>
         </div>
         <label class="f"><span class="l">Araç Durumu</span><select id="t1-durum"></select></label>
-        <div class="row">
-          <div>
-            <fieldset class="seg" id="g-kimden"><legend>Kimden?</legend></fieldset>
-            <fieldset class="seg" id="g-agir"><legend>Ağır Hasarlı?</legend></fieldset>
-          </div>
-          <div>
-            <fieldset class="seg" id="g-takas"><legend>Takasa Uygun?</legend></fieldset>
-            <label class="f"><span class="l">Hasar Skoru <small>(0 = orijinal, 26 = maksimum)</small></span>
-              <span class="rng"><input type="range" id="t1-hasar" min="0" max="26" step="1" value="0"><output id="t1-hasar-o" for="t1-hasar"></output></span></label>
-          </div>
-        </div>
+        <fieldset class="seg" id="g-agir"><legend>Ağır Hasarlı? <small>(ağır hasar kaydı varsa)</small></legend></fieldset>
+        <label class="f"><span class="l">Hasar Skoru <small>(0 = orijinal, 26 = maksimum)</small></span>
+          <span class="rng"><input type="range" id="t1-hasar" min="0" max="26" step="1" value="0"><output id="t1-hasar-o" for="t1-hasar"></output></span>
+          <span class="hint" id="t1-hasar-ac" style="display:block;margin:6px 0 0"></span></label>
+        <details>
+          <summary>ℹ️ Hasar skoru nasıl hesaplanır? Örnekler</summary>
+          <p class="hint" style="margin-top:0">Skor, ekspertiz raporundaki <b>13 parça</b> üzerinden hesaplanır: her <b>boyalı / lokal boyalı</b> parça <b>1 puan</b>, her <b>değişen</b> parça <b>2 puan</b>. Parçalar: ön/arka tampon, motor kaputu, arka kaput (bagaj), tavan, sağ/sol ön çamurluk, sağ/sol arka çamurluk, sağ/sol ön kapı, sağ/sol arka kapı.</p>
+          <table class="tbl">
+            <thead><tr><th>Durum</th><th>Skor</th></tr></thead>
+            <tbody>
+              <tr><td>Tamamen orijinal, boya/değişen yok</td><td>0</td></tr>
+              <tr><td>Sadece ön tampon boyalı</td><td>1</td></tr>
+              <tr><td>Ön tampon + arka tampon boyalı</td><td>2</td></tr>
+              <tr><td>Tek kapı değişmiş (başka işlem yok)</td><td>2</td></tr>
+              <tr><td>2 kapı + 1 çamurluk boyalı</td><td>3</td></tr>
+              <tr><td>Motor kaputu değişmiş + 2 çamurluk boyalı (hafif ön darbe)</td><td>4</td></tr>
+              <tr><td>Bir yan tamamen boyalı (2 kapı + 2 çamurluk)</td><td>4</td></tr>
+              <tr><td>2 parça değişmiş + 3 parça boyalı</td><td>7</td></tr>
+              <tr><td>Tavan değişmiş + 4 parça değişmiş + 2 parça boyalı (ciddi hasar geçmişi)</td><td>12</td></tr>
+              <tr><td>13 parçanın hepsi boyalı (komple boya)</td><td>13</td></tr>
+              <tr><td>13 parçanın hepsi değişmiş</td><td>26</td></tr>
+            </tbody>
+          </table>
+          <p class="hint">Veri setindeki araçların yaklaşık %35'i 0, dörtte üçü 0–5 arasındadır. "Ağır Hasarlı" bilgisi skordan ayrıdır: ağır hasar kaydı varsa skordan bağımsız olarak "Evet" seçin.</p>
+        </details>
       </div>
 
       <div class="gcard">
@@ -156,7 +173,7 @@
     <div id="t5-sonuc" aria-live="polite" style="margin-top:18px"></div>
   </section>
 
-  <footer>AutoValuate · Tahminler bilgilendirme amaçlıdır, bağlayıcı değildir.</footer>
+  <footer>EderiNe · Tahminler bilgilendirme amaçlıdır, bağlayıcı değildir.</footer>
 </div>
 <script src="/app.js" defer></script>
 </body>

@@ -1,5 +1,5 @@
 """
-AutoValuate — Vercel Python (FastAPI) giriş noktası.
+EderiNe — Vercel Python (FastAPI) giriş noktası.
 vercel.json, /api/* isteklerini bu dosyadaki `app`e yönlendirir.
 """
 import os
@@ -16,7 +16,7 @@ import core  # noqa: E402
 from kodlar import (CEKIS_ENC, DURUM_ENC, KASA_ENC, MARKA_ENC, RENK_ENC,  # noqa: E402
                     VITES_ENC, YAKIT_ENC)
 
-app = FastAPI(title="AutoValuate API", docs_url=None, redoc_url=None)
+app = FastAPI(title="EderiNe API", docs_url=None, redoc_url=None)
 
 
 # ── Girdi modelleri ──────────────────────────────────────────────────

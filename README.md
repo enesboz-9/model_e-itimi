@@ -1,4 +1,4 @@
-# AutoValuate — Vercel sürümü
+# EderiNe — Vercel sürümü
 
 Streamlit uygulaması Vercel'de çalışmadığı için (sürekli açık WebSocket sunucusu gerektirir) iki parçaya ayrıldı:
 

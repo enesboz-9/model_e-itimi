@@ -138,6 +138,15 @@ function seriEsles(ai, liste) {
 }
 
 /* ── Sekme 1 — Değerleme ───────────────────────────────────────── */
+function hasarAciklama() {
+  const v = +$('t1-hasar').value;
+  $('t1-hasar-ac').textContent = v === 0 ? 'Orijinal: boya/değişen parça yok.'
+    : v <= 2 ? 'Çok hafif: 1–2 parça boyalı ya da 1 parça değişmiş.'
+    : v <= 6 ? 'Hafif–orta: birkaç parça boyalı/değişmiş.'
+    : v <= 12 ? 'Yüksek: çok sayıda parça boyalı veya değişmiş.'
+    : 'Çok yüksek: neredeyse tüm parçalar boyalı/değişmiş.';
+}
+
 const seriListesi = (marka) => cfg.seri_haritasi[marka] || cfg.tum_seriler;
 
 function t1SeriDoldur(secili) {
@@ -159,7 +168,16 @@ function seriSecenekleri(p, secili) {
   doldur($(`${p}-seri`), liste, secili && liste.includes(secili) ? secili : 'Tümü');
 }
 
+function fotoKaldir() {
+  $('foto').value = '';
+  $('foto-sonuc').innerHTML = '';
+  $('foto-kaldir').hidden = true;
+  $('l-marka').textContent = 'Marka'; $('l-seri').textContent = 'Model / Seri'; $('l-yil').textContent = 'Yıl';
+  $('l-km').textContent = 'Kilometre'; $('l-kasa').textContent = 'Kasa Tipi'; $('l-renk').textContent = 'Renk';
+}
+
 async function fotoYukle(dosya) {
+  $('foto-kaldir').hidden = false;
   const kutu = $('foto-sonuc');
   kutu.innerHTML = '<div class="loading">🤖 AI analiz ediyor…</div>';
   try {
@@ -206,7 +224,8 @@ async function degerle() {
   const gv = (id) => $(id).value;
   const govde = {
     marka: gv('t1-marka'), seri: gv('t1-seri'), yil: +gv('t1-yil'), km: +gv('t1-km'),
-    durum: gv('t1-durum'), kimden: segDeger('kimden'), agir_hasar: segDeger('agir'), takasa: segDeger('takas'),
+    // "Kimden" ve "Takasa uygun" fiyatı etkilememesi için sabit varsayılan gönderilir.
+    durum: gv('t1-durum'), kimden: 'Sahibinden', agir_hasar: segDeger('agir'), takasa: 'Hayır',
     hasar_skoru: +gv('t1-hasar'), motor_hacmi_cc: +gv('t1-cc') || 0, motor_gucu_hp: +gv('t1-hp') || 0,
     cekis: gv('t1-cekis'), yakit: gv('t1-yakit'), vites: gv('t1-vites'), kasa: gv('t1-kasa'), renk: gv('t1-renk'),
   };
@@ -214,13 +233,14 @@ async function degerle() {
   const r = await api('/api/tahmin', govde);
   const g = r.girdi, v = r.verdict;
   const vcls = { uygun: 'verdict-uygun', pahali: 'verdict-pahali', normal: 'verdict-normal' }[v.tip];
-  const oneriler = r.oneriler.length ? `<div class="gcard"><div class="gcard-title">💡 Benzer Araç Önerileri (Aynı Kasa, Farklı Marka)</div>${
+  const oneriler = r.oneriler.length ? `<div class="gcard"><div class="gcard-title">💡 Benzer Araç Önerileri <small>(aynı kasa, farklı marka · model yılı ${g.yil - 3}–${g.yil + 3} ilanlarının ortalamasına göre)</small></div>${
     r.oneriler.map((o) => {
-      const fark = r.tahmin > 0 ? (o.fiyat - r.tahmin) / r.tahmin * 100 : 0;
+      const fark = r.tahmin > 0 ? (o.ort_fiyat - r.tahmin) / r.tahmin * 100 : 0;
       return `<div class="oneri-card"><div class="oneri-ust"><span><b>${e(o.marka)} ${e(o.seri)}</b>
-        <span style="color:#6b7280;font-size:.82rem;margin-left:10px">${e(o.yil ?? '')} · ${sayi(o.km)} km</span></span>
-        <span style="color:${fark < 0 ? '#34d399' : '#f87171'};font-weight:600">${tl(o.fiyat)}</span></div>
-        <div style="color:#6b7280;font-size:.8rem;margin-top:4px">${e(o.yakit)} · ${e(o.vites)} · ${e(o.kasa)}</div></div>`;
+        <span style="color:#6b7280;font-size:.82rem;margin-left:10px">${o.yil_min === o.yil_max ? o.yil_min : `${o.yil_min}–${o.yil_max}`} model · ort. ${sayi(o.ort_km)} km</span></span>
+        <span style="text-align:right"><span style="color:${fark < 0 ? '#34d399' : '#f87171'};font-weight:600">Ort. ${tl(o.ort_fiyat)}</span>
+        <span style="display:block;color:#6b7280;font-size:.75rem">${fark < 0 ? '▼' : '▲'} tahmine göre %${Math.abs(fark).toFixed(1)}</span></span></div>
+        <div style="color:#6b7280;font-size:.8rem;margin-top:4px">${e(o.yakit)} · ${e(o.vites)} · ${e(o.kasa)} · ${sayi(o.adet)} ilan · fiyat aralığı ${tl(o.min_fiyat)} – ${tl(o.max_fiyat)}</div></div>`;
     }).join('')}</div>` : '';
   $('t1-sonuc').innerHTML = `
     ${r.luks_uyari ? `<div class="msg warn">⚠️ <b>${e(g.marka)}</b> için tahmin güvenilirliği düşük olabilir. Eğitim verisinde bu marka için çok az ilan bulunmaktadır. Sonucu referans değil, yaklaşık bir alt/üst sınır olarak değerlendirin.</div>` : ''}
@@ -385,10 +405,8 @@ async function basla() {
   doldur($('t1-vites'), [BELIRTILMEMIS, ...cfg.vites]);
   doldur($('t1-kasa'), [BELIRTILMEMIS, ...cfg.kasa.filter((k) => k !== 'Bilinmiyor'), 'Bilinmiyor']);
   doldur($('t1-renk'), [BELIRTILMEMIS, ...cfg.renk]);
-  segment($('g-kimden'), 'kimden', ['Sahibinden', 'Galeriden', 'Yetkili Bayiden'], 'Sahibinden');
   segment($('g-agir'), 'agir', ['Hayır', 'Evet'], 'Hayır');
-  segment($('g-takas'), 'takas', ['Hayır', 'Evet'], 'Hayır');
-  aralik('t1-km', (v) => `${sayi(v)} km`); aralik('t1-hasar', String); aralik('t2-km', (v) => `${sayi(v)} km`);
+  aralik('t1-km', (v) => `${sayi(v)} km`); aralik('t1-hasar', String); hasarAciklama(); $('t1-hasar').addEventListener('input', hasarAciklama); aralik('t2-km', (v) => `${sayi(v)} km`);
 
   for (const p of ['t2', 't3']) {
     doldur($(`${p}-marka`), cfg.ilan_markalari, 'Toyota'); seriSecenekleri(p);
@@ -399,7 +417,8 @@ async function basla() {
   $('t1-marka').addEventListener('change', () => { t1SeriDoldur(); digerSekmelerleSenkronla(); });
   $('t1-seri').addEventListener('change', digerSekmelerleSenkronla);
   digerSekmelerleSenkronla();
-  $('foto').addEventListener('change', (ev) => { if (ev.target.files[0]) fotoYukle(ev.target.files[0]); });
+  $('foto').addEventListener('change', (ev) => { if (ev.target.files[0]) fotoYukle(ev.target.files[0]); else fotoKaldir(); });
+  $('foto-kaldir').addEventListener('click', fotoKaldir);
   $('t1-git').addEventListener('click', (ev) => calistir(ev.currentTarget, degerle));
   $('t2-git').addEventListener('click', (ev) => calistir(ev.currentTarget, ilanAra));
   $('t5-git').addEventListener('click', (ev) => calistir(ev.currentTarget, performansAnalizi));

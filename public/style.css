@@ -154,3 +154,16 @@ footer { text-align: center; color: #374151; font-size: .75rem; margin-top: 40px
 :focus-visible { outline: 2px solid var(--indigo-d); outline-offset: 2px; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+.filerow { display: flex; gap: 10px; align-items: stretch; }
+.filerow .file { flex: 1; }
+.x { flex: 0 0 auto; width: 46px; cursor: pointer; font-size: 1.1rem; color: var(--soft); background: rgba(248,113,113,.08);
+  border: 1px solid rgba(248,113,113,.3); border-radius: 12px; }
+.x:hover { color: #fff; background: rgba(248,113,113,.25); }
+.x[hidden] { display: none; }
+.preview-wrap { position: relative; }
+.tbl { width: 100%; border-collapse: collapse; font-size: .84rem; margin: 6px 0 4px; }
+.tbl th, .tbl td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); color: var(--soft); }
+.tbl th { color: var(--indigo); font-weight: 600; font-size: .75rem; letter-spacing: 1px; text-transform: uppercase; }
+.tbl td:last-child, .tbl th:last-child { text-align: right; width: 64px; color: var(--ink); font-weight: 600; }
+.seg legend small { color: var(--mute); }

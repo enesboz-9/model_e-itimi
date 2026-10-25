@@ -233,9 +233,17 @@ def ilan_satiri(i):
     }
 
 
-def oneri_bul(kasa, fiyat_ust, fiyat_alt, marka_haric=None, n=5, yil_ref=None):
+def oneri_bul(kasa, fiyat_ust, fiyat_alt, marka_haric=None, n=5, yil_ref=None, min_ilan=3):
+    """Benzer araç önerisi: tek bir ilana değil, marka+model GRUBUNUN ortalama fiyatına bakar.
+
+    Aynı kasa tipinde ve model yılı (yil_ref ± 3) aralığındaki ilanlar marka+seri bazında
+    gruplanır; grubun ortalama fiyatı [fiyat_alt, fiyat_ust] bandına düşen (ve en az
+    `min_ilan` ilanı olan) gruplar, ortalaması tahmine en yakın olandan başlayarak döner.
+    Fiyatlar il.fiyat üzerinden gelir: taban ay fiyatı x güncel enflasyon katsayısı.
+    """
     il = ilanlar()
-    m = (il.fiyat >= fiyat_alt) & (il.fiyat <= fiyat_ust)
+    hedef = (fiyat_ust + fiyat_alt) / 2
+    m = il.yil > 0
     if kasa and kasa != "Bilinmiyor":
         kk = il.kasa_kod.get(kasa.lower())
         m &= (il.kasa == kk) if kk is not None else np.zeros_like(m)
@@ -248,17 +256,26 @@ def oneri_bul(kasa, fiyat_ust, fiyat_alt, marka_haric=None, n=5, yil_ref=None):
     idx = np.flatnonzero(m)
     if idx.size == 0:
         return []
-    idx = idx[np.argsort(il.fiyat[idx], kind="stable")]
-    goruldu, sonuc = set(), []
-    for i in idx:
-        anahtar = (il.marka[i], il.seri[i])
-        if anahtar in goruldu:
-            continue
-        goruldu.add(anahtar)
-        sonuc.append(ilan_satiri(i))
-        if len(sonuc) >= n:
-            break
-    return sonuc
+    anahtar = il.marka[idx].astype(np.int64) * 10000 + il.seri[idx]
+    grup, ters = np.unique(anahtar, return_inverse=True)
+    adet = np.bincount(ters)
+    ort = np.bincount(ters, weights=il.fiyat[idx]) / adet
+    ort_km = np.bincount(ters, weights=il.km[idx].astype(float)) / adet
+    sonuc = []
+    for g in np.flatnonzero((adet >= min_ilan) & (ort >= fiyat_alt) & (ort <= fiyat_ust)):
+        uyeler = idx[ters == g]
+        p = il.fiyat[uyeler]
+        sonuc.append({
+            "marka": il.t["marka"][il.marka[uyeler[0]]], "seri": il.t["seri"][il.seri[uyeler[0]]],
+            "ort_fiyat": float(ort[g]), "min_fiyat": float(p.min()), "max_fiyat": float(p.max()),
+            "yil_min": int(il.yil[uyeler].min()), "yil_max": int(il.yil[uyeler].max()),
+            "ort_km": int(ort_km[g]), "adet": int(adet[g]),
+            "yakit": il.t["yakit"][np.bincount(il.yakit[uyeler]).argmax()],
+            "vites": il.t["vites"][np.bincount(il.vites[uyeler]).argmax()],
+            "kasa": il.t["kasa"][il.kasa[uyeler[0]]],
+        })
+    sonuc.sort(key=lambda s: abs(s["ort_fiyat"] - hedef))
+    return sonuc[:n]
 
 
 def verdict(tahmin, medyan):
