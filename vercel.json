@@ -7,9 +7,6 @@
       "includeFiles": "data/**"
     }
   },
-  "rewrites": [
-    { "source": "/api/:path*", "destination": "/api/index" }
-  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -18,10 +15,6 @@
         { "key": "X-Frame-Options", "value": "DENY" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
       ]
-    },
-    {
-      "source": "/(style.css|app.js)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=300, must-revalidate" }]
     }
   ]
 }

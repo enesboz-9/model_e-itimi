@@ -186,15 +186,17 @@ async function fotoYukle(dosya) {
     if (r.renk && [...$('t1-renk').options].some((o) => o.value === r.renk)) $('t1-renk').value = r.renk;
     $('l-marka').textContent = 'Marka' + (markaE ? ' 🤖' : ''); $('l-seri').textContent = 'Model / Seri' + (seriE ? ' 🤖' : '');
     $('l-yil').textContent = 'Yıl' + (r.yil ? ' 🤖' : ''); $('l-km').textContent = 'Kilometre' + (r.km ? ' 🤖' : '');
-    $('l-kasa').textContent = 'Kasa Tipi 🤖'; $('l-renk').textContent = 'Renk 🤖';
+    $('l-kasa').textContent = 'Kasa Tipi' + (r.marka ? ' 🤖' : ''); $('l-renk').textContent = 'Renk' + (r.marka ? ' 🤖' : '');
     digerSekmelerleSenkronla();
 
     const yasAi = r.yil ? 2026 - r.yil : 0;
+    const tespitYok = !r.marka;
     kutu.innerHTML = `<div class="grid2" style="margin-top:12px"><div><img class="preview" alt="Yüklenen araç fotoğrafı" src="${url}"></div><div>
-      <div class="msg ok"><b>Kasa:</b> ${e(r.kasa_tipi)} &nbsp;|&nbsp; <b>Renk:</b> ${e(r.renk)}</div>
+      ${tespitYok ? `<div class="msg warn">⚠️ <b>AI bu fotoğraftan aracı tespit edemedi.</b> ${e(r.aciklama || '')}<br>Daha net, aracın yandan veya önden/arkadan tamamının göründüğü bir fotoğraf deneyin ya da bilgileri aşağıdan elle girin.</div>`
+        : `<div class="msg ok"><b>Kasa:</b> ${e(r.kasa_tipi)} &nbsp;|&nbsp; <b>Renk:</b> ${e(r.renk)}</div>`}
       ${r.marka ? `<div class="msg info"><b>Marka:</b> ${e(r.marka)} &nbsp;|&nbsp; <b>Model:</b> ${e(r.seri)}${r.yil ? ` &nbsp;|&nbsp; <b>Yıl:</b> ${r.yil}` : ''}${r.yil_aralik_baslangic && r.yil_aralik_bitis ? ` &nbsp;|&nbsp; <b>Kasa Dönemi:</b> ${r.yil_aralik_baslangic}–${r.yil_aralik_bitis}` : ''}</div>` : ''}
       ${r.km > 0 ? `<div class="msg info"><b>Tahmini KM:</b> ${sayi(r.km)} km <i>(~${yasAi} yıl × ${yasAi <= 10 ? '15k-20k' : '10k-15k'} km/yıl)</i></div>` : ''}
-      <p class="hint">${e(r.aciklama || '')}<br>Aşağıda AI tespitlerini onaylayabilir veya değiştirebilirsin.</p></div></div>`;
+      ${tespitYok ? '' : `<p class="hint">${e(r.aciklama || '')}<br>Aşağıda AI tespitlerini onaylayabilir veya değiştirebilirsin.</p>`}</div></div>`;
   } catch (err) {
     kutu.innerHTML = `<div class="msg err">⚠️ ${e(err.message)}</div>`;
   }
