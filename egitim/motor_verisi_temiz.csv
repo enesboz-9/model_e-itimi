@@ -1,0 +1,1663 @@
+marka,motor_kodu,uretim_yillari,hacim_cc,guc_hp,tork_nm,yakit_tipi,silindir_konf,silindir_sayisi,blok_malzemesi,turbo,kompresyon_orani,tavsiye_edilen_yag,yag_kapasitesi_l,motor_omru_km,agirlik_kg,euro_standardi
+Audi,BDW,2004-2008,2393.0,177.0,230.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.3,5w-30,6.5,280000.0,,euro 4
+Audi,AUK,2004-2010,3123.0,256.0,330.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),12.5,5w-30,6.5,260000.0,,euro 4
+Audi,BDX,2006-2010,2773.0,210.0,280.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),12.0,5w-30,6.2,250000.0,,euro 4
+Audi,CAJA,2008-2011,2995.0,290.0,420.0,Benzin,V,6.0,Alüminyum,Evet,10.5,5w-30,6.5,250000.0,,euro 5
+Audi,CGWA,2009-2013,2995.0,290.0,420.0,Benzin,V,6.0,Alüminyum,Evet,10.5,5w-30,6.5,240000.0,,euro 5
+Audi,CGWB,2010-2012,2995.0,300.0,440.0,Benzin,V,6.0,Alüminyum,Evet,10.5,5w-30,6.5,260000.0,,euro 5
+Audi,CREC,since 2014,2995.0,333.0,440.0,Benzin,V,6.0,Alüminyum,Evet,10.8,5w-30,6.8,250000.0,,euro 6
+Audi,CZSE,since 2017,2995.0,340.0,500.0,Benzin,V,6.0,Alüminyum,Evet,11.2,0w-20,7.0,260000.0,,euro 6
+Audi,DLZA,since 2018,2995.0,340.0,500.0,Benzin,V,6.0,Alüminyum,Evet,11.2,0w-20,7.0,270000.0,,euro 6
+Audi,CWGD,since 2016,2995.0,354.0,500.0,Benzin,V,6.0,Alüminyum,Evet,11.2,0w-20,7.0,250000.0,,euro 6
+BMW,N42B18,2001-2004,1796.0,116.0,175.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,4.25,250000.0,120.0,euro 3
+BMW,M54B30,2000-2006 munich plant,2979.0,231.0,300.0,Benzin,Sıra (Inline),6.0,Alüminyum,Hayır (Atmosferik),10.2,5w-30,6.5,330000.0,,euro 3/4
+BMW,N45B16,2004-2011,1596.0,116.0,150.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,4.5,320000.0,,euro 4/5
+BMW,N43B20,2007-2011,1995.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),12.0,5w-30,4.25,250000.0,,euro 4/5
+BMW,M44B19,1996-2001 munich plant,1895.0,140.0,180.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,0w-30 / 0w-40 / 5w-30 / 5w-40 / 10w-40 / 15w-50,5.0,300000.0,,euro 3
+BMW,M50B20,1990-1996 munich plant,1991.0,150.0,190.0,Benzin,Sıra (Inline),6.0,Dökme Demir,Hayır (Atmosferik),,5w-30,5.75,400000.0,,
+BMW,N45B20S,2006-2007,1997.0,177.0,210.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,4.5,250000.0,,euro 4
+BMW,N46B18,2004-2005 bmw plant hams hall,1796.0,116.0,175.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.2,5w-30,4.25,320000.0,,euro 4
+BMW,N46B20,2004-2012 bmw plant hams hall,1995.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,4.25,300000.0,,euro 4/5
+BMW,N53B30,2007-2013,2996.0,,,Benzin,Sıra (Inline),6.0,Alüminyum,Hayır (Atmosferik),12.0,5w-30,6.5,300000.0,,euro 5
+BMW,N54B30,2006-2016,2979.0,,,Benzin,Sıra (Inline),6.0,Alüminyum,Evet,10.2,5w-30,6.5,250000.0,,euro 5
+BMW,N55B30,2009-2018,2979.0,,,Benzin,Sıra (Inline),6.0,Alüminyum,Evet,10.2,5w-30,6.5,300000.0,,euro 5
+BMW,N62B36,2001-2004,3600.0,272.0,360.0,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,8.0,300000.0,213.0,euro 3/4
+BMW,N62B40,2005-2010,4000.0,306.0,390.0,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,8.0,310000.0,,euro 3/4
+BMW,N43B16,2007-2011,1599.0,122.0,160.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),12.0,5w-30,4.25,240000.0,,euro 4/5
+BMW,N52B25,2005-2011,2497.0,197.5,240.0,Benzin,Sıra (Inline),6.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,6.5,250000.0,,euro 4/5
+BMW,N53B25,2007-2010,2497.0,190.0,237.5,Benzin,Sıra (Inline),6.0,Alüminyum,Hayır (Atmosferik),12.0,5w-30,6.5,275000.0,,euro 5
+BMW,S50B30,1992-1995,2990.0,,,Benzin,,,,Bilinmiyor,,5w-30 / 5w-40 / 5w-50 / 10w-40 / 15w-40,7.0,400000.0,,euro 1
+BMW,S50B32,1995-2000,3201.0,,,Benzin,,,,Bilinmiyor,11.3,0w-30 / 0w-40 / 5w-30 / 5w-40 / 10w-40/ 15w-40,5.5,400000.0,154.0,euro 2
+BMW,N52B30,2004-2011,2996.0,245.0,292.5,Benzin,Sıra (Inline),6.0,Alüminyum,Hayır (Atmosferik),10.7,5w-30,6.5,275000.0,,euro 4/5
+BMW,M52B20 / M52TUB20,1994-2001 munich plant,1991.0,150.0,190.0,Benzin,Sıra (Inline),6.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,6.5,350000.0,,
+BMW,S62B50,1998-2003,4941.0,400.0,,Benzin,,,,Bilinmiyor,11.0,10w-60,6.5,250000.0,,euro 2
+BMW,M42B18,1989-1996,1796.0,140.0,175.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,0w-30 / 0w-40 / 5w-30 / 5w-40 / 10w-40,5.0,300000.0,,euro 2
+BMW,S63B44,2009,4395.0,,,Benzin,,,,Bilinmiyor,,,8.5,,229.0,
+BMW,S65B40,2007-2013,3999.0,420.0,,Benzin,,,,Bilinmiyor,12.0,10w-60,8.8,200000.0,202.0,euro 4
+BMW,S85B50,2005-2010,4999.0,507.0,,Benzin,,,,Bilinmiyor,12.0,10w-60,9.3,200000.0,240.0,euro 4
+BMW,M43B16,1993-2002 steyr plant,1596.0,102.0,150.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.7,5w-30,4.0,300000.0,,euro 2/3
+BMW,M43B18,1992-2001 steyr plant,1796.0,115.0,168.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.7,5w-30,4.0,320000.0,133.0,euro 2/3
+BMW,M43B19 / M43TU,1998-2002 steyr plant,1895.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.7,5w-30,4.0,350000.0,138.0,euro 2/3
+BMW,M20B20,1977-1992,1991.0,,,,,,,Bilinmiyor,,5w-30 / 5w-40 / 10w-30 / 10w-40 / 10w-50 / 15w-50,4.25,300000.0,,
+BMW,M50B25 / M50B25TU,1990-1996 munich plant,2494.0,192.0,245.0,Benzin,Sıra (Inline),6.0,Dökme Demir,Hayır (Atmosferik),,5w-30,5.75,400000.0,,
+BMW,M52B25 / M52TUB25,1995-2001 munich plant,2494.0,170.0,245.0,Benzin,Sıra (Inline),6.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,6.5,350000.0,,
+BMW,M20B25,1986-1993,2494.0,,,,,,,Bilinmiyor,,5w-30 / 5w-40 / 10w-30 / 10w-40 / 10w-50 / 15w-40 / 15w-50,4.75,300000.0,,
+BMW,M60B30,1992-1996,2997.0,218.0,290.0,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,7.5,300000.0,,euro 1
+BMW,M52B28 / M52TUB28,1995-2001 munich plant,2793.0,193.0,280.0,Benzin,Sıra (Inline),6.0,Alüminyum,Hayır (Atmosferik),10.2,5w-30,6.5,350000.0,,
+BMW,S38B36,1988-1996,3535.0,316.0,,Benzin,,,,Bilinmiyor,10.0,5w-30 / 5w-40 / 10w-40 / 15w-40,5.75,400000.0,,
+BMW,M30B30,1971-1994,2986.0,184.0,,Benzin,,,,Bilinmiyor,9.0,5w-30 / 5w-40 / 10w-40/ 15w-40,5.75,400000.0,,
+BMW,M30B35 / M30B34,1982-1992,3430.0,,,Benzin,,,,Bilinmiyor,,5w-30 / 5w-40 / 10w-40/ 15w-40,5.75,400000.0,,
+BMW,M40B16,1988-1994 steyr plant,1596.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.0,5w-30,4.0,275000.0,,euro 1
+BMW,M40B18,1987-1994 steyr plant,1795.0,113.0,162.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),8.8,5w-30,4.0,300000.0,,euro 1
+BMW,M54B22,2001-2006 munich plant,2171.0,170.0,210.0,Benzin,Sıra (Inline),6.0,Alüminyum,Hayır (Atmosferik),10.7,5w-30,6.5,300000.0,,euro 3/4
+BMW,M54B25,2000-2006 munich plant,2494.0,192.0,245.0,Benzin,Sıra (Inline),6.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,6.5,320000.0,,euro 3/4
+BMW,M60B40,1992-1998,3982.0,286.0,400.0,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),10.0,5w-30,7.5,350000.0,,euro 1
+BMW,M62B35,1996-2003,3498.0,,,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),10.0,5w-30,7.5,320000.0,,euro 2/3
+BMW,M62B44,1996-2005,4398.0,,,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),10.0,5w-30,7.5,330000.0,,euro 2/3
+BMW,N13B16,2011-2016,1598.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.5,5w-30,4.25,250000.0,,euro 5/6
+BMW,N20B20,2011-2018,1997.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.0,5w-30,5.0,220000.0,,euro 5/6
+BMW,N42B20,2001-2004,1995.0,143.0,200.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.0,5w-30,4.25,275000.0,120.0,euro 3
+BMW,N62B44,2001-2006,4398.0,,,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),,5w-30,8.0,320000.0,213.0,euro 3/4
+BMW,N62B48,,4799.0,,,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),,5w-30,8.0,3500000.0,,euro 3/4
+BMW,N63B44,since 2008,4395.0,,,Benzin,V,8.0,Alüminyum,Bilinmiyor,,5w-30,8.5,250000.0,,
+BMW,S52B32,1995-2000,3152.0,240.0,,Benzin,,,,Bilinmiyor,10.5,0w-30 / 0w-40 / 5w-30 / 5w-40 / 10w-40 / 15w-40,5.5,400000.0,141.0,euro 2
+BMW,S54B32,2000-2011,3246.0,,,Benzin,,,,Bilinmiyor,11.5,10w-60,6.5,400000.0,149.0,euro 3
+BMW,M62B46,2001-2003,4619.0,347.0,480.0,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,7.5,350000.0,208.0,euro 3
+Jeep,EJH,2011-,1598.0,110.0,152.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,4.6,250000.0,,euro 5
+Jeep,ERH,1986-2006,3964.0,185.0,310.0,Benzin,Sıra (Inline),6.0,Dökme Demir,Hayır (Atmosferik),8.6,5w-30,5.7,450000.0,,euro 2/3
+Jeep,EPE,1983-1985,2464.0,105.0,179.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.2,5w-30,3.8,300000.0,,euro 0
+Jeep,EML,1992-2003,5899.0,240.0,455.0,Benzin,V,8.0,Dökme Demir,Hayır (Atmosferik),8.7,5w-30,,400000.0,,euro 2
+Jeep,ELF,1992-2002,5210.0,220.0,395.0,Benzin,V,8.0,Dökme Demir,Hayır (Atmosferik),9.1,5w-30,4.7,450000.0,,euro 2
+Jeep,EVE,2008-2013,4701.0,305.0,450.0,Benzin,V,8.0,Dökme Demir,Hayır (Atmosferik),9.8,5w-30,5.7,250000.0,,euro 4
+Jeep,EVC,2002-2008,4701.0,260.0,435.0,Benzin,V,8.0,Dökme Demir,Hayır (Atmosferik),9.7,5w-30,5.7,300000.0,,euro 3/4
+Jeep,EVA,1998-2013,4701.0,232.5,400.0,Benzin,V,8.0,Dökme Demir,Hayır (Atmosferik),9.0,5w-30,5.7,350000.0,,euro 3/4
+Jeep,EKG,2001-2012,3701.0,207.5,312.5,Benzin,V,6.0,Dökme Demir,Hayır (Atmosferik),9.7,5w-30,4.7,300000.0,,euro 3/4
+Jeep,EXL,2005-2010,2987.0,218.0,510.0,Dizel,V,6.0,Dökme Demir,Evet,18.0,5w-30,8.5,320000.0,,euro 4/5
+Jeep,ENF,2002-2005,2685.0,163.0,400.0,Dizel,Sıra (Inline),5.0,Dökme Demir,Evet,18.0,5w-30,7.5,350000.0,,euro 3/4
+Jeep,ENE,2010-2015,2143.0,149.5,320.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.2,5w-30,6.5,300000.0,,euro 5
+Chrysler,EDJ,2002-2009,2148.0,135.5,300.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.0,5w-30,6.7,275000.0,,euro 3/4
+Dodge,ECE,2006-2011,1968.0,140.0,310.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.0,5w-30,4.3,280000.0,,euro 4
+Chrysler,ECD,2006-2011,1968.0,140.0,310.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.0,5w-30,4.3,300000.0,,euro 3
+Jeep,EXA,1999-2001,3125.0,140.0,385.0,Dizel,Sıra (Inline),5.0,Dökme Demir,Evet,21.0,5w-30,7.8,300000.0,,euro 1
+Jeep,EXF,2010-,2987.0,220.0,505.0,Dizel,V,6.0,Dökme Demir,Evet,16.5,5w-30,7.7,300000.0,,euro 5/6
+Chrysler,ENR,2000-2007,2766.0,156.5,380.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,17.5,5w-30,6.5,320000.0,,euro 3
+Jeep,ENS,2006-2018,2766.0,180.0,410.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,17.5,5w-30,6.5,300000.0,,euro 4/5
+Chrysler,EGF,2006-2010,3518.0,235.0,325.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.1,5w-30,5.2,350000.0,,euro 3
+Chrysler,ESF,2005-2010,6059.0,425.0,570.0,Benzin,,,,Hayır (Atmosferik),10.3,5w-30,6.7,350000.0,,euro 3
+Chrysler,EGG,1998-2010,3518.0,250.0,340.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.1,5w-30,5.2,340000.0,,euro 3
+Dodge,EBA,2006-2009,1798.0,148.0,169.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,4.3,220000.0,,euro 4
+Dodge,ECB,1994-2005,1996.0,132.0,176.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.8,5w-30,4.3,275000.0,,euro 3
+Dodge,EDV,2002-2009,2429.0,225.0,335.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,8.1,5w-30,4.7,200000.0,,euro 3/4
+Dodge,EGS,2006-2011,3952.0,260.0,360.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.3,5w-30,5.2,310000.0,,euro 3
+Jeep,EHB,2013-,3239.0,275.0,325.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.7,5w-30,5.6,320000.0,,euro 5
+Dodge,ECN,2006-2016,1998.0,158.0,191.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,4.3,250000.0,,euro 4
+Chrysler,EGE,1992-1997,3518.0,215.0,300.0,Benzin,V,6.0,Dökme Demir,Hayır (Atmosferik),10.4,5w-30,5.3,300000.0,,euro 2
+Dodge,ED4,2007-2009,2360.0,285.0,359.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,8.6,5w-30,4.3,230000.0,,euro 4
+Chrysler,EDT,2002-2009,2429.0,182.0,285.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,8.1,5w-30,4.7,220000.0,,euro 3/4
+Dodge,EGW,1997-2001,3231.0,225.0,305.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.1,5w-30,5.2,320000.0,,euro 3
+Chrysler,EDZ,1995-2010,2429.0,144.5,220.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.4,"5w-30, 5w-40",5.5,500000.0,,euro 3/4
+Jeep,ED6,2012-,2360.0,180.0,237.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.0,5w-20,5.2,250000.0,,euro 5/6
+Dodge,EZA,2003-2009,5654.0,340.0,505.0,Benzin,,,,Hayır (Atmosferik),9.5,5w-30,6.7,400000.0,,euro 2
+Dodge,ECH,1999-2004,1996.0,150.0,183.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.8,5w-30,4.3,260000.0,,euro 3
+Chrysler,ENJ,2000-2007,2499.0,141.0,340.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,17.5,5w-30,6.0,300000.0,,euro 3
+Dodge,EZH,2008-,5654.0,375.0,540.0,Benzin,,,,Hayır (Atmosferik),10.3,5w-30,6.7,350000.0,,euro 4
+Chrysler,EGA,1989 &#8211; 2000,3301.0,156.0,260.0,Benzin,V,6.0,Dökme Demir,Hayır (Atmosferik),8.9,5w-30,4.0,400000.0,,euro 2/3
+Chrysler,EGN,2003 &#8211; 2006,3518.0,253.0,340.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.1,5w-30,5.2,320000.0,,euro 3
+Jeep,EHD,2014-,2997.0,235.0,295.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.2,5w-30,5.6,300000.0,,euro 5
+Chrysler,ECC,1994-2005,1996.0,145.0,180.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.6,5w-30,4.3,270000.0,,euro 3
+Chrysler,EJD,2000-2010,1598.0,116.0,157.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.5,5w-30,4.3,300000.0,,euro 3
+Chrysler,EER,1997-2010,2736.0,197.5,260.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),9.7,5w-30,5.4,330000.0,,euro 3/4
+Dodge,EGH,1990 &#8211; 2000,3778.0,165.0,307.5,Benzin,V,6.0,Dökme Demir,Hayır (Atmosferik),9.0,5w-30,4.0,420000.0,,euro 2/3
+Chrysler,EBD,1994-1999,1796.0,115.0,152.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,5w-30,4.3,250000.0,,euro 3
+Jeep,ENC,1991-2001,2499.0,115.0,270.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,21.0,5w-30,6.8,250000.0,,euro 1
+Dodge,ESG,2010-,6407.0,477.5,640.0,Benzin,,,,Hayır (Atmosferik),10.9,5w-30,6.7,380000.0,,euro 4
+Dodge,ED3,2006-,2360.0,172.5,222.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,4.3,260000.0,,euro 4
+Chrysler,EGQ,2006-2010,3952.0,252.5,352.5,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.3,5w-30,5.3,330000.0,,euro 3
+Chrysler,EZB,2004-2008,5654.0,335.0,515.0,Benzin,,,,Hayır (Atmosferik),9.6,5w-20,6.7,375000.0,,euro 3
+Chrysler,ERB,2010-,3604.0,295.0,355.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.2,5w-30,5.6,330000.0,,euro 4
+Mercedes - Benz,OM460LA,,12816.0,435.0,,Dizel,,,,Bilinmiyor,18.0,,,,939.0,euro 5
+Mercedes - Benz,OM926LA,1998,7201.0,312.5,,Dizel,,,,Bilinmiyor,,,,,530.0,euro 4
+Mercedes - Benz,OM470,2003,10700.0,,,Dizel,,,,Bilinmiyor,18.5,,,,956.0,euro 6
+Mercedes - Benz,OM352,1964-01-01 00:00:00,5675.0,,,Dizel,,,,Bilinmiyor,,,,,,
+Mercedes - Benz,OM642,2005-03-01 00:00:00,2987.0,,,Dizel,,,,Bilinmiyor,18.0,,,,,euro-4
+Mercedes - Benz,OM364,1986-04-01 00:00:00,3972.0,,,Dizel,,,,Bilinmiyor,,,,,,
+Mercedes - Benz,OM471,2011,12800.0,476.0,,Dizel,,,,Bilinmiyor,18.3,,,,1045.0,euro 6
+Mercedes - Benz,OM402,1990-12-01 00:00:00,12763.0,,,Dizel,,,,Bilinmiyor,,,,,,euro 1
+Mercedes - Benz,OM636,1949,1732.0,,,Dizel,,,,Bilinmiyor,,,,,,
+Mercedes - Benz,OM421,10.1981,10964.0,,,Dizel,,,,Bilinmiyor,,,,,,
+Mercedes - Benz,OM403,1974-05-01 00:00:00,15900.0,,,Dizel,,,,Bilinmiyor,,,,,,
+Mercedes - Benz,OM443,1987-88,18273.0,,,Dizel,,,,Bilinmiyor,16.9,,,,,euro 2
+Mercedes - Benz,OM924LA,2004-10-01 00:00:00,4801.0,,,Dizel,,,,Bilinmiyor,,,,,,euro 3
+Mercedes - Benz,OM401,1975,9572.0,313.0,,Dizel,,,,Bilinmiyor,16.75,,,,,euro ii
+Mercedes - Benz,OM427,,11970.0,,,Dizel,,,,Bilinmiyor,16.25,,,,,
+Mercedes - Benz,OM362,2.1983,5700.0,,,Dizel,,,,Bilinmiyor,,,,,,
+Volvo,D12A340,1993-08-01 00:00:00,12100.0,,,Dizel,,,,Bilinmiyor,,,,,,
+DAF,RS 222,,8650.0,,,Dizel,,,,Bilinmiyor,,,,,,
+DAF,RS 200,,8650.0,,,Dizel,,,,Bilinmiyor,,,,,,
+Mercedes - Benz,OM446,1987,14618.0,455.5,,Dizel,,,,Bilinmiyor,,,,,,euro-1
+Mercedes - Benz,OM936,,7698.0,,,Dizel,,,,Bilinmiyor,,,,,,euro 6
+Mercedes - Benz,OM441,,10964.0,,,Dizel,,,,Bilinmiyor,,,,,,
+Mercedes - Benz,OM326,1.1961,10809.0,,,Dizel,,,,Bilinmiyor,,,,,,
+Mercedes - Benz,OM346,1.1964,10809.0,,,Dizel,,,,Bilinmiyor,,,,,,
+Mercedes - Benz,OM611,,2151.0,,,Dizel,,,,Bilinmiyor,22.0,,,,,
+Mercedes - Benz,OM601,1988-10-01 00:00:00,2299.0,,,Dizel,,,,Bilinmiyor,,,,,,
+Mercedes - Benz,OM648,,3222.0,,,Dizel,,,,Bilinmiyor,18.0,,,,,
+Mercedes - Benz,OM647,,2685.0,,,Dizel,,,,Bilinmiyor,18.0,,,,,
+Mercedes - Benz,OM622,,1598.0,,,Dizel,,,,Bilinmiyor,15.4,,,,,
+Mercedes - Benz,OM613,,3226.0,,470.0,Dizel,,,,Bilinmiyor,,,,,,
+Mercedes - Benz,M271 E18 ML/AL,2002,1796.0,157.0,,Benzin,,,,Bilinmiyor,9.0,0w-30 / 0w-40 / 5w-30 / 5w-40,5.5,,,euro 5
+Mercedes - Benz,OM501LA,,11946.0,370.5,,,,,,Bilinmiyor,,,31.0,,885.0,euro 3
+Mercedes - Benz,OM457LA,,11967.0,,,Dizel,,,,Bilinmiyor,18.5,,,,1045.0,euro 5
+Opel,Z18XER,2005-2010,1796.0,140.0,175.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.5,5w-30 / 5w-40 / 0w-30 / 0w-40,4.5,350000.0,120.0,euro 4
+Mercedes - Benz,OM502LA,,15928.0,554.0,,Dizel,,,,Bilinmiyor,,,,,1125.0,"euro 4, euro 5"
+Mercedes - Benz,OM904LA,,4249.0,,,,,,,Bilinmiyor,17.4,,,,,
+Mercedes - Benz,OM366LA,,5958.0,,,,,,,Bilinmiyor,,,,,,
+Mercedes - Benz,OM422,,14618.0,263.0,,,,,,Bilinmiyor,16.9,,20.75,,900.0,euro 2
+Mercedes - Benz,OM603,,2996.0,,,Dizel,,,,Bilinmiyor,22.0,,,,,
+Mercedes - Benz,OM640,,1991.0,95.5,,Dizel,,,,Bilinmiyor,18.0,,,,,euro 4
+Mercedes - Benz,OM602,,2497.0,,,Dizel,,,,Bilinmiyor,22.0,,,,,
+Mercedes - Benz,OM606,,2996.0,,,Dizel,,,,Bilinmiyor,22.0,,,,,
+Mercedes - Benz,OM629,,3996.0,,715.0,Dizel,,,,Bilinmiyor,,,,,,euro 4
+Mercedes - Benz,OM607,,1461.0,,,Dizel,,,,Bilinmiyor,15.5,,,,,euro 5
+Mercedes - Benz,OM668,,1689.0,,,Dizel,,,,Bilinmiyor,,,,,,
+Mercedes - Benz,OM605,,2497.0,,,Dizel,,,,Bilinmiyor,22.0,,,,,
+DAF,GR220,2006-03-01 00:00:00,6691.0,,1100.0,Dizel,,,,Bilinmiyor,,,,,,euro 4
+Mercedes - Benz,OM604,,2155.0,84.0,,Dizel,,,,Bilinmiyor,22.0,,,,,euro 2/3
+Mercedes - Benz,M104 E32,1991-1998,3199.0,225.5,,Benzin,,,,Bilinmiyor,9.2,0w-30 / 0w-40 / 5w-30 / 5w-40 / 5w-50 / 10w-40 / 10w-50 / 15w-40 / 15w-50,7.5,,,
+Mercedes - Benz,M103 E26,1985-1993,2599.0,160.0,,Benzin,,,,Bilinmiyor,9.2,0w-30 / 0w-40 / 5w-30 / 5w-40 / 5w-50 / 10w-40 / 10w-50 / 15w-40 / 15w-50,6.0,,,—
+Mercedes - Benz,M112 E26,2000-2006,2597.0,,,Benzin,,,,Bilinmiyor,11.0,0w-30 / 0w-40 / 5w-30 / 5w-40 / 5w-50 / 10w-40 / 10w-50 / 15w-40 / 15w-50,8.0,,,euro 4
+Mercedes - Benz,M272 KE25,2005-2011,2496.0,204.0,,Benzin,,,,Bilinmiyor,11.2,0w-30 / 0w-40 / 5w-30 / 5w-40,8.0,,,euro 5
+Mercedes - Benz,M272 KE30,2004-2013,2996.0,231.0,,Benzin,,,,Bilinmiyor,11.3,0w-30 / 0w-40 / 5w-30 / 5w-40,8.0,,,euro 5
+Mercedes - Benz,M272 KE/DE 35,2004-2013,3498.0,,,Benzin,,,,Bilinmiyor,,0w-30 / 0w-40 / 5w-30 / 5w-40,8.0,,,euro 6
+Mercedes - Benz,M273 E55/E46,,4663.0,340.0,,,,,,Bilinmiyor,,,,,,
+Mercedes - Benz,M113 E50,1998-2011,4966.0,,,Benzin,,,,Bilinmiyor,10.0,0w-30 / 0w-40 / 5w-30 / 5w-40 / 5w-50 / 10w-40 / 10w-50 / 15w-40 / 15w-50,8.0,,,euro 4
+Mercedes - Benz,M119 E50,1989-1998,4973.0,,,Benzin,,,,Bilinmiyor,,0w-30 / 0w-40 / 5w-30 / 5w-40 / 5w-50 / 10w-40 / 10w-50 / 15w-40 / 15w-50,8.0,,,euro 1
+Mercedes - Benz,M271 E16 ML,2008-2011,1597.0,142.5,,Benzin,,,,Bilinmiyor,10.3,0w-30 / 0w-40 / 5w-30 / 5w-40,5.5,,,euro 5
+Volvo,D4A140,,4000.0,,,Dizel,,,,Bilinmiyor,,,,,,euro 2
+Honda,J37A,2006-2014,3664.0,300.0,370.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,4.3,320000.0,210.0,euro 4/5
+Mercedes - Benz,M113 E43,1997-2005,4266.0,,,Benzin,,,,Bilinmiyor,10.0,0w-30 / 0w-40 / 5w-30 / 5w-40 / 5w-50 / 10w-40 / 10w-50 / 15w-40 / 15w-50,8.0,,,euro 4
+Mercedes - Benz,M103 E30,1985-1993,2962.0,185.0,,Benzin,,,,Bilinmiyor,,0w-30 / 0w-40 / 5w-30 / 5w-40 / 5w-50 / 10w-40 / 10w-50 / 15w-40 / 15w-50,6.5,,,—
+Mercedes - Benz,M104 E28,1992-1998,2799.0,,,Benzin,,,,Bilinmiyor,,0w-30 / 0w-40 / 5w-30 / 5w-40 / 5w-50 / 10w-40 / 10w-50 / 15w-40 / 15w-50,7.5,,,—
+Mercedes - Benz,M104 E30,1989-1993,2960.0,,,Benzin,,,,Bilinmiyor,10.0,0w-30 / 0w-40 / 5w-30 / 5w-40 / 5w-50 / 10w-40 / 10w-50 / 15w-40 / 15w-50,7.5,,,—
+Mercedes - Benz,M111 E18,1993-2000,1799.0,122.0,,Benzin,,,,Bilinmiyor,9.8,0w-30 / 0w-40 / 5w-30 / 5w-40 / 10w-40 / 15w-40,5.5,,,euro 3
+Mercedes - Benz,M112 E24,1997-2000,2398.0,170.0,,Benzin,,,,Bilinmiyor,10.0,0w-30 / 0w-40 / 5w-30 / 5w-40 / 5w-50 / 10w-40 / 10w-50 / 15w-40 / 15w-50,8.0,,,euro 3
+Mercedes - Benz,M111 E20/E20 ML,1992-2004,1998.0,,,Benzin,,,,Bilinmiyor,,0w-30 / 0w-40 / 5w-30 / 5w-40 / 10w-40 / 15w-40,,,,
+Mercedes - Benz,M119 E42,1991-1998,4196.0,,,Benzin,,,,Bilinmiyor,,0w-30 / 0w-40 / 5w-30 / 5w-40 / 5w-50 / 10w-40 / 10w-50 / 15w-40 / 15w-50,8.0,,,euro 1
+Mercedes - Benz,M112 E28,1997-2005,2799.0,,,Benzin,,,,Bilinmiyor,10.0,0w-30 / 0w-40 / 5w-30 / 5w-40 / 5w-50 / 10w-40 / 10w-50 / 15w-40 / 15w-50,8.0,,,euro 4
+Mercedes - Benz,M111 E23/E23 ML,1995,2295.0,,,Benzin,,,,Bilinmiyor,,0w-30 / 0w-40 / 5w-30 / 5w-40 / 10w-40 / 15w-40,,,,
+Mercedes - Benz,M112 E37,2002-2008,3724.0,,,Benzin,,,,Bilinmiyor,10.0,0w-30 / 0w-40 / 5w-30 / 5w-40 / 5w-50 / 10w-40 / 10w-50 / 15w-40 / 15w-50,8.0,,,euro 4
+Mercedes - Benz,M112 E32,1997,3199.0,,,Benzin,,,,Bilinmiyor,10.0,0w-30 / 0w-40 / 5w-30 / 5w-40 / 5w-50 / 10w-40 / 10w-50 / 15w-40 / 15w-50,8.0,,,euro 4
+Mercedes - Benz,OM639,,1493.0,81.5,,,,,,Bilinmiyor,18.0,,,,,euro 4
+Mercedes - Benz,OM621,,1990.0,,,Dizel,,,,Bilinmiyor,21.0,,,,,
+Mercedes - Benz,OM661,,2225.5,,,Dizel,,,,Bilinmiyor,21.0,,,,,
+Mercedes - Benz,OM626,,1598.0,,,Dizel,,,,Bilinmiyor,15.7,,,,,
+Toyota,1VD-FTV,since 2007,4461.0,,,Dizel,V,8.0,Dökme Demir,Bilinmiyor,16.8,"0w-30, 5w-30",10.8,500000.0,,
+Toyota,1KZ,1992-2003,2982.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,21.2,"5w-30, 5w-40, 10w-30, 10w-40, 15w-40",,350000.0,,
+Toyota,1KD-FTV,since 2000,2982.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,17.9,"0w-30 (since 10.2010), 5w-30, 10w-30, 15w-40, 20w-50",7.0,400000.0,260.0,euro 2/3/4
+Toyota,1HZ,since 1990,4164.0,130.0,280.5,Dizel,Sıra (Inline),6.0,Dökme Demir,Hayır (Atmosferik),,,9.3,600000.0,300.0,euro 1
+Toyota,1HD,1989-2007,4164.0,,,Dizel,,,,Bilinmiyor,,,,,,
+Toyota,7A-FE,1993-2002,1762.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,5w-30 / 10w-30 / 15w-40 / 20w-50,4.2,300000.0,130.0,euro 2
+Toyota,5VZ-FE,1995-2004,3378.0,190.0,298.0,Benzin,V,6.0,Dökme Demir,Hayır (Atmosferik),9.6,5w-30,5.3,400000.0,205.0,euro 1/2
+Toyota,5S-FE,1989-2001,2164.0,135.0,200.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,"5w-30, 5w-40",4.1,500000.0,160.0,euro 2/3
+Toyota,5A-FE,1988-2003,1498.0,100.0,130.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.8,"5w-30, 5w-40",3.0,300000.0,126.0,euro 2
+Toyota,2NZ-FE,since 1999,1298.0,85.0,122.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,3.7,250000.0,88.0,euro 2/3/4
+Toyota,1AZ-FE,2000-2014,1998.0,143.0,192.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.5,"0w-30, 5w-30",4.2,400000.0,131.0,euro 3/4
+Toyota,4ZZ-FE,1999-2009,1398.0,95.0,130.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,3.7,200000.0,125.0,euro 2/3/4
+Toyota,4S,,1838.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),,"5w-30, 5w-40",3.9,350000.0,140.0,
+Toyota,4A-FE,1987-2002,1587.0,107.5,142.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,"5w-30, 5w-40",3.2,300000.0,128.0,euro 2
+Toyota,3ZZ-FE,1997-2009,1598.0,110.0,150.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,3.7,200000.0,128.0,euro 2/3/4
+Toyota,3ZR-FE,since 2007,1986.0,145.0,195.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.0,5w-20,4.2,250000.0,123.0,euro 4/5
+Toyota,3S-FE,1986-2003,1998.0,127.5,175.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,9.8,"5w-30, 5w-40",3.9,500000.0,145.0,euro 2
+Toyota,3RZ-FE,1994-2004,2693.0,147.5,235.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,5w-30,5.4,500000.0,175.0,euro 2/3
+Toyota,2TR-FE,since 2004,2693.0,,242.5,,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),,5w-20,5.5,400000.0,170.0,
+Toyota,1JZ-GE,1990-2007,2492.0,,,,Sıra (Inline),6.0,Dökme Demir,Hayır (Atmosferik),,"5w-30, 5w-40",4.2,500000.0,210.0,
+Toyota,1NZ-FE,since 1999,1497.0,110.0,137.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,"5w-20, 5w-30",3.7,200000.0,92.0,euro 3/4
+Toyota,3UZ-FE,2000-2013,4292.0,292.5,430.0,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),10.5,"5w-30, 5w-40",5.1,500000.0,225.0,euro 3
+Toyota,1G,1979-2006,1988.0,,,,,,,Bilinmiyor,,0w-30 / 5w-30 / 5w-40 / 10w-30 / 10w-40 / 10w-50 / 15w-50,4.2,300000400000.0,,up to euro 3
+Toyota,1GR-FE,since 2002,3956.0,,,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),,"5w-20, 5w-30",,500000.0,166.0,
+Toyota,1MZ-FE,1993-2008,2994.0,,,,V,6.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,4.7,450000.0,175.0,
+Toyota,2AZ-FE,2000-2019,2362.0,157.5,220.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.6,"5w-20, 5w-30",4.3,350000.0,133.0,euro 3/4
+Toyota,2GR-FE,since 2004,3456.0,265.0,340.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.8,"5w-20, 5w-30",6.1,400000.0,163.0,euro 4/5
+Toyota,2JZ-GE,1991-2007,2997.0,222.5,292.5,,Sıra (Inline),6.0,Dökme Demir,Hayır (Atmosferik),10.5,"5w-30, 5w-40",4.5,500000.0,230.0,euro 2/3
+Toyota,2AR-FE,since 2008,2494.0,175.0,230.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.4,5w-30,4.4,300000.0,141.0,euro 3/4/5
+Toyota,1FZ,1984-2009,4477.0,,,Benzin,Sıra (Inline),6.0,Dökme Demir,Hayır (Atmosferik),,5w-30,7.4,400000.0,290.0,
+Toyota,1UZ-FE,1989-2004,3968.0,,,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),,"5w-30, 5w-40",5.6,500000.0,220.0,
+Toyota,2UZ-FE,1998-2012,4663.0,,,Benzin,V,8.0,Dökme Demir,Hayır (Atmosferik),,5w-30,6.8,500000.0,230.0,
+Toyota,3VZ-FE,1991-1996,2958.0,185.0,256.0,Benzin,V,6.0,Dökme Demir,Hayır (Atmosferik),9.6,5w-30,4.3,250000.0,200.0,euro 1/2
+Toyota,4GR-FSE,2003-2020,2499.0,210.0,251.5,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),12.0,"5w-20, 5w-30",6.3,400000.0,180.0,euro 4/5
+Toyota,2ZR-FE,since 2006,1798.0,135.0,172.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.0,5w-20,4.2,250000.0,121.0,euro 4/5
+Toyota,3GR-FE,2003-2017,2994.0,230.0,300.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,6.2,300000.0,163.0,euro 4/5
+Toyota,2ZZ-GE,1999-2011,1796.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Bilinmiyor,11.5,5w-30,4.4,200000.0,135.0,euro 3/4
+Toyota,1ZR-FE,since 2006,1598.0,122.5,155.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.2,"5w-20, 5w-30",4.2,300000.0,120.0,euro 4/5
+Toyota,1ZZ,1997-2009,1794.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.0,"5w-20, 5w-30",3.7,200000.0,,euro 3/4
+Toyota,1AR-FE,since 2008,2672.0,185.0,250.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.0,5w-30,4.4,300000.0,139.0,euro 3/4/5
+Nissan,ZD30,,2953.0,,,Dizel,,,,Bilinmiyor,,5w-30,,,,euro 3/4
+Renault,K7J,1997-2016,1390.0,75.0,114.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,"5w-30, 5w-40",3.8,400000.0,125.0,euro 2/3/4
+Renault,F4R,since 1998,1998.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),,"5w-30, 5w-40",5.9,350000.0,139.0,
+Nissan,GA16DE (GA16S/DS),1990-2002,1597.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),,5w-30,3.2,320000.0,150.0,euro 2/3
+Nissan,HR16DE,2005-,1598.0,,,Benzin,,,,Bilinmiyor,10.7,0w-30 / 0w-40 / 5w-30 / 5w-40 / 10w-30 / 10w-40 / 10w-60 / 15w-40,4.3,300000.0,110.0,euro 4/5
+Nissan,KA24DE,1988-2004,2389.0,147.5,,Benzin,,,,Bilinmiyor,9.2,5w-30 / 5w-40 / 10w-30 / 10w-40,4.1,350000.0,,euro 2/3
+Nissan,QG15DE,1999-20013,1497.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),,5w-30,2.7,220000.0,130.0,
+Nissan,QG16DE,2000-2013,1597.0,110.0,155.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,5w-30,2.7,250000.0,135.0,euro 3/4
+Nissan,RB20,1984-2002,1998.0,,,Benzin,,,,Bilinmiyor,,0w-30 / 5w-30 / 5w-40 / 10w-30 / 10w-40,4.2,400000.0,,euro 2/3
+Nissan,RB25,,2498.0,,,Benzin,Sıra (Inline),6.0,Dökme Demir,Bilinmiyor,,5w-30,4.65,400000.0,,euro 2/3
+Nissan,RB26DETT,1989-2002,2568.0,,,Benzin,,,,Bilinmiyor,8.5,5w-30 / 5w-40 / 10w-30 / 10w-40,4.6,320000.0,,euro 2/3
+Renault,K4M,since 1998,1598.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,,"5w-30, 5w-40",4.8,400000.0,133.0,euro 4/5
+Nissan,VQ40DE,2005,3954.0,,,Benzin,,,,Bilinmiyor,9.7,5w-30 / 5w-40 / 10w-30 / 10w-40,5.1,500000.0,190.0,euro 3/4
+Nissan,SR16VE,1997-2000,1596.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),,5w-30,4.2,320000.0,150.0,euro 3/4
+Nissan,QR20DE,2000-2012,1998.0,147.0,,Benzin,,,,Bilinmiyor,9.9,0w-30 / 5w-20 / 5w-30 / 5w-40 / 10w-30 / 10w-40 / 10w-60 / 15w-40 / 20w-20,3.9,300000.0,120.0,euro 3/4
+Nissan,SR18DE,1989-2001,1838.0,,,Benzin,,,,Bilinmiyor,,5w-30 / 5w-40 / 10w-30 / 10w-40,3.4,380000.0,152.0,euro 2/3
+Nissan,SR20DE,1989-2002,1998.0,147.5,182.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.5,"5w-30, 5w-40",4.0,400000.0,160.0,euro 2/3
+Nissan,MR20DE,2005-2020,1997.0,,,Benzin,,,,Bilinmiyor,10.2,0w-30 / 5w-30 / 5w-40 / 10w-30 / 10w-40 / 10w-60 / 15w-40,4.4,350000.0,118.0,euro 4
+Nissan,QG18DE,1998-2006,1769.0,121.5,166.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,5w-30,2.7,250000.0,138.0,euro 3/4
+Nissan,VR38DETT,,3799.0,600.0,680.0,Benzin,,,,Evet,9.0,0w-40 / 10w-40,,200000.0,225.0,euro 5/6
+Nissan,VQ37VHR,2007,3696.0,,,Benzin,,,,Bilinmiyor,11.0,0w-30 / 0w-40 / 5w-30 / 5w-40 / 10w-30 / 10w-40 / 15w-40,5.4,250000.0,210.0,euro 4/5
+Renault,K9K,since 2001,1461.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,,"5w-30, 5w-40",4.5,400000.0,145.0,
+Nissan,VK45DE / VK45DD,2001-2010,4494.0,,,Benzin,,,,Bilinmiyor,,0w-30 / 5w-30 / 5w-40 / 10w-30 / 10w-40,6.4,400000.0,,euro 3/4
+Nissan,VQ30DE,1994-2007,2987.0,,,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.0,5w-30,4.0,350000.0,190.0,
+Nissan,VQ35DE,,3498.0,260.0,345.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.3,"5w-30, 5w-40",4.7,400000.0,180.0,euro 4/5
+Nissan,QR25DE,2000-,2488.0,,,Benzin,,,,Bilinmiyor,,,5.1,300000.0,121.0,euro 3/4
+Nissan,VH41DE,1991-2001,4130.0,,,Benzin,,,,Bilinmiyor,10.5,5w-30 / 5w-40 / 10w-30 / 10w-40,5.3,400000.0,240.0,euro 3/4
+Nissan,VH45DE,1989-2002,4494.0,278.0,,Benzin,,,,Bilinmiyor,10.2,5w-30 / 5w-40 / 10w-30 / 10w-40,5.6,350000.0,237.0,euro 3/4
+Nissan,VK56DE / VK56VD,2003-2015,5552.0,,,Benzin,,,,Bilinmiyor,,5w-30 / 5w-40 / 10w-30 / 10w-40,6.5,400000.0,,
+Hyundai,D6CA,2014,12920.0,440.0,,,,,,Bilinmiyor,17.0,,,,1210.0,
+Hyundai,D6BR,2000,7545.0,198.0,,Dizel,,,,Bilinmiyor,17.5,,,,1045.0,euro 4
+Hyundai,D8AY,,16031.0,320.0,,Dizel,,,,Bilinmiyor,17.0,,,,1170.0,euro 2
+Hyundai,D6CC,,12344.0,410.0,,Dizel,,,,Bilinmiyor,17.2,,,,1620.0,euro 4
+Mitsubishi,4G64,since 1985,2351.0,,,,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),,5w-30,4.0,330000.0,180.0,
+Ford,JXFA,2006-2014,2402.0,115.0,310.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,17.5,5w-30,9.0,350000.0,,euro 4
+Hyundai,D6AB,,11149.0,300.0,,Dizel,,,,Bilinmiyor,17.0,,,,990.0,euro 2
+Hyundai,D4AF,,3568.0,100.0,,,,,,Bilinmiyor,,,,,320.0,
+Hyundai,D6DA,,6606.0,210.5,,Dizel,,,,Bilinmiyor,17.6,,,,,euro 3
+Hyundai,D4AL,,3298.0,117.5,,,,,,Bilinmiyor,,,,,323.0,euro 2
+Hyundai,D8AB,,17787.0,355.0,,Dizel,,,,Bilinmiyor,,,,,1220.0,euro 2
+Hyundai,D6AV,,11149.0,235.0,,Dizel,,,,Bilinmiyor,17.0,,,,905.0,euro 2
+Hyundai,D6CB,,12344.0,395.0,,,,,,Bilinmiyor,17.0,,30.0,,1153.0,euro 3
+Mitsubishi,4A30,1993-2012,659.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,,,3.45,200000.0,104.0,
+Mitsubishi,4G93,1991-2014,1834.0,,,,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,,5w-30,3.55,350000.0,145.0,
+Mitsubishi,4G92,1991-2006,1597.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),,5w-30,3.65,270000.0,140.0,euro 2/3
+Mitsubishi,4G94,1999-2007,1999.0,,,,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),,5w-30,3.8,300000.0,150.0,
+Mitsubishi,6G74,1992-2021,3497.0,,,,V,6.0,Dökme Demir,Hayır (Atmosferik),,"5w-30, 5w-40",5.7,400000.0,210.0,
+Mitsubishi,6G75,2002-2021,3828.0,,,,V,6.0,Dökme Demir,Hayır (Atmosferik),,"5w-30, 5w-40",5.7,400000.0,205.0,
+Mitsubishi,4M40,1992-2003,2835.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,21.0,5w-40,6.5,400000.0,234.0,
+Mitsubishi,4B11T,2007-2016,1998.0,343.0,450.0,Benzin,Sıra (Inline),4.0,Alüminyum,Bilinmiyor,9.0,"5w-30, 5w-40",5.6,300000.0,134.0,euro 4/5
+Mitsubishi,4D56,1986-2016,2477.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,,"5w-30, 5w-40",6.5,400000.0,193.0,
+Mitsubishi,4G63,since 1981,1997.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,,5w-30,4.0,400000.0,160.0,
+Mitsubishi,4B12,since 2006,2359.0,167.5,227.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,"5w-30, 5w-40",5.2,350000.0,136.0,euro 4/5
+Mitsubishi,6G73,1990-2002,2497.0,,,,V,6.0,Dökme Demir,Hayır (Atmosferik),,"5w-30, 5w-40",5.0,400000.0,195.0,
+Mitsubishi,6G72,1986-2008,2972.0,,,,V,6.0,Dökme Demir,Evet,,"5w-30, 5w-40",5.5,400000.0,195.0,
+Mitsubishi,4G15,1985-2012,1468.0,,,,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,,"5w-30, 5w-40",3.6,300000.0,133.0,
+Mitsubishi,4G18,1998-2012,1584.0,105.0,147.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,"5w-30, 5w-40",3.6,300000.0,135.0,euro 4/5
+Mitsubishi,4G69,since 2003,2378.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),,5w-30,4.3,350000.0,175.0,euro 4
+Mitsubishi,4G63T,1987-2007,1997.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,,5w-30,5.0,300000.0,170.0,
+Mitsubishi,4B11,since 2006,1998.0,150.0,197.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.0,"5w-30, 5w-40",5.0,350000.0,124.0,euro 4/5
+Mitsubishi,4G13,1985-2012,1298.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),,"5w-30, 5w-40",3.6,300000.0,135.0,
+Hyundai,G4FA,since 2006,1396.0,104.0,136.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,"0w-30, 5w-30",3.7,300000.0,99.5,euro 4/5
+Hyundai,G4FC,since 2006,1591.0,124.0,156.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,"0w-30, 5w-30",3.7,300000.0,99.8,euro 4/5
+Hyundai,G4GC,2000-2011,1975.0,139.5,182.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.1,"5w-30, 5w-40",4.5,500000.0,144.0,euro 3/4
+Hyundai,D6AC,,11149.0,340.0,,,,,,Bilinmiyor,16.5,,,,990.0,
+Honda,N22B,2008-2015,2199.0,,,Dizel,Sıra (Inline),4.0,Alüminyum,Bilinmiyor,16.3,0w-30,5.5,240000.0,170.0,euro 5
+Honda,N22A,2002-2010,2204.0,140.0,340.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,16.7,0w-30,5.5,250000.0,175.0,euro 4
+Honda,N16A,since 2013,1597.0,,,Dizel,Sıra (Inline),4.0,Alüminyum,Bilinmiyor,16.0,0w-30,5.1,250000.0,125.0,euro 5/6
+Honda,R20A,since 2006,1997.0,152.5,190.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,4.3,300000.0,110.0,euro 4/5
+Ford,Q4BA,2008-2010,2179.0,175.0,400.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.6,5w-30,5.9,375000.0,,euro 4
+DAF,MX 340,,12900.0,462.0,,,,,,Bilinmiyor,17.7,,,,,euro 5
+Honda,F20B,1993-2002,1997.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),,5w-30,4.2,330000.0,150.0,euro 2/3
+Honda,F20A,1989-2002,1997.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),,5w-30,3.8,300000.0,145.0,euro 2/3
+Audi,CABB,2007-2008,1798.0,160.0,250.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,5w-30,4.6,240000.0,154.0,euro 4
+Volkswagen,CBFA,2008-2013,1984.0,200.0,280.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,5w-30,4.6,280000.0,152.0,sulev
+Honda,D17A,2000-2007,1668.0,125.0,150.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.5,5w-30,3.5,300000.0,125.0,euro 3/4
+Honda,B20B,1995-2002,1972.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),,5w-30,3.8,350000.0,150.0,euro 3
+Volkswagen,CCTB,2008-2011,1984.0,170.0,280.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,5w-30,4.6,270000.0,152.0,ulev 2
+Alfa Romeo,937A1000,2002-2010,1970.0,165.0,206.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),11.3,10w-40,4.4,180000.0,150.0,euro 4
+Ford,QJBB/QJBA,2004-2007,2198.0,155.0,360.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,17.5,5w-30,6.2,275000.0,,euro 3/4
+Ford,FMBA,2002-2007,1998.0,130.0,330.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.2,5w-30,6.1,250000.0,,euro 3
+Opel,Z12XEP,2004-2009,1229.0,80.0,110.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.5,5w-30,3.5,250000.0,100.0,euro 4
+Ford,KNWA,2010-2015,2179.0,200.0,420.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,15.8,5w-30,6.0,350000.0,,euro 5
+Opel,Z14XEP,2003-2010,1364.0,90.0,125.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.5,5w-30,3.5,275000.0,105.0,euro 4
+Honda,L13B,since 2011,1318.0,101.0,122.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),13.5,5w-30,3.6,250000.0,100.0,euro 5/6
+Honda,L15B,since 2013,1497.0,,,,Sıra (Inline),4.0,Alüminyum,Bilinmiyor,,5w-30,3.7,275000.0,100.0,euro 5/6
+Honda,L15A,since 2001,1497.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),,5w-30,3.6,275000.0,100.0,euro 4/5/6
+Honda,L13A,since 2001,1339.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),,5w-30,3.6,275000.0,100.0,euro 4/5
+Honda,R18A,2005-2014,1799.0,140.0,175.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,3.7,280000.0,105.0,euro 4/5
+Honda,F18B,1993-2002,1849.0,137.5,170.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.3,5w-30,3.8,320000.0,135.0,euro 2/3
+Ford,RFA/RFB,1990-1993,1753.0,75.0,152.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,21.5,5w-40,5.0,220000.0,,euro 1
+Ford,1.5 TDCi,since 2012,1499.0,97.5,227.5,Dizel,Sıra (Inline),4.0,Alüminyum,Bilinmiyor,16.0,,,300000.0,,euro 6
+Ford,RVA,1995-1998,1753.0,70.0,135.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,21.5,5w-40,5.1,210000.0,,euro 1
+Ford,RTK/RTJ,1995-2000,1753.0,60.0,105.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),21.5,5w-40,5.0,240000.0,,euro 1
+Honda,D13B,1988-2002,1343.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),,5w-30,3.3,250000.0,105.0,
+Opel,Z22SE,2000-2005,2198.0,147.0,203.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.0,5w-30,5.0,270000.0,135.0,euro 4
+Honda,J35A,1998-2012,3471.0,,,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),,5w-30,4.7,375000.0,205.0,euro 3/4
+Honda,K24A,2001-2016,2354.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),,5w-30,4.2,350000.0,155.0,euro 3/4
+Ford,FXFA,2000-2006,2402.0,115.0,185.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,19.0,5w-30,6.7,300000.0,,euro 3
+Honda,C35A,1995-2004,3473.0,216.5,305.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),9.6,5w-30,4.6,350000.0,221.0,euro 3
+Honda,J32A,1998-2008,3206.0,,,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),,5w-30,4.4,375000.0,195.0,euro 3/4
+Honda,J30A,1997-2007,2997.0,,,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),,5w-30,4.4,375000.0,190.0,euro 3/4
+Honda,F20C,1999-2009,1998.0,245.0,215.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,5w-40,4.8,200000.0,160.0,euro 3/4
+Honda,C32A,1990-1999,3206.0,,,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),,5w-30,4.7,330000.0,217.0,euro 2/3
+Opel,A16XER,since 2008,1598.0,115.0,155.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.8,5w-30,4.5,300000.0,115.0,euro 5
+Honda,D14A,1987-2000,1396.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),,5w-30,3.3,250000.0,110.0,
+Honda,K23A,2006-2012,2300.0,240.0,350.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,8.8,5w-30,5.2,300000.0,170.0,euro 4
+Honda,K20A,2000-2011,1998.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),,5w-30,4.2,300000.0,150.0,euro 3/4
+Honda,J25A,1998-2003,2495.0,200.0,240.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,4.4,350000.0,170.0,euro 2/3
+Honda,H23A,1992-2002,2258.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),,5w-30,,300000.0,160.0,euro 3/4
+Honda,H22A,1991-2002,2157.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.0,5w-30,4.8,300000.0,165.0,euro 3/4
+Honda,C27A,1987-1997,2675.0,,,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),,5w-30,4.5,320000.0,,
+Honda,G25A,1989-1998,2451.0,185.0,230.0,Benzin,Sıra (Inline),5.0,Alüminyum,Hayır (Atmosferik),9.0,5w-30,4.3,350000.0,170.0,euro 1/2
+Honda,G20A,1989-1998,1996.0,157.5,185.0,Benzin,Sıra (Inline),5.0,Alüminyum,Hayır (Atmosferik),9.7,5w-30,4.3,350000.0,165.0,euro 1/2
+Honda,F23A,1997-2003,2254.0,,205.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),,5w-30,4.3,350000.0,145.0,euro 3/4
+Honda,F22B,1991-1997,2156.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),,5w-30,3.8,350000.0,145.0,euro 2/3
+Chevrolet,F18D3,,1796.0,121.0,169.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.5,5w-30,4.0,330000.0,,euro 3/4
+Alfa Romeo,AR32104,2000-2010,1598.0,120.0,146.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.3,10w-40,4.4,250000.0,150.0,euro 3
+DAF,FR 152,2009,4461.0,207.0,,Dizel,,,,Bilinmiyor,,,,,,euro 5
+Honda,D16A,1986-1995,1590.0,,140.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),,5w-30,3.6,300000.0,120.0,euro 2/3
+Honda,D15B,1987-2005,1493.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),,5w-30,3.3,290000.0,115.0,
+Opel,Z10XEP,2003-2009,998.0,60.0,88.0,Benzin,Sıra (Inline),3.0,Dökme Demir,Hayır (Atmosferik),10.5,5w-30,3.0,240000.0,85.0,euro 4
+Honda,B18C,1993-2001,1797.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),,5w-30,4.0,325000.0,120.0,euro 3
+Honda,B18B,1992-2000,1834.0,137.5,170.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.2,5w-30,4.0,300000.0,125.0,euro 3
+Honda,B16B,1997-2000,1595.0,185.0,160.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.8,5w-30,4.0,300000.0,128.0,euro 3
+Honda,B16A,1989-2000,1595.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),,5w-30,4.0,330000.0,138.0,
+Opel,Z22YH,,2198.0,,217.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),12.0,"5.0 liters 5w-30, 5w-40",,250000.0,140.0,euro 4
+Opel,Z16SE,2000-2004,1598.0,84.0,138.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.6,5w-30,3.25,350000.0,100.0,euro 4
+Chevrolet,F14D4,,1399.0,101.0,,,,,,Bilinmiyor,10.5,10w-30 / 5w-30,4.5,350000.0,,euro 4
+Chevrolet,F16D3,2004-2013,1598.0,109.0,,Benzin,,,,Bilinmiyor,9.5,10w-30 / 5w-30,3.75,350000.0,,euro 3/4
+DAF,MX 375,,12900.0,510.0,,,,,,Bilinmiyor,16.5,,,,,euro 5
+Volvo,D7E280,2006,7200.0,280.0,,Dizel,,,,Bilinmiyor,18.0,,,,,"euro 4, 5"
+Chevrolet,F16D4,2008-2020,1598.0,113.0,152.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.8,5w-30,4.5,350000.0,115.0,euro 4/5
+Chevrolet,F18D4,2008-2016,1796.0,141.0,176.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.5,5w-30,4.6,350000.0,,euro 4/5
+Chevrolet,F14D3,2002-2008,1399.0,94.0,,Benzin,,,,Bilinmiyor,9.5,10w-30 / 5w-30,3.75,350000.0,112.0,euro 4
+Ford,2.2 TDCi,,2179.0,175.0,400.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,16.6,,,,,euro 4
+Ford,1.6 TDCi,2004-2010,1560.0,92.0,212.5,Dizel,Sıra (Inline),4.0,Alüminyum,Bilinmiyor,18.0,,,350000.0,,euro 4
+Ford,TXDA,2010-2012,1997.0,163.0,340.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.0,5w-30,5.6,350000.0,,euro 5
+Ford,QXWA/QXWB,2006-2015,1997.0,140.0,320.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.0,5w-30,5.5,400000.0,,euro 4/5
+Volvo,D16C550,,16120.0,550.0,,,,,,Bilinmiyor,,,,,,euro 3
+Scania,DSC12,1995,11700.0,360.0,,Dizel,,,,Bilinmiyor,18.0,,,,,euro 2
+Volvo,D7E240,2006,7200.0,240.0,,Dizel,,,,Bilinmiyor,18.0,,,,670.0,euro 4
+Ford,1.4 TDCi,2002-2014,1399.0,69.0,160.0,Dizel,Sıra (Inline),4.0,Alüminyum,Bilinmiyor,17.9,,,300000.0,,euro 3/4
+Ford,C9DA/C9DB/C9DC,1999-2004,1753.0,90.0,200.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,19.4,5w-30,5.75,300000.0,,euro 2/3
+Ford,BHDA/BHDB,1999-2004,1753.0,75.0,175.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,19.4,5w-30,5.65,275000.0,,euro 2/3
+Ford,RTP/RTN/RTQ,1999-2002,1753.0,75.0,140.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,19.4,5w-30,5.7,250000.0,,euro 2
+Ford,RFN/RFM,1993-2000,1753.0,90.0,178.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,21.5,5w-40,5.1,200000.0,,euro 1/2
+Scania,DS14,1969,14190.0,369.0,,Dizel,,,,Bilinmiyor,,,,,,euro 2
+MAN,D0836,,6871.0,308.0,,,,,,Bilinmiyor,,,,,642.0,euro 4
+DAF,HS825,,8250.0,,,Dizel,,,,Bilinmiyor,,,,,,
+Ford,D6BA,2000-2002,1998.0,115.0,280.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,19.0,5w-30,6.25,240000.0,,euro 3
+Ford,D5BA,2000-2005,1998.0,90.0,245.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,19.0,5w-30,6.2,250000.0,,euro 3
+Ford,D3FA,2000-2006,1998.0,75.0,185.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,19.0,5w-30,6.4,320000.0,,euro 3
+Ford,QYWA,2006-2012,1753.0,125.0,320.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,17.0,5w-30,5.7,250000.0,,euro 3/4
+Ford,KKDA/KKDB,2004-2011,1753.0,115.0,280.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,17.0,5w-30,5.75,260000.0,,euro 3/4
+Ford,FFDA,2002-2004,1753.0,100.0,240.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.5,5w-30,5.65,275000.0,,euro 3/4
+Ford,HCPA,2002-2013,1753.0,90.0,227.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.5,5w-30,5.7,300000.0,,euro 3/4
+Ford,G8DA/G8DB,2003-2010,1560.0,109.0,240.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,18.3,5w-30,3.85,225000.0,,euro 3/4
+Ford,GPDA/GPDC,2005-2010,1560.0,90.0,215.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,18.0,5w-30,3.8,220000.0,,euro 3/4
+Ford,UGJC,2012-2017,1499.0,75.0,185.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,16.0,5w-30,3.85,250000.0,,euro 5
+Ford,F6JA/F6JB,2002-2008,1399.0,68.0,160.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,17.9,5w-30,3.75,280000.0,,euro 3/4
+Ford,CDDA,2002-2005,1597.0,98.0,140.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,5w-30,4.1,320000.0,,euro 3
+Ford,A9JA/A9JB,2001-2008,1299.0,70.0,106.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.2,5w-30,4.15,300000.0,,euro 3
+Ford,MHA/MHB,1997-2001,1679.0,125.0,157.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.3,5w-30,4.3,250000.0,93.0,euro 3
+Ford,FYDA/FYDB/FYDC,1998-2004,1596.0,100.0,145.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,4.25,300000.0,92.0,euro 3
+Ford,FXJA/FXJB/FXJC,2001-2012,1388.0,80.0,124.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,3.8,250000.0,91.0,euro 3/4
+Ford,FUJA/FUJB,2001-2011,1242.0,72.5,110.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.0,5w-30,3.75,220000.0,89.0,euro 3/4
+Ford,RKB,1994-1998,1796.0,112.0,158.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,5w-30,4.25,300000.0,,euro 2/3
+Ford,EDDB,1998-2004,1988.0,131.0,178.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,5w-30,4.3,350000.0,,euro 3
+Ford,NGA,1993-1998,1988.0,133.5,178.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,5w-30,4.3,350000.0,,euro 2/3
+Ford,EYDB,1998-2004,1796.0,115.0,160.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,5w-30,4.3,320000.0,,euro 3
+Ford,EDDC,1998-2004,1988.0,131.0,178.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,5w-30,4.3,400000.0,,euro 2
+Ford,EYDC,1998-2004,1796.0,115.0,160.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,5w-30,4.3,350000.0,,euro 2
+Ford,L1N,1998-2000,1597.0,95.0,142.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.3,5w-30,4.25,330000.0,,euro 2/3
+Ford,L1E,1992-1995,1597.0,90.0,134.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.3,5w-30,4.2,320000.0,,euro 2/3
+Ford,YS4E,2000-2004,1988.0,111.0,169.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.4,5w-30,3.8,240000.0,,euro 3
+Ford,F8CE,1997-2002,1988.0,111.0,169.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.35,5w-30,3.78,250000.0,,euro 3
+Ford,E5SA,2000-2006,2295.0,145.0,203.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,5w-30,4.3,400000.0,,euro 3
+Ford,ZVSA,2000-2006,1998.0,115.0,170.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.8,5w-30,4.5,300000.0,,euro 3
+Ford,J4D,1996-2002,1299.0,60.0,105.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,5w-30,3.25,230000.0,,euro 2/3
+Ford,JJA,1995-2002,1299.0,50.0,84.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,5w-30,3.25,220000.0,,euro 2/3
+Ford,YVDA,2016-2018,2261.0,350.0,440.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.37,5w-20,5.65,180000.0,,euro 6
+Ford,R9DA,2012-2015,1999.0,249.0,360.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.3,5w-20,5.6,200000.0,,euro 5
+Ford,TPWA,2010-2015,1999.0,240.0,340.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.0,5w-20,5.5,250000.0,,euro 5
+Ford,TPBA,2010-2014,1999.0,240.0,340.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.0,5w-20,5.4,250000.0,,euro 5
+Ford,TNBB/TNBA,2010-2014,1999.0,199.0,300.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.0,5w-20,5.7,275000.0,,euro 5
+Ford,JTMA/JTMB,2012-2016,1596.0,182.0,240.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.1,5w-20,4.05,220000.0,,euro 5/6
+Ford,JTBA/JTBB,2010-2014,1596.0,160.0,240.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.0,5w-20,4.1,240000.0,,euro 5/6
+Ford,JQMA,2012-2016,1596.0,150.0,240.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.1,5w-20,3.8,240000.0,,euro 5/6
+Ford,JQDA,2010-2015,1596.0,150.0,240.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.0,5w-20,4.1,250000.0,,euro 5/6
+Ford,?9??,2014-2019,1498.0,182.0,240.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.3,5w-20,3.8,220000.0,,euro 5/6
+Ford,M9DA,2014-2018,1498.0,182.0,240.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.0,5w-20,4.1,220000.0,,euro 5/6
+Ford,M8MA,2014-2019,1498.0,150.0,240.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.0,5w-20,3.8,230000.0,,euro 5/6
+Ford,M8DA,2014-2019,1498.0,150.0,240.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.0,5w-20,4.1,240000.0,,euro 5/6
+Ford,M1JE,2012-2017,998.0,125.0,170.0,Benzin,Sıra (Inline),3.0,Dökme Demir,Evet,10.0,5w-20,4.6,230000.0,,euro 5/6
+Ford,M2DA,since 2012,998.0,100.0,170.0,Benzin,Sıra (Inline),3.0,Dökme Demir,Evet,10.0,5w-20,4.1,250000.0,,euro 5
+Ford,M1DA,since 2012,998.0,125.0,170.0,Benzin,Sıra (Inline),3.0,Dökme Demir,Evet,10.0,5w-20,4.1,220000.0,,euro 5
+Ford,MEBA,2002-2007,2967.0,226.0,280.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.0,5w-30,5.75,330000.0,,euro 3/4
+Ford,REBA,2004-2007,2967.0,204.0,263.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.0,5w-30,5.8,350000.0,,euro 3/4
+Ford,LCBD,2000-2007,2495.0,170.0,220.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),9.8,5w-30,5.7,320000.0,,euro 3/4
+Ford,SGA,1999-2000,2495.0,205.0,235.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.25,5w-30,5.65,275000.0,,euro 3
+Ford,SEA,1994-1999,2544.0,170.0,220.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),9.7,5w-30,5.6,300000.0,,euro 3
+Ford,XTDA,2010-2018,1596.0,85.0,141.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,4.1,300000.0,91.0,euro 5/6
+Ford,SIDA,2007-2011,1596.0,115.0,155.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,4.1,260000.0,91.0,euro 4
+Ford,PNDA,2010-2019,1596.0,125.0,159.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,4.1,350000.0,91.0,euro 5
+Ford,PNBA,2007-2010,1596.0,125.0,160.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,4.1,250000.0,91.0,euro 4
+Ford,HXDA,2003-2008,1596.0,115.0,155.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,4.1,300000.0,93.0,euro 4
+Ford,IQDB,2010-2019,1596.0,105.0,150.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,4.05,330000.0,91.0,euro 5/6
+Ford,UEJB,2013-2017,1499.0,112.0,140.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,4.0,320000.0,89.0,euro 5
+Ford,JZDA,2009-2010,2522.0,327.5,450.0,Benzin,Sıra (Inline),5.0,Alüminyum,Evet,8.5,5w-30,5.9,300000.0,,euro 4/5
+Ford,HUWA,2006-2010,2522.0,220.0,320.0,Benzin,Sıra (Inline),5.0,Alüminyum,Evet,9.0,5w-30,5.8,290000.0,,euro 4
+Ford,HYDB,2008-2013,2522.0,200.0,320.0,Benzin,Sıra (Inline),5.0,Alüminyum,Evet,9.0,5w-30,5.8,450000.0,,euro 4/5
+Ford,HYDA,2005-2010,2522.0,225.0,320.0,Benzin,Sıra (Inline),5.0,Alüminyum,Evet,9.0,5w-30,5.75,400000.0,,euro 4
+Ford,HUBA,2007-2010,2522.0,220.0,320.0,Benzin,Sıra (Inline),5.0,Alüminyum,Evet,9.0,5w-30,5.8,300000.0,,euro 4
+Ford,HMDA,2002-2003,1988.0,215.0,310.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,8.0,5w-30,4.3,250000.0,,euro 3
+Ford,ALDA,2002-2004,1988.0,173.0,196.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.2,5w-30,4.35,275000.0,,euro 3
+Ford,YTMA,since 2012,2488.0,149.0,230.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.7,5w-30,5.0,400000.0,116.0,euro 5
+Ford,SEBA,2007-2015,2261.0,161.0,208.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.6,5w-30,4.3,350000.0,112.0,euro 4/5
+Ford,SEWA,2006-2015,2261.0,161.0,208.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.6,5w-30,4.3,375000.0,112.0,euro 4
+Ford,XQDA,since 2010,1999.0,150.0,202.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),12.0,5w-30,4.3,300000.0,109.0,euro 5
+Ford,CJBA/CJBB,2000-2007,1999.0,145.0,190.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.8,5w-30,4.25,400000.0,105.0,euro 4
+Ford,AOWA,2006-2015,1999.0,145.0,185.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.8,5w-30,4.3,360000.0,105.0,euro 4
+Ford,AODA,2003-2011,1999.0,145.0,185.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.8,5w-30,4.3,340000.0,105.0,euro 4
+Ford,QQDB/QQDA,2003-2011,1798.0,125.0,165.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.8,5w-30,4.3,350000.0,102.0,euro 4
+Ford,CHBA/CHBB,2000-2007,1798.0,125.0,170.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.8,5w-30,4.3,360000.0,102.0,euro 4
+Ford,CFBA,2003-2007,1798.0,130.0,175.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.3,5w-30,4.4,250000.0,107.0,euro 4
+Ford,FYJA,2001-2012,1596.0,100.0,146.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,4.1,340000.0,92.0,euro 4
+Ford,HWDA,2003-2008,1596.0,100.0,150.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,4.1,320000.0,92.0,euro 4
+Ford,SHDA/SHDB,2007-2011,1596.0,100.0,150.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,4.1,330000.0,90.0,euro 4
+Ford,ASDA,2004-2010,1388.0,80.0,124.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,3.8,250000.0,91.0,euro 4
+Ford,Duratorq 2.4,2006,2402.0,100.0,,Dizel,,,,Bilinmiyor,17.5,,,,,euro 4
+Ford,Duratorq 3.2,,3198.0,200.0,,Dizel,,,,Bilinmiyor,15.8,,,,,euro 5
+Ford,Duratorq 2.2,,2198.0,107.5,,Dizel,,,,Bilinmiyor,17.5,,,,,euro 4
+Mazda,B1 1.1l,1987-1994,1138.0,52.5,85.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),8.6,5w-30,3.0,220000.0,112.5,euro 1
+Mazda,B3 1.3l,1987-2005,1323.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),,5w-30,3.2,250000.0,115.8,
+Mazda,B3-ME,1994-2003,1323.0,75.0,105.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.1,5w-30,3.2,280000.0,118.5,euro 2/3
+Mazda,B5 1.5l,1987-1994,1498.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),,5w-30,3.0,250000.0,121.7,
+Mazda,B5-DE,1989-2005,1498.0,112.5,135.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.2,5w-30,3.2,350000.0,129.3,euro 2
+Mazda,B5-ME,1992-2002,1498.0,87.5,122.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.0,5w-30,3.2,300000.0,123.1,euro 2/3
+Mazda,B6 1.6l,1985-1994,1597.0,84.0,122.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.3,5w-30,3.0,275000.0,137.2,euro 1/2
+Mazda,B6-ME,1989-1994,1597.0,87.5,137.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.0,5w-30,3.0,280000.0,138.3,euro 1/2
+Mazda,B6-DE,1993-2009,1597.0,110.0,140.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.0,5w-30,3.2,300000.0,140.5,euro 2/3
+Mazda,BP 1.8l,1989-2004,1839.0,135.0,155.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.0,5w-30,3.2,330000.0,143.2,euro 2
+Mazda,BP-ME/B8,1990-1996,1839.0,107.5,152.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),8.9,5w-30,3.2,320000.0,140.3,euro 2
+Mazda,F6 1.6l,1982-1987,1587.0,77.0,120.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),8.6,5w-30,3.9,250000.0,152.9,euro 0
+Mazda,FP 1.8l,1991-1997,1839.0,102.5,150.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.1,5w-30,3.5,350000.0,131.8,euro 2
+Mazda,FP-DE,1997-2004,1839.0,112.5,155.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.1,5w-30,3.5,400000.0,132.7,euro 3
+Mazda,F8 1.8l,1982-2005,1789.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),,5w-30,3.9,275000.0,155.4,
+Mazda,FE 2.0l,1981-2001,1998.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,,5w-30,3.9,300000.0,164.3,
+Mazda,FE-DE,1987-2004,1998.0,140.0,177.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.2,5w-30,3.9,350000.0,168.2,euro 1/2
+Mazda,FE3N,1989-1997,1998.0,160.0,185.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,5w-30,3.9,250000.0,168.7,euro 2
+Mazda,FS 2.0l,1991-1997,1991.0,122.5,172.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.0,5w-30,3.5,375000.0,136.3,euro 2
+Mazda,FS-DE,1997-2004,1991.0,127.5,177.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.1,5w-30,3.5,450000.0,137.5,euro 3
+Mazda,FS-ZE,1997-2004,1991.0,167.5,180.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,5w-30,3.5,300000.0,138.2,euro 3
+Mazda,F2 2.2l,1986-1993,2184.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,,5w-30,4.6,350000.0,177.1,
+Mazda,K8-DE,1991-1998,1845.0,132.5,157.5,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),9.2,5w-30,4.0,290000.0,165.0,euro 3
+Mazda,K8-ZE,1991-1998,1845.0,142.5,157.5,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),9.5,5w-30,4.0,275000.0,167.0,euro 3
+Mazda,KF-DE,1992-2002,1995.0,142.5,180.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),9.5,5w-30,4.0,300000.0,175.0,euro 3
+Mazda,KF-ZE,1991-1999,1995.0,165.0,185.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.0,5w-30,4.0,275000.0,175.0,euro 3
+Mazda,KJ-ZEM,1993-2002,2255.0,215.0,285.0,Benzin,V,6.0,Alüminyum,Evet,10.0,5w-30,4.1,250000.0,205.0,euro 3
+Mazda,KL-DE,1992-2002,2497.0,170.0,215.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),9.2,5w-30,4.0,450000.0,171.0,euro 3
+Mazda,KL-G4,1997-2002,2497.0,170.0,221.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),9.5,5w-30,4.0,500000.0,175.0,euro 3
+Mazda,KL-ZE,1992-2002,2497.0,200.0,224.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.0,5w-30,4.0,400000.0,176.0,euro 3
+Mazda,L8-DE,2002-2018,1798.0,122.5,165.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.8,5w-30,4.3,275000.0,102.0,euro 4
+Mazda,L813,2002-2012,1798.0,120.0,165.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.8,5w-30,4.3,280000.0,102.0,euro 4
+Mazda,LF-DE,2002-2015,1999.0,150.0,185.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.8,5w-30,4.3,300000.0,105.0,euro 4
+Mazda,LF-VD,2010-2018,1999.0,150.0,190.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.2,5w-30,4.3,260000.0,110.0,euro 5
+Mazda,LF17,2002-2013,1999.0,145.0,185.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.8,5w-30,4.3,320000.0,105.0,euro 4
+Mazda,LFF7,2004-2011,1999.0,145.0,185.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.8,5w-30,4.3,310000.0,105.0,euro 4
+Mazda,L3-VE,2002-2018,2261.0,165.0,210.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.6,5w-30,3.5,300000.0,112.0,euro 4
+Mazda,L3-VDT,2005-2013,2261.0,255.0,365.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.5,5w-30,5.7,230000.0,148.0,euro 4
+Mazda,L3C1,2002-2008,2261.0,165.0,205.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.6,5w-30,3.5,280000.0,112.0,euro 4
+Mazda,L5-VE,2008-2015,2488.0,167.5,227.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.7,5w-30,5.5,350000.0,116.0,euro 4
+Mazda,ZJ-VE,2002-2015,1348.0,82.5,122.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.0,5w-30,3.7,240000.0,103.5,euro 4/5
+Mazda,Z5-DE,1994-1998,1489.0,100.0,135.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.0,5w-30,3.5,300000.0,128.7,euro 3
+Mazda,ZL-DE,1998-2003,1489.0,110.0,137.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.0,5w-30,3.2,320000.0,127.9,euro 3
+Mazda,ZL-VE,1998-2003,1489.0,130.0,141.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.4,5w-30,3.3,290000.0,129.7,euro 3
+Mazda,ZY-VE,2002-2015,1489.0,107.5,137.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.0,5w-30,3.9,280000.0,117.9,euro 4/5
+Mazda,MZR Z6,2003-2019,1598.0,105.0,145.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.0,5w-30,4.2,250000.0,131.2,euro 4/5
+Mazda,ZM-DE,1998-2003,1598.0,100.0,145.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,5w-30,4.0,300000.0,140.9,euro 3
+Mazda,GY-DE,1999-2002,2495.0,170.0,209.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),9.7,5w-30,5.2,350000.0,,euro 3
+Mazda,AJ-DE,2000-2007,2967.0,210.0,265.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.0,5w-30,5.7,400000.0,,euro 3
+Mazda,AJ-VE,2007-2011,2967.0,240.0,300.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.3,5w-30,5.7,350000.0,,euro 4
+Mazda,SkyActiv-G 1.5,since 2013,1496.0,110.0,145.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),13.0,0w-20,3.9,250000.0,,euro 4/5
+Mazda,SkyActiv-G 2.0,since 2012,1997.0,157.5,205.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),13.0,0w-20,4.2,300000.0,,euro 4/5
+Mazda,SkyActiv-G 2.5,1992-2003,2488.0,190.0,250.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),13.0,0w-20,4.2,320000.0,,euro 4/5
+Mazda,13B-MSP,2003-2012,1308.0,221.0,216.5,Benzin,W,2.0,Alüminyum,Hayır (Atmosferik),10.0,5w-30,3.6,120000.0,112.0,euro 4
+Mazda,RF 2.0l,1983-2003,1998.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,,5w-30,,300000.0,187.0,
+Mazda,RF-T DI,1998-2004,1998.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,18.8,5w-30,4.7,300000.0,210.0,euro 2/3
+Mazda,RF5C,2002-2005,1998.0,127.5,310.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.3,5w-30,4.8,270000.0,195.0,euro 3
+Mazda,RF7J,2005-2010,1998.0,127.5,335.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.7,5w-30,4.8,280000.0,197.0,euro 4
+Mazda,R2 2.2l,1983-2007,2184.0,74.5,140.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),22.9,5w-30,6.5,320000.0,190.0,euro 1/2
+Mazda,R2AA,2008-2013,2184.0,167.5,380.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.3,5w-30,4.7,275000.0,202.0,euro 4/5
+Mazda,Y4 1.4 CiTD,2003-2009,1399.0,68.0,160.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,17.9,5w-30,3.75,300000.0,,euro 3/4
+Mazda,Y6 1.6 CiTD,2004-2015,1560.0,,,Dizel,Sıra (Inline),4.0,Alüminyum,Bilinmiyor,,5w-30,,300000.0,,
+Mazda,WL-T,1995-2006,2499.0,120.0,280.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,20.0,"10w-30, 10w-40",6.7,500000.0,234.0,euro 2/3
+Mazda,SH-VPTS,since 2013,2188.0,182.5,435.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,14.4,5w-30,5.8,250000.0,,euro 5/6
+Mazda,S8-DPTS,since 2018,1756.0,115.0,270.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,14.8,5w-30,5.1,260000.0,,euro 6d
+Mazda,S5-DPTS,since 2014,1498.0,105.0,245.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,14.8,5w-30,5.1,240000.0,,euro 5/6
+Subaru,EE20,since 2008,1998.0,148.5,350.0,Dizel,Boxer (H),4.0,Alüminyum,Evet,15.2,5w-30,5.6,250000.0,190.0,euro 4/5/6
+Subaru,FB25,since 2010,2498.0,,,Benzin,Boxer (H),4.0,Alüminyum,Hayır (Atmosferik),,0w-20,4.8,250000.0,150.0,
+Subaru,FB20,,1995.0,,,,Boxer (H),4.0,Alüminyum,Hayır (Atmosferik),,0w-20,,250000.0,,euro 5/6
+Subaru,FB16,,1599.0,,,Benzin,Boxer (H),4.0,Alüminyum,Bilinmiyor,,,4.8,220000.0,,euro 5/6
+Subaru,FA24,,2387.0,264.0,376.0,Benzin,Boxer (H),4.0,Alüminyum,Evet,10.6,5w-30,5.2,240000.0,190.0,euro 5
+Subaru,FA20,,1998.0,,,,Boxer (H),4.0,Alüminyum,Bilinmiyor,,,,230000.0,,euro 5
+Subaru,EZ36,,3629.0,255.0,350.0,Benzin,Boxer (H),6.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,6.3,320000.0,185.0,euro 4/5
+Subaru,EZ30,2000-2009,2999.0,,,Benzin,Boxer (H),6.0,Alüminyum,Hayır (Atmosferik),10.7,5w-30,,300000.0,170.0,
+Subaru,EL15,2006-2012,1498.0,107.5,142.5,Benzin,Boxer (H),4.0,Alüminyum,Hayır (Atmosferik),10.1,5w-30,4.0,250000.0,105.0,euro 4
+Subaru,EJ25,,2457.0,,,,Boxer (H),4.0,Alüminyum,Bilinmiyor,,5w-30,,300000.0,,
+Subaru,EJ20T,,1994.0,,,Benzin,Boxer (H),4.0,Alüminyum,Bilinmiyor,,5w-30,4.7,225000.0,,
+Subaru,EJ20,1989-2015,1994.0,,,,Boxer (H),4.0,Alüminyum,Hayır (Atmosferik),,5w-30,4.0,300000.0,,euro 2/3/4
+Subaru,EJ15,1992-2007,1493.0,,,Benzin,Boxer (H),4.0,Alüminyum,Hayır (Atmosferik),,5w-30,4.4,220000.0,100.0,euro 1/2
+Subaru,CB18,,1795.0,177.0,300.0,Benzin,Boxer (H),4.0,Alüminyum,Evet,10.4,"0w-16, 0w-20",4.3,200000.0,125.0,euro 6
+Volvo,D12A420,,12100.0,,,Dizel,,,,Bilinmiyor,,,,,,euro 2
+Alfa Romeo,AR32301,1998-2001,1970.0,155.0,187.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,10w-40,4.4,210000.0,170.0,euro 2
+Caterpillar,3512,,58.6,,,,,,,Bilinmiyor,,,,,,
+Caterpillar,C10,,10.3,,,,,,,Bilinmiyor,17.25,,,,630.0,
+Audi,CDHA,2009-2015,1798.0,120.0,230.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,5w-30,4.6,270000.0,144.0,euro 5
+Audi,CDHB,2008-2013,1798.0,160.0,250.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,5w-30,4.6,250000.0,144.0,euro 5
+Audi,CCZC,2010-2015,1984.0,170.0,280.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,5w-30,4.6,260000.0,142.0,euro 5
+Caterpillar,C12,,12.0,,,,,,,Bilinmiyor,,,,,1174.0,
+Caterpillar,C18,,18.1,,,,,,,Bilinmiyor,16.3,,,,1565.0,
+Volkswagen,BGP,2005-2010,2480.0,150.0,228.0,Benzin,Sıra (Inline),5.0,Dökme Demir,Hayır (Atmosferik),10.0,5w-30,5.7,330000.0,,euro 4
+Volkswagen,CBTA,2008-2014,2480.0,170.0,240.0,Benzin,Sıra (Inline),5.0,Dökme Demir,Hayır (Atmosferik),10.3,5w-30,6.0,350000.0,,euro 5
+Audi,CEPA,2009-2014,2480.0,340.0,450.0,Benzin,Sıra (Inline),5.0,Dökme Demir,Evet,10.0,5w-30,6.5,220000.0,,euro 5
+Audi,CTSA,2013-2015,2480.0,310.0,420.0,Benzin,Sıra (Inline),5.0,Dökme Demir,Evet,10.0,5w-30,6.5,230000.0,,euro 5
+MAN,D2156,1971,10344.0,192.0,,,,,,Bilinmiyor,17.0,,,,965.0,
+DAF,WS 282,,11600.0,,,Dizel,,,,Bilinmiyor,,,,,,
+MAN,D0834,,4580.0,220.0,,,,,,Bilinmiyor,,,,,360.0,euro 3
+Scania,DSC9,,8970.0,265.0,,Dizel,,,,Bilinmiyor,16.7,,,,,euro 2
+MAN,D0826,,6871.0,205.0,,,,,,Bilinmiyor,,,,,,euro 2
+Scania,DC9,,9000.0,285.0,,Dizel,,,,Bilinmiyor,16.0,,,,890.0,euro 3
+Scania,DSC14,,14181.0,,,Dizel,,,,Bilinmiyor,,,,,,
+Scania,DC16,,16400.0,660.0,,Dizel,,,,Bilinmiyor,16.7,,,,1340.0,euro 4
+Scania,DC12,,11700.0,405.0,,Dizel,,,,Bilinmiyor,,,,,1065.0,euro 3
+Volvo,D12C380,1998-08-01 00:00:00,12100.0,,,Dizel,,,,Bilinmiyor,,,,,,
+Volvo,D16A520,,16122.0,520.0,,,,,,Bilinmiyor,,,,,,euro 2
+DAF,RS 180,,8650.0,,,Dizel,,,,Bilinmiyor,,,,,,
+Volvo,D6A180,,5480.0,,,Dizel,,,,Bilinmiyor,,,,,,
+DAF,B85,,844.0,,,Benzin,,,,Bilinmiyor,,,,,,
+Volvo,D12C460,1998-08-01 00:00:00,12100.0,,,Dizel,,,,Bilinmiyor,,,,,,
+MAN,D2862,2014,24240.0,1900.0,,Dizel,,,,Bilinmiyor,17.0,,,,2380.0,euro 5
+DAF,WS 242,,11600.0,,,Dizel,,,,Bilinmiyor,,,,,,euro 2
+DAF,WS 225,,11600.0,,,Dizel,,,,Bilinmiyor,,,,,,
+DAF,WS 259,,11600.0,,,Dizel,,,,Bilinmiyor,,,,,,
+DAF,XD3P,,2497.0,,,Dizel,,,,Bilinmiyor,,,,,,
+DAF,MX 300,,12900.0,410.0,,,,,,Bilinmiyor,17.7,,,,,euro 5
+Volvo,D16C610,,16120.0,610.0,,,,,,Bilinmiyor,,,,,1270.0,euro 3
+Volvo,D11C330,,10800.0,,,Dizel,,,,Bilinmiyor,,,,,,euro 5
+DAF,BE99C,,3920.0,,,Dizel,,,,Bilinmiyor,,,,,,euro 3
+Volvo,D6A230,,5480.0,,,Dizel,,,,Bilinmiyor,,,,,,
+Volvo,D6A210,,5480.0,,,Dizel,,,,Bilinmiyor,,,,,,
+Volvo,D12D420,,12100.0,,,Dizel,,,,Bilinmiyor,,,,,,euro 2-3
+DAF,XF315M,1997,12580.0,,,Dizel,,,,Bilinmiyor,16.0,,,,,
+MMZ,D-240,,,80.0,,Dizel,,,,Bilinmiyor,16.0,,,,,
+MAN,D2842,,21930.0,,,Dizel,,,,Bilinmiyor,,,,,1860.0,
+Volvo,D7F260,,7146.0,,,Dizel,,,,Bilinmiyor,,,,,,euro 5
+Audi,CDNB,2008-2014,1984.0,180.0,320.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,5w-30,4.6,260000.0,142.0,euro 5
+Audi,CDNC,2008-2013,1984.0,211.0,350.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,"0w-30, 5w-40 (approved vw 502.00 or 505.00)",4.6,300000.0,142.0,euro 5
+Audi,CNCD,2012-2016,1984.0,225.0,350.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,5w-30,5.7,250000.0,140.0,euro 5/6
+DAF,MX 265,,12900.0,360.0,,,,,,Bilinmiyor,17.7,,,,,euro 4
+Volvo,D12A380,1993-08-01 00:00:00,12100.0,,,Dizel,,,,Bilinmiyor,,,,,,euro 2
+MAN,D0824,,4580.0,,,,,,,Bilinmiyor,,,,,360.0,euro 2
+Volvo,D6A250,,5480.0,,,Dizel,,,,Bilinmiyor,,,,,,
+Volvo,D7C290,1998-09-01 00:00:00,7300.0,,,Dizel,,,,Bilinmiyor,,,,,,
+Volvo,D16A470,,16122.0,470.0,,,,,,Bilinmiyor,,,,,,euro 2
+Volvo,D16E580,,16120.0,,,Dizel,,,,Bilinmiyor,,,,,,euro 4 (d4)
+Volvo,D9A380,9.2001,9364.0,,,Dizel,,,,Bilinmiyor,18.5,,,,,euro 3
+Volvo,D16G750,,16120.0,750.0,3550.0,,,,,Bilinmiyor,,,,,1325.0,euro 5/eev
+DAF,XF280M,,12580.0,381.0,,,,,,Bilinmiyor,,,,,1050.0,euro 2
+Volvo,D13A480,2005-09-01 00:00:00,12800.0,,,Dizel,,,,Bilinmiyor,,,,,,euro 3
+MAN,D2848,,14618.0,,,Dizel,,,,Bilinmiyor,,,,,,
+Volvo,D7B260,,6700.0,,,Dizel,,,,Bilinmiyor,,,,,,
+MMZ,D-245,1984,4750.0,,,Dizel,,,,Bilinmiyor,,,12.0,,450.0,euro 0-5
+MAN,D2866,1998,11967.0,,,Dizel,,,,Bilinmiyor,,,,,,euro 2/ euro 3
+Alfa Romeo,AR32201,1997-2001,1747.0,144.0,169.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.3,10w-40,4.4,270000.0,160.0,euro 2
+Audi,BYT,2007,1798.0,160.0,250.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,5w-30,4.6,230000.0,154.0,euro 4
+Volkswagen,BZB,2007-2010,1798.0,160.0,250.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,5w-30,4.6,300000.0,154.0,euro 4
+Audi,CABA,2008-2009,1798.0,120.0,230.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,5w-30,4.6,260000.0,154.0,euro 4
+DAF,BN 52,,2498.0,,,Dizel,,,,Bilinmiyor,,,,,,
+Scania,DS11,1996,11022.0,350.0,,Dizel,,,,Bilinmiyor,16.0,,,,,euro 2
+Audi,CCTA,2008-2018,1984.0,200.0,280.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,5w-30,4.6,250000.0,152.0,ulev 2
+Audi,CABD,2007-2008,1798.0,170.0,250.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,5w-30,4.6,250000.0,154.0,euro 4
+Volkswagen,CAWA,2008-2011,1984.0,170.0,280.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,5w-30,4.6,300000.0,152.0,euro 4
+Volkswagen,CAWB,2008-2011,1984.0,200.0,280.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,5w-30,4.6,250000.0,152.0,euro 4
+Alfa Romeo,AR32310,2000-2010,1970.0,150.0,181.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,10w-40,4.4,200000.0,170.0,euro 3
+Alfa Romeo,839A6000,2000-2002,2387.0,140.0,305.0,Dizel,Sıra (Inline),5.0,Dökme Demir,Evet,18.45,5w-30,5.0,400000.0,210.0,euro 3
+Alfa Romeo,937A5000,2003-2010,1910.0,150.0,305.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,17.5,5w-30,4.7,300000.0,186.0,euro 4
+MAN,D2566,,11413.0,,,Dizel,,,,Bilinmiyor,,,,,,
+DAF,BE110C,,3920.0,,,Dizel,,,,Bilinmiyor,,,,,,euro 3
+DAF,1160,,11600.0,330.0,,,,,,Bilinmiyor,15.0,,,,,
+MAN,D2865,,9973.0,,,Dizel,,,,Bilinmiyor,,,,,,
+Scania,DSI14,1969,14181.0,350.0,,,,,,Bilinmiyor,,,21.0,,1700.0,euro 2
+MAN,D2066,,10518.0,375.0,,Dizel,,,,Bilinmiyor,,,,,,euro 4
+Alfa Romeo,AR34102,1998-2002,1996.0,205.0,285.0,Benzin,V,6.0,Alüminyum,Evet,8.0,10w-40,6.1,200000.0,185.0,euro 2
+Alfa Romeo,AR32405,2000-2005,2492.0,192.0,218.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.3,10w-40,6.4,280000.0,190.0,euro 3
+Alfa Romeo,AR67301,1992-1997,2492.0,165.0,216.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.0,10w-40,6.0,240000.0,180.0,euro 2
+Alfa Romeo,AR16105,1999-2003,2959.0,218.0,270.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.0,10w-40,5.9,300000.0,195.0,euro 3
+Alfa Romeo,939A5000,2005-2010,2198.0,185.0,230.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),11.3,5w-40,5.4,220000.0,155.0,euro 4
+Alfa Romeo,939B1000,2009-2014,1742.0,200.0,320.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.5,5w-40,4.8,250000.0,125.0,euro 5
+Alfa Romeo,960A1000,2013-2019,1742.0,241.0,345.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.25,5w-40,4.8,230000.0,125.0,euro 6
+Audi,CAEA,2008-2014,1984.0,180.0,320.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,5w-30,4.6,250000.0,142.0,ulev 2
+Audi,CAEB,2008-2013,1984.0,211.0,350.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,5w-30,4.6,240000.0,142.0,ulev 2
+Audi,CJSB,2012-2018,1798.0,180.0,280.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,5w-30,5.2,250000.0,138.0,euro 5
+Audi,CJEB,2011-2015,1798.0,170.0,320.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,5w-30,5.2,275000.0,138.0,euro 5/6
+Audi,CJXC,2013-2018,1984.0,300.0,380.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.3,0w-20,5.7,220000.0,140.0,euro 6
+Audi,CVKB,since 2016,1984.0,190.0,320.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,11.6,0w-20,5.7,250000.0,132.0,euro 6
+Audi,CYRB,since 2015,1984.0,250.0,370.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,0w-20,5.7,240000.0,132.0,euro 6
+BMW,S38B38,1992-1996,3795.0,340.0,400.0,Benzin,Sıra (Inline),6.0,Dökme Demir,Bilinmiyor,10.5,"5w-30, 5w-40, 10w-40, 15w-40",5.75,400000.0,,
+BMW,B38,since 2013,1499.0,,,Benzin,Sıra (Inline),3.0,Alüminyum,Evet,,"0w-30, 0w-40, 5w-30, 5w-40",4.25,300000.0,,euro 6
+Volkswagen,CJSA,since 2012,1798.0,180.0,250.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,5w-30,5.2,260000.0,138.0,euro 5/6
+Volkswagen,CHHA,2013-2018,1984.0,230.0,350.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,0w-20,5.7,230000.0,140.0,euro 6
+Volkswagen,CHHB,since 2013,1984.0,220.0,350.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,5w-30,5.7,240000.0,140.0,euro 6
+Volkswagen,CXDA,since 2016,1984.0,227.5,350.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,5w-30,5.7,250000.0,140.0,euro 5/6
+Volkswagen,CZPA,since 2016,1984.0,180.0,320.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,11.6,5w-30,5.7,250000.0,132.0,euro 6
+Volkswagen,CZPB,since 2016,1984.0,190.0,320.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,11.6,0w-20,5.7,260000.0,132.0,euro 6
+Chevrolet,Z22D1,,2231.0,173.5,375.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.3,5w-30,5.7,300000.0,,euro 5
+Chevrolet,Z20D1,2010-2015,1998.0,163.0,355.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.5,5w-30,5.4,320000.0,,euro 5
+Chevrolet,Z20S1,2006-2011,1991.0,124.0,290.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,17.5,5w-30,6.2,400000.0,,euro 4
+Chevrolet,Z20S,2006-2011,1991.0,150.0,320.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,17.5,5w-30,5.75,380000.0,,euro 4
+Chevrolet,X25D1,2000-2014,2492.0,155.0,237.0,Benzin,Sıra (Inline),6.0,Dökme Demir,Hayır (Atmosferik),9.8,5w-30,6.5,260000.0,,euro 3/4
+Chevrolet,X20D1,2006-2014,1993.0,141.0,195.0,Benzin,Sıra (Inline),6.0,Dökme Demir,Hayır (Atmosferik),10.2,5w-30,6.4,250000.0,,euro 3/4
+Daewoo,A16DMS,1997-2002,1598.0,105.0,145.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,5w-30,3.75,300000.0,127.0,euro 2/3
+Chevrolet,F15S3,2002-2011,1498.0,86.0,130.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,5w-30,3.75,320000.0,,euro 3/4
+Daewoo,A15SMS,1997-2016,1498.0,83.0,126.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,5w-30,3.75,300000.0,117.0,euro 3
+Chevrolet,B15D2,,1485.0,106.0,141.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.2,5w-30,3.75,350000.0,,euro 5
+Chevrolet,B12D1,2007-2015,1206.0,84.0,114.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.5,5w-30,3.75,300000.0,,euro 4/5
+Chevrolet,B12S1,2002-2011,1150.0,72.0,104.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.3,5w-30,3.2,300000.0,,euro 3
+Chevrolet,B10D1,,996.0,68.0,93.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.8,5w-30,3.75,250000.0,,euro 4/5
+Chevrolet,B10S1,2002-2009,995.0,64.0,91.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.3,5w-30,3.2,200000.0,,euro 3/4
+Hyundai,G6AV,1995-2005,2497.0,165.0,215.0,Benzin,V,6.0,Dökme Demir,Hayır (Atmosferik),10.0,5w-40,4.6,200000.0,175.0,euro 2
+Daewoo,F8CV,1991-2018,796.0,46.5,65.5,Benzin,Sıra (Inline),3.0,Dökme Demir,Hayır (Atmosferik),9.3,5w-40,2.7,220000.0,82.0,euro 2/3/4
+Suzuki,F8B,since 1981,796.0,40.0,60.0,Benzin,Sıra (Inline),3.0,Dökme Demir,Hayır (Atmosferik),8.7,5w-30,2.7,250000.0,,euro 1/2
+Daewoo,F10CV,2002-2016,995.0,63.0,88.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.3,5w-30,3.25,220000.0,85.0,euro 2/3/4
+Daewoo,G15MF,1994-2008,1498.0,75.0,120.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),8.6,5w-30,3.7,250000.0,117.0,euro 1/2
+Daewoo,A15MF,1994-2008,1498.0,87.5,133.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.2,5w-30,3.75,300000.0,125.0,euro 1/2
+Daewoo,T18SED,2002-2007,1799.0,121.0,165.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.8,5w-30,3.75,320000.0,140.0,euro 3
+Opel,X18XE,1995-2000,1799.0,115.0,170.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.8,5w-30,4.0,350000.0,140.0,euro 2
+Daewoo,X20SED,1997-2008,1998.0,127.0,180.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.6,5w-30,4.25,350000.0,140.0,euro 2
+Opel,X20XEV,1994-2000,1998.0,136.0,185.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.8,5w-30,4.25,350000.0,140.0,euro 2
+Daewoo,T22SED,1997-2002,2198.0,136.0,202.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.6,5w-30,5.0,340000.0,145.0,euro 3
+Opel,X22XE,1995-1999,2198.0,137.5,202.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.5,5w-30,5.0,350000.0,140.0,euro 2
+Fiat,187A1000,2000-2012,1108.0,54.0,88.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.6,5w-40,3.5,240000.0,80.0,euro 3/4
+Fiat,169A4000,since 2007,1242.0,69.0,102.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),11.1,5w-40,2.8,240000.0,85.0,euro 4/5
+Fiat,176A8000,1993-2004,1242.0,73.0,106.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.8,10w-40,3.75,230000.0,85.0,euro 2
+Fiat,188A4000,1997-2012,1242.0,60.0,102.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,5w-40,2.8,240000.0,85.0,euro 2/3
+Fiat,188A5000,1999-2012,1242.0,80.0,114.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.6,5w-40,2.8,250000.0,105.0,euro 3
+Fiat,199A6000,2005-2011,1368.0,95.0,125.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.8,5w-40,2.9,250000.0,105.0,euro 4/5
+Fiat,350A1000,since 2005,1368.0,77.0,115.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),11.1,5w-40,2.8,250000.0,90.0,euro 4/5
+Fiat,198A1000,2007-2010,1368.0,152.5,230.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.8,5w-40,2.9,230000.0,125.0,euro 4
+Fiat,198A4000,2007-2020,1368.0,120.0,206.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.8,5w-40,2.9,250000.0,125.0,euro 4/5
+Fiat,955A6000,2009-2015,1368.0,105.0,130.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.8,5w-40,3.4,220000.0,125.0,euro 5
+Fiat,955A2000,2009-2014,1368.0,135.0,206.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.8,5w-40,3.5,200000.0,125.0,euro 5
+Fiat,310A5011,since 2011,1598.0,112.5,155.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,4.3,250000.0,127.0,euro 5
+Fiat,370A0011,since 2010,1747.0,132.5,182.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,4.3,270000.0,129.0,euro 5
+Fiat,182A3000,1995-1999,1370.0,80.0,112.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.8,5w-40,4.1,200000.0,140.0,euro 2
+Fiat,182A2000,1995-2000,1747.0,113.0,154.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.3,5w-40,4.3,275000.0,160.0,euro 2
+Fiat,182A1000,1995-1999,1998.0,147.0,186.0,Benzin,Sıra (Inline),5.0,Dökme Demir,Hayır (Atmosferik),10.0,5w-40,5.0,300000.0,185.0,euro 2
+Fiat,192A2000,2001-2007,2446.0,170.0,221.0,Benzin,Sıra (Inline),5.0,Dökme Demir,Hayır (Atmosferik),10.5,5w-40,4.7,300000.0,190.0,euro 3
+Fiat,182A4000,1996-2001,1581.0,103.0,144.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.1,5w-40,4.0,280000.0,147.0,euro 3
+Fiat,182B6000,2000-2012,1596.0,103.0,145.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.5,5w-40,3.9,300000.0,148.0,euro 3/4
+Fiat,199B6000,since 2012,875.0,105.0,145.0,Benzin,Sıra (Inline),2.0,Dökme Demir,Evet,10.0,0w-30,3.2,180000.0,85.0,euro 6
+Peugeot,DW12MTED4,2007-2013,2179.0,156.0,380.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.6,5w-30,5.2,350000.0,215.0,euro 4/5
+Peugeot,DW12CTED4,2010-2015,2179.0,204.0,450.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.0,5w-30,5.3,300000.0,215.0,euro 5
+Peugeot,DW12BTED4,2006-2010,2179.0,166.5,370.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.6,5w-30,5.25,300000.0,215.0,euro 4/5
+Geely,JLC-4G15,since 2016,1498.0,104.5,139.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.0,5w-30,3.5,280000.0,110.0,euro 5
+Geely,JLY-4G15,since 2009,1498.0,102.0,133.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.8,5w-30,4.0,300000.0,110.0,euro 4/5
+Geely,JLC-4G18,since 2016,1799.0,132.0,170.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.0,5w-30,3.5,300000.0,117.0,euro 5
+Geely,JLY-4G18,since 2007,1792.0,129.0,167.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.5,5w-30,4.0,300000.0,117.0,euro 4/5
+Geely,JLD-4G20,since 2010,1997.0,138.5,184.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.5,5w-30,4.5,300000.0,122.0,euro 4/5
+Geely,JLD-4G24,since 2010,2378.0,152.0,217.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.0,5w-30,4.5,280000.0,125.0,euro 4/5
+Geely,JLE-4G18TD,2015-2019,1799.0,163.0,250.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.6,0w-40,5.0,250000.0,150.0,euro 5
+Geely,JLE-4G18TDB,since 2017,1799.0,184.0,292.5,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.7,0w-40,5.0,250000.0,155.0,euro 5
+Geely,JLH-3G15TD,since 2018,1477.0,165.0,260.0,Benzin,Sıra (Inline),3.0,Alüminyum,Evet,10.5,0w-20,5.6,250000.0,,euro 5/6
+Volvo,B3154T,since 2017,1477.0,156.0,265.0,Benzin,Sıra (Inline),3.0,Alüminyum,Evet,10.5,0w-20,5.6,220000.0,,euro 6
+Geely,JLH-4G20TDB,since 2019,1969.0,238.0,350.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.8,0w-20,5.6,250000.0,,euro 5/6
+Volvo,B4204T23,since 2015,1969.0,249.0,350.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.8,0w-20,5.9,280000.0,,euro 5/6
+Geely,MR479Q,1998-2016,1342.0,84.0,110.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.3,5w-30,3.2,250000.0,126.0,euro 3/4
+Toyota,8A-FE,since 1998,1342.0,85.0,115.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.3,5w-30,3.0,250000.0,125.0,euro 3
+Geely,MR479QA,2000-2016,1498.0,94.0,128.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.6,5w-30,3.2,275000.0,128.0,euro 3/4
+Volkswagen,CDAA,2008-2015,1798.0,160.0,250.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,5w-30,4.6,250000.0,144.0,euro 5
+Volkswagen,CDAB,2009-2018,1798.0,152.0,250.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,"5w-30, 5w-40",4.6,200000.0,144.0,euro 4
+Volkswagen,CCZA,2008-2015,1984.0,200.0,280.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,5w-30,4.6,275000.0,142.0,euro 5
+Volkswagen,CCZB,2009-2015,1984.0,211.0,280.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,5w-30,4.6,260000.0,142.0,euro 5
+Volkswagen,CCZD,2011-2015,1984.0,180.0,280.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,5w-30,4.6,250000.0,142.0,euro 5
+Chevrolet,LSY,since 2018,1998.0,235.0,350.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.0,0w-20,5.0,250000.0,130.0,euro 6
+Chevrolet,LTG,since 2012,1998.0,252.5,375.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.5,5w-30,5.7,250000.0,130.0,euro 5/6
+Opel,A20NFT,since 2012,1998.0,265.0,400.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.5,5w-30,6.05,250000.0,130.0,euro 5
+Chevrolet,LUV,2010-2020,1364.0,139.0,200.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.5,5w-30,4.0,250000.0,130.0,euro 5/6
+Opel,A14NET/NEL,since 2009,1364.0,140.0,200.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.5,5w-30,4.0,300000.0,120.0,euro 5
+Chevrolet,LF1,2009-2016,2994.0,262.5,295.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),11.7,5w-30,5.7,300000.0,185.0,euro 5
+Opel,A30XH,since 2010,2994.0,262.5,295.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),11.7,5w-30,5.7,250000.0,200.0,euro 5
+Chevrolet,LFX,2011-2020,3564.0,312.5,365.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),11.5,5w-30,5.7,300000.0,175.0,euro 5
+Chevrolet,LGX,since 2015,3564.0,322.5,375.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),11.5,5w-30,5.7,300000.0,180.0,euro 5/6
+Chevrolet,LLT,2007-2017,3564.0,297.5,365.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),11.3,5w-30,5.7,280000.0,180.0,euro 4/5
+Chevrolet,LY7,2003-2012,3564.0,257.5,325.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.2,5w-30,5.7,280000.0,185.0,euro 4
+Chevrolet,LE2,since 2016,1399.0,152.5,240.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.0,5w-30,4.0,250000.0,110.0,euro 6
+Chevrolet,LFV,since 2014,1490.0,166.0,250.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.0,5w-30,4.0,250000.0,115.0,euro 5/6
+Chevrolet,LYX,since 2017,1490.0,170.0,275.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.0,5w-30,5.0,240000.0,115.0,euro 5/6
+Chevrolet,LR4,1998-2007,4806.0,270.0,392.5,Benzin,V,8.0,Dökme Demir,Hayır (Atmosferik),9.4,5w-30,5.7,450000.0,,euro 2
+Chevrolet,LM7,1999-2007,5327.0,285.0,440.0,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),9.5,5w-30,5.7,500000.0,,euro 2
+Chevrolet,LY2,2006-2017,4806.0,282.5,407.5,Benzin,V,8.0,Dökme Demir,Hayır (Atmosferik),9.1,5w-30,5.7,400000.0,,euro 3/4
+Chevrolet,LY5,2006-2014,5327.0,320.0,462.5,Benzin,V,8.0,Dökme Demir,Hayır (Atmosferik),9.9,5w-30,5.7,400000.0,,euro 3/4
+Chevrolet,LFA,2007-2013,5972.0,332.0,498.0,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),10.8,5w-30,5.7,400000.0,,euro 4
+Chevrolet,L92,2006-2014,6162.0,400.0,565.0,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,5.7,400000.0,,euro 3/4
+Chevrolet,L86,2013-2020,6162.0,417.5,610.0,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),11.5,0w-20,7.6,300000.0,,euro 5
+Chevrolet,LH7,2017-2019,1598.0,136.0,320.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,16.0,5w-30,5.0,250000.0,160.0,euro 6
+Geely,GW4G15,since 2008,1497.0,100.0,135.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,3.5,250000.0,115.0,euro 4
+Geely,GW4G15B,since 2013,1497.0,146.5,206.5,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.3,5w-30,4.3,200000.0,115.0,euro 5
+Geely,GW4G15K,since 2020,1497.0,143.0,210.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.3,5w-30,3.8,220000.0,115.0,euro 5
+Geely,GW491QE,2001-2011,2237.0,107.5,190.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),8.8,5w-40,4.2,300000.0,126.0,euro 2/3
+Toyota,4Y-E,1985-1996,2237.0,105.0,185.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.0,5w-30,3.5,250000.0,155.0,euro 2-4
+Geely,4G63S4M,since 2004,1997.0,119.0,175.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,10w-40,4.3,250000.0,170.0,euro 4/5
+Geely,4G63S4T,since 2012,1997.0,163.5,250.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.3,10w-40,4.3,220000.0,175.0,euro 4/5
+Geely,4G64S4M,since 2004,2351.0,129.0,190.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,10w-40,4.3,300000.0,167.0,euro 4
+Geely,4G69S4N,since 2009,2378.0,136.0,202.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.8,10w-40,4.3,320000.0,165.0,euro 4/5
+Geely,GW4B15,since 2018,1499.0,160.0,282.5,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.6,0w-30,4.8,200000.0,115.0,euro 5
+Geely,GW4B15A,since 2020,1499.0,160.0,282.5,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.6,0w-30,4.0,220000.0,115.0,euro 5
+Geely,GW4B15D,since 2021,1499.0,150.0,230.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,11.8,0w-20,4.0,200000.0,115.0,euro 5
+Geely,GW4C20,2013-2019,1967.0,204.0,317.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,5w-40,5.5,220000.0,175.0,euro 5
+Geely,GW4C20A,since 2017,1967.0,245.0,350.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,10.0,5w-40,5.5,220000.0,175.0,euro 5
+Geely,GW4C20B,since 2019,1967.0,218.0,380.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,5w-30,5.5,230000.0,180.0,euro 6
+Geely,GW4C20NT,since 2018,1967.0,190.0,340.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,5w-40,5.0,240000.0,175.0,euro 5
+Geely,GW2.8TC,2006-2011,2771.0,95.0,225.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,17.2,10w-40,5.2,250000.0,240.0,euro 3
+Isuzu,4JB1,1988-1998,2771.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,,5w-40,4.2,450000.0,240.0,
+Geely,GW4D20,since 2010,1996.0,145.0,310.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.7,"5w-40, 10w-40",5.5,250000.0,215.0,euro 4/5
+Geely,GW4D20B,since 2011,1996.0,140.0,305.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.7,0w-30,6.2,220000.0,210.0,euro 5
+Geely,GW4D20D,since 2018,1996.0,143.0,315.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.3,5w-30,5.3,270000.0,210.0,euro 5
+Geely,GW4D20T,since 2017,1996.0,190.0,420.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.0,5w-30,5.5,250000.0,210.0,euro 5
+Hyundai,G4EA,1994-1999,1341.0,71.0,110.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,"5w-40, 10w-40",3.8,300000.0,99.7,euro 1
+Hyundai,G4EH,1994-2005,1341.0,72.5,112.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,"5w-40, 10w-40",3.8,300000.0,107.7,euro 2/3
+Hyundai,G4EE,2005-2012,1399.0,75.0,125.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,"5w-30, 5w-40",3.8,350000.0,116.0,euro 4
+Hyundai,G4EB,1999-2012,1495.0,90.0,132.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,"5w-40, 10w-40",3.8,350000.0,106.0,euro 2/3
+Hyundai,G4EC,1999-2012,1495.0,102.0,134.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,"5w-40, 10w-40",3.8,350000.0,115.1,euro 2/3
+Hyundai,G4ER,1995-2000,1495.0,99.0,134.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,5w-40,3.3,300000.0,114.3,euro 2
+Hyundai,G4EK,1991-2000,1495.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,,"5w-40, 10w-40",3.8,300000.0,101.3,euro 2
+Hyundai,G4ED,2000-2012,1599.0,107.5,143.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,"5w-30, 5w-40",3.8,350000.0,115.4,euro 3/4
+Hyundai,G4GR,1995-2001,1599.0,114.0,145.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.85,5w-40,4.0,300000.0,136.0,euro 2
+Hyundai,G4GB,2001-2010,1795.0,127.0,164.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,"5w-30, 5w-40",4.5,400000.0,146.0,euro 3/4
+Hyundai,G4GM,1995-2000,1795.0,130.0,167.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,5w-40,4.0,320000.0,135.6,euro 2
+Hyundai,G4GF,1996-2002,1975.0,139.0,182.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.3,5w-40,4.0,330000.0,144.0,euro 2
+Hyundai,G6BP,1998-2005,1998.0,142.5,180.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.0,5w-40,4.5,250000.0,144.0,euro 2/3
+Hyundai,G6BV,1998-2005,2493.0,165.0,230.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.0,5w-40,4.5,250000.0,145.0,euro 3
+Hyundai,G6BA,1999-2012,2656.0,173.5,240.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.0,"5w-30, 5w-40",5.5,400000.0,148.0,euro 3/4
+Hyundai,G3HA,2011-2019,814.0,56.0,75.0,Benzin,Sıra (Inline),3.0,Dökme Demir,Hayır (Atmosferik),10.1,5w-30,2.5,200000.0,,euro 5
+Hyundai,G4HA,1997-2003,798.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,,5w-30,3.1,200000.0,97.5,euro 2
+Audi,DECA,since 2017,2894.0,450.0,600.0,Benzin,V,6.0,Alüminyum,Evet,10.0,0w-20,7.6,200000.0,,euro 6
+Nissan,VR30DDTT,,2997.0,,,Benzin,V,6.0,Alüminyum,Evet,10.3,0w-20,5.4,200000.0,195.0,euro 5/6
+Nissan,VQ35DD,,3498.0,284.0,351.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,4.9,250000.0,185.0,euro 5
+Nissan,VQ25HR,,2495.0,227.5,257.5,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.3,"5w-30, 5w-40",4.7,500000.0,185.0,euro 4/5
+Nissan,VK50VE,2008-2014,5026.0,405.0,510.0,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),10.9,"5w-30, 5w-40",8.0,400000.0,235.0,euro 4/5
+Nissan,VG33E,1995-,3274.0,175.0,270.0,Benzin,V,6.0,Dökme Demir,Hayır (Atmosferik),8.9,5w-30,3.7,300000.0,230.0,euro 2/3
+Nissan,VG30E,1983-1999,2960.0,165.0,250.0,Benzin,V,6.0,Dökme Demir,Hayır (Atmosferik),9.0,5w-30,3.9,390000.0,220.0,euro 2/3
+Nissan,QR25DER,2013-2017,2488.0,234.0,330.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.1,5w-30,5.8,250000.0,,euro 5
+Nissan,KR20DDET,2017-,1970.0,261.0,380.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,8.0,5w-30,4.7,220000.0,137.0,euro 6
+Isuzu,6VD1,1991-2004,3165.0,,,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),,5w-30,,350000.0,184.0,
+Isuzu,6VE1,1998-2004,3494.0,215.0,,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),,5w-30,5.4,330000.0,185.0,
+Isuzu,4ZD1,1985-1997,2255.0,100.0,175.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),8.3,5w-40,4.4,275000.0,150.0,euro 1
+Isuzu,4ZE1,1988-1998,2559.0,115.0,200.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),8.3,5w-40,4.4,300000.0,160.0,euro 1
+Isuzu,4JX1,1998-2004,2999.0,152.5,315.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,19.0,5w-30,7.5,300000.0,280.0,euro 2/3
+Isuzu,4JG2,1991-2000,3059.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,,5w-40,6.0,450000.0,260.0,
+Jaguar,AJ20,2001-2008,2099.0,156.0,198.5,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.75,5w-30,5.9,300000.0,170.0,euro 3
+Jaguar,AJ25,2001-2009,2495.0,197.5,245.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,5.9,350000.0,170.0,euro 3
+Jaguar,AJ30,1999-2011,2967.0,235.0,290.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,6.5,370000.0,175.0,euro 3
+Jaguar,AJ126,2012-2019,2995.0,370.0,455.0,Benzin,V,6.0,Alüminyum,Evet,10.5,5w-20,7.25,300000.0,,euro 5
+Land Rover,306PS,since 2012,2995.0,370.0,455.0,Benzin,V,6.0,Alüminyum,Evet,10.5,0w-20,7.25,280000.0,190.0,euro 5
+Jaguar,AJ27S,1999-2003,3996.0,365.0,515.0,Benzin,V,8.0,Alüminyum,Evet,8.9,5w-30,7.3,300000.0,,euro 2/3
+Jaguar,AJ28,1999-2002,3996.0,276.0,378.0,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),10.75,5w-30,6.0,400000.0,,euro 3
+Jaguar,AJ33S,2002-2009,4196.0,395.0,540.0,Benzin,V,8.0,Alüminyum,Evet,9.1,5w-30,7.0,350000.0,,euro 3
+Land Rover,428PS,2005-2009,4197.0,393.0,550.0,Benzin,V,8.0,Alüminyum,Evet,9.1,5w-30,7.7,300000.0,210.0,euro 4
+Jaguar,AJ34,2003-2009,4196.0,305.0,420.0,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,7.0,350000.0,,euro 4
+Land Rover,448PN,2004-2009,4394.0,302.5,432.5,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,7.7,400000.0,200.0,euro 4
+Jaguar,AJ34S,2006-2009,4196.0,420.0,560.0,Benzin,V,8.0,Alüminyum,Evet,9.1,5w-30,7.0,300000.0,,euro 4
+Jaguar,AJ133,2009-2014,4999.0,385.0,515.0,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),11.5,5w-20,7.25,400000.0,,euro 5
+Land Rover,508PN,2009-2014,4999.0,380.0,512.5,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),11.5,5w-20,8.0,400000.0,210.0,euro 5
+Jaguar,AJ133S,since 2009,4999.0,525.0,640.0,Benzin,V,8.0,Alüminyum,Evet,9.5,5w-20,7.25,350000.0,,euro 5
+Land Rover,508PS,since 2009,4999.0,525.0,637.5,Benzin,V,8.0,Alüminyum,Evet,9.5,5w-20,8.0,300000.0,220.0,euro 5
+Jaguar,AJ200P,since 2017,1997.0,250.0,360.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.5,0w-20,7.0,250000.0,120.0,euro 6
+Land Rover,PT204,since 2017,1997.0,250.0,360.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.5,0w-20,7.0,240000.0,120.0,euro 6
+Jaguar,AJD,2003-2009,2720.0,207.0,435.0,Dizel,V,6.0,Dökme Demir,Evet,17.3,5w-40,6.5,240000.0,,euro 4
+Land Rover,276DT,2004-2010,2720.0,,,Dizel,V,6.0,Dökme Demir,Bilinmiyor,17.3,5w-40,6.5,250000.0,,euro 4
+Peugeot,DT17TED4,2004-2010,2720.0,204.0,440.0,Dizel,V,6.0,Dökme Demir,Evet,17.3,5w-30,5.75,250000.0,230.0,euro 4
+Jaguar,AJV6D,since 2009,2993.0,270.0,600.0,Dizel,V,6.0,Dökme Demir,Evet,16.1,5w-30,5.9,280000.0,,euro 4/5
+Land Rover,306DT,since 2009,2993.0,,,Dizel,V,6.0,Dökme Demir,Bilinmiyor,16.1,5w-30,5.9,350000.0,,euro 4/5
+Peugeot,DT20C,2009-2013,2993.0,241.0,450.0,Dizel,V,6.0,Dökme Demir,Evet,16.4,5w-30,6.5,300000.0,230.0,euro 5
+Jaguar,AJ200D,since 2015,1999.0,,,Dizel,Sıra (Inline),4.0,Alüminyum,Bilinmiyor,15.5,0w-30,,260000.0,130.0,euro 6
+Land Rover,204DTA,since 2017,1999.0,220.0,465.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,15.5,0w-30,7.0,220000.0,135.0,euro 6
+Land Rover,204DTD,since 2015,1999.0,165.0,405.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,15.5,0w-30,6.5,250000.0,130.0,euro 6
+Kia,A3E,1999-2005,1343.0,78.5,114.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,5w-30,3.4,220000.0,115.3,euro 2
+Kia,A5D,1999-2005,1493.0,103.0,137.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,5w-30,3.4,230000.0,131.7,euro 3
+Kia,BFD,1992-2001,1498.0,97.5,141.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.3,5w-30,3.4,240000.0,125.5,euro 2
+Kia,S5D,2000-2004,1493.0,101.5,134.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.3,5w-30,3.4,240000.0,131.6,euro 3
+Kia,A6D,2001-2005,1594.0,102.5,142.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,5w-30,3.4,240000.0,140.2,euro 3
+Kia,S6D,2002-2011,1594.0,103.0,143.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,5w-30,3.4,250000.0,140.7,euro 3
+Kia,T8D,1995-2006,1793.0,117.5,157.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,5w-30,3.8,250000.0,143.7,euro 2/3
+Kia,FED,1993-2006,1998.0,134.0,176.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.2,5w-30,4.1,250000.0,163.2,euro 2/3
+Kia,FEE,1994-2003,1998.0,95.0,157.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),8.6,5w-30,4.1,240000.0,153.8,euro 2/3
+Hyundai,G4HE,2004-2011,999.0,62.0,86.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.7,5w-30,3.0,240000.0,83.9,euro 3/4
+Hyundai,G4HG,2004-2013,1086.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.1,5w-30,3.0,250000.0,84.0,
+Hyundai,G4FD,since 2009,1591.0,135.0,163.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,"0w-30, 5w-30",4.2,300000.0,101.9,euro 5/6
+Land Rover,204PT,2011-2019,1999.0,220.0,320.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.0,5w-30,5.5,220000.0,,euro 4/5
+Volvo,B4204T6,2010-2011,1999.0,203.0,300.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.0,0w-30,5.4,250000.0,,euro 5
+Land Rover,406PN,2005-2009,4009.0,219.0,346.0,Benzin,V,6.0,Dökme Demir,Hayır (Atmosferik),9.7,5w-30,5.7,400000.0,172.0,euro 3
+Land Rover,42D,1994-2002,3946.0,187.5,330.0,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),9.35,5w-40,5.8,200000.0,,euro 2
+Land Rover,46D,1994-2004,4552.0,223.0,392.0,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),9.35,5w-40,5.8,180000.0,,euro 2
+Land Rover,306PN,2006-2012,3192.0,233.0,320.0,Benzin,Sıra (Inline),6.0,Alüminyum,Hayır (Atmosferik),10.8,5w-30,7.7,320000.0,175.0,euro 4/5
+Volvo,B6324S,2006-2010,3192.0,238.0,320.0,Benzin,Sıra (Inline),6.0,Alüminyum,Hayır (Atmosferik),10.8,5w-30,7.7,350000.0,175.0,euro 4
+Land Rover,204D3,2000-2006,1951.0,110.5,260.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.0,5w-40,6.8,300000.0,178.0,euro 3
+Land Rover,256T,1994-2002,2497.0,136.0,270.0,Dizel,Sıra (Inline),6.0,Dökme Demir,Evet,22.0,5w-40,8.7,300000.0,,euro 1/2
+Land Rover,306D1,2002-2006,2926.0,177.0,390.0,Dizel,Sıra (Inline),6.0,Dökme Demir,Evet,18.0,5w-40,8.75,350000.0,,euro 3
+Land Rover,224DT,2006-2016,2179.0,175.0,425.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,15.8,5w-30,5.9,400000.0,,euro 4/5
+Land Rover,368DT,2006-2010,3628.0,272.0,640.0,Dizel,V,8.0,Dökme Demir,Evet,17.3,5w-30,9.5,350000.0,,euro 4
+Land Rover,448DT,2010-2020,4367.0,326.0,720.0,Dizel,V,8.0,Dökme Demir,Evet,16.1,5w-30,9.5,400000.0,,euro 5/6
+Land Rover,10P 2.5 TD5,1998-2002,2495.0,129.0,307.5,Dizel,Sıra (Inline),5.0,Dökme Demir,Evet,19.5,5w-30,7.3,350000.0,,euro 2
+Land Rover,15P 2.5 TD5,2002-2007,2495.0,130.5,307.5,Dizel,Sıra (Inline),5.0,Dökme Demir,Evet,19.5,5w-30,7.2,400000.0,,euro 3
+Toyota,A25A-FKS,since 2017,2487.0,205.0,245.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),13.0,0w-20,4.5,250000.0,,euro 6
+Toyota,A25A-FXS,since 2017,2487.0,181.5,228.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),14.0,0w-20,4.5,250000.0,,euro 6
+Toyota,6AR-FSE,since 2014,1998.0,157.5,200.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),12.7,5w-30,4.4,250000.0,144.0,euro 4/5
+Toyota,8AR-FTS,since 2014,1998.0,238.0,350.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.0,5w-30,4.9,200000.0,156.0,euro 5
+Toyota,2AZ-FXE,since 2000,2362.0,140.5,190.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),12.5,5w-30,4.3,250000.0,145.0,euro 4/5
+Toyota,3GR-FSE,2003-2012,2994.0,,,Benzin,V,6.0,Alüminyum,Bilinmiyor,,"5w-20, 5w-30",6.3,400000.0,178.0,euro 4
+Toyota,2GR-FSE,2004-2020,3456.0,,,Benzin,V,6.0,Alüminyum,Bilinmiyor,,"5w-20, 5w-30",6.3,400000.0,179.0,euro 5
+Toyota,2GR-FKS,since 2015,3456.0,297.5,370.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),11.8,0w-20,5.5,300000.0,167.0,euro 5/6
+Toyota,2GR-FXE,2009-2020,3456.0,,,,V,6.0,Alüminyum,Hayır (Atmosferik),,"5w-20, 5w-30",6.3,400000.0,,euro 5
+Toyota,2GR-FXS,since 2015,3456.0,263.0,335.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),13.0,0w-20,5.4,300000.0,,euro 6
+Toyota,8GR-FKS,since 2017,3456.0,315.0,380.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),11.8,0w-20,5.8,300000.0,168.0,euro 6
+Toyota,8GR-FXS,since 2017,3456.0,299.0,356.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),13.0,0w-20,5.8,300000.0,,euro 6
+Mini,W10B14A,2001-2006,1397.0,75.0,122.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.5,5w-30,4.5,280000.0,,euro 4
+Mini,W10B16A,2001-2008,1598.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.5,5w-30,4.5,300000.0,,euro 4
+Mini,W11B16A,2001-2008,1598.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,8.3,5w-30,4.8,250000.0,,euro 4
+Mini,N12B14A,2007-2010,1397.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,4.2,250000.0,,euro 4
+Peugeot,EP3,2007-2013,1397.0,95.0,136.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,"5w-30, 5w-40",4.25,200000.0,118.0,euro 4
+Mini,N12B16A,2006-2010,1598.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,4.2,230000.0,,euro 4
+Peugeot,EP6,2006-2013,1598.0,,160.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,"5w-30, 5w-40",4.25,200000.0,117.0,euro 4
+Mini,N16B16A,2010-2017,1598.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,4.2,250000.0,,euro 5
+Peugeot,EP6C,2009-2018,1598.0,,160.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,"5w-30, 5w-40",4.3,200000.0,118.0,euro 5
+Mini,N14B16A,2006-2010,1598.0,174.0,240.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.5,5w-30,4.2,200000.0,,euro 4
+Peugeot,EP6DTS,2007-2018,1598.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,,5w-30,4.2,200000.0,147.0,euro 4
+Mini,N14B16C,2008-2012,1598.0,211.0,260.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.0,5w-30,4.2,180000.0,,euro 4
+Mini,N18B16A,2010-2017,1598.0,187.0,250.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.5,5w-30,4.2,220000.0,,euro 5
+Mini,N18B16C,2012-2017,1598.0,,260.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.0,5w-30,4.2,200000.0,,euro 5
+Peugeot,EP6CDTX,2010-2015,1598.0,200.0,275.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.0,5w-30,4.3,200000.0,148.0,euro 5
+Mini,B38A12A,2014-2017,1198.0,,,Benzin,Sıra (Inline),3.0,Alüminyum,Evet,11.0,5w-30,4.25,250000.0,,euro 6
+Mini,B38A15A,since 2014,1499.0,,,Benzin,Sıra (Inline),3.0,Alüminyum,Evet,11.0,5w-30,4.25,270000.0,,euro 6
+Mini,B48A20A,since 2014,1998.0,192.0,280.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,11.0,5w-30,5.0,250000.0,,euro 6
+Mini,B48A20B,since 2014,1998.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,,5w-30,5.0,230000.0,,euro 6
+Mini,W17D14,2003-2006,1364.0,,,Dizel,Sıra (Inline),4.0,Alüminyum,Bilinmiyor,,5w-30,4.3,250000.0,,euro 3
+Toyota,1ND-TV,since 2002,1364.0,79.0,187.5,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,16.5,"0w-30, 5w-30",4.8,300000.0,125.0,euro 3/4/5
+Mini,W16D16,2007-2011,1560.0,109.0,240.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,18.0,5w-30,3.8,290000.0,,euro 4
+Mini,N47C16A,2010-2017,1598.0,,,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,16.5,5w-30,5.2,240000.0,,euro 5
+Mini,N47C20A,2010-2017,1995.0,,,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,16.5,5w-30,5.2,250000.0,,euro 5
+Mini,B37C15A,since 2014,1496.0,,,Dizel,Sıra (Inline),3.0,Alüminyum,Evet,16.5,5w-30,4.4,270000.0,,euro 6
+Mini,B47C20A,since 2014,1995.0,,,Dizel,Sıra (Inline),4.0,Alüminyum,Bilinmiyor,16.5,5w-30,5.2,280000.0,,euro 6
+Mitsubishi,3A90,since 2012,999.0,71.0,88.0,Benzin,Sıra (Inline),3.0,Alüminyum,Hayır (Atmosferik),11.5,5w-30,3.2,200000.0,90.0,euro 5/6
+Mitsubishi,3A91,2004-2012,1124.0,75.0,100.0,Benzin,Sıra (Inline),3.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,3.2,220000.0,92.0,euro 4/5
+Mitsubishi,3A92,since 2012,1193.0,79.0,106.0,Benzin,Sıra (Inline),3.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,3.2,230000.0,93.0,euro 5/6
+Mitsubishi,3B20,2006-2020,659.0,50.5,57.5,Benzin,Sıra (Inline),3.0,Alüminyum,Hayır (Atmosferik),10.8,5w-30,3.4,200000.0,67.0,euro 4/5
+Mitsubishi,3B20T,2006-2020,659.0,64.0,97.0,Benzin,Sıra (Inline),3.0,Alüminyum,Evet,8.8,5w-30,3.4,180000.0,69.0,euro 4/5
+Mitsubishi,3B21,2006-2014,999.0,66.0,90.5,Benzin,Sıra (Inline),3.0,Alüminyum,Hayır (Atmosferik),11.4,5w-30,3.3,200000.0,67.0,euro 4/5
+Mitsubishi,3B21T,2006-2014,999.0,93.0,133.5,Benzin,Sıra (Inline),3.0,Alüminyum,Evet,10.0,5w-30,3.4,200000.0,69.0,euro 4/5
+Mitsubishi,3G83,1990-2014,657.0,,,Benzin,Sıra (Inline),3.0,Dökme Demir,Bilinmiyor,,5w-20,3.25,180000.0,88.0,
+Mitsubishi,4A31,1995-2001,1094.0,,,,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),,5w-30,3.5,220000.0,105.0,
+Mitsubishi,4A90,since 2004,1332.0,95.0,125.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,4.0,200000.0,125.0,euro 4/5
+Mitsubishi,4A91,since 2004,1499.0,109.0,145.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,4.0,225000.0,130.0,euro 4/5
+Mitsubishi,4A92,since 2010,1590.0,117.0,154.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,4.0,250000.0,131.0,euro 4/5
+Mitsubishi,4B10,2007-2017,1798.0,141.5,175.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,"5w-30, 5w-40",5.0,350000.0,122.0,euro 4/5
+Hyundai,G4KC,2004-2010,2359.0,162.5,222.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,"5w-30, 5w-40",5.3,350000.0,146.1,euro 3/4
+Hyundai,G4KE,2008-2019,2359.0,175.0,225.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,"5w-30, 5w-40",5.2,300000.0,136.3,euro 4/5
+Mitsubishi,4B40,since 2017,1499.0,156.5,250.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.0,5w-30,4.3,250000.0,143.0,euro 5/6
+Mitsubishi,4G19,2002-2012,1343.0,90.0,121.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,"5w-30, 5w-40",3.6,300000.0,130.0,euro 4/5
+Nissan,YD22DDTi,2001-2007,2184.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,,5w-30,6.3,300000.0,210.0,euro 3/4
+Nissan,YD22DD / YD22DDT,1998-2006,2184.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,18.0,5w-30,,300000.0,,euro 3/4
+Nissan,TD42,,4169.0,,,Dizel,Sıra (Inline),6.0,Dökme Demir,Bilinmiyor,,10w-30,9.4,500000.0,,euro 1/2/3
+Nissan,TD27ETi,1995-2001,2663.0,130.0,280.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,22.0,10w-30,7.2,350000.0,250.0,euro 2/3
+Nissan,TD27,,2663.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,21.8,10w-30,,400000.0,,euro 1/2/3
+Nissan,TD25,1985-2015,2488.0,77.5,165.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),22.0,10w-30,6.5,450000.0,230.0,euro 1/2/3
+Nissan,TD23,1985-1995,2289.0,75.0,150.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),22.0,10w-30,6.2,440000.0,230.0,euro 1/2
+Nissan,RD28ETi,1997-1999,2825.0,132.5,267.5,Dizel,Sıra (Inline),6.0,Dökme Demir,Evet,21.0,5w-30,6.4,300000.0,255.0,euro 2/3
+Nissan,RD28T,1987-1998,2825.0,120.0,245.0,Dizel,Sıra (Inline),6.0,Dökme Demir,Evet,19.0,10w-40,6.4,320000.0,235.0,euro 1/2
+Nissan,RD28,1987-1999,2825.0,97.5,177.5,Dizel,Sıra (Inline),6.0,Dökme Demir,Hayır (Atmosferik),21.2,10w-40,6.4,350000.0,220.0,euro 1/2
+Nissan,QD32ETi,,3153.0,150.0,340.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,22.0,10w-30,6.9,400000.0,250.0,euro 2
+Nissan,QD32,,3153.0,105.0,215.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),22.0,10w-30,6.6,450000.0,225.0,euro 2
+Nissan,CD20T,1991-2002,1973.0,90.0,174.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,22.2,10w-30,5.5,230000.0,200.0,euro 1/2
+Nissan,CD20,1990-2000,1973.0,75.0,132.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),22.2,10w-30,5.7,275000.0,180.0,euro 1/2
+Nissan,CD17,1981-1998,1680.0,57.5,104.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),21.8,10w-30,5.4,250000.0,170.0,euro 1/2
+Opel,A12XER,2009-2014,1229.0,85.0,115.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.5,5w-30,4.0,240000.0,100.0,euro 5
+Opel,A14XER,since 2009,1398.0,100.0,130.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.5,5w-30,4.2,250000.0,105.0,euro 5
+Opel,A16LET,2008-2013,1598.0,180.0,230.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,8.8,"5w-30, 5w-40",4.5,200000.0,130.0,euro 5
+Opel,A16XHT,since 2013,1598.0,170.0,270.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.5,5w-30,4.55,275000.0,130.0,euro 5
+Opel,A18XER,2008-2015,1796.0,140.0,175.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.5,5w-30,4.45,320000.0,120.0,euro 5
+Opel,A20NHT,2008-2013,1998.0,220.0,350.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.2,5w-30,6.0,220000.0,130.0,euro 5
+Opel,A24XE,2010-2018,2384.0,170.0,225.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.4,5w-30,4.7,300000.0,140.0,euro 5
+Opel,A28NET,2008-2013,2792.0,260.0,350.0,Benzin,V,6.0,Alüminyum,Evet,9.5,5w-30,6.3,350000.0,215.0,euro 5
+Opel,C14NZ,1989-1996,1389.0,60.0,103.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.4,5w-30,3.5,300000.0,110.0,euro 1
+Opel,X14XE,1994-2001,1389.0,90.0,125.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.5,5w-30,3.5,250000.0,115.0,euro 2
+Opel,C16NZ,1987-1993,1598.0,75.0,125.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.2,5w-30,3.5,320000.0,120.0,euro 1
+Opel,C18NZ,1988-1995,1796.0,90.0,145.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.2,5w-30,4.0,330000.0,130.0,euro 1
+Opel,C20NE,1986-1996,1998.0,115.0,170.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.2,5w-30,4.5,350000.0,120.0,euro 1
+Opel,X20SE,1995-1999,1998.0,116.0,175.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,5w-30,4.5,400000.0,,euro 2
+Opel,C20XE,1987-1996,1998.0,150.0,200.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.5,5w-30,4.5,300000.0,136.0,euro 1
+Opel,C20LET,1992-1997,1998.0,204.0,280.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.0,5w-30,4.5,250000.0,145.0,euro 1
+Opel,C24NE,1988-1995,2410.0,125.0,195.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.2,5w-30,6.5,400000.0,155.0,euro 1
+Opel,C30SE,1989-1993,2969.0,204.0,270.0,Benzin,Sıra (Inline),6.0,Dökme Demir,Hayır (Atmosferik),10.0,"5w-30, 5w-40",5.5,400000.0,186.0,euro 2
+Peugeot,EB0,2012-2017,999.0,68.0,95.0,Benzin,Sıra (Inline),3.0,Alüminyum,Hayır (Atmosferik),10.5,0w-30,3.25,250000.0,70.0,euro 5
+Peugeot,EB2,since 2012,1199.0,82.0,118.0,Benzin,Sıra (Inline),3.0,Alüminyum,Hayır (Atmosferik),11.0,0w-30,3.25,270000.0,74.7,euro 5/6
+Peugeot,EB2M,since 2012,1199.0,72.0,110.0,Benzin,Sıra (Inline),3.0,Alüminyum,Hayır (Atmosferik),10.5,0w-30,3.25,300000.0,73.5,euro 5
+Peugeot,EB2DT,since 2014,1199.0,110.0,205.0,Benzin,Sıra (Inline),3.0,Alüminyum,Evet,10.5,0w-30,3.5,270000.0,98.0,euro 5/6
+Peugeot,EB2DTS,since 2014,1199.0,130.0,230.0,Benzin,Sıra (Inline),3.0,Alüminyum,Evet,10.5,0w-30,3.5,250000.0,99.0,euro 6
+Peugeot,EB2ADTX,since 2018,1199.0,155.0,240.0,Benzin,Sıra (Inline),3.0,Alüminyum,Evet,10.5,0w-30,4.4,250000.0,104.0,euro 6d
+Peugeot,EP3C,2009-2015,1397.0,,136.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,"5w-30, 5w-40",4.3,200000.0,119.0,euro 5
+Peugeot,EP6CB,2010-2018,1598.0,98.0,152.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.6,5w-30,4.2,240000.0,110.0,euro 5/6
+Peugeot,EP6DT,2006-2010,1598.0,,240.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.5,"5w-30, 5w-40",4.25,200000.0,135.0,euro 4
+Peugeot,EP6CDT,since 2009,1598.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.5,"5w-30, 5w-40",4.25,200000.0,137.0,euro 5
+Peugeot,EP6CDTM,2011-2017,1598.0,,240.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.5,5w-30,4.25,200000.0,135.0,euro 5
+Peugeot,EP6CDTR,2013-2018,1598.0,270.0,330.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.2,5w-30,4.25,175000.0,155.0,euro 5
+Peugeot,EP6FDT,since 2014,1598.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.5,5w-30,4.25,240000.0,136.0,
+Peugeot,EP6FDTM,since 2014,1598.0,,240.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.5,5w-30,4.25,240000.0,135.0,
+Peugeot,ES9J4,1996-2000,2946.0,194.0,267.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.5,5w-40,4.75,300000.0,190.0,euro 2/3
+Porsche,M02.2Y,2003-2007,3189.0,250.0,310.0,Benzin,VR,6.0,Dökme Demir,Hayır (Atmosferik),11.5,5w-30,6.3,280000.0,180.0,euro 4
+Porsche,M55.01,2007-2010,3598.0,290.0,385.0,Benzin,VR,6.0,Dökme Demir,Hayır (Atmosferik),12.3,5w-30,6.9,270000.0,177.0,euro 5
+Porsche,M46.20,2009-2013,3605.0,300.0,400.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),12.5,5w-30,9.0,240000.0,185.0,euro 5
+Porsche,MCX.ZA,2014-2017,3605.0,440.0,600.0,Benzin,V,6.0,Alüminyum,Evet,10.5,5w-30,9.0,200000.0,,euro 6
+Porsche,MCT.LA,2014-2018,3605.0,400.0,550.0,Benzin,V,6.0,Alüminyum,Evet,10.5,5w-30,9.0,200000.0,,euro 6
+Porsche,M48.00,2002-2007,4511.0,340.0,420.0,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),11.5,5w-40,8.5,220000.0,227.0,euro 4
+Porsche,M48.50,2002-2007,4511.0,485.0,670.0,Benzin,V,8.0,Alüminyum,Evet,9.5,5w-40,8.5,200000.0,253.0,euro 4
+Porsche,M48.01,2007-2010,4806.0,395.0,500.0,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),12.5,5w-40,8.5,250000.0,217.0,euro 4
+Porsche,M48.51,2007-2010,4806.0,525.0,725.0,Benzin,V,8.0,Alüminyum,Evet,10.5,5w-40,8.5,200000.0,236.0,euro 4
+Porsche,M48.70,2009-2013,4806.0,525.0,725.0,Benzin,V,8.0,Alüminyum,Evet,10.5,5w-40,8.5,200000.0,236.0,euro 4
+Porsche,M55.02,2010-2017,3598.0,300.0,400.0,Benzin,VR,6.0,Dökme Demir,Hayır (Atmosferik),11.7,5w-30,6.9,260000.0,177.0,euro 5/6
+Porsche,M96.20,1996-1999,2480.0,204.0,245.0,Benzin,Boxer (H),6.0,Alüminyum,Hayır (Atmosferik),11.0,5w-40,8.3,200000.0,172.0,euro 3
+Porsche,M96.22,1999-2002,2687.0,220.0,260.0,Benzin,Boxer (H),6.0,Alüminyum,Hayır (Atmosferik),11.0,5w-40,8.7,220000.0,182.0,euro 3
+Porsche,M96.26,2004-2006,3179.0,280.0,320.0,Benzin,Boxer (H),6.0,Alüminyum,Hayır (Atmosferik),11.0,5w-40,7.75,230000.0,181.0,euro 4
+Porsche,M97.20,2006-2009,2687.0,245.0,273.0,Benzin,Boxer (H),6.0,Alüminyum,Hayır (Atmosferik),11.3,5w-40,7.75,250000.0,192.0,euro 4
+Porsche,M97.21,2005-2009,3387.0,295.0,340.0,Benzin,Boxer (H),6.0,Alüminyum,Hayır (Atmosferik),11.1,5w-40,7.75,240000.0,191.0,euro 4
+Porsche,MDC.AB,since 2017,2894.0,440.0,550.0,Benzin,V,6.0,Alüminyum,Evet,10.5,0w-20,8.0,220000.0,,euro 6
+Porsche,MDC.BE,since 2017,2995.0,340.0,450.0,Benzin,V,6.0,Alüminyum,Evet,11.2,0w-20,7.3,240000.0,172.0,euro 6
+Porsche,M05.9E,2010-2011,2967.0,240.0,550.0,Dizel,V,6.0,Dökme Demir,Evet,16.8,5w-30,8.2,300000.0,,euro 4
+Volkswagen,CASA,2007-2011,2967.0,240.0,525.0,Dizel,V,6.0,Dökme Demir,Evet,17.0,5w-30,8.2,350000.0,215.0,euro 4
+Porsche,MCT.BA,2014-2018,2967.0,258.0,580.0,Dizel,V,6.0,Dökme Demir,Evet,16.8,5w-30,8.0,320000.0,198.0,euro 5/6
+Volkswagen,CRCA,2011-2018,2967.0,245.0,550.0,Dizel,V,6.0,Dökme Demir,Evet,16.8,5w-30,8.0,350000.0,195.0,euro 5/6
+Renault,D4F,1992-2003,1149.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.8,"5w-30, 5w-40",4.8,300000.0,88.0,
+Renault,D7F,1996-2014,1149.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,"5w-30, 5w-40",4.8,300000.0,82.0,euro 2/3/4
+Renault,E7F,1990-1996,1171.0,57.0,85.5,Benzin,Sıra (Inline),4.0,,Hayır (Atmosferik),9.2,,,200000.0,118.0,euro 1/2
+Renault,E7J,1991-2005,1390.0,75.0,109.5,Benzin,Sıra (Inline),4.0,,Hayır (Atmosferik),9.2,,,200000.0,122.0,euro 1
+Renault,F3P,1992-1999,1783.0,99.0,151.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.6,,,250000.0,132.0,euro 1/2
+Renault,F4P,1998-2005,1783.0,117.5,164.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.8,"5w-30, 5w-40",5.5,350000.0,145.0,euro 2/3
+Renault,F7P,1990-1997,1764.0,137.5,159.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,,,250000.0,150.0,euro 1/2
+Renault,F2R,1986-1993,1965.0,96.0,147.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),8.4,,,,135.0,&#8211;
+Renault,F3R,1986-2001,1998.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),,"5w-40, 5w-50",5.5,400000.0,136.0,
+Renault,F5R,1999-2003,1998.0,140.0,200.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,"5w-30, 5w-40",6.0,300000.0,145.0,euro 3
+Renault,F7R,1994-2001,1998.0,147.5,180.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.8,,,300000.0,150.0,euro 2
+Renault,K4J,1999-2013,1390.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,"5w-30, 5w-40",4.6,350000.0,132.0,euro 3
+Renault,K7M,since 1995,1598.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),,"5w-30, 5w-40",3.6,400000.0,127.0,euro 3/4/5
+Renault,N7Q,1995-2000,1948.0,138.0,179.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,5w-40,6.2,300000.0,143.0,euro 2
+Volvo,B4204S,1995-1999,1948.0,140.0,183.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,5w-40,5.4,330000.0,,euro 2
+Renault,N7U,1996-2000,2435.0,165.0,211.0,Benzin,Sıra (Inline),5.0,Alüminyum,Hayır (Atmosferik),10.5,5w-40,6.5,350000.0,171.0,euro 2
+Volvo,B5244S,1996-2009,2435.0,155.0,225.0,Benzin,Sıra (Inline),5.0,Alüminyum,Hayır (Atmosferik),10.3,5w-30,5.5,400000.0,,euro 2/3
+Renault,B4A,since 2015,799.0,54.0,72.0,Benzin,Sıra (Inline),3.0,Alüminyum,Hayır (Atmosferik),10.5,5w-40,3.0,250000.0,50.0,euro 5
+Renault,B4D,since 2015,999.0,,,Benzin,Sıra (Inline),3.0,Alüminyum,Hayır (Atmosferik),,5w-40,3.0,300000.0,67.0,
+Rover,11K4F,2000-2005,1119.0,75.0,95.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.4,5w-30,4.5,230000.0,101.0,euro 3
+Rover,14K2F,1994-1999,1396.0,75.0,117.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.5,5w-30,4.5,240000.0,102.0,euro 2
+Rover,14K4F,1991-2005,1396.0,93.0,116.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.5,5w-30,4.5,250000.0,104.0,euro 2/3
+Rover,16K4F,1995-2005,1589.0,109.5,141.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,4.5,280000.0,107.0,euro 3
+Rover,18K4F,1995-2006,1796.0,125.0,162.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,4.5,300000.0,108.0,euro 3
+Rover,18K4K,1995-2005,1796.0,151.5,174.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,4.5,270000.0,110.0,euro 3
+Rover,18K4G,2002-2005,1796.0,150.0,215.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.2,5w-30,4.5,220000.0,112.0,euro 3
+Rover,20T4H,1991-1999,1994.0,136.0,187.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,5w-30,5.9,300000.0,151.7,euro 2
+Rover,20M4F,1986-1995,1994.0,136.5,178.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,5w-30,5.9,280000.0,162.8,euro 1/2
+Rover,20T4G,1991-1999,1994.0,190.0,226.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,8.5,5w-30,5.9,250000.0,155.1,euro 2
+Rover,46F2F,2003-2005,4601.0,260.0,410.0,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),9.4,5w-30,5.7,300000.0,,euro 3
+Rover,20K4N,1998-2004,1997.0,150.0,185.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,5.2,240000.0,177.8,euro 3
+Rover,25K4N,1996-2006,2497.0,170.0,232.5,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,5.2,250000.0,179.5,euro 2/3
+Rover,20T2R,1995-2000,1994.0,86.0,170.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,19.5,5w-40,4.0,270000.0,157.4,euro 2
+Rover,20T2N,1994-2005,1994.0,105.5,235.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,19.5,5w-40,4.9,250000.0,159.7,euro 2
+Saab,B204E,1994-2000,1985.0,152.0,219.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.2,5w-30,4.0,300000.0,,euro 2/3
+Saab,B204i,1994-2000,1985.0,130.0,177.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,5w-40,4.0,350000.0,,euro 2/3
+Saab,B204L,1993-1999,1985.0,185.0,263.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.2,5w-30,4.0,290000.0,,euro 2/3
+Saab,B205E,1998-2009,1985.0,150.0,240.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,8.8,0w-30,4.0,250000.0,,euro 3/4
+Saab,B234E,1994-1998,2290.0,170.0,260.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.25,5w-30,4.0,320000.0,,euro 2
+Saab,B234i,1990-1999,2290.0,150.0,210.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,5w-40,4.0,360000.0,,euro 2/3
+Saab,B234R,1993-1997,2290.0,212.5,318.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.25,5w-30,4.0,300000.0,,euro 2
+Saab,B235E,1998-2009,2290.0,177.5,280.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.3,0w-30,4.0,230000.0,,euro 3/4
+Saab,B235R,1999-2009,2290.0,245.0,360.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.3,0w-30,4.0,200000.0,,euro 3/4
+Saab,B207E,2002-2012,1998.0,150.0,240.0,Benzin,Sıra (Inline),4.0,Alüminyum,Bilinmiyor,9.5,5w-30,5.7,300000.0,,euro 4/5
+Saab,B207L,2002-2012,1998.0,175.0,265.0,Benzin,Sıra (Inline),4.0,Alüminyum,Bilinmiyor,9.5,5w-30,5.7,290000.0,,euro 4/5
+Saab,B207R,2002-2012,1998.0,210.0,300.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.5,5w-30,5.7,270000.0,,euro 4/5
+Saab,B258i,1993-1998,2498.0,170.0,227.0,Benzin,V,6.0,Dökme Demir,Hayır (Atmosferik),10.8,5w-30,4.5,280000.0,,euro 2
+Opel,X25XE,1994-2000,2498.0,170.0,230.0,Benzin,V,6.0,Dökme Demir,Hayır (Atmosferik),10.8,5w-30,5.75,400000.0,190.0,euro 2
+Saab,B284L,2005-2008,2792.0,252.5,350.0,Benzin,V,6.0,Alüminyum,Evet,9.5,5w-30,7.0,300000.0,215.0,euro 4
+Opel,Z28NET,2005-2008,2792.0,250.0,350.0,Benzin,V,6.0,Alüminyum,Evet,9.5,5w-30,6.0,300000.0,215.0,euro 4
+Saab,B308E,1998-2003,2962.0,200.0,310.0,Benzin,V,6.0,Dökme Demir,Evet,9.5,5w-30,4.5,300000.0,195.0,euro 2
+Opel,X30XE,1994-2001,2962.0,205.0,265.0,Benzin,V,6.0,Dökme Demir,Hayır (Atmosferik),10.8,5w-30,5.8,380000.0,190.0,euro 2
+Saab,B308i,1994-1997,2962.0,211.0,270.0,Benzin,V,6.0,Dökme Demir,Hayır (Atmosferik),10.8,5w-30,4.5,300000.0,190.0,euro 2
+Saab,D207E,2004-2010,1910.0,120.0,280.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.0,5w-40,4.6,350000.0,180.0,euro 4
+Opel,Z19DT,2004-2010,1910.0,120.0,280.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.0,5w-40,4.6,340000.0,180.0,euro 4
+Saab,D207L,2004-2010,1910.0,150.0,320.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,17.5,5w-40,4.6,300000.0,185.0,euro 4
+Opel,Z19DTH,2004-2010,1910.0,150.0,320.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,17.5,5w-40,4.5,300000.0,185.0,euro 4
+Saab,D207R,2007-2011,1910.0,170.0,380.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.5,5w-40,4.6,250000.0,,euro 4
+Saab,D223L,1998-2005,2171.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,18.5,5w-40,5.5,320000.0,195.0,
+Opel,X22DTH,1998-2000,2171.0,115.0,260.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.5,5w-40,6.1,300000.0,195.0,euro 2
+Opel,Y22DTH,2000-2004,2171.0,117.5,270.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.5,5w-40,6.1,320000.0,195.0,euro 3
+Volkswagen,EA111 CFNA/CFNB,2010,1598.0,,,,,,,Bilinmiyor,10.5,0w-40 / 5w-30 / 5w-40,3.6,,,euro 5
+Volkswagen,EA113 1.8T,1994,1781.0,195.0,,Benzin,,,,Bilinmiyor,9.0,5w-30 / 0w-40 / 5w-40,3.5,,,up to euro 5
+Volkswagen,EA827/EA113 1.8,1983-2002,1781.0,103.5,,,,,,Bilinmiyor,8.5,5w-30 / 0w-40 / 5w-40,4.0,,110.0,—
+Volkswagen,EA111 1.2 TSI / TFSI,2009,1197.0,95.5,,,,,,Bilinmiyor,10.0,5w-30 / 5w-40,3.8,,,euro 5
+Volkswagen,EA113 2.0 TFSI,2004,1984.0,220.5,,,,,,Bilinmiyor,10.5,5w-30 / 5w-40,4.6,,,euro 5
+Volkswagen,EA111 1.4 TSI TFSI,2005,1390.0,151.0,,,,,,Bilinmiyor,10.0,5w-30 / 5w-40,3.8,,,euro 5
+Volkswagen,EA211 1.2 TSI TFSI,2012,1197.0,,,,,,,Bilinmiyor,10.5,5w-30 / 5w-40,3.8,,,
+Volkswagen,EA211 1.4 TSI TFSI,2012,1395.0,136.0,,,,,,Bilinmiyor,10.0,5w-30 / 5w-40,3.8,,,euro 5-6
+Volkswagen,EA827 1.6,1985,1595.0,90.0,,Benzin,,,,Bilinmiyor,9.0,5w-30 / 0w-40 / 5w-40,4.5,,,euro 5
+SsangYong,G16DF,since 2015,1597.0,128.0,160.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,4.0,250000.0,,euro 5
+SsangYong,G20D,1993-1998,1998.0,133.0,180.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.4,5w-40,7.5,350000.0,,euro 2
+SsangYong,G20DF,since 2010,1998.0,149.0,197.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.5,5w-30,5.0,250000.0,120.0,euro 4
+SsangYong,G23D,1993-2018,2295.0,150.0,212.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.4,5w-40,7.5,350000.0,,euro 2/3/4
+SsangYong,G32D,1993-2017,3199.0,220.0,312.5,Benzin,Sıra (Inline),6.0,Dökme Demir,Hayır (Atmosferik),10.0,5w-40,7.5,400000.0,,euro 2/3/4
+SsangYong,D16DTF,since 2015,1597.0,115.0,300.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,15.5,5w-30,5.0,250000.0,,euro 6
+SsangYong,D20DT,2005-2012,1998.0,141.0,310.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,17.5,"5w-30, 5w-40",7.5,400000.0,,euro 3/4
+SsangYong,D20DTF,since 2010,1998.0,162.5,360.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.5,5w-30,6.0,250000.0,170.0,euro 4/5
+SsangYong,D20DTR,since 2012,1998.0,152.5,360.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.5,5w-30,6.0,270000.0,,euro 5
+SsangYong,D22DTF,since 2015,2157.0,178.0,400.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,15.5,5w-30,6.0,250000.0,175.0,euro 5/6
+SsangYong,D22DTR,since 2015,2157.0,179.5,410.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,15.5,5w-30,6.0,280000.0,,euro 5/6
+SsangYong,D23DT,1993-2006,2299.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,22.0,5w-40,8.0,400000.0,,euro 2
+SsangYong,D27DT,2003-2017,2696.0,162.5,342.5,Dizel,Sıra (Inline),5.0,Dökme Demir,Evet,18.0,5w-30,8.5,350000.0,,euro 3
+SsangYong,D27DTP,2006-2017,2696.0,182.5,402.0,Dizel,Sıra (Inline),5.0,Dökme Demir,Evet,17.5,5w-30,8.5,320000.0,,euro 4
+SsangYong,D29DT,1993-2006,2874.0,,,Dizel,Sıra (Inline),5.0,Dökme Demir,Bilinmiyor,22.0,5w-40,9.0,400000.0,,euro 2/3
+Suzuki,F6A,1990-2000,657.0,,,Benzin,Sıra (Inline),3.0,Dökme Demir,Bilinmiyor,,5w-30,3.0,250000.0,,euro 1/2
+Suzuki,F10A,1979-2012,970.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),,5w-30,3.5,280000.0,,
+Suzuki,F10D,1999-2010,1061.0,62.5,82.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,5w-30,4.0,320000.0,,euro 2/3
+Suzuki,G10A,1983-2007,993.0,,,Benzin,Sıra (Inline),3.0,Alüminyum,Bilinmiyor,,5w-30,3.3,300000.0,65.0,euro 1/2
+Suzuki,G13B,1986-1995,1298.0,107.5,110.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.0,5w-30,3.2,280000.0,82.0,euro 2
+Suzuki,G13BA,1988-2001,1298.0,70.5,101.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.5,5w-30,3.3,300000.0,78.0,euro 1/2
+Suzuki,G13BB,1995-2005,1298.0,81.0,109.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.5,5w-30,4.5,300000.0,78.0,euro 2/3
+Suzuki,G15A,1991-2002,1493.0,94.0,126.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.0,5w-30,3.3,320000.0,87.0,euro 2/3
+Suzuki,G16A,1988-2002,1590.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),,"5w-30, 5w-40",4.2,300000.0,86.0,
+Suzuki,G16B,1990-2005,1590.0,95.0,132.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.5,"5w-30, 5w-40",4.2,350000.0,89.0,euro 2/3
+Suzuki,H20A,1994-1998,1998.0,140.5,177.5,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),9.5,"5w-30, 5w-40",6.2,350000.0,,euro 2
+Toyota,1VZ-FE,1988-1992,1992.0,136.0,173.0,Benzin,V,6.0,Dökme Demir,Hayır (Atmosferik),9.6,5w-30,4.1,250000.0,190.0,euro 1/2
+Suzuki,H25A,1996-2005,2493.0,151.0,210.5,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),9.5,"5w-30, 5w-40",5.7,400000.0,,euro 3
+Suzuki,H27A,2000-2008,2736.0,179.0,240.5,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),9.5,"5w-30, 5w-40",5.5,400000.0,,euro 3/4
+Suzuki,J18A,1996-2002,1839.0,122.5,152.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.8,5w-30,4.7,250000.0,,euro 3
+Suzuki,J20A,since 1998,1995.0,136.5,182.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.3,"5w-30, 5w-40",4.7,300000.0,,euro 4/5
+Suzuki,J20B,2010-2014,1995.0,151.0,190.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.2,5w-30,4.8,250000.0,,euro 4
+Suzuki,J23A,2004-2007,2290.0,156.5,206.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.3,5w-30,4.7,270000.0,,euro 3
+Suzuki,J24B,since 2008,2393.0,175.0,227.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.0,"0w-20, 0w-30",4.8,300000.0,,euro 4/5
+Suzuki,K6A,1994-2018,658.0,,,Benzin,Sıra (Inline),3.0,Alüminyum,Bilinmiyor,,"5w-30, 5w-40",2.9,250000.0,,euro 4/5
+Toyota,5A-FHE,1989-1992,1498.0,105.0,132.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,5w-30,3.0,280000.0,127.0,euro 2
+Toyota,4A-FHE,1990-1995,1587.0,110.0,142.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,5w-30,3.0,320000.0,129.0,euro 2
+Toyota,4A-GE,1983-2002,1587.0,,,,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),,"5w-30, 5w-40",3.2,300000.0,135.0,euro 2
+Toyota,4A-GZE,1986-1995,1587.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,,5w-30,3.2,250000.0,140.0,euro 2
+Toyota,2AR-FXE,since 2011,2494.0,156.5,209.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),12.5,5w-30,4.4,300000.0,149.0,euro 5
+Toyota,2AR-FSE,since 2012,2494.0,178.0,221.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),13.0,5w-30,4.4,300000.0,151.0,euro 5
+Toyota,5AR-FE,since 2013,2494.0,179.0,234.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.4,5w-30,4.4,300000.0,141.0,euro 3/4/5
+Toyota,1AZ-FSE,2000-2009,1998.0,152.5,195.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,"5w-20, 5w-30",4.2,300000.0,135.0,euro 4
+Volkswagen,DKZA,since 2018,1984.0,190.0,320.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,11.6,0w-30,5.7,250000.0,132.0,euro 6
+Volkswagen,CYRC,since 2018,1984.0,250.0,370.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.6,0w-20,5.7,270000.0,132.0,euro 6
+Volkswagen,JK,1980-1989,1588.0,54.0,100.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),23.0,5w-40,4.0,400000.0,,euro 0
+Volkswagen,JP,1983-1992,1588.0,54.0,100.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),23.0,5w-40,4.0,380000.0,,euro 0
+Volkswagen,JX,1984-1992,1588.0,70.0,138.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,23.0,5w-40,4.0,350000.0,,euro 0
+Volkswagen,SB,1989-1993,1588.0,80.0,152.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,23.0,5w-40,4.0,330000.0,,euro 0
+Volkswagen,1X,1990-1995,1896.0,60.0,127.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),23.0,5w-30,4.8,550000.0,,euro 1
+Volkswagen,1Y,1989-2003,1896.0,66.0,125.5,Dizel,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),22.5,5w-30,4.3,500000.0,,euro 1/2
+Volvo,B4204T9,2014-2018,1969.0,306.0,400.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.3,0w-20,5.9,260000.0,,euro 5/6
+Volvo,B4204T35,since 2015,1969.0,320.0,400.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.3,0w-20,5.9,260000.0,,euro 6
+Volvo,B4164S,1995-1999,1587.0,105.0,143.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,5w-40,5.4,300000.0,,euro 2
+Volvo,B4164S2,1999-2004,1587.0,109.0,145.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.3,5w-30,5.4,320000.0,,euro 3
+Volvo,B4184S,1995-1999,1731.0,115.0,165.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,5w-40,5.4,320000.0,,euro 2
+Volvo,B4184S2,1999-2004,1783.0,122.0,170.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.3,5w-30,5.4,300000.0,,euro 3
+Volvo,B4194T,1997-2000,1855.0,200.0,300.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,8.5,5w-30,5.5,250000.0,,euro 2
+Volvo,B4204T,1997-1999,1948.0,160.0,230.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.0,5w-30,5.5,275000.0,,euro 2
+Volvo,B5202S,1995-2000,1984.0,126.0,170.0,Benzin,Sıra (Inline),5.0,Alüminyum,Hayır (Atmosferik),10.0,5w-40,5.3,350000.0,,euro 2
+Volvo,B5204T,1993-1996,1984.0,211.0,300.0,Benzin,Sıra (Inline),5.0,Alüminyum,Evet,8.4,5w-40,5.3,250000.0,,euro 2
+Volvo,B5204T8,2012-2015,1984.0,180.0,300.0,Benzin,Sıra (Inline),5.0,Alüminyum,Evet,10.5,5w-30,5.5,270000.0,,euro 5
+Volvo,B5234T,1993-1996,2319.0,225.0,300.0,Benzin,Sıra (Inline),5.0,Alüminyum,Evet,8.5,5w-40,5.3,240000.0,,euro 2
+Volvo,B5244S2,1998-2009,2435.0,140.0,220.0,Benzin,Sıra (Inline),5.0,Alüminyum,Hayır (Atmosferik),10.3,5w-30,5.8,380000.0,,euro 3/4
+Volvo,B5244S4,2004-2010,2435.0,170.0,230.0,Benzin,Sıra (Inline),5.0,Alüminyum,Hayır (Atmosferik),10.3,5w-30,5.8,370000.0,,euro 3/4
+Volvo,B5244T,1999-2002,2435.0,193.0,270.0,Benzin,Sıra (Inline),5.0,Alüminyum,Evet,9.0,5w-30,5.5,275000.0,,euro 3
+Volvo,B5244T3,2000-2003,2435.0,200.0,285.0,Benzin,Sıra (Inline),5.0,Alüminyum,Evet,9.0,5w-30,5.8,260000.0,,euro 3
+Audi,ASB,2003-2010,2967.0,233.0,450.0,Dizel,V,6.0,Dökme Demir,Evet,17.0,5w-30,8.2,330000.0,220.0,euro 4
+Audi,CAHA,2008-2013,1968.0,170.0,350.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.5,5w-30,4.6,330000.0,165.0,euro 4/5
+Volvo,D4204T23,since 2016,1969.0,235.0,480.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,15.8,0w-20,5.6,250000.0,,euro 5/6
+Audi,DFBA,since 2018,1968.0,204.0,400.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,15.5,5w-30,6.0,320000.0,,euro 6d
+Audi,CDUD,2010-2014,2967.0,245.0,580.0,Dizel,V,6.0,Dökme Demir,Evet,16.8,5w-30,8.0,300000.0,195.0,euro 5
+Audi,BPP,2004-2008,2698.0,180.0,380.0,Dizel,V,6.0,Dökme Demir,Evet,17.5,5w-30,8.2,350000.0,220.0,euro 4
+BMW,M41D17,1994-2000,1665.0,90.0,190.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,22.0,5w-40,5.0,300000.0,,euro 1/2
+BMW,B58B30,since 2015,2998.0,357.0,475.0,Benzin,Sıra (Inline),6.0,Alüminyum,Evet,11.0,,,300000.0,139.0,euro 6
+BMW,B48B20 / B48A20,since 2014,1998.0,231.0,350.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.5,"0w-30, 0w-40, 5w-30, 5w-40",5.25,250000.0,,euro 6
+BMW,B47 (C20/D20),since 2014,1995.0,173.5,385.0,Dizel,Sıra (Inline),4.0,Alüminyum,Bilinmiyor,16.5,,,350000.0,,euro 5/6
+BMW,N57D30,since 2008,2993.0,,,Dizel,Sıra (Inline),6.0,Alüminyum,Bilinmiyor,,5w-30,,300000.0,,euro 5/6
+BMW,M21D24,1983-1991,2443.0,,,Dizel,Sıra (Inline),6.0,Dökme Demir,Bilinmiyor,22.0,5w-40,,350000.0,,euro 0
+Volvo,D5252T,1995-2001,2460.0,140.0,290.0,Dizel,Sıra (Inline),5.0,Dökme Demir,Evet,20.5,5w-40,6.0,24000000.0,,euro 2/3
+BMW,M30B35LE,1978-1982,3453.0,218.0,310.0,Benzin,Sıra (Inline),6.0,Dökme Demir,Hayır (Atmosferik),9.3,5w-30,5.75,3500000.0,,euro 1
+BMW,B57D30,since 2015,2993.0,332.5,690.0,Dizel,Sıra (Inline),6.0,Alüminyum,Evet,16.0,,,350000.0,,euro 6
+BMW,N20B16,since 2013,1598.0,156.5,235.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.0,5w-30,5.0,200000.0,,euro 5/6
+BMW,N63B40,2012-2015,3982.0,428.5,625.0,Benzin,V,8.0,Alüminyum,Evet,10.0,5w-30,8.5,250000.0,,euro 5
+BMW,M70B50,1987-1994,4998.0,,,Benzin,V,12.0,Alüminyum,Hayır (Atmosferik),,5w-40,7.5,340000.0,,euro 2
+Nissan,CG10DE,1992-2003,998.0,57.5,79.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.5,5w-30,3.1,200000.0,,euro 2/3
+Mitsubishi,4D68,1991-2002,1998.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,22.4,5w-40,5.1,300000.0,170.0,
+Mitsubishi,4D65,1983-1995,1795.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,22.2,5w-40,5.6,250000.0,180.0,
+Mitsubishi,4G67,1989-1992,1836.0,135.0,159.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.2,5w-30,4.0,350000.0,170.0,euro 2
+Toyota,3UR-FE,since 2007,5663.0,375.0,538.0,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),10.2,5w-30,8.6,600000.0,220.0,euro 3/4
+Toyota,V35A-FTS,since 2017,3444.0,385.0,600.0,Benzin,V,6.0,Alüminyum,Evet,10.5,0w-20,7.3,300000.0,182.0,euro 5
+Toyota,2WZ-TV,2005-2007,1399.0,54.0,130.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,17.9,5w-30,3.75,280000.0,,euro 3
+Toyota,1PZ,1990-1993,3469.0,115.0,230.0,Dizel,Sıra (Inline),5.0,Dökme Demir,Hayır (Atmosferik),22.7,10w-30,9.0,500000.0,280.0,euro 1
+Toyota,2L,1982-2004,2446.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,,5w-40,,260000.0,,
+Toyota,3L,1988-2015,2779.0,84.5,188.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),22.2,5w-40,6.1,400000.0,230.0,euro 1/2
+Toyota,5L / 5L-E,since 1994,2986.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),22.2,5w-40,,450000.0,240.0,
+Toyota,2KD-FTV,since 2001,2494.0,131.0,334.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,17.4,5w-30,6.9,300000.0,250.0,euro 2/3/4
+Toyota,1GD-FTV,since 2015,2755.0,177.0,435.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,15.6,0w-30,7.5,250000.0,300.0,euro 4/5/6
+Toyota,2C,1983-2001,1974.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,23.0,5w-40,,250000.0,,
+Toyota,2VZ-FE,1988-1991,2507.0,159.0,216.0,Benzin,V,6.0,Dökme Demir,Hayır (Atmosferik),9.0,5w-30,3.9,250000.0,195.0,euro 1/2
+Toyota,4VZ-FE,1991-1996,2496.0,173.0,224.0,Benzin,V,6.0,Dökme Demir,Hayır (Atmosferik),9.6,5w-30,4.0,250000.0,195.0,euro 1/2
+Toyota,3VZ-E,1988-1995,2958.0,147.5,245.0,Benzin,V,6.0,Dökme Demir,Hayır (Atmosferik),9.0,5w-30,4.3,250000.0,190.0,euro 1/2
+Toyota,1Y,1982-1991,1626.0,84.0,135.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),8.8,5w-30,3.5,250000.0,140.0,euro 0
+Toyota,3S-FC,1986-1992,1998.0,111.0,166.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.8,5w-30,3.9,300000.0,145.0,euro 0
+Toyota,3S-FSE,1996-2003,1998.0,145.0,196.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,11.0,"5w-30, 5w-40",3.9,300000.0,150.0,euro 3
+Toyota,3S-GE,1984-2005,1998.0,,,,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),,"5w-30, 5w-40",,500000.0,155.0,
+Toyota,3S-GTE,1986-2007,1998.0,,,,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,,"5w-30, 5w-40",,300000.0,180.0,
+Toyota,1SZ-FE,1999-2005,997.0,69.0,95.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,5w-30,3.2,200000.0,91.0,euro 3/4
+Toyota,3E,1986-1994,1456.0,83.5,119.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.3,5w-30,3.2,230000.0,110.0,euro 0
+Toyota,1NZ-FXE,since 1997,1497.0,73.5,112.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),13.0,5w-30,3.7,250000.0,144.0,euro 4/5
+Toyota,1KR-FE,since 2004,996.0,69.5,92.0,Benzin,Sıra (Inline),3.0,Alüminyum,Hayır (Atmosferik),10.5,5w-20,3.1,200000.0,75.0,euro 4/5
+Toyota,2NR-FKE,since 2015,1496.0,109.0,136.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),13.5,0w-20,3.4,200000.0,97.0,euro 5
+Toyota,2AZ-FSE,2003-2009,2362.0,163.0,230.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,3.8,250000.0,137.0,euro 4/5
+Toyota,1NR-FE,since 2008,1329.0,98.0,125.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,5w-20,3.4,200000.0,99.0,euro 3/4/5
+Toyota,M20A-FKS,since 2018,1986.0,174.0,205.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),13.0,0w-20,4.3,250000.0,98.1,euro 6
+Toyota,3ZR-FAE,since 2008,1987.0,153.0,195.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.0,5w-20,4.2,250000.0,126.0,euro 4/5
+Toyota,1C,1982-1992,1839.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,23.0,5w-40,3.8,230000.0,,euro 0
+Toyota,1ZR-FAE,since 2009,1598.0,130.0,159.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.7,5w-20,4.2,250000.0,123.0,euro 4/5
+Toyota,2ZR-FAE,since 2007,1798.0,145.0,172.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,5w-20,4.2,250000.0,124.0,euro 4/5
+Toyota,2ZR-FXE,since 2009,1798.0,97.0,142.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),13.0,5w-20,4.2,300000.0,133.0,euro 5/6
+Toyota,1AD-FTV,2005-2018,1998.0,124.5,305.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,15.8,"0w-30, 5w-30",6.7,250000.0,180.0,euro 4/5
+Toyota,1RZ-E,1989-2004,1998.0,105.0,165.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.0,5w-30,4.1,400000.0,140.0,euro 2/3
+Toyota,2RZ-E,1989-2004,2438.0,120.0,198.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),8.8,5w-30,4.1,500000.0,145.0,euro 2/3
+Toyota,2RZ-FE,1995-2004,2438.0,142.0,217.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,5w-30,4.1,500000.0,145.0,euro 2/3
+Toyota,1TR-FE,since 2004,1998.0,,182.0,,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),,5w-20,5.5,400000.0,150.0,
+Toyota,2TZ-FE,1990-1999,2438.0,133.0,206.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.3,5w-30,5.8,200000.0,175.0,euro 1/2
+Toyota,1JZ-GTE,1990-2007,2492.0,280.0,,Benzin,Sıra (Inline),6.0,Dökme Demir,Evet,,"5w-30, 5w-40",5.35,500000.0,260.0,
+Toyota,1JZ-FSE,1999-2007,2492.0,200.0,250.0,Benzin,Sıra (Inline),6.0,Dökme Demir,Hayır (Atmosferik),11.0,5w-30,5.4,250000.0,220.0,euro 3/4
+Toyota,2JZ-GTE,1991-2002,2997.0,,,Benzin,Sıra (Inline),6.0,Dökme Demir,Evet,8.5,"5w-30, 5w-40",5.1,500000.0,270.0,
+Toyota,2JZ-FSE,1999-2007,2997.0,218.5,298.5,Benzin,Sıra (Inline),6.0,Dökme Demir,Hayır (Atmosferik),11.3,5w-30,5.4,250000.0,240.0,euro 3/4
+Toyota,6GR-FE,since 2013,3956.0,232.0,345.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.0,5w-30,6.2,350000.0,167.0,euro 5
+Toyota,1UR-FSE,since 2006,4608.0,378.5,480.0,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),11.8,5w-30,8.6,400000.0,222.0,euro 4/5
+Toyota,7M-GE,1986-1992,2954.0,197.5,257.5,Benzin,Sıra (Inline),6.0,Dökme Demir,Hayır (Atmosferik),9.1,5w-30,4.4,300000.0,185.0,euro 2
+Toyota,2MZ-FE,1995-2002,2496.0,205.0,266.5,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,4.7,300000.0,170.0,euro 3/4
+Toyota,3MZ-FE,2002-2015,3310.0,240.0,337.5,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.8,5w-30,4.7,400000.0,177.0,euro 3/4
+Toyota,5E-FHE,1990-1999,1497.0,112.5,132.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.8,5w-30,3.2,250000.0,120.0,euro 2
+Toyota,1UR-FE,since 2006,4608.0,321.5,449.5,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),10.2,5w-30,8.6,450000.0,216.0,euro 3/4
+Toyota,5GR-FE,2005-2017,2497.0,197.0,242.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.0,5w-30,6.2,300000.0,160.0,euro 4/5
+Nissan,??24?,1988-1999,2389.0,127.5,197.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),8.6,5w-30,4.3,375000.0,160.0,euro 1/2
+Renault,F4Rt,2001-2016,1998.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,,"5w-30, 5w-40",5.9,350000.0,149.0,euro 3/4/5
+Renault,F9Qt (dTi),1997-2003,1870.0,89.0,180.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.3,"5w-30, 5w-40",5.9,400000.0,172.0,euro 2/3
+Nissan,HR10DDT,2019-,999.0,113.5,190.0,Benzin,Sıra (Inline),3.0,Alüminyum,Evet,10.5,5w-30,4.1,220000.0,90.0,euro 6
+Nissan,HRA2DDT / Nissan HR12DDT,2013-2018,1197.0,115.0,190.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.0,5w-30,4.6,200000.0,109.0,euro 5/6
+Nissan,HR12DE,2010-,1198.0,81.5,106.5,Benzin,Sıra (Inline),3.0,Alüminyum,Hayır (Atmosferik),10.7,5w-30,3.2,250000.0,83.0,euro 5/6
+Nissan,HR12DDR,2011-2020,1198.0,98.0,143.0,Benzin,Sıra (Inline),3.0,Alüminyum,Evet,12.0,0w-20,3.9,240000.0,91.0,euro 5/6
+Nissan,HR13DDT,2017-,1332.0,150.0,255.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.5,5w-30,5.4,220000.0,105.0,euro 5/6
+Nissan,HR15DE,2004-,1498.0,108.0,145.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,4.2,230000.0,108.0,euro 4/5
+Renault,H4M,since 2004,1598.0,112.5,152.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.7,"5w-30, 5w-40",4.6,300000.0,98.0,euro 5
+Nissan,MR18DE,2004-,1797.0,125.0,174.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.9,5w-30,4.5,240000.0,116.0,euro 4/5
+Nissan,KA20DE,1999-2009,1998.0,120.0,170.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,5w-30,4.1,340000.0,165.0,euro 2/3/4
+Nissan,SR20DET,1989-2001,1998.0,225.0,285.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,8.3,5w-30,3.7,300000.0,180.0,euro 2/3/4
+Nissan,KR15DDT,2021-,1477.0,201.0,300.0,Benzin,Sıra (Inline),3.0,Alüminyum,Evet,8.0,5w-30,4.7,200000.0,125.0,euro 6
+Nissan,QG13DE,1998-2012,1295.0,88.5,116.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,5w-30,2.7,220000.0,128.0,euro 3/4
+Nissan,QG18DD,1999-2007,1769.0,130.0,174.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),11.0,5w-30,2.7,200000.0,140.0,euro 4/5
+Nissan,VQ25DD,1998-2007,2495.0,212.5,267.5,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,4.7,320000.0,185.0,euro 4/5
+Nissan,VQ30DD,1996-2004,2987.0,245.0,310.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,4.7,300000.0,190.0,euro 4/5
+Nissan,VG20,1983-1999,1998.0,,,Benzin,V,6.0,Dökme Demir,Bilinmiyor,,5w-30,3.9,350000.0,,euro 2/3
+Nissan,SR20VE,1997-2003,1998.0,197.5,201.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,3.4,330000.0,165.0,euro 3/4
+Nissan,SR20VET,2001-2007,1998.0,280.0,309.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.0,5w-30,3.4,300000.0,185.0,euro 3/4
+Nissan,QR20DD,2000-2005,1998.0,150.0,200.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,3.9,200000.0,124.0,euro 4
+Nissan,QR25DD,2001-2007,2488.0,170.0,245.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.7,5w-30,5.1,220000.0,125.0,euro 4
+Renault,M4R,since 2005,1997.0,137.5,200.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.2,"5w-30, 5w-40",4.7,350000.0,118.0,euro 4/5
+Nissan,MR15DDT,2022-,1461.0,190.0,330.0,Benzin,Sıra (Inline),3.0,Alüminyum,Evet,12.0,0w-20,3.8,250000.0,,euro 6
+Nissan,MR16DDT,2010-,1618.0,190.5,260.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.5,5w-30,4.5,220000.0,137.0,euro 4/5
+Nissan,MRA8DE,2012-,1797.0,130.0,174.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.9,5w-30,4.5,250000.0,118.0,euro 4/5
+Nissan,MR20DD,2010-,1997.0,145.0,205.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.2,5w-30,3.8,220000.0,121.0,euro 5/6
+Nissan,GA14DE (GA14S/DS),1985-2000,1392.0,81.5,113.5,,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.8,"3.2 l 5w-30, 5w-40, 10w-30, 10w-40",,400000.0,145.0,euro 1/2
+Nissan,VQ30DET,1995-2007,2987.0,275.0,375.0,Benzin,V,6.0,Alüminyum,Evet,9.0,5w-30,4.0,300000.0,230.0,euro 3/4
+Nissan,VQ35HR,,3498.0,307.5,352.5,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.6,"5w-30, 5w-40",4.9,400000.0,190.0,euro 4/5
+Renault,V9X,2008-2015,2993.0,235.0,500.0,Dizel,V,6.0,Dökme Demir,Evet,16.0,"5w-30, 5w-40",8.3,250000.0,185.0,euro 5
+Renault,R9M,since 2011,1598.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,15.4,5w-30,6.5,400000.0,177.0,euro 5/6
+Renault,Z7X,,2963.0,,,,V,6.0,,Bilinmiyor,,,,,190.0,
+Nissan,VQ25DE,,2495.0,,,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),,5w-30,4.0,330000.0,185.0,
+Nissan,VG30DET,1986-1996,2960.0,255.0,343.0,Benzin,V,6.0,Dökme Demir,Evet,8.5,5w-30,3.4,360000.0,235.0,euro 2/3
+Nissan,VG30DE,1986-2000,2960.0,207.5,262.5,Benzin,V,6.0,Dökme Demir,Hayır (Atmosferik),9.0,5w-30,3.4,375000.0,230.0,euro 2/3
+Nissan,VQ20DE,,1995.0,150.0,187.5,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),9.5,5w-30,4.0,300000.0,175.0,euro 3/4
+Mitsubishi,4J11,since 2012,1998.0,158.0,198.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,5w-20,4.4,250000.0,120.0,euro 5/6
+Mitsubishi,6A12,1992-2010,1998.0,,,Benzin,V,6.0,Dökme Demir,Evet,,5w-40,4.2,250000.0,170.0,euro 2/3
+Mitsubishi,4G91,1991-1996,1496.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),,5w-30,3.5,275000.0,135.0,
+Mitsubishi,6A11,1992-2000,1829.0,135.0,167.0,Benzin,V,6.0,Dökme Demir,Hayır (Atmosferik),9.5,5w-40,4.2,275000.0,165.0,euro 2/3
+Mitsubishi,4J10,since 2012,1798.0,140.0,172.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.7,5w-20,4.3,220000.0,115.0,euro 5/6
+Hyundai,G6CU,1999-2007,3497.0,207.5,302.5,Benzin,V,6.0,Dökme Demir,Hayır (Atmosferik),10.0,"5w-30, 5w-40",5.5,350000.0,199.0,euro 3
+Mitsubishi,6G71,1986-1992,1998.0,,,Benzin,V,6.0,Dökme Demir,Bilinmiyor,,5w-40,4.3,300000.0,190.0,
+Mitsubishi,6G72TT,1990-2000,2972.0,302.5,417.0,Benzin,V,6.0,Dökme Demir,Evet,8.0,5w-40,4.6,220000.0,230.0,euro 2
+Mitsubishi,4M41,since 1999,3200.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,,5w-30,9.3,400000.0,245.0,
+Mitsubishi,8A80,1999-2001,4498.0,280.0,412.0,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),10.7,5w-30,5.8,300000.0,245.0,euro 4
+Mitsubishi,4D55,1980-1986,2346.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,21.0,5w-40,5.4,275000.0,183.0,
+Hyundai,D4BA,1989-2003,2477.0,77.5,150.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),21.0,"5w-40, 10w-40",6.5,400000.0,199.6,euro 1/2
+Hyundai,D4BF,1991-2004,2477.0,82.5,201.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,21.0,"5w-40, 10w-40",6.5,450000.0,204.8,euro 1/2
+Hyundai,D4BH,since 1997,2477.0,102.5,232.5,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,21.0,"5w-40, 10w-40",7.2,450000.0,226.8,euro 2/3
+Mitsubishi,4G61,1987-1995,1595.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,,5w-30,4.0,250000.0,155.0,euro 2/3
+Mitsubishi,4G62,1979-1989,1795.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,,5w-30,4.0,250000.0,160.0,
+Hyundai,G4JS,1998-2007,2351.0,145.0,200.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,"5w-30, 5w-40",4.5,500000.0,154.2,euro 2/3
+Mitsubishi,4J12,since 2013,2360.0,168.0,220.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,5w-20,4.6,275000.0,130.0,euro 5/6
+Hyundai,G6AT,1990-2003,2972.0,151.0,235.0,Benzin,V,6.0,Dökme Demir,Hayır (Atmosferik),8.9,5w-40,4.6,220000.0,169.3,euro 2
+Mitsubishi,4G54,1978-1992,2555.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,,5w-40,4.9,450000.0,200.0,
+Mitsubishi,4G15T,2004-2013,1468.0,162.0,220.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.0,5w-30,3.7,250000.0,145.0,euro 4/5
+Mitsubishi,6A10,1991-1996,1597.0,140.0,147.0,Benzin,V,6.0,Dökme Demir,Hayır (Atmosferik),10.0,5w-40,4.0,250000.0,160.0,euro 2
+Mitsubishi,4G33,1970-1998,1439.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),,5w-40,4.0,275000.0,125.0,
+Mitsubishi,4G37,1983-1994,1755.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),,5w-40,3.9,350000.0,135.0,
+Mitsubishi,4N14,since 2010,2268.0,163.5,370.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,14.9,5w-30,7.5,350000.0,160.0,euro 5/6
+Hyundai,G4FG,since 2010,1591.0,127.5,154.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,"0w-30, 5w-30",3.7,300000.0,98.7,euro 4/5
+Hyundai,G4FJ,since 2011,1591.0,190.5,265.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.5,"0w-30, 5w-30",5.1,250000.0,106.3,euro 5/6
+Hyundai,G4FM,since 2018,1598.0,123.0,154.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.2,5w-30,3.4,250000.0,98.8,euro 5/6
+Hyundai,G4FP,since 2019,1598.0,192.0,265.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.5,5w-30,4.5,240000.0,108.2,euro 6
+Hyundai,G4FT,since 2020,1598.0,,265.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.5,5w-30,4.8,250000.0,,euro 6
+Hyundai,G4LC,since 2014,1368.0,100.0,133.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,"0w-30, 5w-30",3.7,300000.0,85.9,euro 5/6
+Hyundai,D4FC,2010-2018,1396.0,82.5,,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,,"0w-30, 5w-30",5.7,300000.0,152.3,
+Hyundai,D4FB,2005-2020,1582.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,,"0w-30, 5w-30",5.7,350000.0,155.8,
+Hyundai,D4EA,2001-2012,1991.0,131.0,270.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,17.3,"5w-30, 5w-40",6.5,400000.0,195.6,euro 3/4
+Hyundai,G4NA,since 2010,1999.0,158.5,195.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.3,"5w-20, 5w-30",4.5,300000.0,117.0,euro 4/5
+Opel,Z20LET,2000-2005,1998.0,195.0,250.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,8.8,5w-30,4.25,250000.0,160.0,euro 4
+Opel,Z24SED,2006-2011,2405.0,136.0,220.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.6,5w-30,4.5,400000.0,155.0,euro 4
+Opel,Z32SE,2006-2011,3195.0,227.0,297.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.3,5w-30,7.4,250000.0,190.0,euro 4
+Opel,Z18XE,2000-2009,1796.0,125.0,170.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.5,5w-30,4.25,300000.0,125.0,euro 4
+Opel,X16XEL,1994-2000,1598.0,100.0,150.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.5,5w-30,3.5,275000.0,130.0,euro 2
+Opel,Z16XEP,2002-2009,1598.0,105.0,150.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.5,5w-30,4.5,300000.0,120.0,euro 4
+Opel,Z16XE,2000-2005,1598.0,101.0,150.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.5,5w-30,3.5,320000.0,120.0,euro 4
+Opel,Y20DTH,2000-2005,1995.0,101.0,230.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.5,5w-40,5.5,320000.0,190.0,euro 3
+Opel,A20DTH,2008-2015,1956.0,165.0,350.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.5,5w-30,4.5,250000.0,190.0,euro 5
+Opel,Z16XER,2006-2010,1598.0,115.0,155.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.8,5w-30,4.5,350000.0,115.0,euro 4
+Opel,Z10XE,2000-2003,973.0,58.0,85.0,Benzin,Sıra (Inline),3.0,Dökme Demir,Hayır (Atmosferik),10.1,5w-30,3.0,250000.0,85.0,euro 4
+Opel,Z12XE,2000-2004,1199.0,75.0,110.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.1,5w-30,3.5,270000.0,100.0,euro 4
+Opel,Z14XE,2000-2004,1389.0,90.0,125.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.5,5w-30,3.5,300000.0,110.0,euro 4
+Opel,Z17DTH,2003-2010,1686.0,101.0,240.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.2,5w-30,5.0,400000.0,170.0,euro 4
+Opel,A13DTE,2009-2017,1248.0,92.5,190.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.8,5w-30,3.2,300000.0,135.0,euro 5
+Volvo,B5254T4,2003-2007,2522.0,300.0,375.0,Benzin,Sıra (Inline),5.0,Alüminyum,Evet,8.5,5w-30,5.5,240000.0,,euro 3
+Volvo,B5254T3,2004-2008,2522.0,220.0,320.0,Benzin,Sıra (Inline),5.0,Alüminyum,Evet,9.0,5w-30,5.8,280000.0,,euro 4
+Volvo,B5254T6,2006-2009,2522.0,200.0,300.0,Benzin,Sıra (Inline),5.0,Alüminyum,Evet,9.0,5w-30,5.5,320000.0,,euro 4
+Mitsubishi,4N15,since 2015,2442.0,167.5,405.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,15.5,5w-30,8.4,300000.0,163.0,euro 5
+Volkswagen,BLS,2005-2010,1896.0,105.0,250.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,19.0,5w-40,4.3,300000.0,,euro 4
+Volkswagen,BKC,2005-2010,1896.0,105.0,250.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,19.0,5w-40,3.8,320000.0,,euro 3/4
+Volkswagen,BXE,2006-2010,1896.0,105.0,250.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.5,5w-40,3.8,275000.0,,euro 3/4
+Audi,CFGB,2009-2015,1968.0,170.0,350.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.5,5w-30,4.3,300000.0,165.0,euro 5
+Audi,CCGA,2008-2012,5934.0,500.0,1000.0,Dizel,V,12.0,Dökme Demir,Evet,16.0,"5w-30, 5w-40",13.0,500000.0,360.0,euro 5
+Fiat,199A2000,2005-2016,1248.0,75.0,190.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,17.6,5w-40,3.0,250000.0,140.0,euro 4/5
+Fiat,199A3000,2005-2018,1248.0,90.0,200.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,17.6,5w-40,3.2,230000.0,140.0,euro 4
+Fiat,186A9000,2005-2010,1910.0,120.0,210.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.0,5w-40,4.5,380000.0,181.0,euro 4
+Fiat,192A8000,2004-2008,1910.0,120.0,255.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.0,5w-40,4.7,350000.0,181.0,euro 4
+Fiat,939A3000,2005-2010,2387.0,200.0,400.0,Dizel,Sıra (Inline),5.0,Dökme Demir,Evet,17.0,5w-40,5.4,300000.0,215.0,euro 4
+Volkswagen,AAZ,1991-1998,1896.0,75.0,145.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,22.5,5w-30,4.3,450000.0,,euro 1/2
+Volkswagen,1Z,1991-1997,1896.0,90.0,202.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,19.5,5w-40,4.3,450000.0,,euro 2
+Audi,CN,1978-1988,1986.0,69.0,123.0,Dizel,Sıra (Inline),5.0,Dökme Demir,Hayır (Atmosferik),23.0,5w-40,5.0,300000.0,,euro 1
+Audi,AAS,1991-1994,2370.0,82.0,164.0,Dizel,Sıra (Inline),5.0,Dökme Demir,Hayır (Atmosferik),23.0,5w-40,5.0,380000.0,,euro 1
+Audi,AAT,1991-1997,2460.0,115.0,265.0,Dizel,Sıra (Inline),5.0,Dökme Demir,Evet,20.5,5w-40,5.2,550000.0,,euro 2
+Audi,1T,1989-1991,2460.0,120.0,265.0,Dizel,Sıra (Inline),5.0,Dökme Demir,Evet,20.5,5w-40,5.2,500000.0,,euro 1
+Volkswagen,AHF,1997-2000,1896.0,110.0,235.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,19.5,5w-40,4.3,400000.0,150.0,euro 2
+Volkswagen,ALH,1997-2010,1896.0,90.0,210.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,19.5,5w-40,4.3,440000.0,,euro 2/3
+Volkswagen,ASZ,2000-2005,1896.0,130.0,310.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,19.0,5w-40,4.3,300000.0,,euro 3/4
+Volkswagen,BMM,2004-2010,1968.0,140.0,320.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.5,5w-30,4.3,280000.0,178.0,euro 4
+Volkswagen,BKD,2003-2011,1968.0,140.0,320.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.0,5w-30,4.3,300000.0,180.0,euro 3/4
+Volkswagen,CAYC,2009-2015,1598.0,105.0,250.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.5,5w-30,4.3,250000.0,165.0,euro 5
+Volkswagen,AFN,1996-2000,1896.0,110.0,235.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,19.5,5w-40,4.3,400000.0,,euro 2
+Volkswagen,AHU,1996-2001,1896.0,90.0,202.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,19.5,5w-40,4.3,430000.0,,euro 2
+Audi,AVG,1999-2001,1896.0,110.0,235.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,19.5,5w-40,4.3,420000.0,,euro 2
+Audi,AJM,1998-2001,1896.0,115.0,285.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.0,5w-40,3.6,300000.0,,euro 3
+Audi,AWX,2000-2008,1896.0,130.0,285.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,19.0,5w-40,3.8,300000.0,,euro 3
+Volkswagen,AVF,2000-2008,1896.0,130.0,310.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,19.0,5w-40,3.6,310000.0,,euro 3
+Audi,BRE,2004-2008,1968.0,140.0,320.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.0,5w-30,4.3,275000.0,180.0,euro 4
+Audi,AFB,1997-1999,2496.0,150.0,310.0,Dizel,V,6.0,Dökme Demir,Evet,19.5,5w-30,6.0,250000.0,,euro 2
+Audi,CAGA,2007-2013,1968.0,143.0,320.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.5,5w-30,4.6,350000.0,165.0,euro 5
+Audi,CDUC,2010-2015,2967.0,245.0,500.0,Dizel,V,6.0,Dökme Demir,Evet,16.8,5w-30,8.0,320000.0,195.0,euro 5
+BMW,B37 (C15/D15),since 2014,1496.0,105.5,245.0,Dizel,Sıra (Inline),3.0,Alüminyum,Evet,16.5,,,300000.0,,euro 6
+BMW,N47D20,since 2007,1995.0,,,Dizel,Sıra (Inline),4.0,Alüminyum,Bilinmiyor,,5w-30,5.2,250000.0,,euro 5/6
+BMW,N47D16,since 2007,1598.0,105.5,247.5,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,16.5,5w-30,5.2,200000.0,,euro 5/6
+BMW,M73B54,1994-2002,5379.0,326.0,490.0,Benzin,V,12.0,Alüminyum,Hayır (Atmosferik),10.0,5w-40,8.5,350000.0,,euro 3
+Volkswagen,CBAB,2007-2015,1968.0,140.0,320.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.5,"5w-30, 5w-40",4.7,400000.0,165.0,euro 4/5
+Hyundai,G6CT,1990-2006,2972.0,195.0,265.0,Benzin,V,6.0,Dökme Demir,Hayır (Atmosferik),10.0,5w-40,4.6,250000.0,191.9,euro 2/3
+Hyundai,G6AU,1994-1999,3497.0,225.0,305.0,Benzin,V,6.0,Dökme Demir,Hayır (Atmosferik),10.0,5w-40,4.3,200000.0,199.0,euro 2
+Hyundai,G4CP,1988-2003,1997.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),,10w-40,4.0,300000.0,154.5,euro 1/2
+Hyundai,G4CS,1986-2007,2351.0,115.0,190.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),8.5,10w-40,4.3,300000.0,159.7,euro 1/2
+Hyundai,G4KK,2011-2017,2359.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),13.0,5w-30,4.6,270000.0,,euro 5
+Hyundai,G4DJ,1985-1995,1468.0,81.0,122.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.4,10w-40,3.3,200000.0,115.0,euro 1/2
+Opel,X16SZR,1995-2000,1598.0,75.0,128.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.6,5w-30,3.5,350000.0,100.0,euro 2
+Opel,X18XE1,1998-2000,1796.0,116.0,170.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.5,5w-30,4.25,320000.0,145.0,euro 2
+Opel,X22SE,1998-2000,2198.0,136.0,202.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.6,5w-30,4.75,400000.0,140.0,euro 2
+Fiat,312A2000,since 2010,875.0,85.0,145.0,Benzin,Sıra (Inline),2.0,Dökme Demir,Evet,10.0,0w-30,3.2,200000.0,85.0,euro 5/6
+Fiat,199B1000,since 2009,1248.0,95.0,200.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.8,5w-30,3.2,270000.0,140.0,euro 5/6
+Fiat,250A1000,since 2010,1956.0,115.0,280.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.5,5w-30,5.7,300000.0,185.0,euro 5/6
+Fiat,198A2000,2008-2015,1598.0,120.0,310.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.5,5w-30,4.6,250000.0,175.0,euro 5
+Fiat,198A3000,2008-2018,1598.0,105.0,290.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.5,5w-30,4.9,270000.0,175.0,euro 5
+Volkswagen,AUY,2000-2006,1896.0,115.0,310.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.0,5w-40,4.3,330000.0,,euro 3
+Peugeot,DW12TED4,2000-2006,2179.0,130.5,315.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.0,"5w-40, 5w-30",5.25,400000.0,215.0,euro 3/4
+Peugeot,DW12UTED,2002-2006,2179.0,100.0,250.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,17.5,5w-30,6.5,500000.0,200.0,euro 3
+Mitsubishi,6B31,since 2006,2998.0,225.0,283.5,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),9.5,5w-30,4.5,300000.0,170.0,euro 4
+Peugeot,DW10FDTED4,since 2013,1997.0,150.0,370.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.7,5w-30,6.1,320000.0,175.0,euro 5/6
+Peugeot,DW10FCTED4,since 2014,1997.0,177.5,400.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.7,5w-30,5.1,300000.0,180.0,euro 5/6
+Peugeot,EW10D,2001-2004,1997.0,140.0,192.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.4,5w-40,4.25,250000.0,140.0,euro 4
+Peugeot,ES9J4S,2000-2005,2946.0,207.0,285.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.9,5w-30,5.25,350000.0,195.0,euro 3/4
+Peugeot,DW10CTED4,2009-2015,1997.0,163.0,340.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),16.0,5w-30,,350000.0,180.0,euro 5
+Peugeot,DW10ATED4,2000-2006,1997.0,108.0,270.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,17.6,5w-40,4.75,350000.0,170.0,euro 3/4
+Peugeot,EW10A,since 2005,1997.0,142.5,190.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,5.0,330000.0,135.0,euro 4
+Fiat,263A1000,since 2009,1956.0,135.0,320.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.5,5w-30,4.9,280000.0,185.0,euro 5/6
+Volvo,B4164T,2010-2016,1596.0,180.0,240.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.0,5w-30,4.1,200000.0,,euro 5
+Renault,G8T,1993-2002,2188.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,,"5w-40, 10w-40",7.5,500000.0,218.0,euro 1/2
+Volvo,D5244T4,2005-2010,2400.0,185.0,400.0,Dizel,Sıra (Inline),5.0,Alüminyum,Evet,17.3,0w-30,5.7,350000.0,,euro 4
+Toyota,2NR-FE,since 2010,1496.0,,,,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),,5w-20,3.4,200000.0,98.0,
+Geely,GW4D20M,since 2019,1996.0,155.0,400.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.3,5w-30,5.5,250000.0,210.0,euro 5/6
+Toyota,2Y,1982-1997,1812.0,87.5,147.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),8.8,5w-30,3.5,275000.0,145.0,euro 0
+Toyota,3Y,1982-1991,1998.0,92.5,160.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),8.8,5w-30,3.5,300000.0,150.0,euro 0
+Toyota,3Y-E,1984-1997,1998.0,97.0,160.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),8.8,5w-30,3.5,340000.0,150.0,euro 2
+Toyota,3Y-EU,1983-1996,1998.0,105.0,170.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.0,5w-30,3.5,330000.0,150.0,euro 2
+Toyota,4Y,1985-1997,2237.0,92.5,180.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),8.8,5w-30,3.5,320000.0,155.0,euro 0
+Peugeot,XUD7TE,1987-1995,1769.0,91.0,180.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,22.0,5w-40,5.0,350000.0,150.0,euro 1
+Hyundai,G4LD,since 2016,1353.0,135.0,227.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.0,"0w-30, 5w-30",4.5,250000.0,92.0,euro 5/6
+Hyundai,G4LE,since 2016,1579.0,105.0,148.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),13.0,5w-30,3.8,300000.0,,euro 6
+Hyundai,G4NB,2010-2016,1797.0,150.0,178.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.3,"5w-20, 5w-30",4.5,300000.0,112.0,euro 4/5
+Hyundai,G4ND,since 2011,1999.0,161.0,200.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.3,"5w-20, 5w-30",4.8,300000.0,124.0,euro 5/6
+Hyundai,G4NH,since 2016,1999.0,149.0,180.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),12.5,5w-30,4.0,250000.0,115.0,euro 5/6
+Hyundai,G4NL,since 2019,1999.0,150.0,191.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.8,"0w-20, 5w-30",4.8,200000.0,114.0,euro 5/6
+Hyundai,G4DG,1985-1995,1298.0,70.0,110.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.7,10w-40,3.3,200000.0,112.0,euro 1/2
+Hyundai,G6DE,since 2012,2999.0,250.0,284.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.6,5w-30,5.2,350000.0,207.0,euro 4/5
+Hyundai,G6DG,2011-2019,2999.0,260.0,305.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,6.9,320000.0,210.0,euro 5
+Hyundai,G6DL,2016-2021,2999.0,267.5,312.5,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,6.5,300000.0,210.0,euro 6
+Hyundai,G6DB,2004-2011,3342.0,246.0,310.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.4,"5w-30, 5w-40",6.0,300000.0,212.0,euro 3/4
+Hyundai,G6DH,2011-2020,3342.0,291.0,342.5,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),11.5,5w-30,6.5,300000.0,216.0,euro 5
+Hyundai,G6DM,since 2016,3342.0,,341.5,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),12.0,5w-30,6.9,300000.0,216.0,euro 5/6
+Hyundai,G6DC,since 2009,3470.0,270.0,336.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.6,5w-30,5.7,350000.0,205.0,euro 5
+Hyundai,G6DA,2004-2016,3778.0,262.0,356.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.4,"5w-30, 5w-40",6.0,300000.0,215.0,euro 3/4
+Hyundai,G6EA,2005-2013,2656.0,192.5,250.0,Benzin,V,6.0,Dökme Demir,Hayır (Atmosferik),10.4,"5w-30, 5w-40",5.5,350000.0,154.0,euro 4
+Hyundai,G4KJ,since 2009,2359.0,190.5,241.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.3,"5w-20, 5w-30",5.8,300000.0,128.4,euro 5/6
+Hyundai,G3LC,since 2015,998.0,110.0,172.0,Benzin,Sıra (Inline),3.0,Alüminyum,Evet,10.0,5w-30,3.9,220000.0,75.6,euro 5/6
+Hyundai,G4LA,since 2008,1248.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,"5w-30, 5w-40",4.2,300000.0,82.0,
+Hyundai,D3FA,2005-2019,1120.0,75.0,,Dizel,Sıra (Inline),3.0,Dökme Demir,Evet,,"0w-30, 5w-30",5.7,300000.0,140.4,
+Hyundai,G4LH,since 2020,1482.0,155.0,253.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.5,5w-30,4.5,220000.0,91.0,euro 6
+Hyundai,G4NC,since 2011,1999.0,163.5,202.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.5,"5w-20, 5w-30",4.6,300000.0,120.0,euro 5/6
+Hyundai,G4KH,since 2010,1998.0,260.0,359.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.5,"5w-20, 5w-30",6.1,200000.0,135.5,euro 5/6
+Hyundai,D4FE,since 2017,1598.0,126.0,300.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,15.9,5w-30,4.4,250000.0,148.5,euro 6d
+Hyundai,G4KD,2008-2014,1998.0,155.0,195.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,"5w-30, 5w-40",4.5,300000.0,124.2,euro 4/5
+Hyundai,D4HA,since 2009,1995.0,160.0,360.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.0,"5w-30, 5w-40",8.8,400000.0,214.9,euro 5/6
+Hyundai,D4FD,2010-2019,1685.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,,"0w-30, 5w-30",5.7,350000.0,167.7,
+Hyundai,G6DF,2012-2020,3342.0,270.0,318.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.4,5w-30,6.5,350000.0,212.0,euro 5
+Hyundai,G6DU,since 2020,3470.0,261.0,331.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.6,5w-30,6.1,300000.0,202.0,euro 5/6
+Hyundai,G4JP,1998-2011,1997.0,135.0,180.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,"5w-30, 5w-40",4.5,450000.0,150.8,euro 2/3
+Hyundai,G4KP,since 2020,2497.0,287.0,422.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.0,0w-30,6.2,200000.0,,euro 5/6
+Hyundai,D4EB,2005-2010,2188.0,152.5,339.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,17.3,"5w-30, 5w-40",6.5,400000.0,201.4,euro 4
+Hyundai,D4HB,since 2009,2199.0,175.0,426.5,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.0,"5w-30, 5w-40",7.4,450000.0,215.5,euro 5/6
+Hyundai,D4HE,since 2020,2151.0,202.0,441.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,16.0,5w-30,5.6,350000.0,195.4,euro 5/6
+Hyundai,G4NE,2012-2015,1999.0,150.0,180.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),12.5,5w-30,4.3,250000.0,,euro 5
+Hyundai,G4NG,2015-2020,1999.0,154.0,190.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),13.5,5w-30,4.3,250000.0,,euro 6
+Hyundai,G4CN,1992-1998,1836.0,126.0,165.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.2,10w-40,3.7,300000.0,150.8,euro 1/2
+Hyundai,G4CM,1988-1998,1795.0,95.0,140.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),8.8,10w-40,3.7,300000.0,149.1,euro 1/2
+Hyundai,G4JN,1998-2005,1836.0,130.0,175.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.5,10w-40,3.7,300000.0,148.2,euro 2/3
+Hyundai,G4KA,2005-2013,1998.0,147.5,190.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,"5w-30, 5w-40",4.7,350000.0,134.3,euro 3/4
+Mitsubishi,4G32,1969-1992,1597.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,,5w-40,3.5,300000.0,130.0,
+Hyundai,D4HD,since 2020,1998.0,186.0,417.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,16.0,5w-30,5.6,300000.0,194.5,euro 5/6
+Hyundai,D4FA,2005-2011,1493.0,94.5,202.5,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,17.8,"0w-30, 5w-30",5.7,350000.0,157.1,euro 3/4
+Hyundai,G4KN,since 2019,2497.0,194.0,246.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),13.0,5w-30,6.0,250000.0,,euro 5
+Hyundai,G4HC,1997-2003,999.0,,,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),,5w-40,3.1,200000.0,83.9,
+Hyundai,G4HD,2002-2014,1086.0,60.5,91.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.6,5w-40,3.1,250000.0,84.0,euro 3
+Hyundai,D6EB,since 2011,2959.0,255.0,515.0,Dizel,V,6.0,Dökme Demir,Evet,17.3,5w-40,7.4,360000.0,299.5,euro 5/6
+Nissan,VQ23DE,,2349.0,173.0,225.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),9.8,5w-30,4.0,320000.0,180.0,euro 3/4
+Nissan,VQ25DET,2001-2004,2495.0,280.0,410.0,Benzin,V,6.0,Alüminyum,Evet,8.5,5w-30,4.0,300000.0,220.0,euro 3/4
+Nissan,VG30DETT,1989-2000,2960.0,290.0,384.0,Benzin,V,6.0,Dökme Demir,Evet,8.5,5w-30,3.4,350000.0,245.0,euro 2/3
+Nissan,VG30i,1985-1989,2960.0,135.0,215.0,Benzin,V,6.0,Dökme Demir,Hayır (Atmosferik),9.0,5w-30,3.9,380000.0,220.0,euro 1/2
+Nissan,VG30ET,1983-1991,2960.0,212.5,320.0,Benzin,V,6.0,Dökme Demir,Evet,7.8,5w-30,3.9,360000.0,225.0,euro 1/2
+Land Rover,300Tdi,1994-2006,2495.0,116.5,282.5,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,19.5,5w-40,6.7,320000.0,,euro 1
+Land Rover,200Tdi,1989-1994,2495.0,109.0,265.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,19.5,5w-40,6.7,350000.0,,euro 1
+Peugeot,ES9A,2005-2009,2946.0,211.0,290.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.9,5w-30,4.75,360000.0,195.0,euro 4
+Peugeot,DK5ATE,1994-2000,2446.0,129.0,285.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,22.0,5w-40,8.0,300000.0,260.0,euro 1/2
+Peugeot,DV4C,2009-2015,1399.0,68.0,160.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,17.9,5w-30,3.75,300000.0,120.0,euro 4/5
+Hyundai,G4KM,since 2019,2497.0,180.0,232.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,5.9,250000.0,,euro 5
+Hyundai,D4CB,since 2001,2497.0,146.5,377.5,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.4,"5w-30, 5w-40",8.2,350000.0,263.2,euro 3/4/5
+Hyundai,G3LB,2012-2020,998.0,106.0,137.0,Benzin,Sıra (Inline),3.0,Alüminyum,Evet,9.5,5w-30,3.8,230000.0,74.2,euro 5
+Hyundai,G3LA,since 2011,998.0,67.0,95.0,Benzin,Sıra (Inline),3.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,3.2,280000.0,71.4,euro 5
+BMW,M51D25,1991-2001,2497.0,,,Dizel,Sıra (Inline),6.0,Dökme Demir,Bilinmiyor,22.0,5w-40,,350000.0,,
+Volvo,B4164S3,2005-2011,1596.0,100.0,150.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,4.1,320000.0,,euro 4
+Volvo,B4184S11,2004-2009,1798.0,125.0,165.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.8,5w-30,4.3,330000.0,,euro 4
+Volvo,B4204S3,2006-2012,1999.0,145.0,187.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.8,5w-30,4.3,350000.0,,euro 4
+Volvo,D4162T,2010-2016,1560.0,114.0,270.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,16.0,5w-30,3.9,400000.0,,euro 5
+Volvo,D4204T8,2015-2019,1969.0,120.0,280.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,16.0,0w-20,5.2,300000.0,,euro 5/6
+Volvo,B6304T2,2007-2010,2953.0,285.0,400.0,Benzin,Sıra (Inline),6.0,Alüminyum,Evet,9.3,0w-30,7.4,300000.0,190.0,euro 4
+Volvo,B6304T4,2010-2016,2953.0,304.0,440.0,Benzin,Sıra (Inline),6.0,Alüminyum,Evet,9.3,0w-30,6.8,280000.0,190.0,euro 5
+Volvo,B6324S5,2010-2016,3192.0,243.0,320.0,Benzin,Sıra (Inline),6.0,Alüminyum,Hayır (Atmosferik),10.8,5w-30,6.8,360000.0,175.0,euro 5
+Toyota,2UR-GSE,since 2007,4969.0,446.5,521.5,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),11.8,5w-30,8.6,300000.0,224.0,euro 5
+Toyota,2AD-FTV,2005-2018,2231.0,143.0,335.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,15.7,"0w-30, 5w-30",6.5,250000.0,190.0,euro 4/5
+Toyota,2AD-FHV,2005-2015,2231.0,173.5,390.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,15.7,"0w-30, 5w-30",6.5,250000.0,195.0,euro 5
+Toyota,2UR-FSE,since 2007,4969.0,394.0,520.0,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,8.6,500000.0,236.0,euro 4/5
+Toyota,T24A-FTS,since 2021,2393.0,275.0,425.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,11.0,0w-20,5.3,250000.0,,euro 6
+Toyota,M15A-FKS,since 2019,1490.0,122.5,149.0,Benzin,Sıra (Inline),3.0,Alüminyum,Hayır (Atmosferik),14.0,0w-20,3.6,250000.0,85.1,euro 6
+Toyota,M15A-FXE,since 2019,1490.0,91.0,120.0,Benzin,Sıra (Inline),3.0,Alüminyum,Hayır (Atmosferik),14.0,0w-20,3.6,250000.0,87.3,euro 6
+Toyota,M20A-FXS,since 2018,1986.0,150.0,190.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),14.0,0w-20,4.3,250000.0,112.3,euro 6
+Toyota,1E,1984-1994,999.0,55.0,75.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.0,5w-30,3.2,200000.0,90.0,euro 0
+Toyota,7GR-FKS,since 2015,3456.0,280.0,357.5,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),11.8,0w-20,6.2,300000.0,170.0,euro 5/6
+Toyota,1N / 1N-T,1986-1999,1453.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,22.0,5w-40,3.5,200000.0,,euro 0
+Mitsubishi,4N13,2010-2015,1798.0,150.0,300.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,14.9,5w-30,5.3,240000.0,152.0,euro 5/6
+Renault,F8Q,1988-2006,1870.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,,"5w-40, 10w-40",5.9,500000.0,163.0,euro 1/2
+Renault,F9Q (dCi),1998-2012,1870.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,,"5w-30, 5w-40",5.5,500000.0,177.0,
+Mitsubishi,6A13,1996-2005,2498.0,167.5,225.0,Benzin,V,6.0,Dökme Demir,Hayır (Atmosferik),9.0,5w-40,4.2,300000.0,175.0,euro 2/3
+Mitsubishi,4G52,1973-1986,1995.0,112.5,170.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),8.5,5w-40,4.9,300000.0,180.0,euro 1
+Mitsubishi,6A12TT,1992-1996,1998.0,227.5,310.0,Benzin,V,6.0,Dökme Demir,Evet,8.5,5w-40,4.3,220000.0,195.0,euro 2
+Mitsubishi,6A13TT,1996-2003,2498.0,270.0,353.0,Benzin,V,6.0,Dökme Demir,Evet,8.5,5w-40,4.3,230000.0,205.0,euro 3
+Nissan,PR25DD,2018-,2488.0,188.0,244.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),12.0,5w-30,5.1,300000.0,142.0,euro 6
+Hyundai,D4BB,1993-2004,2607.0,80.5,165.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),21.0,"5w-40, 10w-40",6.5,450000.0,200.8,euro 1/2
+Hyundai,G4KG,since 2007,2359.0,172.5,227.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,"5w-30, 5w-40",5.1,400000.0,130.9,euro 4/5
+Hyundai,G4KL,since 2017,1998.0,252.5,353.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.0,5w-30,5.7,220000.0,135.3,euro 5/6
+Nissan,CR14DE,2002-2013,1386.0,93.0,137.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.8,0w-20,3.4,220000.0,,euro 4/5
+Nissan,CGA3DE,2000-2003,1348.0,87.0,121.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.5,5w-30,3.1,230000.0,,euro 2/3
+Nissan,CG13DE,1992-2003,1275.0,78.5,104.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.5,5w-30,3.1,220000.0,,euro 2/3
+Renault,H5Ft,2012-2019,1197.0,123.0,197.5,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.25,"5w-30, 5w-40",5.2,250000.0,109.0,euro 5/6
+Nissan,VE30DE,1991-1994,2960.0,190.0,258.0,Benzin,V,6.0,Dökme Demir,Hayır (Atmosferik),10.0,5w-30,3.8,350000.0,220.0,euro 2
+Peugeot,TUD5,1994-2003,1527.0,58.0,95.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),23.0,5w-40,4.5,200000.0,130.0,euro 1/2/3
+Renault,H4D,since 2014,999.0,67.0,93.0,Benzin,Sıra (Inline),3.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,3.0,250000.0,81.0,euro 6
+Nissan,CR12DE,2002-,1240.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),,0w-20,3.4,200000.0,,euro 4/5
+Nissan,CR10DE,2002-2004,997.0,68.0,96.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.2,0w-20,3.2,180000.0,,euro 4/5
+Nissan,GA13DE (GA13S/DS),1989-1999,1295.0,80.0,104.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.5,"5w-30, 5w-40, 10w-30, 10w-40",,300000.0,143.0,euro 1/2
+Renault,R9N,since 2018,1749.0,135.0,320.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,15.2,5w-30,5.5,300000.0,167.0,euro 6d
+Renault,H5Ht,since 2017,1332.0,139.0,245.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.5,"0w-40, 5w-40",6.0,300000.0,105.0,euro 5/6
+Nissan,TB42,1987-1997,4169.0,172.5,322.5,Benzin,Sıra (Inline),6.0,Dökme Demir,Hayır (Atmosferik),8.3,15w-40,8.2,400000.0,270.0,euro 1/2
+Nissan,TB48DE,2001-,4758.0,247.5,410.0,Benzin,Sıra (Inline),6.0,Dökme Demir,Hayır (Atmosferik),9.0,5w-40,6.8,450000.0,300.0,euro 3/4
+Nissan,TB45,1997-2002,4478.0,200.0,350.0,Benzin,Sıra (Inline),6.0,Dökme Demir,Hayır (Atmosferik),8.5,10w-40,8.3,420000.0,275.0,euro 2/3
+Peugeot,DV5RD,since 2018,1499.0,101.0,260.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,16.5,5w-30,4.0,290000.0,130.0,euro 6
+Opel,Z13DTH,2005-2010,1248.0,90.0,200.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,17.6,5w-30,3.3,330000.0,140.0,euro 4
+Opel,Y17DT,2000-2005,1686.0,75.0,165.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.4,5w-40,4.5,400000.0,150.0,euro 3
+Opel,Z13DTJ,2005-2010,1248.0,75.0,170.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.0,5w-30,3.1,350000.0,140.0,euro 4
+Opel,X20DTL,1996-2000,1995.0,82.0,185.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.5,5w-40,5.5,350000.0,190.0,euro 2
+Opel,X20DTH,1997-2000,1995.0,100.0,205.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.5,5w-40,5.5,330000.0,190.0,euro 2
+Peugeot,DV5TED4,since 2018,1499.0,120.0,300.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,16.5,5w-30,3.75,270000.0,130.0,euro 6
+Opel,A17DTJ,2009-2011,1686.0,110.0,260.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.0,5w-30,5.4,350000.0,175.0,euro 5
+Opel,A17DTR,2009-2012,1686.0,125.0,280.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.1,5w-30,5.4,340000.0,175.0,euro 5
+BMW,M67D40,1999-2005,3901.0,,,Dizel,V,8.0,Dökme Demir,Evet,18.0,5w-30,8.75,350000.0,,euro 3
+Peugeot,DW8,1997-2007,1868.0,69.0,125.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),23.0,5w-40,4.75,400000.0,150.0,euro 2/3
+Suzuki,10JBAX,2007-2009,1560.0,90.0,215.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,18.3,5w-30,3.85,280000.0,,euro 3
+Peugeot,DV6FDTED,since 2014,1560.0,100.0,254.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,17.0,5w-30,4.5,240000.0,135.0,euro 5/6
+Peugeot,ET3J4,2004-2010,1360.0,88.0,133.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,5w-40,3.0,220000.0,99.0,euro 4/5
+Peugeot,XU10J2,1992-1998,1998.0,121.0,170.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,5w-40,4.25,280000.0,135.0,euro 1/2
+Peugeot,DV5RC,since 2017,1499.0,130.0,300.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,16.5,5w-30,3.8,250000.0,130.0,euro 6
+Peugeot,DV6ATED4,2004-2011,1560.0,90.0,215.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,18.0,"5w-30, 5w-40",4.3,400000.0,140.0,euro 3/4
+Peugeot,XUD11A,1990-1997,2138.0,82.0,145.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),22.5,5w-40,5.5,500000.0,160.0,euro 1
+Porsche,MCR.CC,2011-2013,2967.0,250.0,550.0,Dizel,V,6.0,Dökme Demir,Evet,16.8,5w-30,8.0,350000.0,,euro 5
+Porsche,MCU.DB,2012-2014,4134.0,382.0,850.0,Dizel,V,8.0,Dökme Demir,Evet,16.5,5w-30,9.4,300000.0,255.0,euro 5
+Audi,BMK,2004-2007,2967.0,224.0,450.0,Dizel,V,6.0,Dökme Demir,Evet,17.0,5w-30,8.2,340000.0,220.0,euro 4
+Volkswagen,BKS,2004-2007,2967.0,224.0,500.0,Dizel,V,6.0,Dökme Demir,Evet,17.0,5w-30,8.2,330000.0,220.0,euro 4
+Audi,BUG,2005-2007,2967.0,233.0,500.0,Dizel,V,6.0,Dökme Demir,Evet,17.0,5w-30,8.2,360000.0,220.0,euro 4
+Audi,CCWA,2007-2012,2967.0,240.0,500.0,Dizel,V,6.0,Dökme Demir,Evet,17.0,5w-30,7.2,350000.0,215.0,euro 5
+Volkswagen,CJMA,2010-2018,2967.0,204.0,450.0,Dizel,V,6.0,Dökme Demir,Evet,16.8,5w-30,8.0,360000.0,195.0,euro 5
+Audi,CRTC,2015-2018,2967.0,272.0,600.0,Dizel,V,6.0,Dökme Demir,Evet,16.0,5w-30,8.0,340000.0,195.0,euro 6
+Audi,CVMD,since 2015,2967.0,249.0,600.0,Dizel,V,6.0,Dökme Demir,Evet,16.0,5w-30,8.0,350000.0,190.0,euro 6
+Audi,DCPC,since 2017,2967.0,286.0,620.0,Dizel,V,6.0,Dökme Demir,Evet,16.0,5w-30,8.0,330000.0,190.0,euro 6
+Renault,H4Bt,since 2012,898.0,91.5,137.5,Benzin,Sıra (Inline),3.0,Alüminyum,Evet,9.5,"5w-30, 5w-40",4.1,200000.0,86.0,euro 5/6
+Renault,H4Dt,since 2018,999.0,100.0,160.0,Benzin,Sıra (Inline),3.0,Alüminyum,Evet,9.5,5w-30,3.3,250000.0,87.0,euro 6
+Renault,D4Ft,2007-2013,1149.0,101.5,150.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,9.5,"5w-30, 5w-40",4.8,300000.0,91.0,euro 4/5
+Renault,M5Mt,2013-2018,1618.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.5,"5w-30, 5w-40",4.8,300000.0,137.0,euro 5/6
+Renault,M5Pt,since 2011,1798.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.0,5w-30,4.5,250000.0,136.0,euro 6
+Renault,L7X,since 1997,2946.0,,,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),,,,300000.0,200.0,euro 3/4
+Renault,P9X,2002-2010,2958.0,,,Dizel,V,6.0,Alüminyum,Evet,18.5,"5w-30, 5w-40",8.5,250000.0,235.0,
+Saab,D308L,2001-2005,2958.0,177.0,350.0,Dizel,V,6.0,Alüminyum,Evet,18.0,5w-40,7.5,250000.0,,euro 3
+Renault,J8S,1979-1997,2068.0,,,Dizel,Sıra (Inline),4.0,Alüminyum,Bilinmiyor,21.0,"10w-40, 15w-40",6.3,500000.0,171.0,euro 0
+Renault,G9T,1999-2008,2188.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,,"5w-30, 5w-40",7.2,300000.0,227.0,euro 3/4
+Renault,H4Jt,2009-2016,1397.0,130.0,190.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.1,5w-30,4.5,200000.0,115.0,euro 5
+Renault,G9U,1999-2014,2463.0,122.5,290.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,17.1,"5w-30, 5w-40",8.2,400000.0,205.0,euro 3/4
+Peugeot,XUD11ATE,1989-2000,2088.0,110.0,250.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,21.5,5w-40,6.0,450000.0,170.0,euro 1
+Volvo,B5254S,1991-1999,2435.0,167.5,215.0,Benzin,Sıra (Inline),5.0,Alüminyum,Hayır (Atmosferik),10.3,5w-40,5.3,400000.0,,euro 2
+Peugeot,XUD9,1982-2005,1905.0,65.0,117.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),23.0,5w-40,4.5,500000.0,140.0,euro 1/2
+Opel,Y22DTR,2000-2005,2171.0,122.5,275.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.5,5w-40,5.5,350000.0,195.0,euro 3
+Opel,X17DTL,1994-2000,1700.0,68.0,132.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,22.0,5w-40,5.5,300000.0,165.0,euro 2
+Volkswagen,CLCA,2009-2018,1968.0,110.0,250.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.5,5w-30,4.3,400000.0,165.0,euro 4/5
+Volkswagen,AVB,2000-2005,1896.0,101.0,250.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,19.5,5w-40,3.8,350000.0,,euro 3
+Volkswagen,BMP,2005-2010,1968.0,140.0,320.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.0,5w-30,4.3,280000.0,178.0,euro 4
+Volkswagen,CLJA,2010-2017,1968.0,140.0,320.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.5,5w-30,4.3,350000.0,165.0,euro 5
+Volkswagen,DCXA,since 2014,1598.0,120.0,250.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.2,5w-30,5.0,300000.0,150.0,euro 6
+Volkswagen,CRLB,since 2012,1968.0,150.0,340.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.2,5w-30,4.6,320000.0,,euro 5/6
+Audi,AYM,2001-2003,2496.0,155.0,310.0,Dizel,V,6.0,Dökme Demir,Evet,19.5,5w-30,6.0,270000.0,,euro 3
+Audi,BDG,2003-2008,2496.0,163.0,350.0,Dizel,V,6.0,Dökme Demir,Evet,18.5,5w-30,6.0,320000.0,,euro 4
+Suzuki,R06A,since 2011,658.0,,,Benzin,Sıra (Inline),3.0,Alüminyum,Bilinmiyor,,0w-20,2.9,250000.0,,euro 5/6
+Suzuki,K12B,2008-2020,1242.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),,5w-30,3.1,280000.0,,euro 4/5
+Suzuki,K14C,since 2015,1373.0,137.5,220.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,9.9,5w-30,3.3,250000.0,,euro 5/6
+Suzuki,M15A,2000-2014,1490.0,105.0,137.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.5,"5w-30, 5w-40",4.2,350000.0,92.0,euro 3/4
+Suzuki,K14B,since 2010,1372.0,96.5,125.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.0,5w-30,3.1,300000.0,,euro 5
+Suzuki,M13A,1999-2018,1328.0,88.0,114.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.5,"5w-30, 5w-40",4.2,350000.0,90.0,euro 3/4
+Suzuki,M16A,since 2001,1586.0,119.0,152.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.7,"5w-30, 5w-40",4.2,400000.0,97.0,euro 4/5
+Suzuki,K10B,2008-2020,998.0,68.0,90.0,Benzin,Sıra (Inline),3.0,Alüminyum,Hayır (Atmosferik),10.0,5w-30,3.0,250000.0,,euro 4/5
+Suzuki,K10A,1997-2006,996.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Bilinmiyor,,5w-30,3.5,300000.0,,euro 2/3
+Suzuki,K15B,since 2018,1462.0,104.0,134.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.0,5w-30,4.0,300000.0,,euro 5/6
+Toyota,22R,1981-1997,2366.0,102.5,182.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.0,5w-30,4.5,400000.0,155.0,euro 0
+Toyota,22R-E,1982-1997,2366.0,110.0,187.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.3,5w-30,4.5,420000.0,155.0,euro 2
+Toyota,22R-TE,1985-1988,2366.0,137.0,234.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,7.5,5w-30,4.5,420000.0,175.0,euro 2
+Toyota,8NR-FTS,since 2015,1197.0,115.0,185.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.0,0w-20,4.4,200000.0,112.0,euro 5/6
+Toyota,1CD-FTV,1999-2007,1995.0,103.0,247.5,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,17.8,"5w-30, 5w-40",6.7,300000.0,205.0,euro 4
+Toyota,3SZ-VE,since 2005,1495.0,107.5,140.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.0,5w-30,3.1,250000.0,95.0,euro 3/4
+Toyota,2SZ-FE,1999-2016,1297.0,85.0,120.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),11.0,5w-30,3.4,250000.0,93.0,euro 3/4
+Toyota,5E-FE,1990-2003,1497.0,97.5,130.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.4,"5w-30, 5w-40",3.2,300000.0,115.0,euro 2
+Toyota,3C,1992-2007,2184.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Bilinmiyor,,5w-40,,260000.0,,euro 2
+Toyota,2E,1984-1999,1295.0,73.5,93.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,5w-30,3.2,220000.0,100.0,euro 0
+Toyota,2E-E,1986-1992,1295.0,80.0,100.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.5,5w-30,3.2,250000.0,100.0,euro 2
+Toyota,4E-FE,1989-2001,1331.0,90.0,117.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.6,5w-30,3.2,300000.0,105.0,euro 2
+Toyota,3E-E,1986-1994,1456.0,85.0,120.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.3,5w-30,3.2,240000.0,110.0,euro 2
+Toyota,5M-EU,1979-1989,2759.0,132.5,215.0,Benzin,Sıra (Inline),6.0,Dökme Demir,Hayır (Atmosferik),8.8,5w-30,4.4,320000.0,170.0,euro 2
+Toyota,5M-GE,1981-1988,2759.0,160.0,225.0,Benzin,Sıra (Inline),6.0,Dökme Demir,Hayır (Atmosferik),8.8,5w-30,4.4,330000.0,180.0,euro 2
+Toyota,2TZ-FZE,1994-1999,2438.0,158.0,258.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,8.9,5w-30,5.8,200000.0,190.0,euro 1/2
+Toyota,2GD-FTV,since 2015,2393.0,150.0,380.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,15.6,0w-30,7.5,250000.0,270.0,euro 4/5/6
+Toyota,1NR-FKE,since 2014,1329.0,99.0,121.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),13.5,0w-20,3.4,200000.0,99.0,euro 5
+Toyota,7M-GTE,1986-1992,2954.0,235.0,344.0,Benzin,Sıra (Inline),6.0,Dökme Demir,Evet,8.4,5w-30,4.4,250000.0,210.0,euro 2
+Toyota,3E-TE,1986-1990,1456.0,115.0,172.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,8.0,5w-30,3.2,210000.0,120.0,euro 2
+Toyota,3NR-FE,since 2011,1197.0,,,,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),,5w-30,3.4,200000.0,95.0,
+Volkswagen,AEY,1995-2000,1896.0,64.0,125.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),19.5,5w-40,4.3,500000.0,,euro 2
+Volkswagen,AHD,1996-1999,2461.0,102.0,250.0,Dizel,Sıra (Inline),5.0,Dökme Demir,Evet,19.5,5w-40,7.8,450000.0,,euro 2
+Volkswagen,AKU,1997-2005,1716.0,60.0,115.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),19.5,5w-40,4.7,400000.0,,euro 2/3
+Volkswagen,DBGC,since 2016,1968.0,150.0,340.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.2,5w-30,5.7,330000.0,,euro 5
+Volkswagen,DFGA,since 2016,1968.0,150.0,340.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.2,5w-30,5.7,310000.0,,euro 6
+Volkswagen,ABL,1992-2003,1896.0,68.0,140.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,22.5,5w-30,4.8,475000.0,,euro 1/2
+Volvo,D4204T14,since 2014,1969.0,190.0,400.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,15.8,0w-20,5.6,275000.0,,euro 5/6
+Volvo,B5252S,1994-1999,2435.0,144.0,206.0,Benzin,Sıra (Inline),5.0,Alüminyum,Hayır (Atmosferik),10.0,5w-40,5.3,400000.0,,euro 2
+Volvo,B5254T,1995-1999,2435.0,193.0,270.0,Benzin,Sıra (Inline),5.0,Alüminyum,Evet,9.0,5w-30,5.5,280000.0,,euro 2
+Volvo,B5254T2,2002-2012,2522.0,210.0,320.0,Benzin,Sıra (Inline),5.0,Alüminyum,Evet,9.0,5w-30,5.8,300000.0,,euro 4
+Volvo,B6294S,1998-2001,2922.0,204.0,280.0,Benzin,Sıra (Inline),6.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,6.9,330000.0,,euro 3
+Volvo,D5244T15,2010-2016,2400.0,215.0,440.0,Dizel,Sıra (Inline),5.0,Alüminyum,Evet,16.5,0w-30,5.2,330000.0,,euro 5
+Volvo,D4164T,2005-2010,1560.0,109.0,240.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,18.3,5w-30,3.75,300000.0,,euro 4
+Volkswagen,CAAC,2009-2019,1968.0,140.0,340.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.5,5w-30,7.0,350000.0,165.0,euro 4/5
+Volkswagen,CFCA,2009-2019,1968.0,180.0,400.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.5,5w-30,7.0,300000.0,165.0,euro 5
+Volvo,D5244T,2001-2006,2401.0,163.0,340.0,Dizel,Sıra (Inline),5.0,Alüminyum,Evet,18.0,0w-30,6.5,400000.0,,euro 3
+Volvo,D5204T,2009-2013,1984.0,177.0,400.0,Dizel,Sıra (Inline),5.0,Alüminyum,Evet,16.5,0w-30,5.9,300000.0,,euro 5
+Volkswagen,CRMB,since 2012,1968.0,150.0,320.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.2,5w-30,4.6,330000.0,,euro 5/6
+Audi,DETA,since 2015,1968.0,190.0,400.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,15.5,5w-30,4.7,300000.0,,euro 5/6
+Volkswagen,BJK,2006-2010,2461.0,109.0,280.0,Dizel,Sıra (Inline),5.0,Dökme Demir,Evet,16.8,5w-30,9.0,300000.0,,euro 3/4
+BMW,M57D25,2000-2007,2497.0,,,Dizel,Sıra (Inline),6.0,Dökme Demir,Bilinmiyor,,"5w-30, 5w-40",,400000.0,,euro 2/3
+BMW,M67D44,2005-2008,4423.0,,,Dizel,V,8.0,Dökme Demir,Evet,17.0,5w-30,9.25,350000.0,,euro 4
+Toyota,4E-FTE,1990-1999,1331.0,135.0,157.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,8.2,5w-30,3.2,200000.0,115.0,euro 2
+Toyota,1KR-DE,since 2012,996.0,65.5,87.5,Benzin,Sıra (Inline),3.0,Alüminyum,Hayır (Atmosferik),10.5,5w-30,3.1,200000.0,72.0,euro 3/4
+Toyota,1KR-VE,since 2016,996.0,67.0,91.0,Benzin,Sıra (Inline),3.0,Alüminyum,Hayır (Atmosferik),11.5,5w-20,3.1,200000.0,77.0,euro 4/5
+Toyota,1NR-VE,since 2015,1329.0,92.5,117.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.5,5w-20,3.4,200000.0,98.0,euro 4/5
+Toyota,2NR-VE,since 2015,1496.0,104.0,136.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,5w-20,3.4,200000.0,99.0,euro 3/4/5
+Renault,F8M,1982-1994,1595.0,55.0,100.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),22.5,"10w-40, 15w-40",5.9,400000.0,140.0,euro 0
+Hyundai,G4CR,1990-1995,1596.0,110.0,135.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.2,15w-40,3.7,250000.0,142.2,euro 1/2
+Hyundai,G8AA,1999-2003,4498.0,260.0,380.0,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),10.7,5w-30,5.8,300000.0,230.0,euro 4
+Hyundai,G8AB,2003-2008,4498.0,270.0,375.0,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),10.0,5w-30,5.8,350000.0,223.0,euro 4
+Mitsubishi,4G53,1975-1998,2384.0,110.0,200.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),8.0,5w-40,4.9,400000.0,190.0,euro 0
+Hyundai,D3EA,2001-2005,1493.0,82.0,189.0,Dizel,Sıra (Inline),3.0,Dökme Demir,Evet,17.7,5w-40,4.5,200000.0,176.1,euro 3
+Volvo,B6284T,1998-2001,2783.0,272.0,380.0,Benzin,Sıra (Inline),6.0,Alüminyum,Evet,8.5,5w-30,6.7,240000.0,,euro 3
+Volkswagen,AXB,1992-2003,1896.0,105.0,250.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.5,5w-40,5.8,330000.0,,euro 3/4
+Volkswagen,AXC,2003-2009,1896.0,86.0,200.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.5,5w-40,5.8,350000.0,,euro 3/4
+Audi,AKF,2000-2002,3328.0,224.0,480.0,Dizel,V,8.0,Dökme Demir,Evet,18.0,5w-40,6.0,250000.0,220.0,euro 3
+Audi,ASE,2003-2005,3936.0,275.0,650.0,Dizel,V,8.0,Dökme Demir,Evet,17.5,5w-30,9.5,260000.0,250.0,euro 4
+Audi,BTR,2007-2009,4134.0,326.0,760.0,Dizel,V,8.0,Dökme Demir,Evet,16.4,5w-30,9.5,350000.0,255.0,euro 4
+Volkswagen,CKDA,2010-2015,4134.0,340.0,800.0,Dizel,V,8.0,Dökme Demir,Evet,16.4,5w-30,9.4,360000.0,255.0,euro 5
+Suzuki,D13AA,2003-2017,1248.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,,5w-40,3.2,250000.0,142.0,
+Fiat,198A5000,2008-2014,1956.0,165.0,360.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.5,5w-30,4.9,270000.0,185.0,euro 5
+Volkswagen,AYH,2002-2006,4921.0,313.0,750.0,Dizel,V,10.0,Alüminyum,Evet,18.5,5w-30,11.5,250000.0,,euro 3
+Audi,AEL,1994-1997,2460.0,140.0,290.0,Dizel,Sıra (Inline),5.0,Dökme Demir,Evet,20.5,5w-40,5.2,450000.0,210.0,euro 2
+Volkswagen,BDH,2004-2006,2496.0,180.0,370.0,Dizel,V,6.0,Dökme Demir,Evet,18.5,5w-30,6.0,320000.0,,euro 4
+Volkswagen,BKP,2005-2008,1968.0,140.0,320.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.5,5w-30,4.3,275000.0,180.0,euro 4
+Volkswagen,BMR,2005-2008,1968.0,170.0,350.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.5,5w-30,4.3,270000.0,180.0,euro 4
+Audi,BPW,2004-2009,1968.0,140.0,320.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.0,5w-30,4.3,300000.0,178.0,euro 4
+Volkswagen,BRT,2005-2010,1968.0,140.0,310.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.0,5w-30,4.3,300000.0,178.0,euro 4
+Audi,AKE,1999-2005,2496.0,180.0,370.0,Dizel,V,6.0,Dökme Demir,Evet,19.5,5w-30,6.0,240000.0,,euro 3
+Volkswagen,AKN,1999-2003,2496.0,150.0,310.0,Dizel,V,6.0,Dökme Demir,Evet,19.5,5w-30,6.0,260000.0,,euro 3
+Audi,BAU,2003-2005,2496.0,180.0,370.0,Dizel,V,6.0,Dökme Demir,Evet,18.5,5w-30,6.0,300000.0,,euro 3
+BMW,N74B60,since 2009,5972.0,544.0,750.0,Benzin,V,12.0,Alüminyum,Evet,10.0,5w-30,10.5,300000.0,,euro 5/6
+BMW,N73B68,2003-2017,6749.0,460.0,720.0,Benzin,V,12.0,Alüminyum,Hayır (Atmosferik),11.0,5w-40,8.5,330000.0,,euro 4/5
+Hyundai,G8BA,2008-2013,4627.0,365.0,445.0,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),10.4,5w-30,6.5,350000.0,216.0,euro 5
+Peugeot,DV6TED4,2004-2011,1560.0,109.0,250.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,18.0,"5w-30, 5w-40",4.25,400000.0,145.0,euro 3/4
+Peugeot,DV6CTED,2009-2017,1560.0,113.5,255.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,16.0,"5w-30, 5w-40",4.25,500000.0,135.0,euro 4/5
+Peugeot,DV6DTED,2009-2016,1560.0,92.0,230.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,16.0,"5w-30, 5w-40",4.3,500000.0,135.0,euro 4/5
+Peugeot,XUD7,1982-2005,1769.0,60.0,110.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),23.0,5w-40,5.0,400000.0,140.0,euro 1
+Peugeot,TUD3,1988-1994,1360.0,51.5,83.0,Dizel,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),22.5,5w-40,3.8,150000.0,130.0,euro 0/1
+Peugeot,DW10TD,1999-2006,1997.0,90.0,190.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.0,"5w-30, 5w-40",5.25,500000.0,160.0,euro 3/4
+Peugeot,DW10ATED,1998-2004,1997.0,107.5,250.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,17.6,5w-40,4.5,400000.0,160.0,euro 3
+Peugeot,DW10BTED4,2004-2015,1997.0,137.5,330.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,17.6,5w-30,5.25,375000.0,170.0,euro 4/5
+Peugeot,DW10DTED4,2009-2015,1997.0,150.0,330.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.0,5w-30,5.5,380000.0,175.0,euro 5
+Peugeot,EW7J4,2000-2008,1749.0,117.0,160.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.8,5w-40,4.25,250000.0,130.0,euro 3
+Peugeot,EW7A,2006-2010,1749.0,125.0,170.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),11.0,5w-30,5.0,300000.0,130.0,euro 4
+Peugeot,EW10J4,1999-2010,1997.0,136.0,190.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.8,5w-40,4.25,300000.0,135.0,euro 3
+Peugeot,EW12J4,1999-2009,2231.0,160.5,217.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.8,5w-40,5.0,275000.0,150.0,euro 3/4
+Suzuki,D20AA,2009-2014,1956.0,135.0,320.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.5,5w-30,4.9,250000.0,185.0,euro 5
+Peugeot,XUD9SD,1995-2007,1905.0,69.0,135.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,21.5,5w-40,4.5,450000.0,150.0,euro 1/2
+Peugeot,XUD9TE,1992-2000,1905.0,91.0,193.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,21.8,5w-40,5.4,400000.0,155.0,euro 1/2
+Hyundai,G6DP,since 2015,3342.0,370.0,512.5,Benzin,V,6.0,Alüminyum,Evet,10.0,5w-30,7.7,280000.0,232.0,euro 5/6
+Hyundai,G6DS,since 2020,3470.0,380.0,530.0,Benzin,V,6.0,Alüminyum,Evet,11.0,0w-30,6.1,250000.0,225.0,euro 5/6
+Hyundai,G6DJ,since 2011,3778.0,332.0,397.5,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),11.5,5w-30,6.9,320000.0,221.0,euro 5
+Hyundai,G6DK,2008-2015,3778.0,303.0,359.5,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),10.4,5w-30,5.7,350000.0,215.0,euro 4/5
+Hyundai,G6DN,since 2018,3778.0,292.5,355.0,Benzin,V,6.0,Alüminyum,Hayır (Atmosferik),13.0,5w-30,6.5,300000.0,218.0,euro 5/6
+Hyundai,D6JA,since 2020,2996.0,263.5,589.0,Dizel,Sıra (Inline),6.0,Alüminyum,Evet,16.0,5w-30,6.1,300000.0,,euro 6
+Hyundai,G4KF,2008-2016,1998.0,,,Benzin,Sıra (Inline),4.0,Alüminyum,Bilinmiyor,,5w-30,5.3,220000.0,135.7,
+Hyundai,D4HC,since 2017,2199.0,202.0,441.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,16.0,5w-30,6.8,300000.0,215.7,euro 5
+Hyundai,D4HF,since 2020,2151.0,210.0,441.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,16.0,5w-30,5.6,330000.0,197.1,euro 5/6
+Hyundai,G4KR,since 2020,2497.0,304.0,422.0,Benzin,Sıra (Inline),4.0,Alüminyum,Evet,10.5,0w-30,6.2,200000.0,,euro 5/6
+Hyundai,G8BE,since 2011,5038.0,425.0,512.5,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),11.5,5w-30,8.5,300000.0,236.0,euro 5/6
+Hyundai,D6EA,2006-2011,2959.0,245.0,500.0,Dizel,V,6.0,Dökme Demir,Evet,17.3,5w-40,7.8,350000.0,296.8,euro 3/4
+Peugeot,DV6FCTED,since 2014,1560.0,120.0,300.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,17.0,5w-30,4.5,220000.0,135.0,euro 5/6
+Peugeot,XU10J4R,1995-2005,1998.0,134.0,185.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.4,5w-40,4.25,320000.0,140.0,euro 2/3
+Peugeot,DV4TD,2001-2009,1399.0,,,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,17.9,5w-30,3.75,320000.0,125.0,
+Peugeot,DV4TED,2008-2010,1399.0,68.0,160.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,17.9,5w-30,3.75,300000.0,120.0,euro 4
+Peugeot,DV4TED4,2002-2005,1399.0,91.0,200.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,17.9,5w-30,3.75,250000.0,130.0,euro 3
+Peugeot,DV6FETED,since 2015,1560.0,75.0,230.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,17.0,5w-30,4.5,250000.0,135.0,euro 5/6
+Peugeot,DV6ETED,2009-2015,1560.0,75.0,185.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,16.0,5w-30,3.75,300000.0,135.0,euro 4/5
+Volvo,B8444S,2005-2010,4414.0,315.0,440.0,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),10.4,5w-30,6.7,500000.0,210.0,euro 4
+Volvo,B6304S,1990-1999,2922.0,204.0,267.0,Benzin,Sıra (Inline),6.0,Alüminyum,Hayır (Atmosferik),10.7,5w-40,5.8,350000.0,,euro 2
+Renault,M9T,since 2010,2299.0,,,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,15.1,"5w-30, 5w-40",8.8,400000.0,217.0,euro 4/5/6
+Peugeot,DV5RE,since 2018,1499.0,75.0,230.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,16.5,5w-30,4.0,300000.0,125.0,euro 6
+Suzuki,10FD53,2004-2006,1399.0,90.0,200.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,17.9,5w-30,3.75,270000.0,,euro 3
+Suzuki,D16AA,2013-2018,1598.0,120.0,320.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,16.5,5w-30,4.6,250000.0,174.0,euro 6
+Suzuki,D19AA,2006-2009,1910.0,120.0,180.0,Dizel,Sıra (Inline),4.0,Dökme Demir,Evet,18.0,5w-40,4.7,300000.0,181.0,euro 4
+Peugeot,DV6BTED4,2005-2009,1560.0,75.0,180.0,Dizel,Sıra (Inline),4.0,Alüminyum,Evet,17.6,"5w-30, 5w-40",4.3,400000.0,140.0,euro 3
+Peugeot,TU3JP,1993-2006,1360.0,75.0,118.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.5,5w-40,3.0,200000.0,105.0,euro 3/4
+Peugeot,EC5,since 2010,1587.0,115.0,150.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.8,"5w-30, 5w-40",4.2,400000.0,124.0,euro 4/5
+Peugeot,EC8,since 2012,1813.0,137.5,172.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.8,5w-30,3.3,320000.0,125.0,euro 5
+Peugeot,TU5JP4,2000-2015,1587.0,100.0,140.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),10.8,"5w-30, 5w-40",3.5,300000.0,130.0,euro 3/4
+Peugeot,XU5JP,1993-1999,1580.0,88.0,128.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.25,5w-40,4.8,220000.0,110.0,euro 1/2
+Peugeot,XU7JP,1992-2002,1761.0,95.0,152.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.2,5w-40,5.5,250000.0,115.0,euro 1/2
+Peugeot,XU7JP4,1996-2002,1761.0,110.0,158.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.4,5w-40,5.0,300000.0,120.0,euro 2
+Peugeot,TU3K,1986-1992,1360.0,67.5,112.5,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.3,5w-40,3.0,180000.0,100.0,euro 0
+Suzuki,M18A,2001-2007,1796.0,125.0,170.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),9.6,5w-30,4.5,350000.0,102.0,euro 3
+Toyota,2E-TE,1986-1989,1295.0,105.0,155.0,Benzin,Sıra (Inline),4.0,Dökme Demir,Evet,8.0,5w-30,3.2,200000.0,110.0,euro 2
+Volkswagen,AAB,1990-1998,2370.0,78.0,164.0,Dizel,Sıra (Inline),5.0,Dökme Demir,Hayır (Atmosferik),23.0,5w-40,5.5,400000.0,,euro 1
+Volvo,B6294T,2001-2006,2922.0,272.0,380.0,Benzin,Sıra (Inline),6.0,Alüminyum,Evet,8.5,5w-30,6.7,250000.0,,euro 4
+Hyundai,G8BB,2009-2011,5038.0,400.0,500.0,Benzin,V,8.0,Alüminyum,Hayır (Atmosferik),10.4,5w-30,6.5,360000.0,214.0,euro 5
+Volkswagen,AJT,1998-2003,2460.0,88.0,195.0,Dizel,Sıra (Inline),5.0,Dökme Demir,Evet,19.5,5w-40,5.5,450000.0,,euro 2/3
+Volkswagen,ACV,1995-2003,2460.0,102.0,250.0,Dizel,Sıra (Inline),5.0,Dökme Demir,Evet,19.5,5w-40,5.5,500000.0,,euro 2/3
+Volkswagen,AXG,1998-2003,2460.0,151.0,295.0,Dizel,Sıra (Inline),5.0,Dökme Demir,Evet,19.5,5w-40,5.5,400000.0,,euro 2/3
+Volkswagen,BAC,2003-2006,2460.0,174.0,400.0,Dizel,Sıra (Inline),5.0,Alüminyum,Evet,18.0,5w-30,8.9,300000.0,,euro 3/4
+Volkswagen,BPE,2006-2009,2460.0,174.0,400.0,Dizel,Sıra (Inline),5.0,Alüminyum,Evet,18.0,5w-30,8.9,350000.0,,euro 4
+Volkswagen,AXD,2003-2009,2460.0,131.0,340.0,Dizel,Sıra (Inline),5.0,Alüminyum,Evet,18.0,5w-40,7.4,350000.0,,euro 3
+Volkswagen,AXE,2003-2009,2460.0,174.0,400.0,Dizel,Sıra (Inline),5.0,Alüminyum,Evet,18.0,5w-40,7.4,350000.0,,euro 3
+Volkswagen,AJS,2002-2006,4921.0,313.0,750.0,Dizel,V,10.0,Alüminyum,Evet,18.0,5w-30,10.5,260000.0,,euro 3
+BMW,N74B66,since 2010,6592.0,,,Benzin,V,12.0,Alüminyum,Evet,10.0,5w-30,10.5,320000.0,,euro 5/6
+BMW,N74B68,since 2018,6749.0,567.0,875.0,Benzin,V,12.0,Alüminyum,Evet,10.0,5w-30,10.5,330000.0,,euro 6
+BMW,N73B60,2002-2008,5972.0,445.0,600.0,Benzin,V,12.0,Alüminyum,Hayır (Atmosferik),11.3,5w-40,8.5,320000.0,,euro 4
+Peugeot,TU3A,2005-2012,1360.0,73.0,118.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.2,5w-40,3.0,250000.0,105.0,euro 4/5
+Peugeot,TU1JP,2001-2013,1124.0,60.0,94.0,Benzin,Sıra (Inline),4.0,Alüminyum,Hayır (Atmosferik),10.2,5w-40,3.2,190000.0,96.0,euro 3/4/5
+Peugeot,TU5JP,1993-2001,1587.0,91.5,137.5,Benzin,Sıra (Inline),4.0,Dökme Demir,Hayır (Atmosferik),9.6,5w-40,3.25,300000.0,125.0,euro 1/2

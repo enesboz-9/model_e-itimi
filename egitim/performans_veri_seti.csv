@@ -1,0 +1,501 @@
+Car_Brand,Model,Engine_Type,Fuel_Efficiency,Safety_Rating,Price,Driving_Condition,Temperature,Road_Type,Traffic_Level,Weather_Condition,Engine_Performance,Battery_Range,Braking_Performance,Comfort_Rating,Emissions,Acceleration,Suspension_Performance,Vehicle_Condition,Tire_Condition,Driver_Experience,Performance_Optimization,Scenario_Adaptability
+Ford,Mustang,Diesel,35,5,74337,Urban,6,Highway,Medium,Rainy,404,,170,6,150,6,6,Poor,Worn,Novice,Medium,6
+BMW,3 Series,Diesel,26,4,60696,Off-Road,27,Highway,Low,Clear,267,,193,8,286,9,8,Poor,New,Novice,Low,5
+Ford,Mustang,Diesel,15,5,79050,Heavy Traffic,12,Highway,Low,Rainy,244,,110,9,272,6,8,Well-maintained,Worn,Novice,Medium,2
+BMW,X5,Electric,21,5,29782,Highway,10,Off-road terrain,Medium,Clear,373,,191,8,268,5,5,Moderate wear,New,Intermediate,High,7
+Mercedes,GLE,Diesel,29,4,73006,Heavy Traffic,1,City streets,High,Snowy,488,,109,9,178,7,8,Poor,Worn,Novice,High,3
+Tesla,Model 3,Electric,17,5,36940,Highway,2,Off-road terrain,Low,Snowy,158,,159,7,226,9,5,Poor,Flat,Expert,Medium,2
+Toyota,Camry,Petrol,32,5,70383,Urban,2,City streets,Low,Clear,161,,188,6,261,5,8,Well-maintained,Flat,Expert,Medium,5
+Tesla,Model S,Petrol,39,4,70971,Highway,12,Off-road terrain,High,Rainy,241,,150,9,260,5,8,Well-maintained,Worn,Novice,Medium,3
+Ford,Mustang,Petrol,16,4,21141,Heavy Traffic,12,Off-road terrain,Medium,Clear,450,,146,8,225,9,6,Poor,New,Expert,Low,3
+Tesla,Model S,Diesel,33,4,34892,Heavy Traffic,18,City streets,Low,Rainy,363,,122,9,168,6,8,Poor,Flat,Novice,Low,4
+Mercedes,GLE,Diesel,37,4,52894,Urban,29,Highway,Low,Clear,459,,121,9,177,7,8,Well-maintained,Worn,Expert,Low,6
+Mercedes,GLE,Petrol,37,4,24758,Heavy Traffic,17,Off-road terrain,High,Clear,307,,176,8,295,5,9,Well-maintained,Flat,Expert,Low,2
+Tesla,Model S,Electric,23,4,38771,Off-Road,21,Highway,High,Rainy,394,,156,8,170,6,9,Well-maintained,New,Expert,High,6
+Mercedes,GLE,Diesel,20,4,62481,Urban,0,Off-road terrain,Low,Clear,224,,113,7,152,9,7,Well-maintained,Flat,Intermediate,High,4
+Mercedes,GLE,Diesel,33,4,57016,Heavy Traffic,28,City streets,Medium,Snowy,360,,124,9,222,5,6,Poor,New,Intermediate,Low,2
+Ford,F-150,Diesel,21,4,60005,Heavy Traffic,26,City streets,High,Clear,436,,109,7,167,8,8,Well-maintained,New,Expert,Low,4
+Toyota,Corolla,Petrol,34,5,44162,Urban,-1,Off-road terrain,Low,Rainy,228,,117,8,151,9,9,Moderate wear,New,Intermediate,High,9
+Tesla,Model 3,Petrol,24,5,63492,Urban,7,City streets,Low,Rainy,222,,151,8,279,8,9,Poor,New,Intermediate,Medium,3
+Mercedes,E-Class,Diesel,39,4,51926,Urban,11,City streets,Medium,Snowy,162,,191,7,268,7,6,Poor,Worn,Expert,Medium,4
+Mercedes,E-Class,Diesel,39,4,24239,Off-Road,18,City streets,High,Snowy,184,,154,7,251,8,7,Well-maintained,New,Expert,Medium,8
+Tesla,Model 3,Diesel,24,5,71372,Highway,7,Off-road terrain,High,Snowy,183,,135,6,155,6,9,Moderate wear,New,Expert,High,8
+Tesla,Model 3,Diesel,30,5,78533,Off-Road,8,Off-road terrain,Medium,Rainy,170,,153,9,252,7,7,Moderate wear,Flat,Expert,High,1
+Mercedes,E-Class,Electric,15,4,26380,Extreme Weather,34,Off-road terrain,High,Snowy,368,,179,7,236,5,7,Poor,Worn,Novice,High,2
+BMW,X5,Electric,17,5,31695,Urban,-1,Off-road terrain,High,Snowy,265,,113,8,261,9,9,Poor,Flat,Novice,Low,2
+Ford,Mustang,Electric,17,5,59182,Highway,30,Off-road terrain,High,Snowy,339,,146,6,254,6,9,Moderate wear,New,Novice,High,2
+Hyundai,Sonata,Petrol,39,4,47125,Extreme Weather,1,City streets,High,Rainy,187,,113,9,240,6,5,Well-maintained,Worn,Novice,Medium,4
+Mercedes,E-Class,Electric,16,4,26449,Heavy Traffic,11,Highway,High,Rainy,281,,184,8,243,5,5,Well-maintained,New,Expert,High,5
+Toyota,Corolla,Diesel,16,5,55427,Highway,16,Highway,Medium,Clear,306,,137,8,259,5,6,Poor,New,Expert,High,1
+BMW,3 Series,Electric,37,5,54335,Heavy Traffic,27,Highway,Low,Rainy,377,,159,7,211,6,6,Moderate wear,New,Novice,Medium,6
+Mercedes,E-Class,Electric,33,5,66158,Heavy Traffic,12,Off-road terrain,Medium,Snowy,435,,197,7,216,6,6,Poor,Worn,Intermediate,Medium,1
+BMW,3 Series,Electric,26,4,79213,Urban,3,Off-road terrain,High,Rainy,447,,150,9,277,8,7,Moderate wear,New,Intermediate,High,1
+Tesla,Model 3,Electric,24,5,64243,Urban,23,Off-road terrain,Low,Snowy,247,,164,8,261,6,6,Well-maintained,Worn,Intermediate,Low,9
+Hyundai,Kona EV,Electric,15,4,46081,Off-Road,29,Highway,Low,Snowy,457,,184,6,214,7,5,Poor,New,Novice,Low,6
+Ford,Mustang,Diesel,21,5,31962,Extreme Weather,17,Off-road terrain,Low,Clear,257,,178,7,195,9,8,Moderate wear,Worn,Expert,Low,2
+Ford,Mustang,Petrol,36,4,25269,Heavy Traffic,26,City streets,Low,Clear,388,,157,7,295,9,5,Poor,Flat,Intermediate,High,7
+BMW,X5,Electric,16,5,45142,Highway,21,City streets,Low,Clear,204,,196,9,236,9,6,Poor,Flat,Expert,Low,2
+Toyota,Corolla,Electric,21,4,46655,Urban,25,Highway,High,Snowy,254,,100,6,163,8,6,Poor,Worn,Intermediate,Medium,4
+Mercedes,GLE,Petrol,31,5,66270,Extreme Weather,6,City streets,High,Clear,469,,158,7,279,8,6,Poor,New,Expert,High,7
+BMW,3 Series,Electric,38,5,65156,Highway,32,City streets,Low,Clear,269,,196,6,206,6,5,Moderate wear,New,Novice,High,5
+Ford,Mustang,Petrol,31,4,32982,Highway,23,Highway,Low,Snowy,423,,141,9,250,9,6,Well-maintained,New,Intermediate,High,4
+Ford,F-150,Electric,19,5,31468,Extreme Weather,9,Off-road terrain,High,Snowy,396,,118,7,175,5,6,Moderate wear,Worn,Novice,Medium,5
+Tesla,Model 3,Electric,17,4,77248,Urban,6,City streets,High,Rainy,198,,154,7,248,8,8,Well-maintained,Worn,Expert,Medium,4
+Mercedes,GLE,Petrol,21,4,38895,Urban,10,Highway,Low,Clear,497,,105,9,297,5,7,Moderate wear,Worn,Intermediate,Low,1
+Ford,F-150,Electric,28,4,48412,Heavy Traffic,20,Off-road terrain,Medium,Snowy,257,,129,6,289,6,8,Well-maintained,New,Intermediate,Medium,2
+BMW,3 Series,Diesel,30,5,78446,Heavy Traffic,7,Off-road terrain,Low,Rainy,279,,183,9,195,7,8,Moderate wear,Worn,Expert,Medium,6
+Mercedes,GLE,Diesel,22,4,65178,Extreme Weather,24,City streets,High,Rainy,220,,195,9,168,8,7,Well-maintained,Flat,Novice,Low,5
+Tesla,Model S,Petrol,20,5,56132,Off-Road,3,Off-road terrain,High,Rainy,166,,125,6,221,9,5,Poor,Worn,Intermediate,High,3
+Hyundai,Sonata,Electric,31,4,23240,Highway,4,Highway,Low,Rainy,372,,100,9,252,8,6,Well-maintained,Worn,Intermediate,High,6
+Toyota,Camry,Electric,22,4,41584,Highway,4,Highway,Medium,Clear,274,,150,8,276,8,5,Moderate wear,Worn,Expert,High,4
+Ford,F-150,Diesel,26,5,74797,Extreme Weather,15,Highway,Low,Clear,455,,193,8,169,5,5,Moderate wear,Worn,Intermediate,Medium,6
+BMW,3 Series,Petrol,38,4,68421,Highway,18,Off-road terrain,Medium,Rainy,349,,120,9,219,9,5,Moderate wear,Flat,Novice,Low,2
+BMW,X5,Electric,39,4,37400,Extreme Weather,26,Highway,Medium,Rainy,480,,122,7,206,8,9,Poor,Flat,Novice,High,2
+Ford,F-150,Diesel,38,5,40914,Urban,12,Highway,Medium,Clear,221,,129,9,202,6,8,Well-maintained,Flat,Intermediate,Medium,10
+BMW,X5,Diesel,37,4,49412,Heavy Traffic,24,Off-road terrain,Medium,Clear,400,,153,9,214,8,6,Well-maintained,New,Intermediate,High,5
+Ford,Mustang,Petrol,26,4,22663,Heavy Traffic,6,Highway,High,Snowy,305,,181,6,151,9,6,Moderate wear,Flat,Intermediate,High,5
+Mercedes,E-Class,Petrol,21,5,51085,Off-Road,9,Highway,High,Rainy,189,,127,9,248,8,9,Moderate wear,New,Expert,Medium,5
+Mercedes,E-Class,Petrol,18,4,71660,Heavy Traffic,17,Off-road terrain,Medium,Clear,253,,179,8,202,6,5,Moderate wear,New,Novice,High,5
+Hyundai,Kona EV,Petrol,27,4,68353,Extreme Weather,7,Off-road terrain,Medium,Snowy,207,,177,8,191,8,9,Well-maintained,Flat,Novice,High,3
+Ford,F-150,Diesel,24,5,28412,Urban,13,Highway,High,Snowy,153,,194,7,229,8,5,Poor,Worn,Novice,Low,9
+Mercedes,E-Class,Electric,27,5,28417,Highway,8,City streets,Low,Snowy,356,,127,7,229,8,8,Well-maintained,Worn,Intermediate,High,7
+Ford,F-150,Electric,20,4,68885,Off-Road,33,Highway,Low,Snowy,299,,103,6,208,5,8,Poor,Flat,Intermediate,High,8
+Hyundai,Sonata,Diesel,27,4,41168,Off-Road,20,City streets,High,Snowy,176,,167,9,262,6,5,Moderate wear,Flat,Novice,Low,5
+BMW,X5,Diesel,30,4,64980,Extreme Weather,14,Off-road terrain,High,Snowy,314,,120,8,294,6,9,Well-maintained,Flat,Intermediate,High,2
+Hyundai,Kona EV,Petrol,16,5,48408,Extreme Weather,-2,Off-road terrain,Medium,Snowy,474,,154,7,191,5,9,Poor,New,Intermediate,Medium,10
+Hyundai,Sonata,Petrol,35,5,75899,Extreme Weather,33,Highway,Low,Snowy,198,,108,6,218,6,5,Moderate wear,Flat,Novice,Medium,3
+BMW,3 Series,Diesel,18,5,69597,Urban,23,Off-road terrain,Low,Clear,257,,109,8,155,5,5,Poor,Worn,Expert,High,8
+Hyundai,Sonata,Diesel,20,4,64548,Extreme Weather,15,Highway,High,Rainy,206,,192,8,277,5,5,Well-maintained,Flat,Intermediate,High,3
+Toyota,Camry,Electric,35,4,73228,Off-Road,14,City streets,Medium,Clear,333,,154,9,264,9,9,Well-maintained,Flat,Novice,High,2
+Tesla,Model S,Electric,18,5,45616,Highway,21,Off-road terrain,Medium,Rainy,168,,116,6,266,7,5,Poor,New,Intermediate,High,5
+Hyundai,Kona EV,Petrol,24,5,70839,Extreme Weather,8,City streets,Medium,Clear,206,,182,9,166,7,7,Poor,New,Novice,Low,9
+BMW,3 Series,Electric,31,5,76530,Extreme Weather,6,City streets,Low,Clear,258,,100,7,196,7,7,Moderate wear,Flat,Intermediate,Medium,2
+Tesla,Model S,Diesel,21,4,47445,Urban,25,Highway,Medium,Clear,187,,158,8,286,7,5,Moderate wear,Flat,Expert,Low,2
+Mercedes,GLE,Electric,28,4,34744,Extreme Weather,22,Highway,High,Rainy,299,,130,8,197,8,9,Moderate wear,Flat,Expert,High,1
+Toyota,Corolla,Petrol,16,4,47433,Extreme Weather,32,Off-road terrain,Medium,Rainy,223,,178,7,257,6,5,Poor,Worn,Novice,Low,3
+BMW,X5,Diesel,20,5,32601,Highway,28,Off-road terrain,Medium,Rainy,327,,131,8,152,6,7,Poor,New,Novice,High,7
+Mercedes,GLE,Electric,24,5,57939,Highway,0,Off-road terrain,Low,Rainy,368,,176,8,170,8,7,Poor,Flat,Novice,High,8
+Hyundai,Sonata,Petrol,31,4,20845,Extreme Weather,7,Off-road terrain,Medium,Clear,381,,198,6,151,5,9,Moderate wear,Flat,Expert,Medium,6
+Tesla,Model S,Diesel,23,4,34419,Off-Road,33,Off-road terrain,Low,Snowy,462,,152,6,161,9,6,Well-maintained,New,Intermediate,High,3
+Tesla,Model 3,Electric,25,5,46505,Heavy Traffic,28,Off-road terrain,High,Rainy,386,,170,6,215,5,8,Well-maintained,Worn,Intermediate,High,7
+Toyota,Corolla,Petrol,36,5,73997,Off-Road,0,Highway,Medium,Rainy,489,,188,8,262,9,9,Well-maintained,New,Intermediate,Medium,5
+Ford,Mustang,Diesel,30,5,78175,Heavy Traffic,4,Off-road terrain,Medium,Clear,449,,181,8,165,7,6,Moderate wear,Worn,Novice,High,5
+BMW,X5,Electric,35,5,77241,Heavy Traffic,1,Highway,High,Clear,336,,137,6,202,6,7,Well-maintained,New,Intermediate,High,10
+Tesla,Model S,Electric,25,4,32316,Extreme Weather,5,City streets,Medium,Rainy,170,,138,8,251,6,7,Poor,Flat,Intermediate,Low,1
+Tesla,Model S,Petrol,33,5,76805,Extreme Weather,14,Off-road terrain,High,Snowy,359,,163,7,218,5,6,Moderate wear,Worn,Novice,Low,10
+Ford,Mustang,Petrol,28,5,35173,Extreme Weather,-3,Highway,Low,Rainy,367,,160,6,239,8,6,Well-maintained,Worn,Expert,Low,1
+Mercedes,E-Class,Electric,20,4,28399,Extreme Weather,15,Highway,Medium,Snowy,239,,157,7,251,5,7,Well-maintained,New,Expert,Medium,5
+Tesla,Model 3,Diesel,24,5,69756,Heavy Traffic,3,Off-road terrain,Medium,Rainy,434,,179,9,233,9,9,Moderate wear,Flat,Expert,High,8
+Mercedes,GLE,Electric,38,5,30464,Extreme Weather,3,City streets,High,Rainy,239,,128,8,198,7,8,Poor,New,Novice,Medium,7
+Ford,Mustang,Diesel,15,4,30776,Urban,3,City streets,High,Snowy,236,,173,7,274,7,9,Moderate wear,Worn,Novice,Medium,10
+Ford,Mustang,Petrol,31,5,41015,Highway,14,City streets,Low,Rainy,400,,100,6,265,9,5,Poor,Flat,Intermediate,Low,8
+Hyundai,Kona EV,Diesel,31,5,79927,Extreme Weather,4,Off-road terrain,High,Clear,392,,153,8,293,5,6,Poor,New,Expert,Medium,3
+BMW,X5,Petrol,24,5,74225,Heavy Traffic,28,Off-road terrain,Low,Snowy,327,,186,8,208,7,8,Poor,New,Intermediate,High,5
+Ford,F-150,Petrol,30,4,25147,Extreme Weather,7,City streets,High,Rainy,435,,153,9,229,6,7,Well-maintained,New,Expert,Medium,8
+Tesla,Model S,Petrol,32,4,46691,Extreme Weather,30,City streets,Medium,Clear,318,,117,7,215,9,8,Poor,Flat,Expert,High,6
+Ford,F-150,Electric,28,5,26093,Urban,31,Highway,Medium,Snowy,208,,196,8,252,6,7,Moderate wear,Flat,Novice,Low,5
+Ford,Mustang,Electric,24,5,57899,Extreme Weather,29,City streets,Low,Clear,181,,173,8,230,9,9,Moderate wear,New,Novice,High,4
+BMW,3 Series,Petrol,29,4,41400,Urban,9,Highway,Medium,Rainy,498,,103,7,224,7,7,Moderate wear,Worn,Intermediate,Medium,10
+Ford,Mustang,Petrol,15,4,77804,Extreme Weather,-2,Off-road terrain,Medium,Rainy,241,,151,6,157,8,6,Well-maintained,Worn,Novice,Low,9
+Ford,Mustang,Electric,23,4,45628,Urban,-3,Highway,Low,Rainy,211,,102,7,217,5,7,Well-maintained,Flat,Expert,Low,7
+Toyota,Camry,Petrol,28,4,36363,Heavy Traffic,-4,Highway,Low,Rainy,218,,157,7,193,6,7,Poor,New,Intermediate,High,7
+Hyundai,Kona EV,Electric,25,4,74469,Off-Road,6,City streets,Medium,Clear,295,,184,9,253,8,8,Moderate wear,New,Expert,Medium,2
+Tesla,Model S,Diesel,19,5,78696,Heavy Traffic,14,City streets,High,Rainy,480,,178,9,221,7,7,Moderate wear,Flat,Intermediate,Low,2
+Ford,F-150,Petrol,21,5,67058,Extreme Weather,27,Off-road terrain,High,Clear,175,,195,9,221,9,6,Well-maintained,New,Novice,Medium,5
+Hyundai,Sonata,Electric,30,5,21770,Heavy Traffic,12,Highway,Low,Clear,354,,138,6,279,5,6,Moderate wear,Worn,Intermediate,Low,9
+BMW,3 Series,Diesel,26,4,34485,Urban,0,Highway,High,Snowy,248,,113,7,200,6,5,Well-maintained,New,Novice,Medium,5
+Tesla,Model S,Petrol,17,4,33362,Extreme Weather,28,Off-road terrain,Medium,Rainy,269,,158,7,296,7,6,Poor,New,Novice,Low,9
+Hyundai,Kona EV,Electric,30,4,77676,Heavy Traffic,-4,City streets,Low,Clear,173,,198,7,249,7,6,Moderate wear,New,Expert,Medium,10
+Toyota,Corolla,Electric,33,4,70390,Highway,-4,Highway,High,Clear,381,,125,6,227,5,5,Well-maintained,Flat,Intermediate,Medium,2
+Toyota,Camry,Petrol,31,5,60297,Heavy Traffic,0,Off-road terrain,Low,Clear,276,,139,7,280,8,8,Moderate wear,Worn,Intermediate,Low,5
+Toyota,Corolla,Electric,28,4,56766,Off-Road,27,Off-road terrain,Medium,Clear,314,,191,9,180,7,5,Moderate wear,New,Expert,Low,2
+Mercedes,E-Class,Petrol,16,5,49715,Highway,32,Highway,Low,Clear,270,,131,7,216,5,5,Poor,New,Novice,Low,9
+Toyota,Corolla,Petrol,36,4,68998,Off-Road,7,City streets,High,Rainy,458,,183,8,218,5,6,Moderate wear,New,Novice,Medium,7
+Toyota,Camry,Diesel,29,4,30929,Extreme Weather,7,Off-road terrain,Medium,Clear,441,,162,6,223,6,5,Moderate wear,Flat,Intermediate,High,7
+Tesla,Model 3,Petrol,39,5,51501,Highway,9,City streets,Low,Rainy,426,,116,8,206,7,5,Moderate wear,Worn,Novice,Medium,3
+Mercedes,E-Class,Electric,15,5,27910,Heavy Traffic,34,Highway,Low,Rainy,338,,153,6,168,7,7,Well-maintained,Worn,Novice,Medium,10
+Mercedes,E-Class,Petrol,30,4,53798,Off-Road,10,Off-road terrain,Medium,Rainy,161,,134,6,170,6,7,Well-maintained,New,Intermediate,Low,4
+Toyota,Camry,Petrol,37,5,46579,Urban,0,Off-road terrain,Low,Clear,406,,169,6,175,5,6,Moderate wear,Flat,Intermediate,Low,10
+Tesla,Model S,Petrol,36,4,64451,Heavy Traffic,18,City streets,High,Rainy,496,,124,8,181,8,6,Moderate wear,Worn,Novice,Medium,9
+BMW,X5,Diesel,25,5,57789,Extreme Weather,22,Off-road terrain,High,Rainy,436,,148,9,249,7,8,Poor,Flat,Expert,High,5
+Mercedes,GLE,Diesel,20,5,79635,Off-Road,-2,Highway,Medium,Rainy,428,,158,7,264,7,8,Moderate wear,Flat,Novice,Low,5
+Ford,F-150,Diesel,26,5,29096,Highway,29,Off-road terrain,High,Rainy,472,,152,8,227,8,7,Poor,New,Novice,Medium,3
+Hyundai,Sonata,Electric,39,5,62243,Extreme Weather,22,Highway,Low,Rainy,250,,120,7,295,5,7,Well-maintained,New,Expert,Low,2
+Hyundai,Kona EV,Diesel,28,5,44982,Off-Road,23,City streets,High,Clear,307,,180,9,219,7,7,Moderate wear,New,Intermediate,Medium,8
+Tesla,Model 3,Petrol,16,4,64007,Urban,1,Off-road terrain,Low,Rainy,383,,134,9,242,6,8,Poor,Worn,Intermediate,Medium,8
+Ford,Mustang,Electric,29,5,53760,Heavy Traffic,28,Highway,High,Clear,431,,156,6,156,8,8,Poor,Worn,Novice,Medium,6
+BMW,3 Series,Electric,24,4,53988,Highway,-3,Off-road terrain,High,Clear,399,,119,8,273,7,7,Poor,Flat,Expert,High,7
+Hyundai,Kona EV,Diesel,24,4,62098,Highway,12,City streets,Low,Snowy,430,,177,9,174,7,7,Moderate wear,Flat,Expert,Low,5
+Tesla,Model S,Electric,26,5,58756,Urban,12,Off-road terrain,Medium,Rainy,459,,105,8,272,6,5,Poor,Worn,Novice,High,10
+Ford,Mustang,Petrol,15,4,70411,Heavy Traffic,34,City streets,High,Rainy,384,,132,7,189,9,5,Moderate wear,New,Intermediate,Medium,9
+Tesla,Model 3,Diesel,36,5,74011,Heavy Traffic,18,Highway,Medium,Rainy,288,,147,9,188,7,7,Well-maintained,Worn,Intermediate,Medium,5
+Tesla,Model 3,Electric,15,5,56526,Highway,10,City streets,Low,Snowy,262,,192,6,298,6,9,Well-maintained,Worn,Intermediate,Low,9
+Mercedes,E-Class,Electric,17,4,64553,Extreme Weather,3,City streets,Low,Clear,161,,109,6,160,8,9,Moderate wear,Worn,Expert,High,8
+Hyundai,Kona EV,Electric,18,4,25534,Heavy Traffic,32,Off-road terrain,High,Rainy,457,,179,8,171,9,7,Well-maintained,Worn,Novice,Low,7
+BMW,X5,Electric,16,4,40719,Off-Road,20,City streets,Low,Snowy,482,,154,8,185,5,8,Well-maintained,Worn,Novice,Low,2
+BMW,3 Series,Electric,23,5,37952,Off-Road,14,Highway,Low,Snowy,172,,171,9,261,7,5,Well-maintained,Flat,Novice,High,5
+Ford,F-150,Electric,17,5,77442,Heavy Traffic,33,Off-road terrain,Medium,Clear,211,,138,6,268,6,5,Poor,New,Intermediate,High,10
+BMW,3 Series,Diesel,30,4,63642,Off-Road,23,Highway,Low,Snowy,168,,107,7,187,9,9,Well-maintained,Worn,Expert,Low,1
+Toyota,Corolla,Electric,34,5,36607,Highway,0,Highway,High,Clear,312,,197,7,211,9,6,Well-maintained,Worn,Intermediate,Medium,10
+Toyota,Camry,Electric,30,5,71990,Heavy Traffic,3,Highway,High,Rainy,195,,121,9,157,7,8,Poor,Worn,Expert,High,2
+Ford,F-150,Electric,36,4,25153,Urban,1,Highway,Low,Snowy,467,,122,7,205,5,9,Poor,Flat,Intermediate,Medium,1
+BMW,3 Series,Petrol,31,5,35187,Extreme Weather,12,City streets,High,Rainy,377,,162,8,287,7,7,Well-maintained,Worn,Expert,Medium,4
+Mercedes,E-Class,Electric,30,4,30420,Extreme Weather,13,Off-road terrain,Medium,Clear,349,,117,9,188,5,5,Well-maintained,Worn,Expert,Medium,7
+Toyota,Corolla,Petrol,31,4,45112,Extreme Weather,1,Off-road terrain,Medium,Clear,242,,193,8,271,7,5,Poor,Flat,Novice,High,7
+Tesla,Model 3,Petrol,27,4,62438,Heavy Traffic,5,Off-road terrain,Low,Snowy,180,,101,8,164,5,7,Moderate wear,Flat,Expert,High,2
+Mercedes,GLE,Petrol,22,4,42139,Heavy Traffic,13,Off-road terrain,Medium,Clear,226,,165,6,210,6,5,Poor,Flat,Intermediate,Low,7
+Ford,F-150,Diesel,23,5,73412,Extreme Weather,22,Highway,High,Rainy,302,,196,8,264,6,6,Poor,New,Novice,High,5
+BMW,X5,Diesel,28,4,61758,Extreme Weather,21,City streets,High,Snowy,242,,135,6,202,5,9,Well-maintained,Worn,Expert,Medium,5
+BMW,3 Series,Petrol,21,5,56854,Extreme Weather,19,Highway,High,Clear,310,,113,9,230,9,8,Well-maintained,Flat,Novice,Low,1
+Ford,F-150,Diesel,19,4,26256,Extreme Weather,21,City streets,Low,Rainy,367,,176,8,270,7,7,Poor,New,Intermediate,Low,1
+Toyota,Corolla,Electric,20,5,41217,Urban,4,Highway,High,Snowy,365,,175,8,268,7,6,Well-maintained,New,Novice,Medium,1
+Hyundai,Kona EV,Petrol,20,4,64999,Urban,18,Highway,Low,Clear,395,,198,7,209,8,6,Moderate wear,Flat,Intermediate,Medium,7
+Tesla,Model 3,Petrol,37,4,31688,Extreme Weather,18,City streets,High,Snowy,402,,109,9,279,7,7,Poor,Worn,Expert,Low,4
+BMW,3 Series,Diesel,22,5,40369,Urban,12,City streets,Medium,Rainy,233,,197,8,220,6,9,Poor,New,Intermediate,High,3
+Ford,F-150,Electric,15,4,51115,Extreme Weather,16,Highway,Low,Clear,429,,113,9,173,8,9,Well-maintained,Worn,Intermediate,Medium,6
+Hyundai,Sonata,Electric,36,5,54332,Urban,31,City streets,Medium,Snowy,444,,141,9,178,7,7,Moderate wear,Flat,Intermediate,Medium,10
+Hyundai,Kona EV,Electric,38,4,72476,Highway,-4,City streets,Medium,Rainy,380,,170,9,240,5,6,Moderate wear,New,Novice,High,4
+Mercedes,E-Class,Petrol,21,4,50869,Extreme Weather,12,Highway,High,Clear,350,,105,8,197,9,5,Poor,New,Expert,Low,6
+Mercedes,E-Class,Diesel,29,5,28572,Urban,27,Highway,Medium,Rainy,169,,159,7,256,5,6,Well-maintained,New,Novice,High,2
+Mercedes,E-Class,Diesel,24,5,71739,Highway,29,City streets,High,Clear,470,,141,6,286,8,7,Well-maintained,New,Novice,Medium,6
+Toyota,Corolla,Electric,31,4,36246,Extreme Weather,28,Off-road terrain,Low,Clear,374,,150,9,219,9,6,Well-maintained,Worn,Novice,Medium,4
+BMW,X5,Diesel,24,4,65771,Highway,10,Off-road terrain,Medium,Clear,250,,128,8,231,6,6,Poor,Worn,Novice,Low,5
+Toyota,Corolla,Diesel,24,5,49217,Extreme Weather,27,Highway,High,Clear,331,,183,6,226,5,9,Poor,New,Expert,Low,1
+Toyota,Camry,Electric,23,4,63106,Heavy Traffic,25,City streets,High,Rainy,159,,107,6,208,6,9,Moderate wear,Worn,Expert,High,4
+Toyota,Camry,Diesel,16,5,50984,Heavy Traffic,16,Off-road terrain,Medium,Clear,192,,173,7,171,6,6,Moderate wear,Worn,Intermediate,High,5
+Ford,F-150,Diesel,35,4,79538,Heavy Traffic,32,Off-road terrain,High,Rainy,448,,119,9,170,6,5,Moderate wear,Worn,Intermediate,Medium,9
+Hyundai,Sonata,Petrol,31,4,47331,Highway,20,Off-road terrain,High,Snowy,424,,150,6,219,9,7,Moderate wear,New,Expert,Low,10
+Hyundai,Sonata,Diesel,39,5,60931,Off-Road,17,Off-road terrain,Low,Snowy,471,,165,9,222,8,9,Poor,New,Novice,Low,5
+Hyundai,Kona EV,Diesel,23,4,39381,Off-Road,34,Highway,Low,Clear,342,,173,8,281,7,6,Poor,Flat,Intermediate,Medium,1
+Tesla,Model 3,Petrol,16,5,74545,Off-Road,14,Off-road terrain,Medium,Clear,459,,130,7,253,6,6,Moderate wear,Worn,Novice,Low,3
+BMW,3 Series,Electric,23,5,40707,Off-Road,11,Highway,High,Snowy,339,,193,6,288,8,7,Well-maintained,Flat,Intermediate,Low,4
+BMW,X5,Electric,27,4,29967,Extreme Weather,21,City streets,High,Rainy,222,,103,9,222,9,6,Moderate wear,Worn,Novice,Low,10
+Tesla,Model 3,Petrol,36,4,79931,Off-Road,-4,Highway,Medium,Clear,354,,157,6,291,9,8,Poor,New,Novice,Medium,2
+Toyota,Camry,Petrol,31,4,51759,Off-Road,8,Off-road terrain,Low,Snowy,212,,161,8,198,7,5,Moderate wear,Flat,Expert,Medium,7
+Hyundai,Kona EV,Diesel,36,5,41774,Urban,32,Highway,Low,Clear,224,,128,8,201,5,7,Moderate wear,Worn,Novice,High,9
+Ford,F-150,Petrol,17,4,53039,Heavy Traffic,9,City streets,Medium,Snowy,251,,153,7,185,6,5,Moderate wear,Flat,Intermediate,High,7
+Toyota,Corolla,Electric,29,5,54898,Urban,23,Off-road terrain,High,Snowy,225,,129,9,280,5,6,Well-maintained,Flat,Intermediate,Medium,7
+Tesla,Model S,Electric,32,4,27219,Urban,11,Highway,Low,Clear,340,,150,6,290,9,7,Moderate wear,New,Expert,High,10
+BMW,3 Series,Electric,34,4,77745,Urban,24,City streets,High,Clear,174,,111,6,174,7,5,Moderate wear,Worn,Intermediate,Low,9
+Tesla,Model 3,Petrol,17,5,30055,Urban,-1,City streets,Low,Rainy,296,,122,6,267,6,5,Moderate wear,Worn,Intermediate,High,10
+Ford,F-150,Diesel,16,5,41686,Highway,9,Off-road terrain,Medium,Snowy,432,,173,8,221,8,8,Moderate wear,Flat,Novice,Medium,1
+BMW,3 Series,Diesel,16,5,51958,Urban,26,Off-road terrain,Low,Clear,301,,187,8,164,6,5,Poor,New,Novice,High,10
+Mercedes,GLE,Electric,26,5,58640,Heavy Traffic,0,City streets,Medium,Rainy,479,,153,9,228,6,5,Moderate wear,Worn,Novice,Low,5
+Tesla,Model 3,Petrol,21,5,31319,Off-Road,6,Off-road terrain,Low,Snowy,241,,122,8,258,9,8,Moderate wear,Flat,Intermediate,Medium,1
+Hyundai,Sonata,Diesel,21,4,78182,Urban,20,Highway,Medium,Rainy,437,,185,7,206,9,5,Poor,Flat,Novice,High,10
+Tesla,Model S,Electric,27,4,73112,Urban,29,Off-road terrain,Medium,Clear,437,,151,8,267,6,7,Poor,Worn,Expert,Medium,4
+Toyota,Corolla,Diesel,38,4,58524,Extreme Weather,3,Off-road terrain,Low,Rainy,336,,169,7,241,6,9,Well-maintained,Flat,Expert,Low,5
+Tesla,Model 3,Petrol,31,4,32779,Off-Road,30,Highway,Low,Rainy,217,,143,6,210,7,9,Moderate wear,New,Expert,Low,2
+Toyota,Corolla,Diesel,15,5,22586,Urban,19,Highway,Medium,Rainy,338,,102,8,190,9,7,Poor,Worn,Intermediate,Low,8
+Ford,F-150,Diesel,21,5,78706,Highway,24,City streets,High,Rainy,360,,130,9,172,9,5,Poor,Flat,Novice,High,1
+BMW,X5,Petrol,36,4,61996,Off-Road,5,City streets,Medium,Snowy,497,,123,6,222,6,8,Well-maintained,Worn,Intermediate,Low,1
+Mercedes,E-Class,Petrol,29,5,39317,Extreme Weather,8,Highway,Low,Rainy,151,,123,7,213,8,6,Poor,New,Intermediate,Medium,7
+Ford,F-150,Petrol,31,5,67409,Extreme Weather,16,Off-road terrain,Medium,Clear,313,,155,8,170,9,5,Poor,Flat,Intermediate,High,6
+Hyundai,Sonata,Electric,21,4,66029,Heavy Traffic,-1,Highway,Medium,Snowy,197,,173,7,230,9,8,Well-maintained,New,Novice,Low,1
+Hyundai,Sonata,Electric,30,5,54600,Highway,24,City streets,Low,Clear,477,,148,8,205,5,8,Well-maintained,Worn,Novice,High,9
+Toyota,Camry,Electric,23,5,65371,Highway,23,Highway,Medium,Rainy,294,,159,7,210,5,5,Moderate wear,Flat,Expert,High,2
+BMW,X5,Diesel,34,5,24512,Highway,10,Off-road terrain,High,Clear,379,,123,6,267,6,5,Well-maintained,Worn,Novice,Medium,9
+BMW,X5,Diesel,23,5,49369,Off-Road,25,Off-road terrain,Medium,Snowy,386,,198,6,210,9,6,Poor,Flat,Expert,High,4
+BMW,3 Series,Electric,30,5,21509,Urban,16,City streets,High,Clear,264,,126,6,195,5,7,Well-maintained,Worn,Novice,Low,10
+Toyota,Corolla,Electric,16,4,38880,Highway,30,Off-road terrain,Low,Rainy,317,,137,6,286,9,7,Well-maintained,Flat,Intermediate,Medium,8
+Tesla,Model 3,Petrol,33,5,35831,Highway,-3,Highway,Low,Clear,156,,108,8,203,6,9,Poor,Worn,Intermediate,Medium,1
+Hyundai,Kona EV,Diesel,30,4,68926,Off-Road,8,City streets,High,Clear,424,,180,8,283,7,5,Well-maintained,Worn,Novice,Low,7
+Hyundai,Kona EV,Electric,31,5,65881,Heavy Traffic,18,Off-road terrain,Low,Snowy,239,,167,8,194,8,5,Well-maintained,Flat,Novice,Medium,4
+Tesla,Model S,Electric,35,4,66585,Urban,22,City streets,High,Rainy,409,,178,6,257,7,6,Poor,Worn,Expert,Medium,1
+Tesla,Model 3,Electric,39,5,31906,Heavy Traffic,-3,City streets,High,Rainy,249,,160,6,271,6,8,Well-maintained,Worn,Intermediate,Low,1
+Hyundai,Kona EV,Petrol,35,5,77795,Off-Road,15,City streets,High,Snowy,431,,140,7,187,7,5,Well-maintained,Flat,Expert,Low,1
+BMW,X5,Petrol,20,4,75152,Off-Road,8,City streets,Low,Rainy,204,,150,7,178,9,5,Moderate wear,New,Novice,Medium,8
+Ford,F-150,Electric,27,4,24001,Heavy Traffic,22,Off-road terrain,High,Snowy,374,,197,6,218,7,9,Poor,Flat,Intermediate,High,7
+Hyundai,Kona EV,Electric,19,5,42491,Highway,2,Off-road terrain,Medium,Clear,270,,168,7,271,6,5,Poor,Worn,Intermediate,High,1
+BMW,3 Series,Electric,34,5,37625,Heavy Traffic,17,Highway,Medium,Clear,191,,111,6,222,7,8,Poor,Worn,Novice,Medium,3
+Ford,Mustang,Diesel,21,4,57271,Heavy Traffic,3,City streets,Medium,Snowy,261,,120,8,238,7,5,Well-maintained,Flat,Intermediate,High,9
+Toyota,Corolla,Electric,39,4,39945,Urban,23,Highway,Low,Rainy,345,,193,9,280,7,6,Moderate wear,New,Expert,High,9
+Toyota,Corolla,Diesel,37,4,36226,Heavy Traffic,31,Off-road terrain,Low,Rainy,417,,110,9,221,5,8,Moderate wear,Worn,Expert,Medium,1
+Ford,Mustang,Petrol,36,4,23130,Extreme Weather,27,Off-road terrain,Low,Snowy,414,,108,6,176,5,8,Well-maintained,New,Intermediate,High,1
+Toyota,Camry,Petrol,36,4,57552,Urban,12,City streets,High,Snowy,285,,102,7,174,6,9,Poor,Flat,Intermediate,Medium,5
+Toyota,Corolla,Petrol,23,4,58910,Highway,10,Off-road terrain,Medium,Clear,284,,177,8,212,5,7,Well-maintained,New,Novice,Low,9
+Mercedes,GLE,Electric,23,5,49048,Heavy Traffic,16,Highway,Low,Clear,359,,149,6,188,7,8,Well-maintained,New,Intermediate,Medium,3
+Mercedes,GLE,Electric,24,5,57820,Off-Road,17,Off-road terrain,Medium,Snowy,482,,115,6,247,9,9,Moderate wear,New,Expert,Medium,4
+Toyota,Corolla,Diesel,31,5,34677,Extreme Weather,7,Off-road terrain,Low,Rainy,417,,103,6,244,9,5,Poor,Worn,Expert,Low,8
+Mercedes,E-Class,Petrol,24,5,75186,Urban,10,City streets,Medium,Rainy,442,,178,6,226,9,7,Moderate wear,Worn,Intermediate,Low,1
+Mercedes,E-Class,Electric,22,5,49250,Heavy Traffic,1,Off-road terrain,High,Clear,344,,192,7,252,6,7,Poor,New,Intermediate,High,10
+BMW,X5,Electric,15,5,48584,Off-Road,20,City streets,Low,Snowy,154,,177,8,236,8,8,Poor,Flat,Intermediate,Medium,3
+Toyota,Corolla,Electric,20,4,28009,Heavy Traffic,25,City streets,High,Rainy,367,,165,6,226,7,6,Poor,New,Intermediate,High,2
+Hyundai,Kona EV,Electric,22,5,53979,Off-Road,2,Highway,High,Clear,286,,189,7,229,9,9,Moderate wear,Flat,Expert,Medium,8
+BMW,X5,Electric,24,5,54241,Highway,19,City streets,Medium,Snowy,398,,175,6,187,5,6,Well-maintained,Worn,Intermediate,High,2
+Hyundai,Kona EV,Petrol,36,5,36571,Extreme Weather,1,City streets,Medium,Snowy,204,,156,6,196,9,5,Well-maintained,New,Intermediate,Low,7
+Ford,F-150,Diesel,26,5,57001,Heavy Traffic,-4,Highway,Low,Snowy,465,,146,9,156,7,9,Well-maintained,New,Novice,Low,3
+Mercedes,GLE,Electric,39,5,76091,Urban,0,Highway,High,Rainy,403,,196,9,173,9,5,Moderate wear,New,Expert,High,5
+BMW,3 Series,Electric,38,5,73232,Highway,12,City streets,Low,Snowy,180,,158,9,279,5,9,Poor,Flat,Expert,Medium,1
+Ford,F-150,Petrol,26,4,30315,Highway,29,Off-road terrain,Low,Rainy,270,,167,6,233,6,8,Moderate wear,Worn,Novice,Low,1
+Tesla,Model S,Diesel,16,4,66882,Urban,7,Off-road terrain,High,Rainy,260,,176,9,200,6,9,Well-maintained,Worn,Intermediate,High,7
+BMW,3 Series,Petrol,25,4,21391,Off-Road,7,City streets,High,Snowy,372,,179,7,274,8,5,Moderate wear,Worn,Intermediate,Medium,4
+Toyota,Corolla,Electric,32,4,41392,Highway,-4,Off-road terrain,Medium,Snowy,153,,105,7,175,7,6,Well-maintained,Flat,Expert,High,6
+Tesla,Model 3,Electric,34,4,24925,Off-Road,21,Off-road terrain,High,Rainy,322,,134,9,252,9,5,Poor,New,Expert,Medium,1
+Tesla,Model S,Petrol,37,5,67703,Heavy Traffic,10,City streets,High,Snowy,241,,146,9,187,7,7,Poor,New,Expert,High,1
+Toyota,Corolla,Petrol,26,5,66835,Highway,32,City streets,High,Snowy,200,,180,9,216,5,6,Poor,New,Expert,High,4
+Hyundai,Kona EV,Petrol,27,5,70053,Heavy Traffic,27,Off-road terrain,High,Snowy,178,,160,7,173,6,5,Well-maintained,New,Novice,High,8
+BMW,X5,Diesel,29,5,29884,Extreme Weather,-4,Off-road terrain,High,Rainy,187,,102,7,244,8,7,Moderate wear,Worn,Expert,High,8
+BMW,X5,Petrol,33,5,49181,Extreme Weather,24,City streets,Medium,Clear,303,,136,8,264,9,7,Poor,Worn,Expert,Low,1
+Toyota,Corolla,Diesel,22,5,54229,Heavy Traffic,-1,City streets,High,Clear,181,,183,9,287,9,9,Poor,New,Intermediate,High,9
+Hyundai,Kona EV,Diesel,18,5,75489,Heavy Traffic,28,Off-road terrain,High,Snowy,492,,183,6,255,7,9,Well-maintained,Worn,Novice,Low,8
+BMW,3 Series,Diesel,18,5,53690,Extreme Weather,-4,City streets,Medium,Clear,390,,112,9,277,6,6,Well-maintained,Worn,Intermediate,Low,3
+BMW,3 Series,Electric,25,4,47475,Heavy Traffic,2,Off-road terrain,Medium,Clear,392,,192,6,170,7,6,Poor,Worn,Intermediate,Low,7
+Toyota,Corolla,Diesel,29,5,75803,Highway,27,Highway,Low,Rainy,244,,134,6,225,7,5,Poor,New,Novice,Low,1
+Tesla,Model 3,Petrol,35,4,70982,Extreme Weather,17,Highway,High,Clear,254,,165,8,156,5,5,Moderate wear,Flat,Intermediate,Low,2
+Toyota,Camry,Electric,29,5,40437,Highway,28,Off-road terrain,Medium,Clear,191,,192,6,166,8,5,Moderate wear,New,Expert,High,7
+Hyundai,Kona EV,Diesel,25,4,69011,Extreme Weather,23,Highway,Medium,Rainy,493,,192,8,201,6,9,Moderate wear,Flat,Novice,Low,10
+Ford,Mustang,Electric,35,5,73560,Urban,30,Highway,Medium,Snowy,455,,113,7,165,7,6,Well-maintained,Worn,Intermediate,Low,2
+Toyota,Camry,Petrol,23,4,48054,Off-Road,15,Off-road terrain,High,Rainy,473,,124,8,272,6,5,Well-maintained,Flat,Intermediate,High,2
+Hyundai,Sonata,Petrol,24,5,69416,Heavy Traffic,23,Highway,High,Rainy,357,,160,8,159,5,9,Moderate wear,Worn,Expert,Low,8
+Tesla,Model S,Electric,34,5,71331,Urban,34,Off-road terrain,High,Snowy,248,,173,7,219,7,7,Well-maintained,Flat,Intermediate,High,1
+Toyota,Corolla,Electric,37,4,31803,Off-Road,12,Highway,High,Rainy,268,,156,7,278,5,7,Poor,New,Novice,Low,7
+Toyota,Corolla,Petrol,24,4,37675,Off-Road,27,Off-road terrain,Low,Clear,436,,159,7,166,6,9,Moderate wear,Worn,Intermediate,High,6
+Mercedes,E-Class,Electric,19,5,79409,Off-Road,31,City streets,Medium,Rainy,495,,180,9,150,5,6,Poor,Worn,Expert,High,1
+BMW,3 Series,Electric,17,5,34633,Off-Road,28,Off-road terrain,Low,Rainy,420,,164,7,174,6,7,Poor,Flat,Intermediate,Low,6
+BMW,X5,Petrol,32,5,49693,Heavy Traffic,-1,Highway,Medium,Snowy,376,,180,7,263,6,9,Moderate wear,Worn,Expert,High,3
+Mercedes,E-Class,Electric,34,4,28150,Heavy Traffic,22,Highway,Medium,Snowy,303,,147,9,166,5,9,Moderate wear,Flat,Expert,Medium,3
+Ford,F-150,Petrol,24,4,49877,Extreme Weather,8,Off-road terrain,High,Clear,242,,172,9,223,7,5,Well-maintained,New,Novice,Medium,8
+Toyota,Corolla,Diesel,24,5,48810,Off-Road,6,City streets,Medium,Snowy,162,,111,8,234,6,8,Moderate wear,New,Novice,High,10
+Tesla,Model S,Petrol,26,5,28328,Highway,16,Off-road terrain,Low,Rainy,406,,143,7,187,7,7,Poor,Flat,Expert,Low,10
+Tesla,Model 3,Diesel,39,5,54937,Highway,17,Off-road terrain,High,Clear,207,,162,8,201,5,5,Moderate wear,New,Intermediate,High,3
+Mercedes,GLE,Electric,35,4,74525,Extreme Weather,0,City streets,Medium,Clear,319,,149,6,153,7,5,Moderate wear,New,Novice,Medium,7
+Ford,F-150,Electric,28,4,47207,Urban,1,Highway,Low,Snowy,421,,142,9,222,6,5,Moderate wear,Flat,Expert,High,5
+Mercedes,GLE,Petrol,35,5,76243,Off-Road,10,Highway,Low,Clear,497,,137,6,241,5,7,Well-maintained,New,Expert,Medium,9
+Ford,F-150,Diesel,32,5,31159,Highway,29,Off-road terrain,High,Rainy,226,,144,9,264,8,5,Moderate wear,Flat,Intermediate,High,9
+BMW,X5,Electric,22,4,28562,Heavy Traffic,3,Off-road terrain,Medium,Rainy,370,,123,9,218,9,6,Poor,New,Novice,Medium,7
+Mercedes,GLE,Diesel,17,4,23621,Heavy Traffic,-5,Off-road terrain,High,Clear,364,,190,9,239,8,8,Poor,New,Expert,High,4
+Hyundai,Kona EV,Diesel,27,4,70226,Highway,-1,City streets,Low,Snowy,404,,153,8,157,5,8,Moderate wear,New,Expert,Low,4
+Hyundai,Sonata,Petrol,22,4,29916,Heavy Traffic,27,Highway,Medium,Clear,325,,113,6,229,6,5,Poor,Flat,Expert,High,9
+Toyota,Camry,Petrol,37,5,70910,Off-Road,34,City streets,Medium,Clear,419,,158,6,202,7,7,Moderate wear,Flat,Novice,Medium,4
+Mercedes,GLE,Diesel,36,5,23065,Off-Road,33,Off-road terrain,Low,Clear,450,,176,9,158,8,9,Poor,New,Expert,High,9
+Hyundai,Kona EV,Petrol,18,5,63484,Extreme Weather,21,City streets,Medium,Clear,493,,120,6,284,5,5,Poor,Flat,Expert,Low,6
+Ford,Mustang,Electric,35,5,20784,Heavy Traffic,16,City streets,Low,Snowy,200,,149,8,220,6,9,Well-maintained,New,Novice,Medium,3
+BMW,X5,Electric,21,4,40598,Heavy Traffic,15,City streets,Medium,Clear,175,,107,6,153,9,9,Well-maintained,Flat,Expert,High,3
+Toyota,Corolla,Petrol,26,5,51323,Urban,8,City streets,Medium,Clear,346,,129,9,156,8,8,Poor,Worn,Expert,High,1
+Mercedes,E-Class,Diesel,34,5,33782,Highway,23,City streets,Low,Snowy,468,,172,6,206,8,7,Poor,Flat,Novice,Medium,4
+Mercedes,E-Class,Petrol,28,5,54293,Off-Road,24,Off-road terrain,Medium,Snowy,344,,120,7,192,9,6,Well-maintained,New,Intermediate,Medium,3
+Tesla,Model S,Petrol,23,5,25430,Extreme Weather,17,Highway,Low,Snowy,474,,114,8,152,7,8,Poor,Worn,Expert,High,5
+Toyota,Corolla,Petrol,24,5,75065,Urban,25,Highway,High,Rainy,477,,188,9,299,7,5,Well-maintained,Worn,Novice,Low,7
+Mercedes,E-Class,Diesel,29,4,25703,Urban,32,Highway,High,Rainy,323,,100,9,256,8,5,Poor,Flat,Intermediate,Medium,9
+BMW,3 Series,Electric,28,4,44028,Off-Road,27,Highway,Low,Rainy,440,,166,8,287,7,7,Poor,Worn,Expert,High,5
+BMW,X5,Petrol,26,4,69444,Urban,1,City streets,Medium,Clear,298,,110,9,264,6,8,Moderate wear,Worn,Intermediate,High,4
+BMW,X5,Petrol,35,5,64498,Highway,0,Off-road terrain,High,Rainy,392,,107,7,159,7,9,Poor,Flat,Expert,Medium,3
+BMW,3 Series,Electric,33,5,32342,Highway,10,Off-road terrain,Medium,Snowy,305,,180,9,296,9,8,Well-maintained,New,Expert,Low,1
+Hyundai,Kona EV,Diesel,26,5,36484,Extreme Weather,33,Highway,Low,Snowy,319,,139,6,289,6,7,Moderate wear,Worn,Novice,Medium,3
+BMW,3 Series,Petrol,36,4,35957,Extreme Weather,32,City streets,Low,Snowy,257,,136,6,240,7,9,Moderate wear,Worn,Intermediate,High,3
+Ford,F-150,Petrol,26,5,41795,Urban,11,City streets,Medium,Clear,374,,129,9,161,7,5,Well-maintained,Worn,Expert,High,8
+Ford,Mustang,Electric,29,4,74401,Extreme Weather,2,City streets,Low,Clear,440,,122,7,164,6,9,Poor,New,Expert,High,3
+Toyota,Corolla,Petrol,24,5,34669,Off-Road,22,Off-road terrain,Medium,Rainy,216,,135,7,269,5,9,Moderate wear,Flat,Novice,Medium,6
+Mercedes,E-Class,Petrol,36,5,28080,Heavy Traffic,15,Off-road terrain,High,Clear,491,,111,9,155,9,6,Well-maintained,New,Intermediate,Medium,10
+Hyundai,Kona EV,Petrol,24,5,49714,Extreme Weather,2,Off-road terrain,Low,Rainy,458,,198,9,154,5,6,Moderate wear,Flat,Intermediate,High,10
+Mercedes,E-Class,Electric,19,4,41101,Off-Road,2,Highway,Medium,Rainy,445,,133,9,194,7,8,Well-maintained,New,Novice,Low,4
+Tesla,Model S,Diesel,24,4,47751,Heavy Traffic,17,Highway,Medium,Rainy,485,,174,9,194,9,5,Well-maintained,Flat,Expert,Medium,2
+Mercedes,E-Class,Diesel,39,5,51912,Heavy Traffic,7,Highway,Medium,Clear,343,,199,7,154,7,6,Moderate wear,Worn,Novice,High,10
+Mercedes,E-Class,Petrol,19,4,64971,Heavy Traffic,8,Highway,High,Snowy,168,,162,9,243,7,6,Moderate wear,Worn,Intermediate,Medium,5
+Tesla,Model 3,Electric,19,5,20510,Heavy Traffic,7,Off-road terrain,Medium,Clear,480,,158,8,208,6,9,Moderate wear,New,Novice,Medium,9
+Toyota,Corolla,Diesel,38,4,45816,Extreme Weather,9,Highway,Medium,Rainy,181,,108,8,254,5,9,Poor,New,Intermediate,High,4
+BMW,3 Series,Diesel,16,4,28744,Off-Road,32,Highway,Medium,Snowy,460,,155,7,283,6,5,Well-maintained,New,Novice,High,3
+BMW,3 Series,Electric,37,5,62255,Urban,32,Off-road terrain,Low,Snowy,291,,105,6,172,8,7,Well-maintained,Flat,Intermediate,Medium,6
+Ford,Mustang,Petrol,28,4,40942,Extreme Weather,30,City streets,High,Clear,171,,186,9,235,9,9,Moderate wear,New,Intermediate,High,7
+Ford,F-150,Diesel,23,4,77988,Heavy Traffic,17,Highway,High,Clear,256,,152,6,238,9,5,Well-maintained,New,Expert,Medium,6
+Tesla,Model S,Electric,26,4,60861,Urban,23,City streets,Low,Clear,249,,185,6,284,8,9,Poor,New,Novice,Medium,3
+BMW,3 Series,Petrol,26,5,23996,Highway,-2,Off-road terrain,High,Clear,490,,116,9,290,8,6,Well-maintained,Worn,Expert,High,1
+Toyota,Corolla,Petrol,19,5,69656,Highway,14,City streets,High,Rainy,364,,132,7,269,5,5,Poor,New,Novice,High,6
+Tesla,Model 3,Diesel,18,5,61609,Urban,13,Off-road terrain,High,Rainy,233,,182,7,206,6,8,Moderate wear,Worn,Expert,High,7
+Ford,Mustang,Diesel,32,5,64348,Highway,14,Highway,Low,Rainy,395,,180,7,290,8,6,Well-maintained,Worn,Novice,Medium,2
+Ford,Mustang,Electric,22,4,50164,Extreme Weather,24,Highway,Medium,Clear,287,,147,8,256,6,5,Well-maintained,Worn,Intermediate,Low,7
+Tesla,Model S,Electric,23,4,66581,Heavy Traffic,7,Off-road terrain,High,Snowy,439,,180,8,235,7,6,Poor,Flat,Expert,High,9
+Mercedes,E-Class,Electric,36,5,53593,Heavy Traffic,-1,City streets,Low,Rainy,154,,159,9,170,8,6,Well-maintained,Worn,Intermediate,Low,5
+Toyota,Camry,Electric,17,4,51171,Extreme Weather,28,Highway,High,Clear,316,,141,8,219,6,5,Well-maintained,New,Intermediate,High,9
+Mercedes,GLE,Electric,26,5,73871,Highway,-5,Off-road terrain,Medium,Clear,285,,154,9,196,6,9,Moderate wear,Worn,Novice,Low,1
+Hyundai,Sonata,Electric,28,5,31280,Off-Road,-2,City streets,High,Rainy,457,,109,7,246,7,6,Poor,Worn,Novice,Low,2
+BMW,3 Series,Petrol,22,4,69684,Highway,18,Highway,High,Rainy,244,,161,6,274,6,6,Poor,New,Intermediate,Medium,10
+BMW,X5,Electric,16,5,20260,Extreme Weather,19,City streets,Low,Clear,350,,169,7,168,5,8,Poor,New,Intermediate,High,8
+Toyota,Corolla,Diesel,19,4,59451,Heavy Traffic,11,City streets,High,Snowy,367,,114,8,285,9,7,Well-maintained,New,Expert,High,6
+Ford,F-150,Diesel,15,5,32812,Highway,-1,City streets,Low,Clear,238,,146,9,159,8,5,Moderate wear,Worn,Expert,Medium,4
+Tesla,Model 3,Electric,31,5,31043,Urban,8,Highway,High,Rainy,259,,166,7,235,7,7,Moderate wear,New,Intermediate,High,1
+Mercedes,GLE,Electric,22,4,32823,Off-Road,29,Off-road terrain,Medium,Snowy,258,,143,7,248,8,5,Well-maintained,Worn,Expert,Low,6
+BMW,X5,Diesel,24,5,24179,Urban,22,Off-road terrain,High,Clear,256,,139,7,169,7,8,Poor,New,Intermediate,High,6
+Tesla,Model S,Diesel,39,5,68764,Extreme Weather,31,City streets,Medium,Clear,496,,159,9,172,8,9,Poor,Worn,Expert,Medium,4
+Hyundai,Sonata,Diesel,24,5,70908,Off-Road,9,Off-road terrain,High,Clear,269,,179,6,277,7,7,Well-maintained,New,Intermediate,Medium,2
+Ford,Mustang,Electric,29,5,69997,Heavy Traffic,31,City streets,Low,Snowy,475,,179,6,187,9,5,Moderate wear,New,Novice,Medium,4
+BMW,3 Series,Diesel,30,5,78541,Highway,12,City streets,Low,Snowy,484,,156,6,219,7,8,Well-maintained,New,Expert,High,8
+Mercedes,GLE,Diesel,25,5,50314,Highway,-2,City streets,Medium,Rainy,150,,124,7,212,5,7,Well-maintained,Flat,Intermediate,Low,6
+Ford,F-150,Electric,32,5,76271,Highway,0,Off-road terrain,High,Snowy,291,,137,9,260,5,7,Poor,New,Novice,High,5
+Mercedes,GLE,Diesel,39,4,26765,Extreme Weather,-2,City streets,High,Clear,286,,102,7,249,5,5,Well-maintained,Worn,Expert,Low,10
+Toyota,Camry,Diesel,24,4,45274,Extreme Weather,16,Highway,Low,Clear,360,,124,7,234,8,8,Poor,Worn,Expert,Medium,5
+Ford,Mustang,Diesel,26,4,50540,Extreme Weather,6,Off-road terrain,Medium,Snowy,192,,150,7,249,5,7,Poor,New,Expert,Low,1
+Ford,F-150,Electric,19,4,38161,Extreme Weather,1,City streets,Low,Snowy,236,,156,8,252,5,7,Moderate wear,New,Expert,Low,10
+Tesla,Model S,Petrol,35,5,55285,Off-Road,24,Highway,Low,Snowy,458,,186,7,238,5,8,Well-maintained,New,Intermediate,Low,3
+Ford,Mustang,Petrol,39,5,34817,Heavy Traffic,26,City streets,Low,Snowy,465,,158,6,207,8,6,Well-maintained,Worn,Expert,Low,9
+Toyota,Corolla,Diesel,28,4,77647,Urban,0,Highway,High,Clear,428,,183,6,196,8,5,Moderate wear,Worn,Novice,Medium,4
+Toyota,Camry,Diesel,32,5,64052,Off-Road,21,City streets,Low,Clear,383,,189,6,185,5,8,Moderate wear,New,Novice,Medium,3
+Mercedes,GLE,Petrol,37,4,56373,Heavy Traffic,31,Highway,Low,Clear,379,,179,6,156,7,5,Well-maintained,Worn,Novice,Medium,3
+BMW,3 Series,Electric,34,5,74638,Urban,11,Highway,High,Clear,165,,152,9,249,8,9,Well-maintained,Worn,Expert,Medium,5
+Toyota,Corolla,Electric,36,5,68807,Highway,31,Off-road terrain,Medium,Snowy,389,,111,6,259,6,5,Moderate wear,Flat,Novice,Low,2
+Toyota,Corolla,Diesel,36,4,26608,Heavy Traffic,7,Off-road terrain,High,Snowy,202,,189,9,226,8,8,Moderate wear,New,Novice,High,2
+Ford,Mustang,Petrol,23,5,31183,Extreme Weather,27,Off-road terrain,High,Clear,227,,108,8,197,7,9,Poor,Flat,Expert,Medium,2
+BMW,X5,Electric,15,4,35977,Heavy Traffic,6,Off-road terrain,High,Snowy,295,,149,7,275,6,9,Well-maintained,New,Intermediate,Medium,10
+Mercedes,GLE,Electric,26,4,72208,Heavy Traffic,25,City streets,Medium,Rainy,438,,125,7,249,5,7,Poor,Worn,Novice,Low,7
+Ford,F-150,Diesel,17,4,37326,Extreme Weather,11,Highway,Medium,Rainy,335,,161,6,283,7,5,Poor,New,Novice,Medium,10
+Hyundai,Kona EV,Diesel,30,4,74380,Off-Road,4,Highway,Medium,Rainy,423,,180,7,259,6,9,Moderate wear,Worn,Expert,High,9
+BMW,X5,Diesel,18,5,76232,Heavy Traffic,-1,Off-road terrain,Medium,Rainy,200,,151,7,157,5,9,Well-maintained,Flat,Expert,Low,1
+Ford,F-150,Diesel,29,4,45208,Heavy Traffic,18,Off-road terrain,Low,Rainy,264,,147,6,162,9,7,Poor,Flat,Intermediate,Medium,1
+Tesla,Model 3,Petrol,24,5,40545,Heavy Traffic,5,City streets,High,Snowy,216,,168,8,173,5,6,Moderate wear,Flat,Intermediate,Medium,5
+Tesla,Model S,Petrol,29,5,51510,Heavy Traffic,27,Highway,Medium,Snowy,266,,123,7,188,6,7,Moderate wear,Worn,Novice,High,10
+BMW,X5,Diesel,33,4,22473,Off-Road,21,City streets,Medium,Clear,488,,169,6,232,9,7,Moderate wear,Worn,Novice,Medium,7
+BMW,3 Series,Petrol,32,4,78235,Heavy Traffic,7,Off-road terrain,Medium,Clear,373,,177,8,280,5,6,Well-maintained,Flat,Intermediate,Low,2
+Hyundai,Sonata,Electric,21,4,31939,Highway,-5,Off-road terrain,Low,Snowy,265,,151,9,288,7,9,Moderate wear,Worn,Intermediate,High,10
+Mercedes,GLE,Petrol,32,4,28831,Highway,34,Highway,Low,Rainy,155,,184,8,185,8,5,Poor,Worn,Novice,High,10
+Ford,Mustang,Petrol,17,4,21848,Heavy Traffic,20,Highway,High,Rainy,212,,163,7,283,7,6,Poor,Flat,Novice,High,3
+Hyundai,Sonata,Petrol,27,4,23774,Extreme Weather,8,Off-road terrain,High,Snowy,348,,175,6,281,6,7,Moderate wear,Flat,Intermediate,Low,10
+Hyundai,Sonata,Petrol,29,5,59994,Urban,3,Off-road terrain,Low,Clear,471,,174,8,157,9,8,Poor,Flat,Intermediate,High,2
+Toyota,Corolla,Electric,18,4,62381,Off-Road,33,City streets,High,Snowy,358,,136,9,286,6,8,Well-maintained,New,Intermediate,High,4
+Mercedes,E-Class,Petrol,23,4,46924,Urban,26,Highway,Low,Clear,179,,183,7,209,5,8,Well-maintained,New,Expert,Low,4
+Toyota,Camry,Diesel,37,5,52963,Urban,19,Highway,High,Rainy,284,,112,9,192,5,8,Moderate wear,Worn,Expert,Medium,5
+BMW,X5,Diesel,36,5,41087,Off-Road,23,Highway,Low,Rainy,421,,118,6,265,7,6,Moderate wear,New,Novice,Medium,8
+BMW,X5,Diesel,23,4,69901,Heavy Traffic,7,City streets,High,Rainy,235,,163,9,229,7,6,Moderate wear,Worn,Novice,Low,1
+Mercedes,E-Class,Electric,35,4,25190,Urban,3,Highway,Medium,Snowy,289,,170,7,196,9,6,Poor,New,Expert,Medium,5
+Mercedes,E-Class,Diesel,28,4,59293,Urban,33,City streets,Low,Clear,186,,107,8,226,9,7,Moderate wear,Worn,Novice,Low,6
+Hyundai,Kona EV,Electric,31,4,50649,Extreme Weather,5,City streets,Medium,Clear,253,,133,7,276,9,7,Well-maintained,Worn,Expert,Low,7
+Mercedes,GLE,Diesel,23,4,47407,Highway,7,Highway,Low,Snowy,431,,127,6,226,9,8,Well-maintained,Flat,Intermediate,Low,5
+Ford,F-150,Petrol,30,4,70831,Off-Road,14,Off-road terrain,Low,Rainy,315,,171,8,227,8,5,Poor,Flat,Intermediate,High,5
+Toyota,Camry,Petrol,23,4,68795,Urban,28,Off-road terrain,Low,Clear,197,,130,9,257,5,5,Poor,Worn,Expert,Low,7
+Ford,Mustang,Electric,38,5,53357,Urban,11,City streets,Low,Clear,484,,155,6,217,6,8,Moderate wear,Worn,Novice,Low,10
+Tesla,Model S,Electric,27,5,21942,Highway,31,City streets,High,Rainy,487,,148,8,283,6,6,Moderate wear,New,Novice,Medium,7
+Ford,F-150,Electric,23,5,61018,Heavy Traffic,-4,Off-road terrain,High,Rainy,314,,170,9,247,7,6,Well-maintained,Worn,Expert,Low,7
+Tesla,Model 3,Diesel,29,5,57010,Extreme Weather,29,Off-road terrain,Medium,Snowy,405,,163,7,252,5,7,Moderate wear,New,Intermediate,Low,6
+BMW,X5,Petrol,18,5,70660,Urban,34,Off-road terrain,High,Rainy,186,,113,8,272,7,5,Moderate wear,New,Expert,High,6
+BMW,X5,Electric,28,4,77911,Off-Road,32,City streets,Low,Rainy,243,,109,7,285,8,6,Poor,Flat,Novice,High,7
+BMW,X5,Petrol,25,5,46367,Urban,27,Highway,High,Clear,218,,196,9,179,9,9,Well-maintained,New,Expert,Medium,10
+Tesla,Model S,Electric,19,4,70808,Heavy Traffic,10,City streets,High,Snowy,460,,119,9,183,6,9,Moderate wear,Worn,Intermediate,Low,1
+Mercedes,E-Class,Petrol,30,4,27386,Highway,9,City streets,Low,Snowy,363,,183,6,169,6,7,Poor,Flat,Expert,High,5
+Ford,Mustang,Electric,17,5,41219,Extreme Weather,28,Off-road terrain,High,Rainy,374,,101,7,229,5,8,Poor,Flat,Expert,Medium,6
+Hyundai,Kona EV,Electric,28,4,58183,Urban,33,City streets,High,Rainy,329,,196,8,223,5,5,Well-maintained,New,Intermediate,Low,2
+Mercedes,E-Class,Diesel,17,4,53262,Urban,17,City streets,High,Rainy,439,,132,7,230,9,7,Moderate wear,Flat,Expert,Low,9
+Hyundai,Kona EV,Diesel,30,4,74747,Urban,21,Highway,Low,Rainy,444,,185,9,256,9,6,Moderate wear,Worn,Novice,Low,2
+Toyota,Corolla,Petrol,27,4,59351,Extreme Weather,25,Off-road terrain,Medium,Clear,285,,154,6,290,9,8,Moderate wear,Worn,Expert,High,4
+BMW,X5,Electric,30,4,40531,Highway,18,City streets,Medium,Snowy,184,,116,6,248,8,9,Poor,Worn,Expert,Medium,8
+Toyota,Camry,Diesel,20,4,76063,Urban,3,City streets,Low,Rainy,243,,178,8,164,6,6,Poor,Worn,Intermediate,Low,7
+Ford,Mustang,Diesel,18,5,75235,Urban,29,Off-road terrain,High,Snowy,469,,194,6,254,9,6,Well-maintained,New,Intermediate,High,4
+Mercedes,E-Class,Electric,30,5,23889,Heavy Traffic,29,Off-road terrain,Medium,Snowy,393,,140,9,288,9,9,Poor,New,Intermediate,Low,8
+Ford,Mustang,Electric,32,5,55556,Heavy Traffic,14,City streets,Low,Rainy,228,,122,7,280,9,9,Well-maintained,Worn,Novice,High,2
+Toyota,Corolla,Petrol,29,4,52019,Off-Road,15,City streets,High,Rainy,272,,198,7,194,8,7,Well-maintained,Worn,Novice,High,7
+BMW,3 Series,Electric,34,5,64293,Heavy Traffic,19,Off-road terrain,Low,Snowy,351,,136,8,162,5,6,Moderate wear,New,Novice,High,10
+Ford,Mustang,Electric,31,4,54069,Urban,5,Off-road terrain,High,Rainy,162,,170,9,194,5,7,Moderate wear,Flat,Expert,High,9
+Ford,Mustang,Diesel,34,5,79332,Extreme Weather,-1,City streets,High,Rainy,454,,120,6,241,6,6,Poor,Flat,Novice,Medium,4
+Toyota,Corolla,Petrol,37,5,72979,Urban,24,Highway,Medium,Clear,416,,130,7,160,9,8,Moderate wear,Worn,Novice,Low,7
+BMW,X5,Diesel,20,5,62719,Extreme Weather,5,Off-road terrain,High,Rainy,399,,165,6,227,5,6,Poor,Flat,Expert,High,10
+BMW,3 Series,Petrol,22,4,26704,Highway,34,Off-road terrain,Medium,Clear,257,,132,8,226,9,5,Moderate wear,Worn,Novice,Medium,10
+BMW,X5,Petrol,27,5,53523,Highway,15,Highway,Medium,Rainy,435,,101,8,260,8,5,Moderate wear,Worn,Intermediate,Low,6
+Ford,Mustang,Petrol,22,4,27664,Urban,28,Highway,Medium,Rainy,419,,130,7,261,8,5,Poor,Flat,Intermediate,High,9
+Tesla,Model S,Diesel,17,5,38909,Highway,24,Off-road terrain,High,Rainy,310,,132,7,187,6,5,Moderate wear,Worn,Novice,Low,1
+Hyundai,Sonata,Electric,33,5,53293,Extreme Weather,-4,City streets,Medium,Snowy,407,,116,8,159,5,7,Well-maintained,Flat,Expert,Medium,5
+Mercedes,E-Class,Petrol,24,5,26004,Extreme Weather,12,City streets,Medium,Snowy,456,,140,6,173,5,8,Well-maintained,Flat,Expert,High,2
+Tesla,Model S,Diesel,15,4,75598,Highway,33,City streets,Low,Snowy,393,,167,9,185,9,6,Moderate wear,Flat,Expert,Low,6
+Tesla,Model S,Diesel,25,5,77085,Off-Road,32,City streets,High,Rainy,263,,103,6,217,8,7,Well-maintained,New,Intermediate,Low,2
+Hyundai,Kona EV,Diesel,20,4,48582,Off-Road,10,Highway,Medium,Snowy,461,,107,7,176,7,5,Moderate wear,New,Expert,High,6
+Ford,Mustang,Electric,27,4,70909,Off-Road,4,Highway,Medium,Clear,459,,128,7,286,9,9,Moderate wear,New,Novice,Low,8
+Hyundai,Sonata,Electric,36,4,28753,Urban,13,Highway,High,Snowy,495,,180,7,168,7,8,Well-maintained,Flat,Novice,Low,7
+Mercedes,E-Class,Diesel,27,5,23959,Off-Road,2,Highway,Medium,Clear,303,,117,7,200,8,5,Well-maintained,Flat,Intermediate,Low,10
+Ford,F-150,Petrol,38,5,66901,Off-Road,17,Off-road terrain,Low,Rainy,382,,154,6,212,5,6,Well-maintained,Flat,Novice,High,7
+Toyota,Corolla,Diesel,20,4,39483,Heavy Traffic,34,Off-road terrain,Medium,Clear,345,,174,6,213,6,7,Poor,Worn,Expert,High,5
+Hyundai,Sonata,Electric,23,4,20796,Extreme Weather,32,City streets,Low,Rainy,295,,156,8,209,8,7,Well-maintained,New,Novice,Medium,3
+Mercedes,E-Class,Electric,21,5,64542,Urban,13,Highway,High,Rainy,176,,145,7,182,8,6,Poor,Flat,Intermediate,Low,6
+Hyundai,Sonata,Petrol,28,5,60831,Urban,16,Highway,Medium,Clear,400,,137,7,285,8,9,Moderate wear,Flat,Intermediate,Medium,4
+Toyota,Camry,Petrol,17,5,30532,Urban,11,City streets,Medium,Rainy,380,,193,7,217,7,9,Poor,Worn,Novice,High,6
+Mercedes,E-Class,Diesel,27,4,42444,Extreme Weather,3,Highway,Low,Rainy,199,,178,9,247,7,9,Poor,Worn,Intermediate,Low,7
+Mercedes,E-Class,Petrol,39,5,52362,Off-Road,22,City streets,Medium,Snowy,345,,177,8,239,8,6,Well-maintained,Worn,Intermediate,Medium,2
+Hyundai,Sonata,Diesel,18,4,44680,Heavy Traffic,21,Off-road terrain,Low,Clear,196,,142,6,199,9,5,Well-maintained,Worn,Intermediate,Medium,6
+Toyota,Camry,Diesel,29,5,71105,Off-Road,33,Off-road terrain,Medium,Clear,398,,106,9,250,8,8,Poor,Worn,Intermediate,High,10
+Hyundai,Kona EV,Petrol,21,4,71969,Highway,7,Off-road terrain,Low,Rainy,325,,173,9,267,5,5,Poor,New,Novice,Low,8
+BMW,X5,Electric,31,5,49672,Extreme Weather,7,Off-road terrain,Medium,Snowy,491,,197,7,157,5,9,Moderate wear,Worn,Intermediate,Medium,2
+Tesla,Model 3,Electric,15,5,32803,Heavy Traffic,20,Highway,High,Clear,166,,170,7,197,9,7,Poor,Worn,Intermediate,Low,1
+Ford,F-150,Diesel,28,4,64888,Off-Road,20,Highway,Medium,Clear,430,,199,9,181,6,6,Well-maintained,Worn,Novice,Medium,10
+Tesla,Model 3,Electric,30,5,58526,Highway,27,Off-road terrain,Low,Clear,448,,188,6,162,7,8,Poor,New,Novice,High,4
+Toyota,Camry,Diesel,24,4,65414,Heavy Traffic,15,City streets,Medium,Snowy,351,,173,9,294,6,9,Well-maintained,Worn,Expert,High,5
+Toyota,Camry,Petrol,15,4,32204,Heavy Traffic,13,Off-road terrain,Low,Clear,186,,169,7,279,7,5,Moderate wear,New,Novice,Low,3
+Hyundai,Kona EV,Diesel,25,5,24001,Heavy Traffic,23,Off-road terrain,Low,Clear,352,,124,7,191,6,5,Poor,New,Intermediate,Medium,9
+Mercedes,GLE,Petrol,31,4,64864,Heavy Traffic,33,Highway,Low,Snowy,219,,131,9,160,6,6,Poor,Flat,Intermediate,Low,2
+BMW,X5,Petrol,25,5,34101,Off-Road,31,Highway,High,Rainy,245,,198,8,266,8,6,Moderate wear,Worn,Expert,Medium,9
+Ford,Mustang,Electric,35,5,29765,Urban,13,Highway,High,Clear,152,,136,6,165,5,9,Poor,Worn,Novice,Medium,1
+Tesla,Model S,Electric,23,4,49057,Extreme Weather,8,Off-road terrain,Medium,Snowy,163,,104,8,154,9,7,Well-maintained,New,Intermediate,Low,3
+Hyundai,Kona EV,Petrol,27,4,64542,Urban,12,Off-road terrain,Medium,Clear,227,,155,9,199,6,6,Poor,New,Expert,Medium,10
+Mercedes,E-Class,Petrol,32,5,72165,Off-Road,8,City streets,High,Snowy,242,,198,9,187,8,7,Poor,Flat,Novice,Medium,10
+Mercedes,E-Class,Electric,24,4,68047,Highway,27,City streets,Low,Rainy,487,,118,8,206,7,5,Moderate wear,Flat,Intermediate,High,9
+BMW,X5,Petrol,32,5,72748,Heavy Traffic,8,City streets,High,Clear,264,,143,9,231,6,8,Moderate wear,Worn,Expert,Medium,2
+BMW,3 Series,Diesel,33,5,29321,Heavy Traffic,27,Highway,High,Clear,249,,160,9,204,7,7,Well-maintained,Flat,Intermediate,High,6
+BMW,3 Series,Diesel,25,4,54312,Highway,5,Off-road terrain,Medium,Clear,326,,101,8,160,6,7,Poor,Worn,Expert,Low,9
+BMW,3 Series,Electric,16,5,64740,Urban,4,Highway,Medium,Snowy,377,,165,7,226,7,9,Moderate wear,Flat,Expert,Medium,10
+Ford,Mustang,Diesel,38,5,20533,Extreme Weather,13,City streets,Medium,Rainy,399,,151,9,227,6,8,Moderate wear,Worn,Novice,High,10
+Hyundai,Sonata,Electric,22,5,31332,Extreme Weather,0,City streets,High,Snowy,414,,114,9,254,7,9,Poor,Flat,Intermediate,Low,3
+Toyota,Camry,Electric,17,5,44073,Urban,17,Off-road terrain,Medium,Rainy,295,,124,8,297,6,9,Moderate wear,Worn,Novice,Low,7
+Ford,F-150,Diesel,17,5,65206,Extreme Weather,17,Off-road terrain,Low,Clear,490,,152,7,217,5,5,Well-maintained,Worn,Expert,Low,1
+Tesla,Model S,Petrol,24,4,66877,Highway,14,Off-road terrain,Medium,Rainy,201,,162,6,269,5,6,Poor,New,Novice,High,1
+Hyundai,Sonata,Petrol,37,5,72433,Urban,4,Highway,Low,Rainy,154,,133,9,294,5,8,Moderate wear,New,Intermediate,Low,5
+Ford,Mustang,Petrol,18,4,23521,Urban,21,City streets,Low,Clear,232,,165,7,163,8,6,Poor,New,Expert,Medium,3
+Mercedes,E-Class,Electric,33,4,40852,Urban,34,Off-road terrain,Medium,Clear,172,,106,6,291,7,7,Moderate wear,New,Intermediate,Low,4
+Hyundai,Kona EV,Electric,17,5,58405,Extreme Weather,29,Off-road terrain,Low,Rainy,479,,196,9,229,7,6,Well-maintained,Flat,Novice,High,8
+BMW,X5,Petrol,25,4,26450,Heavy Traffic,15,Off-road terrain,Low,Clear,394,,105,6,225,6,5,Moderate wear,Worn,Expert,Low,10
+Hyundai,Kona EV,Diesel,37,4,73257,Extreme Weather,17,Highway,Medium,Clear,262,,129,9,227,9,5,Moderate wear,New,Expert,Medium,7
+Toyota,Corolla,Electric,25,5,60751,Extreme Weather,26,Off-road terrain,Low,Snowy,391,,144,9,236,8,7,Moderate wear,Worn,Intermediate,Medium,1
+Mercedes,E-Class,Petrol,24,5,68971,Highway,4,Highway,Medium,Snowy,393,,194,8,267,9,5,Poor,Worn,Expert,Low,9
+BMW,X5,Electric,26,4,33881,Highway,16,Off-road terrain,Low,Snowy,453,,103,6,285,5,8,Moderate wear,Flat,Novice,Low,5
+Ford,Mustang,Petrol,38,4,69581,Highway,-1,Off-road terrain,Medium,Clear,498,,127,9,203,9,8,Moderate wear,Worn,Expert,High,7
+Mercedes,E-Class,Petrol,32,4,28573,Urban,25,Off-road terrain,Low,Clear,239,,186,7,204,6,9,Poor,Worn,Novice,Low,10
+Tesla,Model S,Petrol,36,5,73554,Urban,31,Off-road terrain,High,Snowy,231,,198,7,216,9,5,Poor,Flat,Novice,High,6
+Tesla,Model S,Diesel,35,4,54469,Heavy Traffic,5,Off-road terrain,Low,Snowy,358,,138,8,276,9,5,Well-maintained,Flat,Novice,High,3
+Toyota,Corolla,Electric,19,4,76630,Extreme Weather,21,City streets,Medium,Snowy,179,,138,8,162,6,8,Poor,Flat,Expert,Low,7
+Tesla,Model S,Electric,22,4,64145,Extreme Weather,14,Highway,Low,Snowy,437,,125,7,297,6,6,Poor,Worn,Expert,Medium,5
+Mercedes,GLE,Diesel,23,5,38174,Heavy Traffic,3,City streets,High,Snowy,203,,164,7,281,8,6,Moderate wear,Flat,Intermediate,High,10
+Toyota,Camry,Diesel,30,5,46015,Extreme Weather,2,Off-road terrain,Low,Snowy,445,,126,9,254,6,7,Well-maintained,Flat,Expert,High,1
+Ford,F-150,Petrol,37,5,77576,Highway,28,Highway,High,Snowy,208,,102,6,227,7,5,Moderate wear,New,Novice,High,1
+BMW,3 Series,Electric,22,5,44506,Highway,21,Highway,Medium,Rainy,481,,121,9,161,7,8,Poor,New,Expert,Low,9
+Mercedes,E-Class,Diesel,22,4,50399,Heavy Traffic,9,Off-road terrain,High,Clear,364,,178,8,252,6,6,Moderate wear,Flat,Expert,Medium,3
+Tesla,Model S,Petrol,24,5,41529,Urban,2,Highway,Medium,Rainy,447,,136,7,289,8,5,Moderate wear,Worn,Expert,High,4
+Ford,Mustang,Electric,15,4,57653,Highway,13,Highway,Low,Rainy,365,,160,9,180,6,7,Well-maintained,Worn,Expert,High,6
+BMW,X5,Electric,38,5,27276,Highway,34,City streets,High,Snowy,167,,140,7,292,9,6,Well-maintained,Flat,Intermediate,High,7
+Toyota,Camry,Diesel,31,4,56375,Highway,8,City streets,Low,Rainy,258,,123,8,156,5,7,Poor,Worn,Novice,Low,5
+Ford,F-150,Diesel,19,4,49536,Off-Road,-2,Off-road terrain,Low,Rainy,339,,159,9,233,5,9,Moderate wear,New,Novice,High,6
+Ford,Mustang,Petrol,38,5,41537,Extreme Weather,33,Off-road terrain,Low,Rainy,301,,102,6,238,7,9,Moderate wear,New,Intermediate,Low,7
+Toyota,Corolla,Diesel,39,4,75372,Extreme Weather,25,City streets,High,Rainy,181,,108,9,244,5,9,Poor,New,Expert,Medium,6
+Tesla,Model 3,Petrol,31,5,67419,Extreme Weather,7,Highway,Low,Snowy,220,,127,7,162,8,5,Poor,Flat,Intermediate,High,8
+BMW,X5,Diesel,32,4,61756,Highway,23,Off-road terrain,Low,Snowy,170,,142,7,225,9,7,Well-maintained,Worn,Intermediate,Medium,5
+Toyota,Corolla,Electric,21,4,43583,Off-Road,27,Highway,Low,Snowy,428,,142,8,151,6,7,Well-maintained,Worn,Expert,Low,7
+BMW,X5,Diesel,32,5,64844,Heavy Traffic,10,Off-road terrain,Medium,Clear,342,,181,7,164,5,5,Moderate wear,Worn,Novice,Medium,3
+Hyundai,Kona EV,Electric,24,4,29431,Extreme Weather,20,City streets,High,Rainy,335,,111,6,265,6,5,Well-maintained,Flat,Intermediate,Medium,1
+Toyota,Corolla,Electric,39,5,24132,Extreme Weather,14,Off-road terrain,Low,Rainy,254,,118,6,207,8,7,Well-maintained,Worn,Expert,High,7
+Mercedes,GLE,Electric,17,4,66290,Highway,33,Off-road terrain,Medium,Snowy,399,,156,6,201,7,8,Moderate wear,Worn,Intermediate,Low,7
+Mercedes,E-Class,Electric,35,4,24158,Highway,30,Off-road terrain,Low,Snowy,299,,171,8,262,9,8,Poor,Worn,Intermediate,High,6
+Mercedes,GLE,Electric,19,5,73516,Urban,30,Off-road terrain,Low,Snowy,392,,185,8,152,9,7,Moderate wear,Worn,Novice,Medium,9
+Tesla,Model 3,Electric,21,5,47326,Highway,19,Off-road terrain,Medium,Snowy,195,,176,7,181,5,8,Moderate wear,Worn,Expert,Low,6
+Toyota,Camry,Petrol,22,4,64588,Heavy Traffic,11,City streets,Medium,Clear,333,,162,8,223,6,8,Well-maintained,Worn,Expert,High,10
+Tesla,Model 3,Diesel,35,5,73470,Heavy Traffic,11,Highway,High,Snowy,382,,114,9,298,8,7,Moderate wear,New,Intermediate,High,10
+Hyundai,Sonata,Electric,15,5,66861,Extreme Weather,7,City streets,High,Clear,334,,116,9,163,7,5,Poor,Worn,Novice,High,2
+Ford,Mustang,Petrol,26,4,36761,Urban,19,City streets,High,Rainy,462,,136,9,186,8,6,Well-maintained,Flat,Expert,High,3
+BMW,X5,Diesel,37,4,33986,Off-Road,1,Highway,Medium,Snowy,499,,197,6,281,6,5,Moderate wear,Worn,Expert,High,2
+Tesla,Model S,Petrol,17,4,33281,Heavy Traffic,23,City streets,Medium,Clear,233,,173,9,167,9,9,Well-maintained,Flat,Expert,Low,10
+Toyota,Camry,Electric,35,5,63188,Off-Road,15,City streets,Medium,Rainy,424,,103,6,265,9,5,Well-maintained,Worn,Expert,Low,3
+Toyota,Corolla,Petrol,18,4,63022,Off-Road,33,Off-road terrain,Low,Clear,450,,131,9,246,5,5,Moderate wear,Worn,Expert,Low,6
+Ford,F-150,Electric,30,5,70924,Extreme Weather,2,Off-road terrain,Low,Clear,294,,117,9,292,8,5,Poor,New,Expert,Medium,2
+Tesla,Model 3,Petrol,27,4,23956,Highway,20,Highway,High,Rainy,390,,119,9,241,8,5,Well-maintained,New,Intermediate,High,1
+Toyota,Camry,Electric,24,5,42315,Off-Road,26,Off-road terrain,High,Snowy,407,,189,6,294,5,8,Moderate wear,Flat,Intermediate,High,4
+Hyundai,Sonata,Electric,21,4,75202,Heavy Traffic,0,Off-road terrain,High,Snowy,451,,143,9,157,6,9,Well-maintained,New,Expert,High,4
+Hyundai,Sonata,Electric,21,5,20164,Extreme Weather,20,Off-road terrain,Medium,Snowy,171,,138,8,207,6,6,Moderate wear,Worn,Intermediate,Low,10
+Mercedes,E-Class,Petrol,29,4,67177,Highway,26,City streets,Medium,Clear,484,,147,8,189,7,8,Poor,Flat,Intermediate,Medium,9
+Mercedes,GLE,Diesel,38,4,39623,Extreme Weather,8,Off-road terrain,Medium,Snowy,238,,160,6,275,9,5,Poor,Flat,Novice,Medium,5
+Hyundai,Kona EV,Petrol,15,4,40455,Extreme Weather,19,Off-road terrain,High,Snowy,277,,180,7,153,9,8,Poor,Worn,Expert,High,7
+Toyota,Corolla,Diesel,39,4,33786,Extreme Weather,15,Off-road terrain,High,Clear,460,,108,6,298,8,9,Poor,Flat,Expert,Medium,8
+Tesla,Model 3,Petrol,26,4,62278,Heavy Traffic,13,Off-road terrain,High,Clear,457,,185,8,269,8,9,Well-maintained,Flat,Novice,Medium,10
+Ford,Mustang,Petrol,20,5,69419,Off-Road,17,Highway,Medium,Snowy,236,,152,6,281,9,6,Poor,New,Intermediate,Low,8
+Ford,F-150,Electric,27,4,67578,Urban,-1,Highway,Medium,Clear,308,,173,7,175,8,7,Well-maintained,New,Novice,Medium,4
+BMW,X5,Petrol,25,4,74887,Urban,16,Highway,Low,Snowy,293,,134,6,152,8,9,Moderate wear,New,Expert,Medium,5
+Mercedes,E-Class,Petrol,24,4,70526,Urban,18,City streets,Low,Snowy,198,,165,8,174,8,7,Poor,New,Intermediate,Medium,9
+Mercedes,GLE,Petrol,35,4,48894,Heavy Traffic,14,Off-road terrain,Medium,Clear,210,,127,8,152,9,5,Poor,Flat,Novice,Low,2
+Mercedes,GLE,Diesel,19,4,60565,Highway,14,Off-road terrain,High,Rainy,342,,114,7,270,5,6,Moderate wear,New,Expert,Low,1
+Hyundai,Kona EV,Petrol,16,5,30120,Highway,17,Off-road terrain,Low,Rainy,443,,139,8,231,9,9,Poor,Worn,Expert,Medium,2
+Tesla,Model 3,Electric,20,4,62967,Off-Road,-5,Off-road terrain,Low,Rainy,176,,111,8,179,6,6,Well-maintained,Flat,Expert,Low,3
+Hyundai,Kona EV,Electric,21,4,77716,Off-Road,34,Highway,High,Clear,339,,109,9,195,7,8,Well-maintained,Worn,Expert,Medium,6
+Ford,Mustang,Diesel,32,5,41618,Heavy Traffic,12,Off-road terrain,High,Snowy,487,,144,8,235,7,7,Well-maintained,Flat,Expert,Medium,2
+Toyota,Corolla,Electric,33,5,48029,Highway,18,Highway,High,Clear,310,,120,6,202,9,5,Moderate wear,Worn,Expert,High,10

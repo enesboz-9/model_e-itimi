@@ -1,0 +1,6 @@
+egitim/
+scripts/
+yerel.py
+README.md
+*.pyc
+__pycache__/

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AutoValuate — Araç Değerleme</title>
+  <meta name="description" content="Yapay zeka destekli araç değerleme ve piyasa analiz platformu.">
+  <meta name="theme-color" content="#09090f">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🚗%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <h1 class="hero-title">AutoValuate</h1>
+    <p class="hero-sub">Yapay Zeka Destekli Araç Değerleme &amp; Piyasa Analiz Platformu</p>
+    <p class="hero-note" id="hero-note">Yükleniyor…</p>
+  </header>
+
+  <div id="hata" class="msg err" hidden></div>
+
+  <nav class="tabs" role="tablist" aria-label="Bölümler">
+    <button class="tab" role="tab" id="tab-t1" aria-controls="t1" aria-selected="true">🔮&nbsp; Değerleme</button>
+    <button class="tab" role="tab" id="tab-t2" aria-controls="t2" aria-selected="false">🔍&nbsp; İlan Arama</button>
+    <button class="tab" role="tab" id="tab-t3" aria-controls="t3" aria-selected="false">📊&nbsp; Piyasa Analizi</button>
+    <button class="tab" role="tab" id="tab-t4" aria-controls="t4" aria-selected="false">🤖&nbsp; Model Bilgisi</button>
+    <button class="tab" role="tab" id="tab-t5" aria-controls="t5" aria-selected="false">🧪&nbsp; Performans Analizi</button>
+  </nav>
+
+  <!-- 1 · DEĞERLEME -->
+  <section class="panel" id="t1" role="tabpanel" aria-labelledby="tab-t1">
+    <div class="gcard">
+      <div class="gcard-title">📸 Araç Fotoğrafı (İsteğe Bağlı)</div>
+      <input class="file" type="file" id="foto" accept="image/jpeg,image/png" aria-label="Araç fotoğrafı yükle">
+      <p class="hint" style="margin-top:8px">Fotoğraf yükle → marka, model, kasa tipi ve renk otomatik tespit edilir.</p>
+      <div id="foto-sonuc"></div>
+    </div>
+
+    <div class="grid2">
+      <div class="gcard">
+        <div class="gcard-title">🚘 Araç Bilgileri</div>
+        <label class="f"><span class="l" id="l-marka">Marka</span><select id="t1-marka"></select></label>
+        <label class="f"><span class="l" id="l-seri">Model / Seri</span><select id="t1-seri"></select></label>
+        <div class="row">
+          <label class="f"><span class="l" id="l-yil">Yıl</span><input type="number" id="t1-yil" min="1985" max="2026" step="1" value="2019"></label>
+          <label class="f"><span class="l" id="l-km">Kilometre</span>
+            <span class="rng"><input type="range" id="t1-km" min="0" max="500000" step="5000" value="85000"><output id="t1-km-o" for="t1-km"></output></span></label>
+        </div>
+        <label class="f"><span class="l">Araç Durumu</span><select id="t1-durum"></select></label>
+        <div class="row">
+          <div>
+            <fieldset class="seg" id="g-kimden"><legend>Kimden?</legend></fieldset>
+            <fieldset class="seg" id="g-agir"><legend>Ağır Hasarlı?</legend></fieldset>
+          </div>
+          <div>
+            <fieldset class="seg" id="g-takas"><legend>Takasa Uygun?</legend></fieldset>
+            <label class="f"><span class="l">Hasar Skoru <small>(0 = orijinal, 26 = maksimum)</small></span>
+              <span class="rng"><input type="range" id="t1-hasar" min="0" max="26" step="1" value="0"><output id="t1-hasar-o" for="t1-hasar"></output></span></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="gcard">
+        <div class="gcard-title">⚙️ Teknik &amp; Ek Bilgiler <small>(İsteğe Bağlı)</small></div>
+        <p class="hint">Boş bırakılan alanlar için model ortalama değerleri kullanır.</p>
+        <details>
+          <summary>🔧 Motor &amp; Performans</summary>
+          <div class="row">
+            <label class="f"><span class="l">Motor Hacmi (cc)</span><input type="number" id="t1-cc" min="0" max="7000" step="50" value="0"></label>
+            <label class="f"><span class="l">Motor Gücü (HP)</span><input type="number" id="t1-hp" min="0" max="1500" step="5" value="0"></label>
+          </div>
+          <p class="hint">0 = belirtilmemiş</p>
+          <label class="f"><span class="l">Çekiş</span><select id="t1-cekis"></select></label>
+        </details>
+        <details>
+          <summary>🚗 Yakıt / Vites / Kasa</summary>
+          <label class="f"><span class="l">Yakıt Tipi</span><select id="t1-yakit"></select></label>
+          <label class="f"><span class="l">Vites</span><select id="t1-vites"></select></label>
+          <label class="f"><span class="l" id="l-kasa">Kasa Tipi</span><select id="t1-kasa"></select></label>
+        </details>
+        <details>
+          <summary>🎨 Renk</summary>
+          <label class="f"><span class="l" id="l-renk">Renk</span><select id="t1-renk"></select></label>
+        </details>
+      </div>
+    </div>
+
+    <button class="btn" id="t1-git" type="button">🔮&nbsp; Değerleme Yap</button>
+    <div id="t1-sonuc" aria-live="polite"></div>
+  </section>
+
+  <!-- 2 · İLAN ARAMA -->
+  <section class="panel" id="t2" role="tabpanel" aria-labelledby="tab-t2" hidden>
+    <div class="gcard">
+      <div class="gcard-title">🔎 Filtreler</div>
+      <div class="row">
+        <label class="f"><span class="l">Marka</span><select id="t2-marka"></select></label>
+        <label class="f"><span class="l">Model</span><select id="t2-seri"></select></label>
+        <label class="f"><span class="l">Göster</span>
+          <select id="t2-limit"><option>25</option><option selected>50</option><option>100</option><option>250</option><option>Tümü</option></select></label>
+      </div>
+      <div class="row">
+        <label class="f"><span class="l">Yıl min</span><input type="number" id="t2-ymin" min="1985" max="2026" value="2015"></label>
+        <label class="f"><span class="l">Yıl max</span><input type="number" id="t2-ymax" min="1985" max="2026" value="2026"></label>
+        <label class="f"><span class="l">Max KM</span>
+          <span class="rng"><input type="range" id="t2-km" min="0" max="500000" step="10000" value="200000"><output id="t2-km-o" for="t2-km"></output></span></label>
+        <label class="f"><span class="l">Sırala</span>
+          <select id="t2-sira"><option>En Düşük Fiyat</option><option>En Yüksek Fiyat</option><option>En Az KM</option><option>En Yeni</option></select></label>
+      </div>
+      <label class="f"><span class="l">Max Fiyat (TL, 0 = sınırsız)</span><input type="number" id="t2-fmax" min="0" max="100000000" step="100000" value="0"></label>
+    </div>
+    <button class="btn" id="t2-git" type="button">🔍&nbsp; Listele</button>
+    <div id="t2-sonuc" aria-live="polite" style="margin-top:18px"></div>
+  </section>
+
+  <!-- 3 · PİYASA ANALİZİ -->
+  <section class="panel" id="t3" role="tabpanel" aria-labelledby="tab-t3" hidden>
+    <div class="gcard">
+      <div class="gcard-title">📊 Filtreler</div>
+      <div class="row">
+        <label class="f"><span class="l">Marka</span><select id="t3-marka"></select></label>
+        <label class="f"><span class="l">Seri</span><select id="t3-seri"></select></label>
+        <label class="f"><span class="l">Yıl min</span><input type="number" id="t3-ymin" min="1990" max="2026" value="2015"></label>
+        <label class="f"><span class="l">Yıl max</span><input type="number" id="t3-ymax" min="1990" max="2026" value="2026"></label>
+      </div>
+    </div>
+    <div id="t3-sonuc" aria-live="polite"></div>
+  </section>
+
+  <!-- 4 · MODEL BİLGİSİ -->
+  <section class="panel" id="t4" role="tabpanel" aria-labelledby="tab-t4" hidden>
+    <div class="gcard" id="t4-ic"><div class="gcard-title">🤖 Model Performansı</div></div>
+  </section>
+
+  <!-- 5 · PERFORMANS ANALİZİ -->
+  <section class="panel" id="t5" role="tabpanel" aria-labelledby="tab-t5" hidden>
+    <div class="gcard">
+      <div class="gcard-title">🧪 Marka / Model Seçimi</div>
+      <div class="row">
+        <label class="f"><span class="l">Marka</span><select id="t5-marka"></select></label>
+        <label class="f"><span class="l">Model</span><select id="t5-model"></select></label>
+      </div>
+      <p class="hint">ⓘ Bu sekme, gerçek kullanıcı senaryolarından oluşan ayrı bir performans veri setine (6 marka / 12 model, 500 kayıt) dayanır. Değerleme sekmesindeki fiyat veri seti ile aynı kaynak değildir.</p>
+      <details>
+        <summary>🔧 Motor Modeli Bilgisi İçin Motor Girdileri (İsteğe Bağlı)</summary>
+        <div class="row">
+          <label class="f"><span class="l">Motor Hacmi (cc)</span><input type="number" id="t5-cc" min="0" max="7000" step="50" value="1600"></label>
+          <label class="f"><span class="l">Motor Gücü (HP)</span><input type="number" id="t5-hp" min="0" max="1500" step="5" value="110"></label>
+        </div>
+      </details>
+    </div>
+    <button class="btn" id="t5-git" type="button">🧪&nbsp; Performans Analizi Yap</button>
+    <div id="t5-sonuc" aria-live="polite" style="margin-top:18px"></div>
+  </section>
+
+  <footer>AutoValuate · Tahminler bilgilendirme amaçlıdır, bağlayıcı değildir.</footer>
+</div>
+<script src="/app.js" defer></script>
+</body>
+</html>

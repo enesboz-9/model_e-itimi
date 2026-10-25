@@ -1,0 +1,13 @@
+{
+  "_aciklama": "VavaCars 'VavaAI Fiyat Endeksi' - ilgili ayın bir önceki aya göre YÜZDE değişimi (TL, nominal). Yeni ay yayınlandıkça tek satır ekleyin; bilinmeyen aylar için son 3 ayın ortalaması kullanılır. Tarih: yıl-ay.",
+  "taban_ay": "2026-03",
+  "aylik_yuzde": {
+    "2026-01": 1.10,
+    "2026-02": 1.28,
+    "2026-03": 1.09,
+    "2026-04": 0.40,
+    "2026-05": 0.19,
+    "2026-06": 0.30,
+    "2026-07": 0.30
+  }
+}
