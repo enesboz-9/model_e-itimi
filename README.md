@@ -20,7 +20,7 @@ Streamlit uygulaması Vercel'de çalışmadığı için (sürekli açık WebSock
 
 ## Modeli / veriyi güncelleme
 `egitim/` içinde yeniden eğitin → `pip install pandas scikit-learn` → `python scripts/build_assets.py` → commit/push.
-Aylık endeks: `data/endeks.json` içine yeni ay satırı ekleyin (yoksa son 3 ayın ortalaması kullanılır).
+Aylık endeks: `data/endeks.json` içinde her kaynağa (`vavaai`, `fiyatplus`) yeni ay satırı ekleyin. Değerleme fiyatları her ay için kaynakların **ortalamasıyla** güncellenir; bir kaynakta o ay yoksa diğeri, hiçbirinde yoksa son 3 ayın ortalaması kullanılır. Yeni kaynak eklemek için `kaynaklar` altına aynı biçimde bir blok yeterlidir. Fiyat Değişimi sekmesi aynı veriyi kullanır.
 Eski/yeni sonuç karşılaştırması: `python scripts/test_parity.py`.
 
 ## Fiyat Değişimi sekmesi

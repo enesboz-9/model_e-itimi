@@ -34,11 +34,27 @@ def _json(ad):
     return json.loads((DATA / ad).read_text(encoding="utf-8"))
 
 
-# ── Piyasa enflasyon endeksi ─────────────────────────────────────────
+# ── Piyasa enflasyon endeksi (birden çok kaynağın ortalaması) ─────────
+def _anahtar(k):
+    return tuple(map(int, k.split("-")))
+
+
+@lru_cache(maxsize=1)
+def _kaynaklar():
+    """{kaynak: {(yil, ay): yüzde}} — endeks.json 'kaynaklar' bölümü (eski tek kaynaklı biçim de okunur)."""
+    ham = _json("endeks.json")
+    kaynaklar = ham.get("kaynaklar") or {"tek": {"ad": "Endeks", "aylik_yuzde": ham.get("aylik_yuzde", {})}}
+    return {ad: {_anahtar(k): float(v) for k, v in k_["aylik_yuzde"].items()} for ad, k_ in kaynaklar.items()}
+
+
 @lru_cache(maxsize=1)
 def _endeks():
-    ham = _json("endeks.json")["aylik_yuzde"]          # {"2026-04": 0.40, ...}
-    return {tuple(map(int, k.split("-"))): float(v) for k, v in ham.items()}
+    """Her ay için, o ayı yayımlamış kaynakların ortalaması."""
+    aylar = {}
+    for seri in _kaynaklar().values():
+        for ay, v in seri.items():
+            aylar.setdefault(ay, []).append(v)
+    return {ay: float(np.mean(v)) for ay, v in aylar.items()}
 
 
 def _ay_ekle(yil, ay, n=1):
@@ -52,20 +68,45 @@ def _ay_ekle(yil, ay, n=1):
     return yil, ay
 
 
-def enflasyon_katsayisi(hedef=None):
-    """Taban aydan hedef aya (varsayılan: bugün) bileşik katsayı."""
+def _aylik_yollar(hedef=None):
+    """Taban aydan hedef aya kadar [(ay, yüzde, tahmini_mi)] — yayımlanmamış aylar son 3 ayın ortalaması."""
     endeks = _endeks()
     bugun = hedef or datetime.date.today()
     hy, ha = bugun.year, bugun.month
     son3 = sorted(endeks)[-3:]
     varsayilan = float(np.mean([endeks[k] for k in son3]))
     y, a = VERI_SETI_TABAN
-    kat, guvenlik = 1.0, 0
+    yol, guvenlik = [], 0
     while (y, a) != (hy, ha) and guvenlik < 240:
         y, a = _ay_ekle(y, a, 1)
-        kat *= 1 + endeks.get((y, a), varsayilan) / 100.0
+        yol.append(((y, a), endeks.get((y, a), varsayilan), (y, a) not in endeks))
         guvenlik += 1
+    return yol
+
+
+def enflasyon_katsayisi(hedef=None):
+    """Taban aydan hedef aya (varsayılan: bugün) bileşik katsayı."""
+    kat = 1.0
+    for _, yuzde, _ in _aylik_yollar(hedef):
+        kat *= 1 + yuzde / 100.0
     return kat
+
+
+def endeks_ozeti(hedef=None):
+    """Arayüz için: kaynak listesi, ay ay kaynak değerleri + ortalama, tahmini aylar, katsayı."""
+    ham = _json("endeks.json")
+    kay = ham.get("kaynaklar") or {}
+    seriler, endeks = _kaynaklar(), _endeks()
+    aylik = [{"ay": f"{y}-{a:02d}", "ortalama": round(endeks[(y, a)], 3),
+              **{ad: seriler[ad].get((y, a)) for ad in seriler}} for (y, a) in sorted(endeks)]
+    yol = _aylik_yollar(hedef)
+    return {
+        "kaynaklar": [{"anahtar": ad, "ad": kay.get(ad, {}).get("ad", ad), "url": kay.get(ad, {}).get("url")} for ad in seriler],
+        "taban_ay": ham.get("taban_ay"),
+        "aylik": aylik,
+        "tahmini_aylar": [f"{y}-{a:02d}" for (y, a), _, t in yol if t],
+        "katsayi": enflasyon_katsayisi(hedef),
+    }
 
 
 def ay_etiketi(hedef=None):

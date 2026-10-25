@@ -87,6 +87,7 @@ def ayarlar():
     return {
         "ay_etiketi": core.ay_etiketi(),
         "katsayi": core.enflasyon_katsayisi(),
+        "endeks": core.endeks_ozeti(),
         "markalar": sorted(MARKA_ENC),
         "seri_haritasi": il.harita,
         "tum_seriler": sorted(k for k in __import__("kodlar").SERI_ENC if k != "nan"),

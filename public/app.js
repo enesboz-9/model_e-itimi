@@ -6,7 +6,14 @@ const e = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<'
 const sayi = (x, d = 0) => Number(x).toLocaleString('tr-TR', { maximumFractionDigits: d, minimumFractionDigits: d });
 const tl = (x) => `${sayi(x)} TL`;
 const BELIRTILMEMIS = 'Belirtilmemiş';
+/* Tema rengi (CSS değişkeni) — Plotly CSS değişkeni okuyamadığı için değerler buradan çözülür. */
+const cv = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+
+/* Araç animasyonu: yükleme alanları ve düğmeler için (stiller style.css → "Araç animasyonu") */
+const ARAC = `<svg class="arac" viewBox="0 0 200 72" aria-hidden="true" focusable="false"><g class="isik"><polygon points="190,44 236,32 236,58"/><polygon points="190,46 214,40 214,52"/></g><path class="govde" d="M8 56V45c0-5 3-8 9-9l26-5 17-15c3-3 6-4 10-4h50c5 0 9 2 12 5l17 15 28 4c9 1 15 5 15 13v7z"/><path class="cam" d="M48 31l12-12c2-2 4-3 7-3h24v15zM98 16h22c3 0 5 1 7 3l11 12H98z"/><path class="detay" d="M94 16v38"/><rect class="far" x="184" y="40" width="8" height="5" rx="2"/><rect class="stop" x="8" y="40" width="5" height="6" rx="2"/><g><circle class="kemer" cx="50" cy="57" r="16"/><circle class="lastik" cx="50" cy="58" r="13"/><g class="jant"><circle cx="50" cy="58" r="7"/><path d="M50 51v14M43 58h14M45 53l10 10M55 53l-10 10"/></g></g><g><circle class="kemer" cx="150" cy="57" r="16"/><circle class="lastik" cx="150" cy="58" r="13"/><g class="jant"><circle cx="150" cy="58" r="7"/><path d="M150 51v14M143 58h14M145 53l10 10M155 53l-10 10"/></g></g></svg>`;
+const yukleme = (mesaj, boyut = '') => `<div class="yukleme ${boyut}" role="status"><div class="yol">${ARAC}<i class="yol-serit"></i></div><p>${e(mesaj)}</p></div>`;
 let cfg = null;
+let cfgSoz; const cfgHazir = new Promise((r) => { cfgSoz = r; });
 
 async function api(yol, govde) {
   const r = await fetch(yol, govde === undefined
@@ -47,14 +54,14 @@ function aralik(id, bicim = (v) => sayi(v)) {
 
 async function calistir(btn, fn) {
   const eski = btn.innerHTML;
-  btn.disabled = true; btn.textContent = 'Hesaplanıyor…';
+  btn.disabled = true; btn.innerHTML = `<span class="btn-yuk">${ARAC}<span>Hesaplanıyor…</span></span>`;
   hataGoster('');
   let kutu = btn.parentElement.querySelector(`[data-hata-icin="${btn.id}"]`);
   if (kutu) kutu.remove();
   try { await fn(); } catch (err) {
     // Hata, butonun hemen altında (kullanıcının baktığı yerde) ve "Tekrar dene" ile gösterilir
     btn.insertAdjacentHTML('afterend', `<div class="msg err hata-satir" role="alert" data-hata-icin="${btn.id}">
-      <span>⚠️ ${e(err.message)}</span><button type="button" class="tekrar-k">🔄 Tekrar dene</button></div>`);
+      <span>⚠️ ${e(err.message)}</span><button type="button" class="tekrar-k">Tekrar dene</button></div>`);
     btn.nextElementSibling.querySelector('button').addEventListener('click', () => btn.click());
   } finally { btn.disabled = false; btn.innerHTML = eski; }
 }
@@ -72,7 +79,7 @@ function plotly() {
   return plotlyP;
 }
 const DUZEN = (ek = {}) => ({
-  paper_bgcolor: 'rgba(0,0,0,0)', plot_bgcolor: 'rgba(0,0,0,0)', font: { color: '#9ca3af' },
+  paper_bgcolor: 'rgba(0,0,0,0)', plot_bgcolor: 'rgba(0,0,0,0)', font: { color: cv('--soft'), family: 'Figtree, system-ui, sans-serif' },
   margin: { t: 44, b: 30, l: 50, r: 10 }, ...ek,
 });
 const CIZ = { displaylogo: false, responsive: true };
@@ -82,10 +89,10 @@ const f = (v, birim = '') => (v === null || v === undefined || v === '' || Strin
 
 function motorKart(m, marka, kisa) {
   if (!m) return '';
-  const k = m.kayit, renk = { 'Yüksek': '#34d399', 'Orta': '#fbbf24', 'Düşük': '#f87171' }[m.guven];
+  const k = m.kayit, renk = { 'Yüksek': 'var(--green)', 'Orta': 'var(--yellow)', 'Düşük': 'var(--red)' }[m.guven];
   return `<div class="gcard" style="margin-top:20px">
-    <div class="gcard-title">🔧 Motor Modeli Bilgisi <small>(en yakın eşleşen kayıt · güven: <b style="color:${renk}">${m.guven}</b>)</small></div>
-    <div style="font-size:1.05rem;font-weight:600;margin-bottom:10px">${e(marka)} ${f(k.motor_kodu)} <span style="color:#6b7280;font-weight:400;font-size:.82rem">(${f(k.uretim_yillari)})</span></div>
+    <div class="gcard-title">Motor Modeli Bilgisi <small>(en yakın eşleşen kayıt · güven: <b style="color:${renk}">${m.guven}</b>)</small></div>
+    <div style="font-size:1.05rem;font-weight:600;margin-bottom:10px">${e(marka)} ${f(k.motor_kodu)} <span style="color:var(--mute);font-weight:400;font-size:.82rem">(${f(k.uretim_yillari)})</span></div>
     <div class="kv">
       <span>Hacim: <b>${f(k.hacim_cc, ' cc')}</b></span><span>Güç: <b>${f(k.guc_hp, ' hp')}</b></span>
       <span>Tork: <b>${f(k.tork_nm, ' nm')}</b></span><span>Yakıt: <b>${f(k.yakit_tipi)}</b></span>
@@ -162,14 +169,28 @@ function t1SeriDoldur(secili) {
   doldur($('t1-seri'), liste, secili);
 }
 
-function digerSekmelerleSenkronla() {
-  const marka = $('t1-marka').value, seri = $('t1-seri').value;
-  if (!cfg.ilan_markalari.includes(marka)) return;
+/* Araç (marka + model) üç sekme arasında ortaktır: Değerleme (t1), İlan Arama (t2), Piyasa (t3).
+   Herhangi birinde değişince diğer ikisi de aynı araca geçer. Programatik .value atamaları
+   change olayı tetiklemediği için döngü oluşmaz. "Tümü" = model filtresi yok (t1'de karşılığı yoktur,
+   orada mevcut model korunur; marka değiştiyse listenin ilk modeli seçilir). */
+const VARSAYILAN_MARKA = 'Honda', VARSAYILAN_SERI = 'Civic';
+
+function aracSenkronla(kaynak) {
+  const marka = $(`${kaynak}-marka`).value, seriHam = $(`${kaynak}-seri`).value;
+  const seri = seriHam && seriHam !== 'Tümü' ? seriHam : null;
+  if (kaynak !== 't1' && cfg.markalar.includes(marka)) {
+    $('t1-marka').value = marka;
+    t1SeriDoldur(seri ?? $('t1-seri').value);
+  }
+  if (!cfg.ilan_markalari.includes(marka)) return;   // ilan verisi olmayan marka: t2/t3 olduğu gibi kalır
   for (const p of ['t2', 't3']) {
+    if (p === kaynak) continue;
     $(`${p}-marka`).value = marka;
     seriSecenekleri(p, seri);
   }
+  if (kaynak !== 't3' && !$('t3').hidden) analizErtele();   // açık olan piyasa sekmesi yenilensin
 }
+const digerSekmelerleSenkronla = () => aracSenkronla('t1');
 function seriSecenekleri(p, secili) {
   const marka = $(`${p}-marka`).value;
   const liste = ['Tümü', ...(cfg.seri_haritasi[marka] || [])];
@@ -187,7 +208,7 @@ function fotoKaldir() {
 async function fotoYukle(dosya) {
   $('foto-kaldir').hidden = false;
   const kutu = $('foto-sonuc');
-  kutu.innerHTML = '<div class="loading">🤖 AI analiz ediyor…</div>';
+  kutu.innerHTML = yukleme('Fotoğraf analiz ediliyor…', 'kucuk');
   try {
     // Vercel istek gövdesi sınırı ~4,5 MB: görüntüyü tarayıcıda küçültüp JPEG'e çeviriyoruz.
     const bmp = await createImageBitmap(dosya);
@@ -241,14 +262,14 @@ async function degerle() {
   const r = await api('/api/tahmin', govde);
   const g = r.girdi, v = r.verdict;
   const vcls = { uygun: 'verdict-uygun', pahali: 'verdict-pahali', normal: 'verdict-normal' }[v.tip];
-  const oneriler = r.oneriler.length ? `<div class="gcard"><div class="gcard-title">💡 Benzer Araç Önerileri <small>(aynı kasa, farklı marka · model yılı ${g.yil - 3}–${g.yil + 3} ilanlarının ortalamasına göre)</small></div>${
+  const oneriler = r.oneriler.length ? `<div class="gcard"><div class="gcard-title">Benzer Araç Önerileri <small>(aynı kasa, farklı marka · model yılı ${g.yil - 3}–${g.yil + 3} ilanlarının ortalamasına göre)</small></div>${
     r.oneriler.map((o) => {
       const fark = r.tahmin > 0 ? (o.ort_fiyat - r.tahmin) / r.tahmin * 100 : 0;
       return `<div class="oneri-card"><div class="oneri-ust"><span><b>${e(o.marka)} ${e(o.seri)}</b>
-        <span style="color:#6b7280;font-size:.82rem;margin-left:10px">${o.yil_min === o.yil_max ? o.yil_min : `${o.yil_min}–${o.yil_max}`} model · ort. ${sayi(o.ort_km)} km</span></span>
-        <span style="text-align:right"><span style="color:${fark < 0 ? '#34d399' : '#f87171'};font-weight:600">Ort. ${tl(o.ort_fiyat)}</span>
-        <span style="display:block;color:#6b7280;font-size:.75rem">${fark < 0 ? '▼' : '▲'} tahmine göre %${Math.abs(fark).toFixed(1)}</span></span></div>
-        <div style="color:#6b7280;font-size:.8rem;margin-top:4px">${e(o.yakit)} · ${e(o.vites)} · ${e(o.kasa)} · ${sayi(o.adet)} ilan · fiyat aralığı ${tl(o.min_fiyat)} – ${tl(o.max_fiyat)}</div></div>`;
+        <span style="color:var(--mute);font-size:.82rem;margin-left:10px">${o.yil_min === o.yil_max ? o.yil_min : `${o.yil_min}–${o.yil_max}`} model · ort. ${sayi(o.ort_km)} km</span></span>
+        <span style="text-align:right"><span style="color:${fark < 0 ? 'var(--green)' : 'var(--red)'};font-weight:600">Ort. ${tl(o.ort_fiyat)}</span>
+        <span style="display:block;color:var(--mute);font-size:.75rem">${fark < 0 ? '▼' : '▲'} tahmine göre %${Math.abs(fark).toFixed(1)}</span></span></div>
+        <div style="color:var(--mute);font-size:.8rem;margin-top:4px">${e(o.yakit)} · ${e(o.vites)} · ${e(o.kasa)} · ${sayi(o.adet)} ilan · fiyat aralığı ${tl(o.min_fiyat)} – ${tl(o.max_fiyat)}</div></div>`;
     }).join('')}</div>` : '';
   $('t1-sonuc').innerHTML = `
     ${r.luks_uyari ? `<div class="msg warn">⚠️ <b>${e(g.marka)}</b> için tahmin güvenilirliği düşük olabilir. Eğitim verisinde bu marka için çok az ilan bulunmaktadır. Sonucu referans değil, yaklaşık bir alt/üst sınır olarak değerlendirin.</div>` : ''}
@@ -266,7 +287,7 @@ async function degerle() {
       <div class="mkart"><div class="mkart-val">${r.arac_yasi} yıl</div><div class="mkart-lbl">Araç Yaşı</div></div>
     </div>
     ${motorKart(r.motor, g.marka, false)}
-    ${r.piyasa && r.piyasa.adet ? `<div class="gcard" style="margin-top:20px"><div class="gcard-title">📊 Piyasa Özeti (${e(g.marka)} · ${g.yil - 2}–${g.yil + 2})</div><div class="kv">${ozetSatiri(r.piyasa)}</div></div>` : ''}
+    ${r.piyasa && r.piyasa.adet ? `<div class="gcard" style="margin-top:20px"><div class="gcard-title">Piyasa Özeti (${e(g.marka)} · ${g.yil - 2}–${g.yil + 2})</div><div class="kv">${ozetSatiri(r.piyasa)}</div></div>` : ''}
     ${oneriler}`;
   $('t1-sonuc').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
@@ -288,11 +309,11 @@ async function ilanAra() {
   kutu.innerHTML = `${ozet}<p class="hint" style="margin:0 0 12px"><b>${r.ilanlar.length}</b> sonuç gösteriliyor (toplam eşleşen: <b>${sayi(r.toplam)}</b>) · 🟢 Uygun 🟡 Ortalama 🔴 Pahalı</p>${
     r.ilanlar.map((i) => {
       const p = i.fark_pct;
-      const [cls, fark] = p <= -10 ? ['ilan-uygun', `<span style="color:#34d399;font-size:.8rem;font-weight:600">▼ %${Math.abs(p).toFixed(1)} ucuz</span>`]
-        : p >= 10 ? ['ilan-pahali', `<span style="color:#f87171;font-size:.8rem;font-weight:600">▲ %${Math.abs(p).toFixed(1)} pahalı</span>`]
-          : ['ilan-normal', '<span style="color:#fbbf24;font-size:.8rem;font-weight:600">≈ Ortalama</span>'];
+      const [cls, fark] = p <= -10 ? ['ilan-uygun', `<span style="color:var(--green);font-size:.8rem;font-weight:600">▼ %${Math.abs(p).toFixed(1)} ucuz</span>`]
+        : p >= 10 ? ['ilan-pahali', `<span style="color:var(--red);font-size:.8rem;font-weight:600">▲ %${Math.abs(p).toFixed(1)} pahalı</span>`]
+          : ['ilan-normal', '<span style="color:var(--yellow);font-size:.8rem;font-weight:600">≈ Ortalama</span>'];
       return `<div class="ilan ${cls}"><div class="ilan-ust"><div><b>${e(i.marka)} ${e(i.seri)}</b>
-        <span style="color:#6b7280;font-size:.85rem;margin-left:8px">${e(i.yil ?? '')}</span></div>
+        <span style="color:var(--mute);font-size:.85rem;margin-left:8px">${e(i.yil ?? '')}</span></div>
         <div style="text-align:right"><div class="ilan-fiyat">${tl(i.fiyat)}</div>${fark}</div></div>
         <div class="ilan-meta"><span class="badge b-green">Sahibinden</span> 🛣️ ${sayi(i.km)} km · ⛽ ${e(i.yakit)} · 🔧 ${e(i.vites)} · 🚘 ${e(i.kasa)}</div></div>`;
     }).join('')}`;
@@ -302,7 +323,7 @@ async function ilanAra() {
 let analizSayac = 0;
 async function analizCalistir() {
   const kutu = $('t3-sonuc'), sira = ++analizSayac;
-  kutu.innerHTML = '<div class="loading">Yükleniyor…</div>';
+  kutu.innerHTML = yukleme('Piyasa verileri hazırlanıyor…');
   try {
     const [r, P] = await Promise.all([
       api('/api/analiz', {
@@ -321,23 +342,23 @@ async function analizCalistir() {
       <div class="gcard"><div id="g3" class="chart"></div></div>`;
     P.newPlot('g1', [{
       type: 'bar', x: r.yil_medyan.map((d) => d.yil), y: r.yil_medyan.map((d) => d.medyan),
-      marker: { color: r.yil_medyan.map((d) => d.medyan), colorscale: [[0, '#312e81'], [0.5, '#6366f1'], [1, '#34d399']] },
+      marker: { color: r.yil_medyan.map((d) => d.medyan), colorscale: [[0, cv('--bar-lo')], [0.5, cv('--accent')], [1, cv('--green')]] },
       hovertemplate: '%{x}: %{y:,.0f} TL<extra></extra>',
     }], DUZEN({ title: { text: `${marka} — Yıl Bazlı Medyan Fiyat`, font: { size: 14 } } }), CIZ);
     const yk = Object.entries(a.yakit);
     P.newPlot('g2', [{
       type: 'pie', hole: 0.45, labels: yk.map((x) => x[0]), values: yk.map((x) => x[1]),
-      marker: { colors: ['#6366f1', '#34d399', '#f59e0b', '#f87171', '#818cf8'] }, textinfo: 'label+percent',
+      marker: { colors: [cv('--accent'), cv('--green'), cv('--yellow'), cv('--red'), '#8b7cf6'] }, textinfo: 'label+percent',
     }], DUZEN({ title: { text: 'Yakıt Tipi Dağılımı', font: { size: 14 } }, showlegend: false }), CIZ);
     const { kenar, sayim } = r.histogram;
     P.newPlot('g3', [{
       type: 'bar', x: sayim.map((_, i) => (kenar[i] + kenar[i + 1]) / 2), y: sayim,
-      width: sayim.map((_, i) => kenar[i + 1] - kenar[i]), marker: { color: '#6366f1' },
+      width: sayim.map((_, i) => kenar[i + 1] - kenar[i]), marker: { color: cv('--accent') },
       hovertemplate: '%{x:,.0f} TL civarı: %{y} ilan<extra></extra>',
     }], DUZEN({
       title: { text: `${marka} — Fiyat Dağılımı`, font: { size: 14 } }, bargap: 0.02,
-      shapes: [{ type: 'line', x0: a.medyan, x1: a.medyan, yref: 'paper', y0: 0, y1: 1, line: { color: '#34d399', dash: 'dash' } }],
-      annotations: [{ x: a.medyan, yref: 'paper', y: 1, text: 'Medyan', showarrow: false, font: { color: '#34d399' }, yanchor: 'bottom' }],
+      shapes: [{ type: 'line', x0: a.medyan, x1: a.medyan, yref: 'paper', y0: 0, y1: 1, line: { color: cv('--green'), dash: 'dash' } }],
+      annotations: [{ x: a.medyan, yref: 'paper', y: 1, text: 'Medyan', showarrow: false, font: { color: cv('--green') }, yanchor: 'bottom' }],
     }), CIZ);
   } catch (err) {
     if (sira === analizSayac) kutu.innerHTML = `<div class="msg err">⚠️ ${e(err.message)}</div>`;
@@ -353,23 +374,27 @@ const yuzde = (x, d = 1) => `${x < 0 ? '−' : x > 0 ? '+' : ''}%${sayi(Math.abs
 /* Artış ▲ (yeşil) / düşüş ▼ (kırmızı): renge ek olarak şekil de taşır (renk körlüğü) */
 const yon = (x) => (x > 0 ? '▲' : x < 0 ? '▼' : '■');
 const degisim = (x, d = 1) => `${yon(x)} %${sayi(Math.abs(x), d)}`;
-const degRenk = (x) => (x > 0 ? '#34d399' : x < 0 ? '#f87171' : '#9ca3af');
-const HAT = { arti: '#34d399', eksi: '#f87171', ana: '#6366f1', ikinci: '#f59e0b' };
+const degRenk = (x) => (x > 0 ? cv('--green') : x < 0 ? cv('--red') : cv('--soft'));
+const HAT = { get arti() { return cv('--green'); }, get eksi() { return cv('--red'); }, get ana() { return cv('--accent'); }, get ikinci() { return cv('--yellow'); } };
 const kaynakLink = (u, ad) => `<a href="${e(u)}" target="_blank" rel="noopener noreferrer">${e(ad)}</a>`;
 let fiyatVeri = null;
 
 async function fiyatDegisimiSekmesi() {
   const kutu = $('t4-ic');
+  kutu.innerHTML = yukleme('Fiyat endeksleri yükleniyor…');
   try {
     fiyatVeri ??= await fetch('/veri/fiyat_degisimi.json').then((r) => { if (!r.ok) throw new Error('Fiyat değişimi verisi yüklenemedi'); return r.json(); });
+    await cfgHazir;   // aylık endeks serisi API'den (değerleme katsayısıyla aynı veri)
     const [d, P] = [fiyatVeri, await plotly()];
+    const ei = cfg.endeks, kay = Object.fromEntries(ei.kaynaklar.map((k) => [k.anahtar, k]));
+    const aylikS = ei.aylik.filter((r) => r.ay <= d.son_ay);
     const v = d.vavaai, fp = d.fiyatplus, en = d.enflasyon, bt = d.betam_haziran_2026, ks = d.kasa_satis;
     const yil = v.yillik_yuzde[d.son_ay], reel = ((1 + yil / 100) / (1 + en.tufe_yillik_eylul_2026 / 100) - 1) * 100;
     const kart = (val, lbl, renk) => `<div class="mkart"><div class="mkart-val" ${renk ? `style="color:${renk}"` : ''}>${val}</div><div class="mkart-lbl">${lbl}</div></div>`;
     const seri = fiyatSeriBolumu(d);
 
     kutu.innerHTML = `
-      <div class="gcard"><div class="gcard-title">📈 Türkiye Araç Piyasası — Son 12 Ay <small>(${ayAd(d.son_ay)} itibarıyla)</small></div>
+      <div class="gcard"><div class="gcard-title">Türkiye Araç Piyasası — Son 12 Ay <small>(${ayAd(d.son_ay)} itibarıyla)</small></div>
         <div class="mgrid">
           ${kart(degisim(yil), 'İkinci el araç fiyatı (12 ay, TL)', degRenk(yil))}
           ${kart(yuzde(en.tufe_yillik_eylul_2026), 'TÜFE (12 ay)')}
@@ -380,29 +405,35 @@ async function fiyatDegisimiSekmesi() {
         <p class="hint" style="margin:0">ⓘ İkinci el fiyatlar TL bazında enflasyonun belirgin şekilde altında arttı; yani araçlar reel olarak ucuzladı. Reel değişim, 12 aylık nominal artış ile TÜFE'den hesaplanmıştır.</p>
       </div>
 
+      <div class="gcard"><div class="gcard-title">Değerleme Fiyatları Nasıl Güncelleniyor?</div>
+        <div class="kv"><span>Veri tabanı: <b>${ayAd(ei.taban_ay)}</b></span><span>Güncel katsayı: <b>×${cfg.katsayi.toFixed(4)}</b> (${yuzde((cfg.katsayi - 1) * 100, 2)})</span>
+          <span>Hesaplanan ay: <b>${e(cfg.ay_etiketi)}</b></span></div>
+        <p class="small" style="margin:10px 0 0;line-height:1.6">Değerleme fiyatları, her ay için <b>${ei.kaynaklar.map((k) => kaynakLink(k.url, k.ad)).join(' ve ')}</b> değişimlerinin <b>ortalaması</b> alınarak ${ayAd(ei.taban_ay)} tabanından bugüne bileşik olarak güncellenir.
+        ${ei.tahmini_aylar.length ? `Henüz yayımlanmayan ay (${ei.tahmini_aylar.map(ayAd).join(', ')}) için son 3 ayın ortalaması kullanılır; gerçek veri gelince otomatik düzelir.` : ''}</p></div>
+
       <div class="grid2">
         <div class="gcard"><div id="g-kum" class="chart"></div></div>
         <div class="gcard"><div id="g-ay" class="chart"></div></div>
       </div>
 
-      <div class="gcard-title" style="margin:8px 0 14px">⛽ Yakıt Tipine Göre</div>
+      <div class="gcard-title" style="margin:8px 0 14px">Yakıt Tipine Göre</div>
       <div class="grid2">
         <div class="gcard"><div id="g-yakit12" class="chart"></div></div>
         <div class="gcard"><div id="g-yakit9" class="chart"></div></div>
       </div>
 
-      <div class="gcard-title" style="margin:8px 0 14px">🚘 Segment ve Fiyat Bandına Göre</div>
+      <div class="gcard-title" style="margin:8px 0 14px">Segment ve Fiyat Bandına Göre</div>
       <div class="grid2">
         <div class="gcard"><div id="g-seg" class="chart"></div></div>
         <div class="gcard"><div id="g-bant" class="chart"></div></div>
       </div>
 
-      <div class="gcard-title" style="margin:8px 0 14px">🚙 Kasa Tipine Göre (SUV · Sedan · Hatchback)</div>
+      <div class="gcard-title" style="margin:8px 0 14px">Kasa Tipine Göre (SUV · Sedan · Hatchback)</div>
       ${seri.html}
       <div class="gcard"><div id="g-kasa" class="chart" style="min-height:280px"></div>
         <p class="hint" style="margin:0">ⓘ Bu grafik <b>fiyat değil, satış adedi</b> değişimidir (${e(ks.ad)}). SUV'un ikinci eldeki payı %${sayi(ks.suv_payi.onceki, 1)} → %${sayi(ks.suv_payi.simdi, 1)}.</p></div>
 
-      <div class="gcard"><div class="gcard-title">ⓘ Nasıl Okunmalı?</div>
+      <div class="gcard"><div class="gcard-title">Nasıl Okunmalı?</div>
         <div class="small" style="margin:0;line-height:1.7">
           • <b>VavaAI</b> ve <b>FiyatPlus+</b> kalite-düzeltmeli endekslerdir (aynı araç kombinasyonunun fiyat hareketi); ikisi farklı yöntemle hesaplandığı için aynı ayda farklı değer verebilir.<br>
           • <b>BETAM–Sahibinden</b> ortalama ilan fiyatıdır; araç karması (daha pahalı/ucuz araçların payı) değiştiğinde endekslerden daha yüksek çıkabilir.<br>
@@ -411,21 +442,19 @@ async function fiyatDegisimiSekmesi() {
           Veri tarihi: ${e(d.guncelleme)}. Bilgilendirme amaçlıdır.
         </div></div>`;
 
-    // Kümülatif endeks (Aralık 2025 = 100)
-    const aylar = Object.keys(v.aylik_yuzde), x = [ayAd(d.baz_ay), ...aylar.map(ayAd)];
-    let k = 100; const vavaKum = [100, ...aylar.map((a) => (k *= 1 + v.aylik_yuzde[a] / 100))];
-    const fpA = Object.keys(fp.endeks), fpTaban = fp.endeks[d.baz_ay];
-    const fpKum = fpA.map((a) => fp.endeks[a] / fpTaban * 100);
-    const eksenBas = { t: 44, b: 40, l: 50, r: 10 };
+    // Kümülatif endeks (Aralık 2025 = 100) — kaynaklar + değerlemede kullanılan ortalama
+    const aylar = aylikS.map((r) => r.ay), x = [ayAd(d.baz_ay), ...aylar.map(ayAd)];
+    const kum = (anahtar) => { let k = 100; return [100, ...aylikS.map((r) => (k *= 1 + (r[anahtar] ?? r.ortalama) / 100))]; };
+    const renkler = [HAT.ana, HAT.ikinci], eksenBas = { t: 44, b: 40, l: 50, r: 10 };
     P.newPlot('g-kum', [
-      { type: 'scatter', mode: 'lines+markers', name: 'VavaAI', x, y: vavaKum, line: { color: HAT.ana, width: 3 }, hovertemplate: '%{x}: %{y:.1f}<extra>VavaAI</extra>' },
-      { type: 'scatter', mode: 'lines+markers', name: 'FiyatPlus+', x: fpA.map(ayAd), y: fpKum, line: { color: HAT.ikinci, width: 3 }, hovertemplate: '%{x}: %{y:.1f}<extra>FiyatPlus+</extra>' },
-    ], DUZEN({ title: { text: `Fiyat Endeksi (${ayAd(d.baz_ay)} = 100)`, font: { size: 14 } }, legend: { orientation: 'h', y: -0.18 }, margin: eksenBas, xaxis: { showgrid: false }, yaxis: { gridcolor: 'rgba(255,255,255,.06)' } }), CIZ);
+      ...ei.kaynaklar.map((q, i) => ({ type: 'scatter', mode: 'lines+markers', name: q.ad.replace(' Fiyat Endeksi', '').replace(' Endeksi', ''), x, y: kum(q.anahtar), line: { color: renkler[i % 2], width: 2 }, hovertemplate: `%{x}: %{y:.1f}<extra>${e(q.ad)}</extra>` })),
+      { type: 'scatter', mode: 'lines+markers', name: 'Ortalama (değerlemede kullanılan)', x, y: kum('ortalama'), line: { color: cv('--ink'), width: 3, dash: 'dot' }, hovertemplate: '%{x}: %{y:.1f}<extra>Ortalama</extra>' },
+    ], DUZEN({ title: { text: `Fiyat Endeksi (${ayAd(d.baz_ay)} = 100)`, font: { size: 14 } }, legend: { orientation: 'h', y: -0.22 }, margin: eksenBas, xaxis: { showgrid: false }, yaxis: { gridcolor: cv('--grid') } }), CIZ);
 
     P.newPlot('g-ay', [
-      { type: 'bar', name: 'VavaAI', x: aylar.map(ayAd), y: aylar.map((a) => v.aylik_yuzde[a]), marker: { color: HAT.ana }, hovertemplate: '%{x}: %{y:+.2f}%<extra>VavaAI</extra>' },
-      { type: 'bar', name: 'FiyatPlus+', x: fpA.slice(1).map(ayAd), y: fpA.slice(1).map((a, i) => +((fp.endeks[a] / fp.endeks[fpA[i]] - 1) * 100).toFixed(2)), marker: { color: HAT.ikinci }, hovertemplate: '%{x}: %{y:+.2f}%<extra>FiyatPlus+</extra>' },
-    ], DUZEN({ title: { text: 'Aylık Değişim (%)', font: { size: 14 } }, barmode: 'group', legend: { orientation: 'h', y: -0.18 }, margin: eksenBas, yaxis: { gridcolor: 'rgba(255,255,255,.06)', zeroline: true, zerolinecolor: 'rgba(255,255,255,.25)' } }), CIZ);
+      ...ei.kaynaklar.map((q, i) => ({ type: 'bar', name: q.ad.replace(' Fiyat Endeksi', '').replace(' Endeksi', ''), x: aylar.map(ayAd), y: aylikS.map((r) => r[q.anahtar]), marker: { color: renkler[i % 2] }, hovertemplate: `%{x}: %{y:+.2f}%<extra>${e(q.ad)}</extra>` })),
+      { type: 'scatter', mode: 'markers', name: 'Ortalama', x: aylar.map(ayAd), y: aylikS.map((r) => r.ortalama), marker: { color: cv('--ink'), size: 9, symbol: 'diamond' }, hovertemplate: '%{x}: %{y:+.2f}%<extra>Ortalama</extra>' },
+    ], DUZEN({ title: { text: 'Aylık Değişim (%)', font: { size: 14 } }, barmode: 'group', legend: { orientation: 'h', y: -0.22 }, margin: eksenBas, yaxis: { gridcolor: cv('--grid'), zeroline: true, zerolinecolor: cv('--zero') } }), CIZ);
 
     const cubuk = (id, baslik, liste, tufe, ek = {}) => {
       const s = [...liste].sort((a, b) => b.yuzde - a.yuzde);
@@ -437,10 +466,10 @@ async function fiyatDegisimiSekmesi() {
         hovertemplate: '%{y}: %{x:+.1f}%<extra></extra>',
       }], DUZEN({
         title: { text: baslik, font: { size: 14 } }, yaxis: { autorange: 'reversed' },
-        xaxis: { gridcolor: 'rgba(255,255,255,.06)', ticksuffix: '%', range: [Math.min(0, ...s.map((o) => o.yuzde)) - 3, Math.max(tufe ?? 0, ...s.map((o) => o.yuzde)) * 1.18] },
+        xaxis: { gridcolor: cv('--grid'), ticksuffix: '%', range: [Math.min(0, ...s.map((o) => o.yuzde)) - 3, Math.max(tufe ?? 0, ...s.map((o) => o.yuzde)) * 1.18] },
         margin: { t: 44, b: 30, l: 110, r: 30 },
-        shapes: tufe == null ? [] : [{ type: 'line', x0: tufe, x1: tufe, yref: 'paper', y0: 0, y1: 1, line: { color: '#fbbf24', dash: 'dash', width: 1.5 } }],
-        annotations: tufe == null ? [] : [{ x: tufe, yref: 'paper', y: 1.02, text: `TÜFE %${sayi(tufe, 1)}`, showarrow: false, font: { color: '#fbbf24', size: 11 }, yanchor: 'bottom' }],
+        shapes: tufe == null ? [] : [{ type: 'line', x0: tufe, x1: tufe, yref: 'paper', y0: 0, y1: 1, line: { color: cv('--yellow'), dash: 'dash', width: 1.5 } }],
+        annotations: tufe == null ? [] : [{ x: tufe, yref: 'paper', y: 1.02, text: `TÜFE %${sayi(tufe, 1)}`, showarrow: false, font: { color: cv('--yellow'), size: 11 }, yanchor: 'bottom' }],
         ...ek,
       }), CIZ);
     };
@@ -467,7 +496,7 @@ function fiyatSeriBolumu(d) {
     ciz: (P) => gruplar.forEach(([k, id, ad]) => P.newPlot(id, s[k].map((o) => ({
       type: 'scatter', mode: 'lines+markers', name: o.ad, x: o.noktalar.map((n) => ayAd(n.ay)), y: o.noktalar.map((n) => n.endeks),
       hovertemplate: `%{x}: %{y:.1f}<extra>${e(o.ad)}</extra>`,
-    })), DUZEN({ title: { text: `${ad} Fiyat Endeksi (${e(s.baz || 'Ocak 2026 = 100')})`, font: { size: 14 } }, legend: { orientation: 'h', y: -0.25 }, margin: { t: 44, b: 40, l: 50, r: 10 }, yaxis: { gridcolor: 'rgba(255,255,255,.06)' } }), CIZ)),
+    })), DUZEN({ title: { text: `${ad} Fiyat Endeksi (${e(s.baz || 'Ocak 2026 = 100')})`, font: { size: 14 } }, legend: { orientation: 'h', y: -0.25 }, margin: { t: 44, b: 40, l: 50, r: 10 }, yaxis: { gridcolor: cv('--grid') } }), CIZ)),
   };
 }
 
@@ -482,7 +511,7 @@ async function performansAnalizi() {
   if (o) {
     const ekstra = (o.guvenilirlik_ort != null ? `<span>Güvenilirlik (1-3): <b>${sayi(o.guvenilirlik_ort, 1)}</b></span>` : '')
       + (o.elektrik_menzil_ort ? `<span>Elektrikli Menzil: <b>${sayi(o.elektrik_menzil_ort)} km</b></span>` : '');
-    html += `<div class="gcard"><div class="gcard-title">📊 Veri Seti Özeti — ${e(marka)} ${e($('t5-model').value)}
+    html += `<div class="gcard"><div class="gcard-title">Veri Seti Özeti — ${e(marka)} ${e($('t5-model').value)}
       <small>(${o.adet} kayıt · en yaygın motor: ${e(o.en_yaygin_motor_tipi ?? '-')})</small></div>
       <div class="kv">
         <span>Yakıt Tüketimi: <b>${sayi(o.yakit_tuketimi_ort, 1)}</b></span><span>Güvenlik Notu: <b>${sayi(o.guvenlik_notu_ort, 1)} / 5</b></span>
@@ -500,16 +529,26 @@ async function performansAnalizi() {
 
 /* ── Başlangıç ─────────────────────────────────────────────────── */
 const bekle = (ms) => new Promise((r) => setTimeout(r, ms));
+let ipucuZaman;
+function ipucuBaslat() {
+  const adimlar = ['Sunucu uyandırılıyor…', 'Fiyat modeli yükleniyor…', 'Piyasa verileri hazırlanıyor…'];
+  const t0 = Date.now(); let i = 0;
+  const yaz = () => {
+    $('iskelet-baslik').textContent = adimlar[Math.min(i++, adimlar.length - 1)];
+    $('iskelet-ipucu').textContent = Date.now() - t0 > 8000 ? 'İlk açılış biraz uzun sürebilir, neredeyse hazır.' : '';
+  };
+  clearInterval(ipucuZaman); yaz(); ipucuZaman = setInterval(yaz, 2400);
+}
 function iskeletDurum(hata) {
   const k = $('iskelet');
   k.querySelector('.iskelet-yuk').hidden = !!hata;
   k.querySelector('.iskelet-hata').hidden = !hata;
-  if (hata) $('iskelet-mesaj').textContent = hata;
+  if (hata) { clearInterval(ipucuZaman); $('iskelet-mesaj').textContent = hata; } else ipucuBaslat();
 }
 async function ayarlariYukle() {
   iskeletDurum(null);
   for (let deneme = 0; ; deneme++) {
-    try { cfg = await api('/api/ayarlar'); return true; } catch (err) {
+    try { cfg = await api('/api/ayarlar'); cfgSoz(); clearInterval(ipucuZaman); return true; } catch (err) {
       if (deneme === 0) { await bekle(1500); continue; }   // soğuk başlangıç için sessizce bir kez daha dene
       iskeletDurum(`Sunucuya ulaşılamadı (${err.message}). İnternet bağlantınızı kontrol edip tekrar deneyin.`);
       return false;
@@ -529,7 +568,7 @@ async function basla() {
   document.body.classList.remove('yukleniyor');
 
   const markalar = cfg.markalar.filter((m) => m !== 'nan');
-  doldur($('t1-marka'), markalar, 'Toyota'); t1SeriDoldur();
+  doldur($('t1-marka'), markalar, VARSAYILAN_MARKA); t1SeriDoldur(VARSAYILAN_SERI);
   doldur($('t1-durum'), cfg.durum, 'İkinci El');
   doldur($('t1-cekis'), [BELIRTILMEMIS, ...cfg.cekis]);
   doldur($('t1-yakit'), [BELIRTILMEMIS, ...cfg.yakit]);
@@ -540,14 +579,15 @@ async function basla() {
   aralik('t1-km', (v) => `${sayi(v)} km`); aralik('t1-hasar', String); hasarAciklama(); $('t1-hasar').addEventListener('input', hasarAciklama); aralik('t2-km', (v) => `${sayi(v)} km`);
 
   for (const p of ['t2', 't3']) {
-    doldur($(`${p}-marka`), cfg.ilan_markalari, 'Toyota'); seriSecenekleri(p);
-    $(`${p}-marka`).addEventListener('change', () => { seriSecenekleri(p); if (p === 't3') analizErtele(); });
+    doldur($(`${p}-marka`), cfg.ilan_markalari, VARSAYILAN_MARKA); seriSecenekleri(p, VARSAYILAN_SERI);
+    $(`${p}-marka`).addEventListener('change', () => { seriSecenekleri(p); aracSenkronla(p); if (p === 't3') analizErtele(); });
+    $(`${p}-seri`).addEventListener('change', () => aracSenkronla(p));
   }
   ['t3-seri', 't3-ymin', 't3-ymax'].forEach((id) => $(id).addEventListener('input', analizErtele));
 
-  $('t1-marka').addEventListener('change', () => { t1SeriDoldur(); digerSekmelerleSenkronla(); });
-  $('t1-seri').addEventListener('change', digerSekmelerleSenkronla);
-  digerSekmelerleSenkronla();
+  $('t1-marka').addEventListener('change', () => { t1SeriDoldur(); aracSenkronla('t1'); });
+  $('t1-seri').addEventListener('change', () => aracSenkronla('t1'));
+  aracSenkronla('t1');
   $('foto').addEventListener('change', (ev) => { if (ev.target.files[0]) fotoYukle(ev.target.files[0]); else fotoKaldir(); });
   $('foto-kaldir').addEventListener('click', fotoKaldir);
   $('t1-git').addEventListener('click', (ev) => calistir(ev.currentTarget, degerle));
@@ -564,4 +604,26 @@ async function basla() {
   const hedef = ['t2', 't3', 't4', 't5'].includes(hash) ? hash : aktif;
   if (hedef !== 't1') sekmeAc(hedef);
 }
+/* ── Tema (koyu / açık) ────────────────────────────────────────── */
+function temaUygula(t, kaydet) {
+  document.documentElement.dataset.tema = t;
+  const m = document.querySelector('meta[name="theme-color"]'); if (m) m.content = cv('--bg');
+  const b = $('tema'), ad = t === 'dark' ? 'Açık temaya geç' : 'Koyu temaya geç';
+  b.setAttribute('aria-label', ad); b.title = ad;
+  if (kaydet) { try { localStorage.setItem('tema', t); } catch (_) { /* yoksay */ } }
+  if (!cfg) return;
+  // Plotly renkleri çizim anında okunur: açık grafik sekmesi yeniden çizilir, diğeri bir sonraki açılışta
+  yuklendi.t4 = false;
+  const aktif = document.querySelector('.tab[aria-selected="true"]').getAttribute('aria-controls');
+  if (aktif === 't3' || aktif === 't4') sekmeAc(aktif);
+}
+$('tema').addEventListener('click', () => temaUygula(document.documentElement.dataset.tema === 'dark' ? 'light' : 'dark', true));
+temaUygula(document.documentElement.dataset.tema === 'light' ? 'light' : 'dark', false);
+try {
+  matchMedia('(prefers-color-scheme: light)').addEventListener('change', (ev) => {
+    if (!localStorage.getItem('tema')) temaUygula(ev.matches ? 'light' : 'dark', false);   // kullanıcı seçmediyse sistemi izle
+  });
+} catch (_) { /* yoksay */ }
+
+ipucuBaslat();
 basla();

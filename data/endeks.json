@@ -1,13 +1,22 @@
 {
-  "_aciklama": "VavaCars 'VavaAI Fiyat Endeksi' - ilgili ayın bir önceki aya göre YÜZDE değişimi (TL, nominal). Yeni ay yayınlandıkça tek satır ekleyin; bilinmeyen aylar için son 3 ayın ortalaması kullanılır. Tarih: yıl-ay.",
+  "_aciklama": "Araç fiyat endeksi — AYLIK YÜZDE değişimler (TL, nominal). Değerleme fiyatları, her ay için bu kaynakların ORTALAMASI alınarak taban aydan bugüne bileşik güncellenir. Yeni ay yayınlandıkça her kaynağa tek satır ekleyin; bir kaynakta o ay yoksa o ay için diğer kaynaklar kullanılır; hiçbirinde yoksa son 3 ayın ortalaması kullanılır. Tarih: yıl-ay.",
   "taban_ay": "2026-03",
-  "aylik_yuzde": {
-    "2026-01": 1.10,
-    "2026-02": 1.28,
-    "2026-03": 1.09,
-    "2026-04": 0.40,
-    "2026-05": 0.19,
-    "2026-06": 0.30,
-    "2026-07": 0.30
+  "kaynaklar": {
+    "vavaai": {
+      "ad": "VavaAI Fiyat Endeksi",
+      "url": "https://www.blog.tr.vava.cars/press-releases/categories/blog",
+      "aylik_yuzde": {
+        "2026-01": 1.10, "2026-02": 1.28, "2026-03": 1.09, "2026-04": 0.40, "2026-05": 0.19,
+        "2026-06": 0.74, "2026-07": 0.20, "2026-08": -0.20, "2026-09": 1.10
+      }
+    },
+    "fiyatplus": {
+      "ad": "FiyatPlus+ Endeksi",
+      "url": "https://fiyatplus.com/endeks",
+      "aylik_yuzde": {
+        "2026-01": 1.3, "2026-02": 0.7, "2026-03": 0.6, "2026-04": 0.1, "2026-05": 0.4,
+        "2026-06": 0.0, "2026-07": -0.2, "2026-08": 0.5, "2026-09": 0.0
+      }
+    }
   }
 }

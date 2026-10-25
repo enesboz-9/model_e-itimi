@@ -5,52 +5,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EderiNe — Araç Değerleme</title>
   <meta name="description" content="Yapay zeka destekli araç değerleme ve piyasa analiz platformu.">
-  <meta name="theme-color" content="#09090f">
+  <meta name="theme-color" content="#0b0d12">
+  <script>(function(){try{var t=localStorage.getItem('tema');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.setAttribute('data-tema',t);}catch(e){document.documentElement.setAttribute('data-tema','dark');}})();</script>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🚗%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body class="yukleniyor">
 <div class="wrap">
   <header class="hero">
-    <h1 class="hero-title">EderiNe</h1>
-    <p class="hero-sub">Yapay Zeka Destekli Araç Değerleme &amp; Piyasa Analiz Platformu</p>
-    <p class="hero-note"><b>BNovative</b> kuruluşudur · <a href="https://bnovative.com.tr" target="_blank" rel="noopener">bnovative.com.tr</a></p>
+    <svg class="logo" viewBox="0 0 200 72" aria-hidden="true" focusable="false"><g class="isik"><polygon points="190,44 236,32 236,58"/><polygon points="190,46 214,40 214,52"/></g><path class="govde" d="M8 56V45c0-5 3-8 9-9l26-5 17-15c3-3 6-4 10-4h50c5 0 9 2 12 5l17 15 28 4c9 1 15 5 15 13v7z"/><path class="cam" d="M48 31l12-12c2-2 4-3 7-3h24v15zM98 16h22c3 0 5 1 7 3l11 12H98z"/><path class="detay" d="M94 16v38"/><rect class="far" x="184" y="40" width="8" height="5" rx="2"/><rect class="stop" x="8" y="40" width="5" height="6" rx="2"/><g><circle class="kemer" cx="50" cy="57" r="16"/><circle class="lastik" cx="50" cy="58" r="13"/><g class="jant"><circle cx="50" cy="58" r="7"/><path d="M50 51v14M43 58h14M45 53l10 10M55 53l-10 10"/></g></g><g><circle class="kemer" cx="150" cy="57" r="16"/><circle class="lastik" cx="150" cy="58" r="13"/><g class="jant"><circle cx="150" cy="58" r="7"/><path d="M150 51v14M143 58h14M145 53l10 10M155 53l-10 10"/></g></g></svg>
+    <div class="hero-txt">
+      <h1 class="hero-title">EderiNe</h1>
+      <p class="hero-sub">Yapay zeka destekli araç değerleme ve piyasa analizi</p>
+      <p class="hero-note"><b>BNovative</b> kuruluşudur · <a href="https://bnovative.com.tr" target="_blank" rel="noopener">bnovative.com.tr</a></p>
+    </div>
+    <button class="tema" id="tema" type="button" aria-label="Açık temaya geç" title="Açık temaya geç">
+      <svg class="gunes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="ay" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 13A9 9 0 1 1 11 3a7 7 0 0 0 10 10z"/></svg>
+    </button>
   </header>
+  <div class="serit-cizgi" aria-hidden="true"></div>
 
   <div id="hata" class="msg err" hidden></div>
 
   <!-- Açılış: yükleniyor iskeleti / bağlantı hatası -->
   <div id="iskelet" class="iskelet" aria-live="polite">
     <div class="iskelet-yuk" aria-busy="true">
-      <div class="sk sk-kart"><div class="sk sk-b" style="width:30%"></div><div class="sk sk-in"></div></div>
-      <div class="grid2">
-        <div class="sk sk-kart"><div class="sk sk-b" style="width:40%"></div><div class="sk sk-in"></div><div class="sk sk-in"></div><div class="sk sk-in"></div></div>
-        <div class="sk sk-kart"><div class="sk sk-b" style="width:35%"></div><div class="sk sk-in"></div><div class="sk sk-in"></div><div class="sk sk-in"></div></div>
+      <div class="yukleme buyuk" role="status">
+        <div class="yol"><svg class="arac" viewBox="0 0 200 72" aria-hidden="true" focusable="false"><g class="isik"><polygon points="190,44 236,32 236,58"/><polygon points="190,46 214,40 214,52"/></g><path class="govde" d="M8 56V45c0-5 3-8 9-9l26-5 17-15c3-3 6-4 10-4h50c5 0 9 2 12 5l17 15 28 4c9 1 15 5 15 13v7z"/><path class="cam" d="M48 31l12-12c2-2 4-3 7-3h24v15zM98 16h22c3 0 5 1 7 3l11 12H98z"/><path class="detay" d="M94 16v38"/><rect class="far" x="184" y="40" width="8" height="5" rx="2"/><rect class="stop" x="8" y="40" width="5" height="6" rx="2"/><g><circle class="kemer" cx="50" cy="57" r="16"/><circle class="lastik" cx="50" cy="58" r="13"/><g class="jant"><circle cx="50" cy="58" r="7"/><path d="M50 51v14M43 58h14M45 53l10 10M55 53l-10 10"/></g></g><g><circle class="kemer" cx="150" cy="57" r="16"/><circle class="lastik" cx="150" cy="58" r="13"/><g class="jant"><circle cx="150" cy="58" r="7"/><path d="M150 51v14M143 58h14M145 53l10 10M155 53l-10 10"/></g></g></svg><i class="yol-serit"></i></div>
+        <p id="iskelet-baslik">Sunucu uyandırılıyor…</p>
+        <p class="yukleme-ipucu" id="iskelet-ipucu"></p>
       </div>
-      <p class="loading">Sunucu hazırlanıyor… ilk açılış birkaç saniye sürebilir.</p>
+      <div class="sk-izgara">
+        <div class="grid2">
+          <div class="sk sk-kart"><div class="sk sk-b" style="width:40%"></div><div class="sk sk-in"></div><div class="sk sk-in"></div><div class="sk sk-in"></div></div>
+          <div class="sk sk-kart"><div class="sk sk-b" style="width:35%"></div><div class="sk sk-in"></div><div class="sk sk-in"></div><div class="sk sk-in"></div></div>
+        </div>
+      </div>
     </div>
     <div class="iskelet-hata gcard" hidden>
-      <div class="gcard-title">⚠️ Bağlantı Kurulamadı</div>
+      <div class="gcard-title">Bağlantı Kurulamadı</div>
       <p id="iskelet-mesaj" style="margin:0 0 14px;color:var(--soft)"></p>
-      <button class="btn" id="tekrar" type="button">🔄&nbsp; Tekrar Dene</button>
+      <button class="btn" id="tekrar" type="button">Tekrar Dene</button>
     </div>
   </div>
 
   <nav class="tabs" role="tablist" aria-label="Bölümler">
-    <button class="tab" role="tab" id="tab-t1" aria-controls="t1" aria-selected="true"><span class="ti" aria-hidden="true">🔮</span><span class="tl">Değerleme</span></button>
-    <button class="tab" role="tab" id="tab-t2" aria-controls="t2" aria-selected="false"><span class="ti" aria-hidden="true">🔍</span><span class="tl">İlan<span class="uzun"> Arama</span></span></button>
-    <button class="tab" role="tab" id="tab-t3" aria-controls="t3" aria-selected="false"><span class="ti" aria-hidden="true">📊</span><span class="tl">Piyasa<span class="uzun"> Analizi</span></span></button>
-    <button class="tab" role="tab" id="tab-t4" aria-controls="t4" aria-selected="false"><span class="ti" aria-hidden="true">📈</span><span class="tl">Fiyat<span class="uzun"> Değişimi</span></span></button>
-    <button class="tab" role="tab" id="tab-t5" aria-controls="t5" aria-selected="false"><span class="ti" aria-hidden="true">🧪</span><span class="tl">Performans<span class="uzun"> Analizi</span></span></button>
+    <button class="tab" role="tab" id="tab-t1" aria-controls="t1" aria-selected="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.3"/></svg><span class="tl">Değerleme</span></button>
+    <button class="tab" role="tab" id="tab-t2" aria-controls="t2" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><span class="tl">İlan<span class="uzun"> Arama</span></span></button>
+    <button class="tab" role="tab" id="tab-t3" aria-controls="t3" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20v-8M12 20V5M19 20v-5"/></svg><span class="tl">Piyasa<span class="uzun"> Analizi</span></span></button>
+    <button class="tab" role="tab" id="tab-t4" aria-controls="t4" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg><span class="tl">Fiyat<span class="uzun"> Değişimi</span></span></button>
+    <button class="tab" role="tab" id="tab-t5" aria-controls="t5" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18a8 8 0 1 1 16 0"/><path d="M12 18l4-5"/></svg><span class="tl">Performans<span class="uzun"> Analizi</span></span></button>
   </nav>
 
   <!-- 1 · DEĞERLEME -->
   <section class="panel" id="t1" role="tabpanel" aria-labelledby="tab-t1">
     <div class="gcard">
-      <div class="gcard-title">📸 Araç Fotoğrafı (İsteğe Bağlı)</div>
+      <div class="gcard-title">Araç Fotoğrafı (İsteğe Bağlı)</div>
       <div class="filerow">
         <input class="file" type="file" id="foto" accept="image/jpeg,image/png" aria-label="Araç fotoğrafı yükle">
         <button type="button" class="x" id="foto-kaldir" aria-label="Fotoğrafı kaldır" title="Fotoğrafı kaldır" hidden>✕</button>
@@ -61,7 +75,7 @@
 
     <div class="grid2">
       <div class="gcard">
-        <div class="gcard-title">🚘 Araç Bilgileri</div>
+        <div class="gcard-title">Araç Bilgileri</div>
         <label class="f"><span class="l" id="l-marka">Marka</span><select id="t1-marka"></select></label>
         <label class="f"><span class="l" id="l-seri">Model / Seri</span><select id="t1-seri"></select></label>
         <div class="row">
@@ -75,7 +89,7 @@
           <span class="rng"><input type="range" id="t1-hasar" min="0" max="26" step="1" value="0"><output id="t1-hasar-o" for="t1-hasar"></output></span>
           <span class="hint" id="t1-hasar-ac" style="display:block;margin:6px 0 0"></span></label>
         <details>
-          <summary>ℹ️ Hasar skoru nasıl hesaplanır? Örnekler</summary>
+          <summary>Hasar skoru nasıl hesaplanır? Örnekler</summary>
           <p class="hint" style="margin-top:0">Skor, ekspertiz raporundaki <b>13 parça</b> üzerinden hesaplanır: her <b>boyalı / lokal boyalı</b> parça <b>1 puan</b>, her <b>değişen</b> parça <b>2 puan</b>. Parçalar: ön/arka tampon, motor kaputu, arka kaput (bagaj), tavan, sağ/sol ön çamurluk, sağ/sol arka çamurluk, sağ/sol ön kapı, sağ/sol arka kapı.</p>
           <table class="tbl">
             <thead><tr><th>Durum</th><th>Skor</th></tr></thead>
@@ -98,10 +112,10 @@
       </div>
 
       <div class="gcard">
-        <div class="gcard-title">⚙️ Teknik &amp; Ek Bilgiler <small>(İsteğe Bağlı)</small></div>
+        <div class="gcard-title">Teknik &amp; Ek Bilgiler <small>(İsteğe Bağlı)</small></div>
         <p class="hint">Boş bırakılan alanlar için model ortalama değerleri kullanır.</p>
         <details>
-          <summary>🔧 Motor &amp; Performans</summary>
+          <summary>Motor &amp; Performans</summary>
           <div class="row">
             <label class="f"><span class="l">Motor Hacmi (cc)</span><input type="number" id="t1-cc" min="0" max="7000" step="50" value="0"></label>
             <label class="f"><span class="l">Motor Gücü (HP)</span><input type="number" id="t1-hp" min="0" max="1500" step="5" value="0"></label>
@@ -110,26 +124,26 @@
           <label class="f"><span class="l">Çekiş</span><select id="t1-cekis"></select></label>
         </details>
         <details>
-          <summary>🚗 Yakıt / Vites / Kasa</summary>
+          <summary>Yakıt / Vites / Kasa</summary>
           <label class="f"><span class="l">Yakıt Tipi</span><select id="t1-yakit"></select></label>
           <label class="f"><span class="l">Vites</span><select id="t1-vites"></select></label>
           <label class="f"><span class="l" id="l-kasa">Kasa Tipi</span><select id="t1-kasa"></select></label>
         </details>
         <details>
-          <summary>🎨 Renk</summary>
+          <summary>Renk</summary>
           <label class="f"><span class="l" id="l-renk">Renk</span><select id="t1-renk"></select></label>
         </details>
       </div>
     </div>
 
-    <button class="btn" id="t1-git" type="button">🔮&nbsp; Değerleme Yap</button>
+    <button class="btn" id="t1-git" type="button">Değerleme Yap</button>
     <div id="t1-sonuc" aria-live="polite"></div>
   </section>
 
   <!-- 2 · İLAN ARAMA -->
   <section class="panel" id="t2" role="tabpanel" aria-labelledby="tab-t2" hidden>
     <div class="gcard">
-      <div class="gcard-title">🔎 Filtreler</div>
+      <div class="gcard-title">Filtreler</div>
       <div class="row">
         <label class="f"><span class="l">Marka</span><select id="t2-marka"></select></label>
         <label class="f"><span class="l">Model</span><select id="t2-seri"></select></label>
@@ -146,14 +160,14 @@
       </div>
       <label class="f"><span class="l">Max Fiyat (TL, 0 = sınırsız)</span><input type="number" id="t2-fmax" min="0" max="100000000" step="100000" value="0"></label>
     </div>
-    <button class="btn" id="t2-git" type="button">🔍&nbsp; Listele</button>
+    <button class="btn" id="t2-git" type="button">Listele</button>
     <div id="t2-sonuc" aria-live="polite" style="margin-top:18px"></div>
   </section>
 
   <!-- 3 · PİYASA ANALİZİ -->
   <section class="panel" id="t3" role="tabpanel" aria-labelledby="tab-t3" hidden>
     <div class="gcard">
-      <div class="gcard-title">📊 Filtreler</div>
+      <div class="gcard-title">Filtreler</div>
       <div class="row">
         <label class="f"><span class="l">Marka</span><select id="t3-marka"></select></label>
         <label class="f"><span class="l">Seri</span><select id="t3-seri"></select></label>
@@ -166,27 +180,27 @@
 
   <!-- 4 · FİYAT DEĞİŞİMİ -->
   <section class="panel" id="t4" role="tabpanel" aria-labelledby="tab-t4" hidden>
-    <div id="t4-ic" aria-live="polite"><div class="loading">Yükleniyor…</div></div>
+    <div id="t4-ic" aria-live="polite"><div class="yukleme" role="status"><div class="yol"><svg class="arac" viewBox="0 0 200 72" aria-hidden="true" focusable="false"><g class="isik"><polygon points="190,44 236,32 236,58"/><polygon points="190,46 214,40 214,52"/></g><path class="govde" d="M8 56V45c0-5 3-8 9-9l26-5 17-15c3-3 6-4 10-4h50c5 0 9 2 12 5l17 15 28 4c9 1 15 5 15 13v7z"/><path class="cam" d="M48 31l12-12c2-2 4-3 7-3h24v15zM98 16h22c3 0 5 1 7 3l11 12H98z"/><path class="detay" d="M94 16v38"/><rect class="far" x="184" y="40" width="8" height="5" rx="2"/><rect class="stop" x="8" y="40" width="5" height="6" rx="2"/><g><circle class="kemer" cx="50" cy="57" r="16"/><circle class="lastik" cx="50" cy="58" r="13"/><g class="jant"><circle cx="50" cy="58" r="7"/><path d="M50 51v14M43 58h14M45 53l10 10M55 53l-10 10"/></g></g><g><circle class="kemer" cx="150" cy="57" r="16"/><circle class="lastik" cx="150" cy="58" r="13"/><g class="jant"><circle cx="150" cy="58" r="7"/><path d="M150 51v14M143 58h14M145 53l10 10M155 53l-10 10"/></g></g></svg><i class="yol-serit"></i></div><p>Fiyat endeksleri yükleniyor…</p></div></div>
   </section>
 
   <!-- 5 · PERFORMANS ANALİZİ -->
   <section class="panel" id="t5" role="tabpanel" aria-labelledby="tab-t5" hidden>
     <div class="gcard">
-      <div class="gcard-title">🧪 Marka / Model Seçimi</div>
+      <div class="gcard-title">Marka / Model Seçimi</div>
       <div class="row">
         <label class="f"><span class="l">Marka</span><select id="t5-marka"></select></label>
         <label class="f"><span class="l">Model</span><select id="t5-model"></select></label>
       </div>
       <p class="hint">ⓘ Bu sekme, gerçek kullanıcı senaryolarından oluşan ayrı bir performans veri setine (6 marka / 12 model, 500 kayıt) dayanır. Değerleme sekmesindeki fiyat veri seti ile aynı kaynak değildir.</p>
       <details>
-        <summary>🔧 Motor Modeli Bilgisi İçin Motor Girdileri (İsteğe Bağlı)</summary>
+        <summary>Motor Modeli Bilgisi İçin Motor Girdileri (İsteğe Bağlı)</summary>
         <div class="row">
           <label class="f"><span class="l">Motor Hacmi (cc)</span><input type="number" id="t5-cc" min="0" max="7000" step="50" value="1600"></label>
           <label class="f"><span class="l">Motor Gücü (HP)</span><input type="number" id="t5-hp" min="0" max="1500" step="5" value="110"></label>
         </div>
       </details>
     </div>
-    <button class="btn" id="t5-git" type="button">🧪&nbsp; Performans Analizi Yap</button>
+    <button class="btn" id="t5-git" type="button">Performans Analizi Yap</button>
     <div id="t5-sonuc" aria-live="polite" style="margin-top:18px"></div>
   </section>
 
