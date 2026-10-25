@@ -231,6 +231,7 @@ details[open] { padding-bottom: 6px; }
 .msg.warn { background: color-mix(in srgb, var(--yellow) 11%, transparent); border-color: color-mix(in srgb, var(--yellow) 40%, transparent); }
 .msg.err  { background: color-mix(in srgb, var(--red) 9%, transparent);    border-color: color-mix(in srgb, var(--red) 40%, transparent); }
 .msg.gelistirme { padding: 8px 14px; font-size: .82rem; margin: 12px 0 0; }
+.ai-not { display: inline-block; margin: 2px 0 0; padding: 7px 12px; border-radius: 10px; font-size: .88rem; font-weight: 700; line-height: 1.4; color: var(--yellow); background: color-mix(in srgb, var(--yellow) 13%, transparent); border: 1px solid color-mix(in srgb, var(--yellow) 50%, transparent); }
 .msg code { background: var(--fill); padding: 1px 6px; border-radius: 5px; font-size: .82rem; }
 .preview { width: 100%; border-radius: 14px; display: block; max-height: 260px; object-fit: cover; }
 .chart { width: 100%; min-height: 340px; }
@@ -346,7 +347,7 @@ body.yukleniyor .panel, body.yukleniyor .tabs { display: none; }
 }
 
 /* ── Parça parça hasar hesaplayıcı ────────────────────────── */
-.hp-grid { display: grid; grid-template-columns: 240px 1fr; gap: 18px; align-items: start; padding-bottom: 10px; }
+.hp-grid { display: grid; grid-template-columns: 250px 1fr; gap: 18px; align-items: start; padding-bottom: 10px; }
 .hp-sema svg { width: 100%; height: auto; display: block; }
 .hp-govde { fill: var(--surface); stroke: var(--line-strong); stroke-width: 2; }
 .hp-teker { fill: var(--lastik); }
@@ -373,7 +374,7 @@ body.yukleniyor .panel, body.yukleniyor .tabs { display: none; }
 .hp-toplam b { color: var(--ink); font-size: 1.15rem; }
 .hp-sifirla { cursor: pointer; font-size: .82rem; font-weight: 600; color: var(--soft); background: var(--fill); border: 1px solid var(--line-strong); border-radius: 10px; padding: 7px 14px; }
 .hp-sifirla:hover { color: var(--ink); border-color: var(--mute); }
-@media (max-width: 520px) { .hp-grid { grid-template-columns: 1fr; } .hp-sema { max-width: 280px; margin: 0 auto; } }
+@media (max-width: 520px) { .hp-grid { grid-template-columns: 1fr; } .hp-sema { max-width: 300px; margin: 0 auto; } }
 
 /* ── Emsal ilan aralığı çubuğu ─────────────────────────────── */
 .aralik { padding: 44px 8px 4px; }

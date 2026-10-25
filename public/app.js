@@ -346,7 +346,7 @@ async function fotoYukle(dosya) {
         : `<div class="msg ok"><b>Kasa:</b> ${e(r.kasa_tipi)} &nbsp;|&nbsp; <b>Renk:</b> ${e(r.renk)}</div>`}
       ${r.marka ? `<div class="msg info"><b>Marka:</b> ${e(r.marka)} &nbsp;|&nbsp; <b>Model:</b> ${e(r.seri)}${r.yil ? ` &nbsp;|&nbsp; <b>Yıl:</b> ${r.yil}` : ''}${r.yil_aralik_baslangic && r.yil_aralik_bitis ? ` &nbsp;|&nbsp; <b>Kasa Dönemi:</b> ${r.yil_aralik_baslangic}–${r.yil_aralik_bitis}` : ''}</div>` : ''}
       ${r.km > 0 ? `<div class="msg info"><b>Tahmini KM:</b> ${sayi(r.km)} km <i>(~${yasAi} yıl × ${yasAi <= 10 ? '15k-20k' : '10k-15k'} km/yıl)</i></div>` : ''}
-      ${tespitYok ? '' : `<p class="hint">${e(r.aciklama || '')}<br>Aşağıda AI tespitlerini onaylayabilir veya değiştirebilirsin.</p>`}</div></div>`;
+      ${tespitYok ? '' : `<p class="hint">${e(r.aciklama || '')}</p><div class="ai-not" role="note">👇 Aşağıda AI tespitlerini onaylayabilir veya değiştirebilirsin.</div>`}</div></div>`;
   } catch (err) {
     kutu.innerHTML = `<div class="msg err">⚠️ ${e(err.message)}</div>`;
   }
