@@ -51,3 +51,10 @@
 .marka-blok .tbl-sar { margin-top: 10px; }
 footer a { color: var(--accent); }
 @media (max-width: 640px) { .ust-nav { justify-content: flex-start; } .marka { font-size: 1.3rem; } }
+.yazi h2 { font-family: 'Bricolage Grotesque', 'Figtree', sans-serif; font-size: 1.25rem; margin: 26px 0 8px; letter-spacing: -.02em; }
+.yazi p, .yazi li { color: var(--soft); line-height: 1.75; max-width: 78ch; }
+.yazi b { color: var(--ink); }
+.yazi a { color: var(--accent); }
+.yazi ul, .yazi ol { padding-left: 22px; }
+.alt { font-size: .95rem; margin: 14px 0 6px; }
+footer p { margin: 4px 0; }

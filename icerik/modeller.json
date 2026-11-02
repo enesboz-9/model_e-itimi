@@ -1,0 +1,40 @@
+{
+  "_aciklama": "Elle yazılmış model notları. Anahtar 'Marka|Model' (veri setindeki yazımla). Her model için: ozet (kısa metin) ve dikkat (madde listesi). '_' ile başlayan anahtarlar yok sayılır. Notlar forum/şikayet sitesi görüşlerinin özetidir; sayfada otomatik uyarı gösterilir.",
+  "_ornek": {
+    "ozet": "Modelin kısa tanıtımı.",
+    "dikkat": [
+      "Alırken kontrol edilecek madde 1",
+      "Madde 2"
+    ]
+  },
+  "Renault|Megane": {
+    "ozet": "Forumlarda ve kullanıcı şikayet sitelerinde Megane için görüşler nesle ve motora göre değişiyor. En sık anılan başlıklar elektrik-elektronik arızalar, dizel motorlarda EGR ve partikül filtresi tıkanıklığı, bazı şanzıman ve süspansiyon sorunları ile klima şikayetleri.",
+    "dikkat": [
+      "Arıza kayıtlarını cihazla okutun; far, klima, gösterge gibi elektrikli parçaların çalıştığını tek tek kontrol edin.",
+      "Dizel (1.5 dCi) araçlarda uzun süre kısa şehir içi kullanılıp kullanılmadığını sorun; EGR ve partikül filtresi uyarılarına dikkat edin.",
+      "Otomatik veya yarı otomatik şanzımanlı araçlarda test sürüşünde vites geçişlerini özellikle deneyin.",
+      "Süspansiyon, alt takım ve klima soğutmasını kontrol ettirin.",
+      "Triger veya zincir bakımının yapıldığını gösteren faturayı isteyin."
+    ]
+  },
+  "Renault|Clio": {
+    "ozet": "Clio için paylaşılan şikayetler nesle göre değişiyor. Eski ve orta nesillerde iç döşeme gıcırtıları, rüzgâr sesi, klima ve fren sesi sık anılıyor; 1.5 dCi dizelde EGR ve partikül filtresi tıkanıklığı konuşuluyor. Yeni nesil 1.0 TCe araçlarda ise titreşim ve ses, turbo sesi ve motor takozu ile ilgili şikayetler paylaşılıyor. Bazı kullanıcılar sorunların yıllar içinde azaldığını ve her araçta yaşanmadığını belirtiyor.",
+    "dikkat": [
+      "Klima soğutmasını, kumanda düğmelerini ve multimedya ekranını çalıştırarak deneyin.",
+      "Soğuk motorda ve rölantide titreşim ya da alışılmadık ses (özellikle turbolu benzinli motorda) olup olmadığını dinleyin.",
+      "Dizel araçta partikül filtresi veya EGR uyarısı geçmişini sorun.",
+      "Fren sesi, direksiyon ve süspansiyondan gelen gürültüleri test sürüşünde kontrol edin.",
+      "Yetkili servis kayıtlarını ve varsa garanti kapsamını sorun."
+    ]
+  },
+  "Opel|Astra": {
+    "ozet": "Astra için görüşler nesle ve motora göre ciddi biçimde farklılaşıyor. Forumlarda ve araç bilgi sitelerinde en çok triger kayışı veya zincir bakımı, soğuk çalıştırmada zincir sesi, dizel motorlarda EGR ve partikül filtresi tıkanıklığı ile bazı turbolu benzinli motorlarda motor iç arızaları anılıyor. Bazı kullanıcılar doğru yağ ve düzenli bakımla sorun yaşamadıklarını söylüyor.",
+    "dikkat": [
+      "Triger veya zincir değişim faturasını isteyin; kayıt yoksa bu masrafı pazarlıkta hesaba katın.",
+      "Motoru soğukken çalıştırıp ilk saniyelerdeki takırtı veya metalik sesleri dinleyin.",
+      "Turbolu benzinli modellerde yağ değişim düzenini ve tekleme olup olmadığını sorun.",
+      "Dizel araçta EGR veya partikül filtresi uyarısı geçmişine ve yağ seviyesinin anormal yükselip yükselmediğine bakın.",
+      "Soğutma sistemi ve yağ sızıntısı için motor bölümünü ekspertizde özellikle inceletin."
+    ]
+  }
+}

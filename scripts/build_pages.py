@@ -29,11 +29,15 @@ import numpy as np
 KOK = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(KOK / "api"))
 import core  # noqa: E402
+from rehber_icerik import YAZILAR  # noqa: E402
 
 PUBLIC = KOK / "public"
 SITE = "https://bnovative.com.tr"
 MIN_YIL_SAYFA = 15      # model-yıl sayfası için en az ilan
 MIN_YIL_SATIR = 5       # tablolarda gösterilecek en az ilan
+GUNCEL = {"ay": "", "iso": ""}     # main() doldurur: görünür güncelleme tarihi ve dateModified
+ILETISIM_EPOSTA = "bnovative.destek@gmail.com"
+EDITOR = {}                        # icerik/modeller.json (elle yazılmış model notları)
 OZEL_MARKA = {"nan", "Bilinmiyor", ""}
 OZEL_SERI = {"nan", "Diğer", "Bilinmiyor", ""}
 
@@ -137,7 +141,7 @@ class Veri:
 _m = re.search(r'<svg class="logo".*?</svg>', (PUBLIC / "index.html").read_text(encoding="utf-8"), re.S)
 LOGO = _m.group(0) if _m else ""   # ana sayfadaki logo SVG'si
 NAV = (("/arac-degerleme", "Araç Değerleme"), ("/araba-fiyat-analizi", "Fiyat Analizi"),
-       ("/piyasa-analizi", "Piyasa Analizi"), ("/ikinci-el-arac-fiyatlari", "İkinci El Fiyatları"))
+       ("/piyasa-analizi", "Piyasa Analizi"), ("/ikinci-el-arac-fiyatlari", "İkinci El Fiyatları"), ("/rehber", "Rehber"))
 TEMA_JS = ("(function(){try{var t=localStorage.getItem('tema');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: light)')"
            ".matches?'light':'dark';document.documentElement.setAttribute('data-tema',t);}catch(e){document.documentElement.setAttribute('data-tema','dark');}})();")
 TEMA_BTN_JS = ("document.getElementById('tema').addEventListener('click',function(){var d=document.documentElement,"
@@ -146,7 +150,7 @@ TEMA_BTN_JS = ("document.getElementById('tema').addEventListener('click',functio
 
 def sayfa(yol: str, baslik: str, aciklama: str, icerik: str, ld: list | None = None, kirinti=None) -> str:
     url = f"{SITE}{yol}"
-    graf = [{"@type": "WebPage", "name": baslik, "url": url, "inLanguage": "tr", "description": aciklama,
+    graf = [{"@type": "WebPage", "name": baslik, "url": url, "inLanguage": "tr", "description": aciklama, "dateModified": GUNCEL["iso"],
              "isPartOf": {"@type": "WebSite", "name": "EderiNe", "url": SITE + "/"}}]
     if kirinti:
         graf.append({"@type": "BreadcrumbList", "itemListElement": [
@@ -203,7 +207,8 @@ def sayfa(yol: str, baslik: str, aciklama: str, icerik: str, ld: list | None = N
 {krm}
 {icerik}
   </main>
-  <footer>EderiNe · Fiyatlar, Mart 2026 ilan verisinin aylık fiyat endeksleriyle güncellenmiş tahmini değerleridir; bilgilendirme amaçlıdır, bağlayıcı değildir. · <a href="/">Uygulamaya git</a></footer>
+  <footer><p>EderiNe · Son güncelleme: {GUNCEL["ay"]} · Fiyatlar, Mart 2026 ilan verisinin aylık fiyat endeksleriyle güncellenmiş tahmini değerleridir; bilgilendirme amaçlıdır, bağlayıcı değildir.</p>
+  <p><a href="/hakkimizda">Hakkımızda</a> · <a href="/metodoloji">Metodoloji</a> · <a href="/rehber">Rehber</a> · <a href="/iletisim">İletişim</a> · <a href="/">Uygulamaya git</a></p></footer>
 </div>
 <script>{TEMA_BTN_JS}</script>
 </body>
@@ -335,6 +340,7 @@ def model_yil_sayfasi(V: Veri, m, s, y, yillar, ozetler, tum_gruplar):
     <section class="gcard"><h2 class="gcard-title">{esc(ad)} model yılına göre fiyatlar</h2>{yil_tablo}
       <p class="small"><a href="{yol_model(m, s)}">Tüm {esc(ad)} fiyatları →</a></p></section>
     {diger_html}
+    {editor_html(m, s)}{rehber_linkleri()}
     {sss_html}"""
     baslik = f"{ad} {y} Fiyatı ve Fiyat Analizi | EderiNe"
     acik = kesit(f"{y} model {ad} fiyatı ne kadar? {ay} itibarıyla {sayi(o['adet'])} ilana göre medyan fiyat {tl(o['medyan'])}, "
@@ -391,6 +397,7 @@ def model_sayfasi(V: Veri, m, s, yillar, ozetler):
     <section class="gcard"><h2 class="gcard-title">Model yılına göre {esc(ad)} fiyatları</h2>{yil_tablo}</section>
     <section class="gcard"><h2 class="gcard-title">Popüler model yılları</h2><div class="chips">{chips}</div></section>
     {dag_html}
+    {editor_html(m, s)}{rehber_linkleri()}
     {sss_html}"""
     baslik = f"{ad} Fiyatları — Model Yılına Göre İkinci El Fiyat Analizi | EderiNe"
     acik = kesit(f"{ad} fiyatları {ay}: {sayi(o['adet'])} ilana göre medyan {tl(o['medyan'])}. {en_eski} – {en_yeni} model yılı fiyat tablosu, "
@@ -592,6 +599,121 @@ def hub_fiyatlar(V, kayit):
         icerik, [sss_ld], [("Ana sayfa", "/"), ("İkinci El Araç Fiyatları", "/ikinci-el-arac-fiyatlari")])
 
 
+# ── Editör notu, rehber bağlantıları, kurumsal sayfalar ─────────────
+def editor_html(m, s):
+    """icerik/modeller.json içindeki elle yazılmış model notu (varsa)."""
+    e = EDITOR.get(f"{m}|{s}")
+    if not e:
+        return ""
+    ozet = f"<p class=\"giris\" style=\"margin-bottom:10px\">{esc(e['ozet'])}</p>" if e.get("ozet") else ""
+    li = "".join(f"<li>{esc(x)}</li>" for x in e.get("dikkat", []))
+    liste = f"<h3 class=\"alt\">Alırken dikkat edilecekler</h3><ul class=\"adim\">{li}</ul>" if li else ""
+    uyari = ('<p class="msg warn" role="note">⚠️ Bu notlar, kullanıcı forumları, şikayet siteleri ve araç bilgi sitelerindeki <b>genel görüşlerin özetidir</b>; '
+             'doğrulanmış teknik bilgi değildir. Anılan sorunlar her araçta görülmez ve nesle, motora, kullanıma ve bakım geçmişine göre değişir. '
+             'Satın almadan önce bağımsız ekspertiz yaptırın ve resmî servis kayıtlarını kontrol edin.</p>')
+    return f'<section class="gcard"><h2 class="gcard-title">{esc(arac_adi(m, s))} hakkında genel kullanıcı görüşleri</h2>{ozet}{liste}{uyari}</section>'
+
+
+def rehber_linkleri():
+    chips = "".join(f'<a class="chip" href="/rehber/{k}">{esc(v["baslik"].split("?")[0].split(":")[0])}</a>' for k, v in YAZILAR.items())
+    return f'<section class="gcard"><h2 class="gcard-title">Satın almadan önce okuyun</h2><div class="chips">{chips}</div></section>'
+
+
+def sayfa_metodoloji(V, kayit):
+    m = core.meta()
+    tm = m.get("test_metrikleri", {})
+    ei = V.endeks
+    kays = ei["kaynaklar"]
+    kaynak = " ve ".join(f'<a href="{esc(k["url"])}" target="_blank" rel="noopener">{esc(k["ad"])}</a>' for k in kays if k.get("url"))
+    kat = ei["katsayi"]
+    icerik = f"""
+    <h1 class="s-baslik">Metodoloji: Fiyatlar Nasıl Hesaplanıyor?</h1>
+    <p class="giris">Bu sayfa, EderiNe'deki fiyat tahminlerinin ve sayfalardaki fiyat tablolarının hangi veriyle, nasıl üretildiğini ve sınırlarını açıklar.</p>
+    <section class="gcard"><h2 class="gcard-title">Veri</h2>
+      <p class="giris">Fiyat analizleri, kamuya açık ikinci el araç ilanlarından derlenen ve temizlenen yaklaşık {sayi(len(V.idx))} ilanlık bir veri setine dayanır.
+      Veri seti Mart 2026 sonu itibarıyladır; bu nedenle sayfalardaki rakamlar canlı ilan fiyatı değil, aşağıdaki endeksle güncellenmiş tahmini değerlerdir.</p></section>
+    <section class="gcard"><h2 class="gcard-title">Fiyatların güncellenmesi</h2>
+      <p class="giris">İlan fiyatları, Mart 2026 tabanından {V.ay_adi} ayına, iki kaynağın aylık ikinci el araç fiyat değişimlerinin ortalamasıyla bileşik olarak güncellenir: {kaynak}.
+      Güncel katsayı ×{sayi(kat, 4)} ({yuzde((kat - 1) * 100, 2)}). Henüz yayımlanmamış aylar için son üç ayın ortalaması kullanılır. Aylık değerleri <a href="/piyasa-analizi">piyasa analizi</a> sayfasında görebilirsiniz.</p></section>
+    <section class="gcard"><h2 class="gcard-title">Model sayfalarındaki rakamlar</h2>
+      <p class="giris">Marka-model ve model-yıl sayfalarında gösterilen <b>medyan fiyat</b>, aynı model ve yıldaki ilanların tam ortasındaki fiyattır; uç değerlerden az etkilenir.
+      <b>Tipik aralık</b>, ilanların ortadaki yarısını (25. – 75. yüzdelik) kapsar. Bir model-yıl sayfası için en az {MIN_YIL_SAYFA} ilan gerekir; tablolarda en az {MIN_YIL_SATIR} ilanlı satırlar gösterilir.</p></section>
+    <section class="gcard"><h2 class="gcard-title">Değerleme modeli</h2>
+      <p class="giris">Değerleme aracı, XGBoost (gradyan artırmalı karar ağaçları) ile eğitilmiş bir regresyon modeli kullanır. Girdiler arasında araç yaşı, kilometre, hasar/boya durumu,
+      motor gücü ve hacmi, yakıt, vites, kasa tipi, marka ve model bulunur. Ayrıca aynı model ve yıldaki emsal ilanların fiyat aralığı sonucu sınırlar.</p>
+      {tablo(["Test verisi göstergesi", "Değer"], [["Ortalama mutlak yüzde hata (MAPE)", yuzde(tm.get("mape", 0), 1)], ["Ortalama mutlak hata (MAE)", tl(tm.get("mae", 0))], ["R²", sayi(tm.get("r2", 0), 3)]], sag=(1,))}
+      <p class="small">Göstergeler, modelin eğitimde görmediği test verisi üzerindedir. Tek bir araçta sapma bundan büyük olabilir.</p></section>
+    <section class="gcard"><h2 class="gcard-title">Sınırlar</h2>
+      <ul class="adim"><li>Sonuçlar tahmindir; gerçek satış fiyatı pazarlığa, bölgeye, donanıma ve aracın gerçek durumuna göre değişir.</li>
+      <li>Ekspertiz yerine geçmez. Satın almadan önce bağımsız ekspertiz yaptırın.</li>
+      <li>Az ilanı olan model ve yıllarda tahminler daha az güvenilirdir.</li>
+      <li>Hasar bilgisi kullanıcı beyanına dayanır; resmî hasar kaydı sorgulanmaz.</li>
+      <li>Uygulama geliştirme aşamasındadır; sonuçlar ve özellikler değişebilir.</li></ul></section>"""
+    return "/metodoloji", sayfa("/metodoloji", "Metodoloji — Fiyat Analizi ve Değerleme Nasıl Çalışır? | EderiNe",
+        kesit(f"EderiNe fiyat verisinin kaynağı, aylık endeksle güncelleme yöntemi, yapay zeka modelinin hata payı (MAPE {yuzde(tm.get('mape', 0), 1)}) ve sınırları."),
+        icerik, None, [("Ana sayfa", "/"), ("Metodoloji", "/metodoloji")])
+
+
+def sayfa_hakkimizda(V, kayit):
+    icerik = """
+    <h1 class="s-baslik">Hakkımızda</h1>
+    <p class="giris">EderiNe, ikinci el araç alıcı ve satıcılarının fiyatı veriye dayalı değerlendirebilmesi için geliştirilen ücretsiz bir araç değerleme ve piyasa analizi platformudur.
+    <a href="https://bnovative.com.tr" target="_blank" rel="noopener">BNovative</a> tarafından Türkiye pazarı için geliştirilmektedir.</p>
+    <section class="gcard"><h2 class="gcard-title">Ne yapıyoruz?</h2>
+      <ul class="adim"><li><a href="/arac-degerleme">Araç değerleme:</a> marka, model, yıl, kilometre ve hasar bilgisine göre tahmini piyasa değeri.</li>
+      <li><a href="/ikinci-el-arac-fiyatlari">İkinci el fiyatları:</a> marka, model ve model yılına göre medyan fiyatlar.</li>
+      <li><a href="/piyasa-analizi">Piyasa analizi:</a> dağılımlar ve aylık fiyat endeksi.</li>
+      <li><a href="/rehber">Rehber:</a> satın alma ve ekspertiz üzerine bilgilendirici yazılar.</li></ul></section>
+    <section class="gcard"><h2 class="gcard-title">Neye dikkat ediyoruz?</h2>
+      <p class="giris">Araç satışı yapmıyor, ilan yayınlamıyor ve komisyon almıyoruz. Verinin kaynağını, hesaplama yöntemini ve hata payını <a href="/metodoloji">metodoloji sayfasında</a> açıkça paylaşıyoruz.
+      Sonuçlarımız bilgilendirme amaçlı tahmindir; bağlayıcı değildir.</p></section>"""
+    return "/hakkimizda", sayfa("/hakkimizda", "Hakkımızda | EderiNe",
+        "EderiNe, BNovative tarafından geliştirilen ücretsiz araç değerleme ve ikinci el piyasa analizi platformudur.",
+        icerik, None, [("Ana sayfa", "/"), ("Hakkımızda", "/hakkimizda")])
+
+
+def sayfa_iletisim(V, kayit):
+    eposta = (f'<li>E-posta: <a href="mailto:{esc(ILETISIM_EPOSTA)}">{esc(ILETISIM_EPOSTA)}</a></li>' if ILETISIM_EPOSTA else "")
+    icerik = f"""
+    <h1 class="s-baslik">İletişim</h1>
+    <p class="giris">Görüş, hata bildirimi, veri düzeltme ya da iş birliği için bize ulaşabilirsiniz.</p>
+    <section class="gcard"><h2 class="gcard-title">Bize ulaşın</h2>
+      <ul class="adim">{eposta}<li>Web: <a href="https://bnovative.com.tr" target="_blank" rel="noopener">bnovative.com.tr</a></li></ul>
+      <p class="small">Bir fiyat ya da sayfa hakkında bildirimde bulunurken sayfanın adresini de yazarsanız daha hızlı yardımcı olabiliriz.</p></section>"""
+    return "/iletisim", sayfa("/iletisim", "İletişim | EderiNe",
+        "EderiNe ile iletişime geçin: görüş, hata bildirimi, veri düzeltme ve iş birliği.", icerik, None, [("Ana sayfa", "/"), ("İletişim", "/iletisim")])
+
+
+def rehber_index(V, kayit):
+    kartlar_ = "".join(f'<section class="gcard"><h2 class="gcard-title"><a href="/rehber/{k}">{esc(v["baslik"])}</a></h2><p class="giris" style="margin:0">{esc(v["aciklama"])}</p></section>' for k, v in YAZILAR.items())
+    icerik = f"""
+    <h1 class="s-baslik">İkinci El Araç Rehberi</h1>
+    <p class="giris">İkinci el araç alırken ve satarken işinize yarayacak kısa, anlaşılır rehberler. Fiyat karşılaştırması için <a href="/ikinci-el-arac-fiyatlari">fiyat sayfalarına</a> ya da <a href="/arac-degerleme">değerleme aracına</a> bakabilirsiniz.</p>
+    {kartlar_}"""
+    return "/rehber", sayfa("/rehber", "İkinci El Araç Rehberi — Alırken ve Satarken | EderiNe",
+        "İkinci el araç alırken dikkat edilecekler, ekspertiz raporunun okunması ve boyalı araç fiyatı üzerine rehber yazılar.",
+        icerik, None, [("Ana sayfa", "/"), ("Rehber", "/rehber")])
+
+
+def rehber_yazisi(k, v):
+    yol = f"/rehber/{k}"
+    diger = "".join(f'<a class="chip" href="/rehber/{kk}">{esc(vv["ozet"])}</a>' for kk, vv in YAZILAR.items() if kk != k)
+    icerik = f"""
+    <article>
+    <h1 class="s-baslik">{esc(v["baslik"])}</h1>
+    <p class="small" style="margin:0 0 14px">Son güncelleme: {GUNCEL["ay"]} · Hazırlayan: EderiNe editör ekibi</p>
+    <div class="yazi">{v["html"]}</div>
+    </article>
+    {cta("Aracımın değerini hesapla", "/#t1", ("İkinci el fiyatları", "/ikinci-el-arac-fiyatlari"))}
+    <section class="gcard"><h2 class="gcard-title">Diğer rehberler</h2><div class="chips">{diger}</div></section>"""
+    ld = [{"@type": "Article", "headline": v["baslik"], "description": v["aciklama"], "inLanguage": "tr",
+           "dateModified": GUNCEL["iso"], "mainEntityOfPage": SITE + yol,
+           "author": {"@type": "Organization", "name": "EderiNe", "url": SITE + "/"},
+           "publisher": {"@type": "Organization", "name": "BNovative", "url": SITE + "/"}}]
+    return yol, sayfa(yol, f'{v["baslik"]} | EderiNe', v["aciklama"], icerik, ld,
+                      [("Ana sayfa", "/"), ("Rehber", "/rehber"), (v["baslik"].split("?")[0].split(":")[0], yol)])
+
+
 # ── Ana akış ─────────────────────────────────────────────────────────
 def main():
     ap = argparse.ArgumentParser()
@@ -602,6 +724,10 @@ def main():
         y, m = map(int, a.ay.split("-"))
         hedef = datetime.date(y, m, 1)
     V = Veri(hedef)
+    GUNCEL["ay"], GUNCEL["iso"] = V.ay_adi, datetime.date.today().isoformat()
+    ed = KOK / "icerik" / "modeller.json"
+    if ed.exists():
+        EDITOR.update({k: v for k, v in json.loads(ed.read_text(encoding="utf-8")).items() if not k.startswith("_")})
 
     # Eski üretimleri temizle (yalnızca bu betiğin ürettiği dosyalar)
     uretilen = PUBLIC / ".uretilen.txt"
@@ -628,25 +754,30 @@ def main():
             if o["adet"] >= MIN_YIL_SAYFA:
                 yol, h = model_yil_sayfasi(V, m, s, y, V.gruplar[(m, s)], ozet_yil[(m, s)], V.gruplar)
                 sayfalar[yol] = h
-    for f in (hub_degerleme, hub_fiyat_analizi, hub_piyasa, hub_fiyatlar):
+    for f in (hub_degerleme, hub_fiyat_analizi, hub_piyasa, hub_fiyatlar, sayfa_metodoloji, sayfa_hakkimizda,
+              sayfa_iletisim, rehber_index):
         yol, h = f(V, kayit)
+        sayfalar[yol] = h
+    for k, v in YAZILAR.items():
+        yol, h = rehber_yazisi(k, v)
         sayfalar[yol] = h
 
     # Ad çakışması / mevcut dosya kontrolü
     for yol in sayfalar:
         hedef_dosya = PUBLIC / (yol.strip("/") + ".html")
         assert not hedef_dosya.exists(), f"Çakışma: {hedef_dosya}"
+        hedef_dosya.parent.mkdir(parents=True, exist_ok=True)
         hedef_dosya.write_text(sayfalar[yol], encoding="utf-8")
     uretilen.write_text("\n".join(y.strip("/") + ".html" for y in sayfalar), encoding="utf-8")
 
     # Sitemap
     bugun = datetime.date.today().isoformat()
-    oncelik = lambda y: "0.9" if y in ("/arac-degerleme", "/araba-fiyat-analizi", "/piyasa-analizi", "/ikinci-el-arac-fiyatlari") else "0.6"
+    oncelik = lambda y: "0.9" if y in ("/arac-degerleme", "/araba-fiyat-analizi", "/piyasa-analizi", "/ikinci-el-arac-fiyatlari", "/rehber") else "0.7" if y.startswith("/rehber/") or y in ("/metodoloji", "/hakkimizda") else "0.3" if y == "/iletisim" else "0.6"
     satirlar = [f"  <url><loc>{SITE}/</loc><lastmod>{bugun}</lastmod><priority>1.0</priority></url>"]
     satirlar += [f"  <url><loc>{SITE}{y}</loc><lastmod>{bugun}</lastmod><priority>{oncelik(y)}</priority></url>" for y in sorted(sayfalar)]
     (PUBLIC / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                                         + "\n".join(satirlar) + "\n</urlset>\n", encoding="utf-8")
-    n_hub = 4
+    n_hub = 4 + 4 + len(YAZILAR)
     n_model = len(kayit["model"])
     print(f"{len(sayfalar)} sayfa üretildi: {n_hub} ana + {n_model} model + {len(sayfalar) - n_hub - n_model} model-yıl  ({V.ay_adi})")
 

@@ -1847,3 +1847,10 @@ arac-degerleme.html
 araba-fiyat-analizi.html
 piyasa-analizi.html
 ikinci-el-arac-fiyatlari.html
+metodoloji.html
+hakkimizda.html
+iletisim.html
+rehber.html
+rehber/boyali-arac-fiyati.html
+rehber/ekspertiz-raporu-nasil-okunur.html
+rehber/ikinci-el-arac-alirken-dikkat-edilecekler.html
