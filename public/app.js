@@ -688,6 +688,12 @@ async function basla() {
   $('t1-marka').addEventListener('change', () => { t1SeriDoldur(); aracSenkronla('t1'); });
   $('t1-seri').addEventListener('change', () => aracSenkronla('t1'));
   aracSenkronla('t1');
+  // Statik SEO sayfalarından gelen ön doldurma: /?marka=Volkswagen&seri=Passat&yil=2019#t1
+  try {
+    const q = new URLSearchParams(location.search), mk = q.get('marka'), sr = q.get('seri'), yl = parseInt(q.get('yil'), 10);
+    if (mk && markalar.includes(mk)) { $('t1-marka').value = mk; t1SeriDoldur(sr || undefined); aracSenkronla('t1'); }
+    if (yl >= 1985 && yl <= YIL_MAX) { $('t1-yil').value = yl; yilSenkronla('t1'); }
+  } catch (_) { /* yoksay */ }
   $('t1-yil').addEventListener('input', () => yilSenkronla('t1'));
   for (const p of ['t2', 't3']) for (const a of ['ymin', 'ymax']) $(`${p}-${a}`).addEventListener('input', () => yilSenkronla(p));
   $('foto').addEventListener('change', (ev) => { if (ev.target.files[0]) fotoYukle(ev.target.files[0]); else fotoKaldir(); });

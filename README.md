@@ -32,3 +32,12 @@ Veri: `public/veri/fiyat_degisimi.json` (kaynak ve tarih alanlarıyla). Yeni ay 
 - **Emsal alt sınırı** yalnızca hasarsız araçlara uygulanır; hasar skoru 12 ve 30 artık aynı taban fiyata kilitlenmez.
 - **"Piyasadan ucuz/pahalı"** kıyası tüm markanın medyanına değil, aynı model/yıl/km emsallerinin medyanına göre yapılır.
 - Veri dosyaları değiştiği için `python scripts/build_assets.py` çalıştırılmalıdır (`data/ilanlar.npz` artık motor hacmi/gücü/çekiş de içerir).
+
+## SEO sayfaları (statik, `data/` verisinden otomatik üretilir)
+`python scripts/build_pages.py` (yalnızca numpy gerekir) şunları `public/` altına yazar ve `sitemap.xml`'i günceller:
+- Ana sayfalar: `/arac-degerleme`, `/araba-fiyat-analizi`, `/piyasa-analizi`, `/ikinci-el-arac-fiyatlari`
+- Model sayfaları: `/volkswagen-passat-fiyatlari` (marka + model)
+- Model-yıl sayfaları: `/volkswagen-passat-2019-fiyati` (en az 15 ilanı olan her model-yıl)
+
+Her sayfanın kendi başlığı, açıklaması, canonical adresi, SSS ve BreadcrumbList yapılandırılmış verisi vardır. "Aracımı değerle" düğmeleri `/?marka=..&seri=..&yil=..#t1` ile uygulamayı ön dolu açar.
+**Her ay**: `data/endeks.json`'a yeni ay ekleyin → `python scripts/build_pages.py` → commit/push (fiyatlar sayfalara gömülü olduğu için yeniden üretmek gerekir). Üretilen dosyalar `public/.uretilen.txt` içinde listelenir; betik eski çıktıları kendisi temizler. Belirli aya göre üretmek için `--ay 2026-11`.
