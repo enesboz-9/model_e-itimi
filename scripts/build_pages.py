@@ -647,8 +647,7 @@ def sayfa_metodoloji(V, kayit):
       <ul class="adim"><li>Sonuçlar tahmindir; gerçek satış fiyatı pazarlığa, bölgeye, donanıma ve aracın gerçek durumuna göre değişir.</li>
       <li>Ekspertiz yerine geçmez. Satın almadan önce bağımsız ekspertiz yaptırın.</li>
       <li>Az ilanı olan model ve yıllarda tahminler daha az güvenilirdir.</li>
-      <li>Hasar bilgisi kullanıcı beyanına dayanır; resmî hasar kaydı sorgulanmaz.</li>
-      <li>Uygulama geliştirme aşamasındadır; sonuçlar ve özellikler değişebilir.</li></ul></section>"""
+      <li>Hasar bilgisi kullanıcı beyanına dayanır; resmî hasar kaydı sorgulanmaz.</li></ul></section>"""
     return "/metodoloji", sayfa("/metodoloji", "Metodoloji — Fiyat Analizi ve Değerleme Nasıl Çalışır? | EderiNe",
         kesit(f"EderiNe fiyat verisinin kaynağı, aylık endeksle güncelleme yöntemi, yapay zeka modelinin hata payı (MAPE {yuzde(tm.get('mape', 0), 1)}) ve sınırları."),
         icerik, None, [("Ana sayfa", "/"), ("Metodoloji", "/metodoloji")])
